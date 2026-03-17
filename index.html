@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambanivolo mi-DEV - Formation gratuite en développement web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #fafafa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===== SECTION HEADER ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #FF7A45;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .logo-sub {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* ===== MENU HAMBURGER ===== */
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-icon span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu a {
+            color: #333;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #FF7A45;
+        }
+
+        /* ===== DROPDOWN MENU ===== */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle i {
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            z-index: 1000;
+            border: 1px solid #eee;
+        }
+
+        .dropdown:hover > .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            list-style: none;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            transition: all 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f5f5f5;
+            color: #FF7A45;
+            padding-left: 25px;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -10px;
+        }
+
+        .dropdown-submenu:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 150px 20px 100px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-greeting {
+            display: block;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .hero-main {
+            font-size: 3.5rem;
+            font-weight: 700;
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .hero-slogan {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #FF7A45;
+            font-style: italic;
+        }
+
+        .hero-slogan i {
+            font-size: 1.2rem;
+            margin: 0 10px;
+            color: white;
+        }
+
+        .hero-ecole {
+            font-size: 1rem;
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 30px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FF7A45;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .hero-message {
+            background: rgba(255,122,69,0.15);
+            border-left: 4px solid #FF7A45;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-message i {
+            font-size: 2rem;
+            color: #FF7A45;
+        }
+
+        .hero-message p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: #FF7A45;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            border-color: #FF7A45;
+            color: #FF7A45;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #2c3e50;
+            transform: translateY(-2px);
+        }
+
+        /* ===== MISSION SECTION ===== */
+        .mission {
+            padding: 60px 0;
+            background: #fafafa;
+            text-align: center;
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mission-content h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .mission-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #FF7A45;
+        }
+
+        .mission-content p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .mission-badges {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .mission-badges .badge {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            color: #333;
+            font-weight: 500;
+            border: 1px solid #eee;
+        }
+
+        .mission-badges .badge i {
+            color: #FF7A45;
+            margin-right: 8px;
+        }
+
+        /* ===== HISTOIRE AKAMASOA ===== */
+        .histoire {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .histoire-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .histoire-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .histoire-texte h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .histoire-texte p {
+            margin-bottom: 15px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .histoire-texte strong {
+            color: #FF7A45;
+        }
+
+        .histoire-slogan {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .histoire-slogan i {
+            color: #FF7A45;
+            margin: 0 15px;
+        }
+
+        /* ===== TÉMOIGNAGES ===== */
+        .temoignages {
+            padding: 80px 0;
+            background: #fafafa;
+        }
+
+        .temoignages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .temoignage-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            gap: 20px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s;
+        }
+
+        .temoignage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #FF7A45;
+        }
+
+        .temoignage-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #FF7A45;
+            flex-shrink: 0;
+        }
+
+        .temoignage-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .temoignage-content {
+            flex: 1;
+            position: relative;
+        }
+
+        .quote-icon {
+            color: #FF7A45;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            margin-bottom: 10px;
+        }
+
+        .temoignage-content p {
+            color: #555;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .temoignage-author h4 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .temoignage-author p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        .stars {
+            color: #FFD700;
+        }
+
+        .stars i {
+            margin-right: 3px;
+        }
+
+        /* ===== COURS SECTION ===== */
+        .cours {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .cours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .cours-card {
+            background: #fafafa;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s;
+        }
+
+        .cours-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #FF7A45;
+        }
+
+        .cours-icon {
+            font-size: 3rem;
+            color: #FF7A45;
+            margin-bottom: 20px;
+        }
+
+        .cours-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .cours-desc {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .cours-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: white;
+            color: #666;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            border: 1px solid #eee;
+        }
+
+        .cours-lecons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .lecon-link a {
+            display: inline-block;
+            padding: 5px 15px;
+            background: white;
+            color: #666;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .lecon-link a:hover {
+            background: #FF7A45;
+            color: white;
+            border-color: #FF7A45;
+        }
+
+        .cours-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #FF7A45;
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .cours-btn:hover {
+            background: transparent;
+            border-color: #FF7A45;
+            color: #FF7A45;
+            transform: translateY(-2px);
+        }
+
+        .tech-message {
+            margin-top: 50px;
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 12px;
+            color: white;
+        }
+
+        .tech-message p {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .tech-message i {
+            color: #FF7A45;
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            padding: 80px 0;
+            background: #fafafa;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            background: white;
+            border-radius: 16px;
+            padding: 50px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .contact-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-info p {
+            margin: 15px 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-info i {
+            color: #FF7A45;
+            width: 20px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 14px 18px;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #FF7A45;
+            box-shadow: 0 0 0 3px rgba(255,122,69,0.1);
+        }
+
+        .btn-submit {
+            background: #FF7A45;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .btn-submit:hover {
+            background: transparent;
+            border-color: #FF7A45;
+            color: #FF7A45;
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin: 15px 0 10px;
+            color: white;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+        }
+
+        .footer-section p {
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .footer-slogan {
+            font-size: 1rem;
+            font-style: italic;
+            color: #FF7A45;
+            margin-top: 15px;
+        }
+
+        .footer-gratuit {
+            color: #FF7A45;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: white;
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+            color: #FF7A45;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .social-links a:hover {
+            background: #FF7A45;
+            transform: translateY(-5px);
+        }
+
+        .footer-credit {
+            font-style: italic;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        .footer-akamasoa {
+            color: #FF7A45;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        .footer-tech {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-top: 10px;
+        }
+
+        .footer-tech i {
+            color: #FF7A45;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .nav-menu {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: flex;
+            }
+            
+            .navbar {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                transition: left 0.3s;
+                padding: 30px;
+                overflow-y: auto;
+            }
+            
+            .menu-toggle:checked ~ .navbar {
+                left: 0;
+            }
+            
+            .menu-toggle:checked + .menu-icon span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .menu-toggle:checked + .menu-icon span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle:checked + .menu-icon span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                display: none;
+                padding-left: 20px;
+            }
+            
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+            
+            .dropdown-submenu .dropdown-menu {
+                left: 0;
+            }
+            
+            .hero-main {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .cours-grid,
+            .temoignages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .histoire-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .temoignage-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .hero-message {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .mission-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .mission-badges .badge {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-main {
+                font-size: 1rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.7rem;
+            }
+            
+            .btn-retour span {
+                display: none;
+            }
+            
+            .cours-lecons {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .lecon-link a {
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/50x50/FF7A45/ffffff?text=USVPA" alt="Logo USVPA" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-main">AMBANIVOLO MI-DEV</span>
+                        <span class="logo-sub">Université Saint Vincent de Paul - Akamasoa</span>
+                    </div>
+                </div>
+
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <nav class="navbar">
+                    <ul class="nav-menu">
+                        <li><a href="#accueil">Accueil</a></li>
+                        
+                        <li class="dropdown">
+                            <a href="#cours" class="dropdown-toggle">Cours <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a href="#">HTML <i class="fas fa-chevron-right"></i></a>
+                                    <ul class="dropdown-menu submenu">
+                                        <li><a href="a.html">Leçons 1-5</a></li>
+                                        <li><a href="b.html">Leçons 6-10</a></li>
+                                        <li><a href="c.html">Leçons 11-15</a></li>
+                                        <li><a href="d.html">Leçons 16-20</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">CSS <i class="fas fa-chevron-right"></i></a>
+                                    <ul class="dropdown-menu submenu">
+                                        <li><a href="1.html">Leçons 1-5</a></li>
+                                        <li><a href="2.html">Leçons 6-10</a></li>
+                                        <li><a href="3.html">Leçons 11-15</a></li>
+                                        <li><a href="4.html">Leçons 16-20</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">JavaScript <i class="fas fa-chevron-right"></i></a>
+                                    <ul class="dropdown-menu submenu">
+                                        <li><a href="js1.html">Leçons 1-5</a></li>
+                                        <li><a href="js2.html">Leçons 6-10</a></li>
+                                        <li><a href="js3.html">Leçons 11-15</a></li>
+                                        <li><a href="js4.html">Leçons 16-20</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">PHP <i class="fas fa-chevron-right"></i></a>
+                                    <ul class="dropdown-menu submenu">
+                                        <li><a href="php1.html">Leçons 1-5</a></li>
+                                        <li><a href="php2.html">Leçons 6-10</a></li>
+                                        <li><a href="php3.html">Leçons 11-15</a></li>
+                                        <li><a href="php4.html">Leçons 16-20</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="members.html">Membres</a></li>
+                        <li><a href="#histoire">Histoire</a></li>
+                        <li><a href="#temoignages">Témoignages</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">FORMATION 100% GRATUITE</span>
+                <h1 class="hero-title">
+                    <span class="hero-greeting">Bienvenue sur</span>
+                    <span class="hero-main">Ambanivolo mi-DEV</span>
+                </h1>
+                <p class="hero-subtitle">Plateforme d'apprentissage gratuite pour les jeunes d'Akamasoa et de Madagascar</p>
+                <div class="hero-slogan">
+                    <i class="fas fa-quote-left"></i>
+                    Knowledge is power 
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <p class="hero-ecole">Université Saint Vincent de Paul - Akamasoa</p>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">80+</span>
+                        <span class="hero-stat-label">Leçons gratuites</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">100%</span>
+                        <span class="hero-stat-label">HTML & CSS</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">4</span>
+                        <span class="hero-stat-label">Langages</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">0</span>
+                        <span class="hero-stat-label">Ariary</span>
+                    </div>
+                </div>
+
+                <div class="hero-message">
+                    <i class="fas fa-heart"></i>
+                    <p>Ces pages ont été créées uniquement avec HTML et CSS, sans aucun framework, pour être accessibles à tous, même sans connexion internet rapide. Entièrement gratuites pour les jeunes d'Akamasoa et les personnes démunies.</p>
+                    <i class="fas fa-heart"></i>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#cours" class="btn btn-primary">Commencer l'apprentissage</a>
+                    <a href="members.html" class="btn btn-outline">Nos membres</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MISSION SECTION ===== -->
+    <section class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <h2>Notre mission</h2>
+                <p>Offrir une formation de qualité en développement web, <strong>totalement gratuite</strong>, aux jeunes d'Akamasoa et à toutes les personnes démunies de Madagascar. Parce que le savoir est une force, et que personne ne devrait être privé d'éducation faute de moyens.</p>
+                <div class="mission-badges">
+                    <span class="badge"><i class="fas fa-check-circle"></i> 100% Gratuit</span>
+                    <span class="badge"><i class="fas fa-code"></i> HTML/CSS uniquement</span>
+                    <span class="badge"><i class="fas fa-mobile-alt"></i> Accessible sur mobile</span>
+                    <span class="badge"><i class="fas fa-heart"></i> Fait avec ❤️ à Akamasoa</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HISTOIRE AKAMASOA ===== -->
+    <section class="histoire" id="histoire">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Université Saint Vincent de Paul</h2>
+                <p class="section-subtitle">Akamasoa - La cité de la renaissance</p>
+            </div>
+
+            <div class="histoire-content">
+                <div class="histoire-image">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Akamasoa">
+                </div>
+                <div class="histoire-texte">
+                    <h3>Une histoire de foi et de résilience</h3>
+                    <p>Fondée en 1989 par le <strong>Père Pedro Pablo Opeka</strong>, missionnaire argentin, Akamasoa ("Les bons amis" en malgache) est née d'un rêve : redonner dignité et espoir aux plus démunis de Madagascar.</p>
+                    <p>Parti d'un simple dépotoir où vivaient des centaines de familles, le Père Pedro a construit, avec les habitants, des villages, des écoles, des centres de formation et aujourd'hui une université.</p>
+                    <p>L'<strong>Université Saint Vincent de Paul</strong> est le fruit de cette vision : offrir une éducation de qualité aux jeunes d'Akamasoa pour qu'ils deviennent les acteurs de leur propre développement. Ici, on ne donne pas du poisson, on apprend à pêcher.</p>
+                    <p>Aujourd'hui, des centaines d'étudiants se forment dans diverses filières, dont l'informatique, pour construire un avenir meilleur pour eux-mêmes et pour Madagascar.</p>
+                    
+                    <div class="histoire-slogan">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>"knowledge is power"</span>
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TÉMOIGNAGES ===== -->
+    <section class="temoignages" id="temoignages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Témoignages</h2>
+                <p class="section-subtitle">Ce que disent nos étudiants</p>
+            </div>
+
+            <div class="temoignages-grid">
+                <div class="temoignage-card">
+                    <div class="temoignage-avatar">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Rakoto">
+                    </div>
+                    <div class="temoignage-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>Grâce à Ambanivolo mi-DEV, j'ai appris le HTML et le CSS en seulement 2 mois. Aujourd'hui, je crée des sites web pour des petites entreprises locales. Le savoir est vraiment une force !</p>
+                        <div class="temoignage-author">
+                            <h4>Rakotoarisoa Jean</h4>
+                            <p>Étudiant en Licence 1 - Akamasoa</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="temoignage-card">
+                    <div class="temoignage-avatar">
+                        <img src="https://images.unsplash.com/photo-1502764613149-7f1d229e230f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Soa">
+                    </div>
+                    <div class="temoignage-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>Ces cours m'ont ouvert les portes du numérique. Je n'avais pas les moyens de payer une formation, mais ici tout est gratuit. Merci à toute l'équipe et au Père Pedro !</p>
+                        <div class="temoignage-author">
+                            <h4>Razafimahatratra Soa</h4>
+                            <p>Étudiante en développement web</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="temoignage-card">
+                    <div class="temoignage-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Andry">
+                    </div>
+                    <div class="temoignage-content">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>Les leçons sont claires, bien expliquées et progressives. J'ai commencé sans aucune connaissance, et maintenant je prépare mon portfolio. Un grand merci pour cette initiative.</p>
+                        <div class="temoignage-author">
+                            <h4>Andrianantenaina Fidy</h4>
+                            <p>Autodidacte - Ambatolampy</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COURS SECTION ===== -->
+    <section class="cours" id="cours">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos formations gratuites</h2>
+                <p class="section-subtitle">20 leçons par cours pour maîtriser le développement web - 100% HTML & CSS</p>
+            </div>
+
+            <div class="cours-grid">
+                <div class="cours-card">
+                    <div class="cours-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML Master</h3>
+                    <p class="cours-desc">20 leçons • Débutant à Expert</p>
+                    <div class="cours-tags">
+                        <span class="tag">Balises</span>
+                        <span class="tag">Sémantique</span>
+                        <span class="tag">Formulaires</span>
+                    </div>
+                    <div class="cours-lecons">
+                        <span class="lecon-link"><a href="a.html">Leçons 1-5</a></span>
+                        <span class="lecon-link"><a href="b.html">Leçons 6-10</a></span>
+                        <span class="lecon-link"><a href="c.html">Leçons 11-15</a></span>
+                        <span class="lecon-link"><a href="d.html">Leçons 16-20</a></span>
+                    </div>
+                    <a href="a.html" class="cours-btn">Commencer HTML</a>
+                </div>
+
+                <div class="cours-card">
+                    <div class="cours-icon">
+                        <i class="fab fa-css3-alt"></i>
+       </div>
+                    <h3>CSS Master</h3>
+                    <p class="cours-desc">20 leçons • Débutant à Expert</p>
+                    <div class="cours-tags">
+                        <span class="tag">Flexbox</span>
+                        <span class="tag">Grid</span>
+                        <span class="tag">Animations</span>
+                    </div>
+                    <div class="cours-lecons">
+                        <span class="lecon-link"><a href="1.html">Leçons 1-5</a></span>
+                        <span class="lecon-link"><a href="2.html">Leçons 6-10</a></span>
+                        <span class="lecon-link"><a href="3.html">Leçons 11-15</a></span>
+                        <span class="lecon-link"><a href="4.html">Leçons 16-20</a></span>
+                    </div>
+                    <a href="1.html" class="cours-btn">Commencer CSS</a>
+                </div>
+
+                <div class="cours-card">
+                    <div class="cours-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript Master</h3>
+                    <p class="cours-desc">20 leçons • Débutant à Expert</p>
+                    <div class="cours-tags">
+                        <span class="tag">ES6+</span>
+                        <span class="tag">DOM</span>
+                        <span class="tag">Async</span>
+                    </div>
+                    <div class="cours-lecons">
+                        <span class="lecon-link"><a href="js1.html">Leçons 1-5</a></span>
+                        <span class="lecon-link"><a href="js2.html">Leçons 6-10</a></span>
+                        <span class="lecon-link"><a href="js3.html">Leçons 11-15</a></span>
+                        <span class="lecon-link"><a href="js4.html">Leçons 16-20</a></span>
+                    </div>
+                    <a href="js1.html" class="cours-btn">Commencer JavaScript</a>
+                </div>
+
+                <div class="cours-card">
+                    <div class="cours-icon">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h3>PHP Master</h3>
+                    <p class="cours-desc">20 leçons • Débutant à Expert</p>
+                    <div class="cours-tags">
+                        <span class="tag">PDO</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">MVC</span>
+                    </div>
+                    <div class="cours-lecons">
+                        <span class="lecon-link"><a href="php1.html">Leçons 1-5</a></span>
+                        <span class="lecon-link"><a href="php2.html">Leçons 6-10</a></span>
+                        <span class="lecon-link"><a href="php3.html">Leçons 11-15</a></span>
+                        <span class="lecon-link"><a href="php4.html">Leçons 16-20</a></span>
+                    </div>
+                    <a href="php1.html" class="cours-btn">Commencer PHP</a>
+                </div>
+            </div>
+
+            <div class="tech-message">
+                <p><i class="fas fa-code"></i> Tous ces cours ont été créés <strong>uniquement avec HTML et CSS</strong>, sans JavaScript, sans framework, pour garantir un apprentissage simple et accessible à tous, même sur des ordinateurs modestes et des connexions lentes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contactez-nous</h2>
+                <p class="section-subtitle">Université Saint Vincent de Paul - Akamasoa</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Informations</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Akamasoa, Antananarivo, Madagascar</p>
+                    <p><i class="fas fa-phone"></i> +261 34 12 466 85</p>
+                    <p><i class="fas fa-envelope"></i> contact@ambanivolo-dev.mg</p>
+                    <p><i class="fas fa-globe"></i> www.akamasoa.org</p>
+                    <p><i class="fas fa-heart"></i> Formation 100% gratuite</p>
+                </div>
+
+                <form class="contact-form" action="#" method="post">
+                    <input type="text" placeholder="Votre nom" required>
+                    <input type="email" placeholder="Votre email" required>
+                    <textarea rows="5" placeholder="Votre message" required></textarea>
+                    <button type="submit" class="btn-submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://via.placeholder.com/60x60/FF7A45/ffffff?text=USVPA" alt="Logo USVPA" class="footer-logo-img">
+                    <h3>AMBANIVOLO MI-DEV</h3>
+                    <p>Université Saint Vincent de Paul</p>
+                    <p>Akamasoa - Madagascar</p>
+                    <p class="footer-slogan">"Knowledge is power"</p>
+                    <p class="footer-gratuit"><i class="fas fa-heart"></i> 100% GRATUIT</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#histoire">Histoire</a></li>
+                        <li><a href="#cours">Cours</a></li>
+                        <li><a href="#temoignages">Témoignages</a></li>
+                        <li><a href="members.html">Membres</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Nos cours</h4>
+                    <ul>
+                        <li><a href="a.html">HTML (4 parties)</a></li>
+                        <li><a href="1.html">CSS (4 parties)</a></li>
+                        <li><a href="js1.html">JavaScript (4 parties)</a></li>
+                        <li><a href="php1.html">PHP (4 parties)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="footer-credit">Fondé par le Père Pedro Pablo Opeka</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ambanivolo mi-DEV - Université Saint Vincent de Paul Akamasoa</p>
+                <p class="footer-akamasoa">"Construire ensemble l'avenir de Madagascar"</p>
+                <p class="footer-tech"><i class="fas fa-code"></i> Site créé avec HTML et CSS uniquement, gratuit pour les personnes démunies</p>
+            </div>
+        </div>
+    </footer>
+</body>
+ </html>
+                                                                               
