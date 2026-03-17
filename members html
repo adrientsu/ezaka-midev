@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membres - Ambanivolo mi-DEV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="members.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">👥</span>
+                    <div class="logo-text">
+                        <span class="logo-main">AMBANIVOLO MI-DEV</span>
+                        <span class="logo-sub">Membres de l'équipe</span>
+                        <span class="logo-usvpa">USVPA Université</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">ÉQUIPE DE DÉVELOPPEMENT</span>
+                <h1 class="hero-title">Nos membres</h1>
+                <p class="hero-subtitle">Les talents derrière Ambanivolo mi-DEV</p>
+                <p class="hero-ecole">Licence 1 en Informatique - USVPA Université</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MEMBRES GRID ===== -->
+    <section class="membres">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre équipe</h2>
+                <p class="section-subtitle">Découvrez les développeurs du projet</p>
+            </div>
+
+            <div class="membres-grid">
+                
+                <!-- MEMBRE 1: RALAIANDRIAMPARANTSOA Adrien -->
+                <div class="membre-card">
+                    <div class="membre-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" alt="Adrien">
+                    </div>
+                    <h2 class="membre-nom">RALAIANDRIAMPARANTSOA Adrien</h2>
+                    <p class="membre-role">Lead Développeur</p>
+                    <p class="membre-classe">Licence 1 en Informatique</p>
+                    
+                    <div class="membre-contact">
+                        <div class="membre-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+261386213225">038 62 132 25</a>
+                        </div>
+                        <div class="membre-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/261386213225">038 62 132 25</a>
+                        </div>
+                        <div class="membre-item">
+                            <i class="fab fa-facebook"></i>
+                            <a href="#">Rayan Andriantsoa</a>
+                        </div>
+                    </div>
+
+                    <div class="membre-skills">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                    </div>
+
+                    <a href="#contact" class="btn-contact">
+                        <i class="fas fa-envelope"></i> Contacter
+                    </a>
+                </div>
+
+                <!-- MEMBRE 2: RAZAFIMAHATRATRA Fanantenana Herisoa -->
+                <div class="membre-card">
+                    <div class="membre-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108777-466d829a3c5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" alt="Fanantenana">
+                    </div>
+                    <h2 class="membre-nom">RAZAFIMAHATRATRA Fanantenana Herisoa</h2>
+                    <p class="membre-role">Développeuse Full Stack</p>
+                    <p class="membre-classe">Licence 1 en Informatique</p>
+                    
+                    <div class="membre-contact">
+                        <div class="membre-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+261341246685">034 12 466 85</a>
+                        </div>
+                        <div class="membre-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/261341246685">034 12 466 85</a>
+                        </div>
+                        <div class="membre-item">
+                            <i class="fab fa-facebook"></i>
+                            <a href="#">Fanantenana Herisoa</a>
+                        </div>
+                    </div>
+
+                    <div class="membre-skills">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Vue.js</span>
+                    </div>
+
+                    <a href="#contact" class="btn-contact">
+                        <i class="fas fa-envelope"></i> Contacter
+                    </a>
+                </div>
+
+                <!-- MEMBRE 3: FENOHASINA Fanomezantsoa Joseph -->
+                <div class="membre-card">
+                    <div class="membre-avatar">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" alt="Joseph">
+                    </div>
+                    <h2 class="membre-nom">FENOHASINA Fanomezantsoa Joseph</h2>
+                    <p class="membre-role">Développeur Backend</p>
+                    <p class="membre-classe">Licence 1 en Informatique</p>
+                    
+                    <div class="membre-contact">
+                        <div class="membre-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+261385820942">038 58 209 42</a>
+                        </div>
+                        <div class="membre-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/261385820942">038 58 209 42</a>
+                        </div>
+                        <div class="membre-item">
+                            <i class="fab fa-facebook"></i>
+                            <a href="#">Joseph Fenohasina</a>
+                        </div>
+                    </div>
+
+                    <div class="membre-skills">
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+
+                    <a href="#contact" class="btn-contact">
+                        <i class="fas fa-envelope"></i> Contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION CONTACT ===== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contactez-nous</h2>
+                <p class="section-subtitle">Laissez-nous un message</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Informations de contact</h3>
+                    <p><i class="fas fa-phone-alt"></i> +261 34 12 466 85</p>
+                    <p><i class="fas fa-envelope"></i> contact@ambanivolo-dev.mg</p>
+                    <p><i class="fas fa-map-marker-alt"></i> USVPA Université, Madagascar</p>
+                </div>
+
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <input type="text" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Votre message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AMBANIVOLO MI-DEV</h3>
+                    <p>Licence 1 Informatique - USVPA Université</p>
+                    <p>Sous direction de Père Pedro Pablo Opeka</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#cours">Cours</a></li>
+                        <li><a href="members.html">Membres</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ambanivolo mi-DEV - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
