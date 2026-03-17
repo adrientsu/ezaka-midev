@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Master - Leçons 6 à 10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">{ }</span>
+                    <div class="logo-text">
+                        <span class="logo-main">CSS MASTER</span>
+                        <span class="logo-sub">Leçons 6 à 10 : Mise en page avancée</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 6-10 sur 20</span>
+                <span class="progress-percent">50%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%"></div>
+            </div>
+            <div class="progress-nav">
+                <a href="1.html" class="progress-prev"><i class="fas fa-arrow-left"></i> Leçons 1-5</a>
+                <span class="progress-current">Leçons 6-10</span>
+                <a href="3.html" class="progress-next">Leçons 11-15 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 6-10 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 6 à 10 : Mise en page avancée</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon6" class="sommaire-card">
+                    <span class="lecon-numero">06</span>
+                    <h3>Arrière-plans</h3>
+                    <p>Couleurs, images, dégradés</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon7" class="sommaire-card">
+                    <span class="lecon-numero">07</span>
+                    <h3>Positionnement</h3>
+                    <p>Static, relative, absolute, fixed, sticky</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon8" class="sommaire-card">
+                    <span class="lecon-numero">08</span>
+                    <h3>Flexbox</h3>
+                    <p>Display flex, alignement, distribution</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                </a>
+                <a href="#lecon9" class="sommaire-card">
+                    <span class="lecon-numero">09</span>
+                    <h3>Grid</h3>
+                    <p>Grilles 2D, template areas</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                </a>
+                <a href="#lecon10" class="sommaire-card">
+                    <span class="lecon-numero">10</span>
+                    <h3>Responsive design</h3>
+                    <p>Media queries, mobile-first</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 6 : ARRIÈRE-PLANS ===== -->
+            <article class="lecon" id="lecon6">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 06</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">🎨 Arrière-plans (background)</h2>
+                    <p class="lecon-description">Couleurs, images, dégradés et positionnement</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: background-color -->
+                    <div class="lecon-section">
+                        <h3>🎨 6.1 background-color</h3>
+
+                        <p>La propriété <code>background-color</code> définit la couleur de fond d'un élément.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.boite</span> {
+    <span class="property">background-color</span>: <span class="value">#FF7A45</span>;
+    <span class="property">background-color</span>: <span class="value">rgb(255, 122, 69)</span>;
+    <span class="property">background-color</span>: <span class="value">hsl(17, 100%, 64%)</span>;
+    <span class="property">background-color</span>: <span class="value">transparent</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples :</h4>
+                            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                <div style="background-color: #FF7A45; padding: 20px; color: white;">#FF7A45</div>
+                                <div style="background-color: #1F2D3D; padding: 20px; color: white;">#1F2D3D</div>
+                                <div style="background-color: #6B7280; padding: 20px; color: white;">#6B7280</div>
+                                <div style="background-color: #F6EDE7; padding: 20px; color: #1F2D3D;">#F6EDE7</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: background-image -->
+                    <div class="lecon-section">
+                        <h3>🖼️ 6.2 background-image</h3>
+
+                        <p>Permet de définir une image de fond.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.fond-image</span> {
+    <span class="property">background-image</span>: <span class="value">url('images/pattern.png')</span>;
+    <span class="property">background-image</span>: <span class="value">url('https://example.com/image.jpg')</span>;
+}</pre>
+                        </div>
+
+                        <h4>Propriétés associées :</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Propriété</th>
+                                    <th>Description</th>
+                                    <th>Valeurs</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>background-repeat</code></td>
+                                    <td>Répétition de l'image</td>
+                                    <td>repeat, repeat-x, repeat-y, no-repeat</td>
+                                </tr>
+                                <tr>
+                                    <td><code>background-position</code></td>
+                                    <td>Position de l'image</td>
+                                    <td>center, top, left, bottom, right, 50% 50%</td>
+                                </tr>
+                                <tr>
+                                    <td><code>background-size</code></td>
+                                    <td>Taille de l'image</td>
+                                    <td>auto, cover, contain, 100% 100%</td>
+                                </tr>
+                                <tr>
+                                    <td><code>background-attachment</code></td>
+                                    <td>Fixer l'image</td>
+                                    <td>scroll, fixed, local</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.hero</span> {
+    <span class="property">background-image</span>: <span class="value">url('montagne.jpg')</span>;
+    <span class="property">background-size</span>: <span class="value">cover</span>;        <span class="comment">/* Couvre tout l'élément */</span>
+    <span class="property">background-position</span>: <span class="value">center</span>;    <span class="comment">/* Centrée */</span>
+    <span class="property">background-repeat</span>: <span class="value">no-repeat</span>;   <span class="comment">/* Pas de répétition */</span>
+    <span class="property">background-attachment</span>: <span class="value">fixed</span>;   <span class="comment">/* Fixe pendant le scroll */</span>
+}
+
+<span class="selector">.pattern</span> {
+    <span class="property">background-image</span>: <span class="value">url('pattern.png')</span>;
+    <span class="property">background-repeat</span>: <span class="value">repeat</span>;       <span class="comment">/* Répète l'image */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Différence entre cover et contain :</h4>
+                            <div style="display: flex; gap: 20px;">
+                                <div style="background-image: url('https://picsum.photos/400/300'); background-size: cover; width: 150px; height: 150px; border: 1px solid #ccc;">cover</div>
+                                <div style="background-image: url('https://picsum.photos/400/300'); background-size: contain; background-repeat: no-repeat; background-position: center; width: 150px; height: 150px; border: 1px solid #ccc;">contain</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Dégradés (gradients) -->
+                    <div class="lecon-section">
+                        <h3>🌈 6.3 Dégradés (gradients)</h3>
+
+                        <p>CSS permet de créer des dégradés sans images.</p>
+
+                        <h4>Dégradé linéaire</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">.degrade-lineaire</span> {
+    <span class="comment">/* direction, couleur1, couleur2 */</span>
+    <span class="property">background</span>: <span class="value">linear-gradient(to right, #FF7A45, #1F2D3D)</span>;
+    
+    <span class="comment">/* Avec angle */</span>
+    <span class="property">background</span>: <span class="value">linear-gradient(45deg, #FF7A45, #1F2D3D, #6B7280)</span>;
+    
+    <span class="comment">/* Avec plusieurs couleurs et positions */</span>
+    <span class="property">background</span>: <span class="value">linear-gradient(to bottom, #FF7A45 0%, #1F2D3D 50%, #6B7280 100%)</span>;
+}</pre>
+                        </div>
+
+                        <h4>Dégradé radial</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">.degrade-radial</span> {
+    <span class="property">background</span>: <span class="value">radial-gradient(circle, #FF7A45, #1F2D3D)</span>;
+    
+    <span class="comment">/* Forme et taille */</span>
+    <span class="property">background</span>: <span class="value">radial-gradient(circle at top left, #FF7A45, #1F2D3D, #6B7280)</span>;
+}</pre>
+                        </div>
+
+                        <h4>Exemples visuels :</h4>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0;">
+                            <div style="background: linear-gradient(to right, #FF7A45, #1F2D3D); height: 100px; border-radius: 5px;"></div>
+                            <div style="background: linear-gradient(45deg, #FF7A45, #1F2D3D, #6B7280); height: 100px; border-radius: 5px;"></div>
+                            <div style="background: radial-gradient(circle, #FF7A45, #1F2D3D); height: 100px; border-radius: 5px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: background shorthand -->
+                    <div class="lecon-section">
+                        <h3>📝 6.4 La propriété raccourcie background</h3>
+
+                        <p><code>background</code> permet de définir toutes les propriétés en une seule ligne.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Ordre: color image repeat position/size attachment */</span>
+<span class="selector">.exemple</span> {
+    <span class="property">background</span>: <span class="value">#FF7A45 url('image.jpg') no-repeat center/cover fixed</span>;
+}
+
+<span class="comment">/* Équivalent à : */</span>
+<span class="selector">.exemple</span> {
+    <span class="property">background-color</span>: <span class="value">#FF7A45</span>;
+    <span class="property">background-image</span>: <span class="value">url('image.jpg')</span>;
+    <span class="property">background-repeat</span>: <span class="value">no-repeat</span>;
+    <span class="property">background-position</span>: <span class="value">center</span>;
+    <span class="property">background-size</span>: <span class="value">cover</span>;
+    <span class="property">background-attachment</span>: <span class="value">fixed</span>;
+}</pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> On peut combiner plusieurs backgrounds en les séparant par des virgules.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 6.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Section hero</h4>
+                            <p><strong>Objectif :</strong> Créer une section hero avec image de fond.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une section de 60vh avec une image de fond</li>
+                                    <li>L'image doit couvrir toute la section (cover)</li>
+                                    <li>Centrez l'image</li>
+                                    <li>Ajoutez un dégradé semi-transparent par-dessus</li>
+                                    <li>Ajoutez un titre centré en blanc</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Cartes avec dégradés</h4>
+                            <p><strong>Objectif :</strong> Créer des cartes avec différents dégradés.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez 3 cartes de 200x150px</li>
+                                    <li>Première : dégradé linéaire horizontal orange → bleu</li>
+                                    <li>Deuxième : dégradé linéaire diagonal orange → bleu → gris</li>
+                                    <li>Troisième : dégradé radial du centre orange vers bleu</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 7 : POSITIONNEMENT ===== -->
+            <article class="lecon" id="lecon7">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 07</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">📍 Le positionnement</h2>
+                    <p class="lecon-description">Static, relative, absolute, fixed, sticky</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: position: static -->
+                    <div class="lecon-section">
+                        <h3>📌 7.1 position: static (défaut)</h3>
+
+                        <p>C'est le positionnement par défaut. Les éléments suivent le flux normal du document.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">position</span>: <span class="value">static</span>;  <span class="comment">/* Valeur par défaut */</span>
+    <span class="comment">/* top, right, bottom, left n'ont aucun effet */</span>
+}</pre>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <p><strong>Caractéristiques :</strong></p>
+                            <ul>
+                                <li>L'élément est positionné selon le flux normal</li>
+                                <li>Les propriétés top, right, bottom, left sont ignorées</li>
+                                <li>C'est le comportement naturel des éléments</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: position: relative -->
+                    <div class="lecon-section">
+                        <h3>📏 7.2 position: relative</h3>
+
+                        <p>Positionne l'élément par rapport à sa position normale, tout en laissant un espace vide à son emplacement d'origine.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">position</span>: <span class="value">relative</span>;
+    <span class="property">top</span>: <span class="value">20px</span>;     <span class="comment">/* Décalé de 20px vers le bas */</span>
+    <span class="property">left</span>: <span class="value">10px</span>;    <span class="comment">/* Décalé de 10px vers la droite */</span>
+    <span class="comment">/* L'espace d'origine est conservé */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple visuel :</h4>
+                            <div style="display: flex; gap: 50px; background: #f0f0f0; padding: 20px;">
+                                <div style="background: #FF7A45; padding: 10px; width: 80px; height: 80px;">Normal</div>
+                                <div style="background: #FF7A45; padding: 10px; width: 80px; height: 80px; position: relative; top: 20px; left: 20px;">Relative</div>
+                            </div>
+                            <p style="margin-top: 10px;">L'élément est décalé mais son emplacement d'origine reste vide.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Utilisation courante :</strong> 
+                                   <ul>
+                                    <li>Décaler légèrement un élément</li>
+                                    <li>Servir de point de référence pour un enfant en absolute</li>
+                                    <li>Créer des effets de superposition légers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: position: absolute -->
+                    <div class="lecon-section">
+                        <h3>🎯 7.3 position: absolute</h3>
+
+                        <p>Positionne l'élément par rapport à son ancêtre positionné le plus proche (sinon par rapport à la fenêtre). L'élément est retiré du flux normal.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.parent</span> {
+    <span class="property">position</span>: <span class="value">relative</span>;  <span class="comment">/* Point de référence */</span>
+    <span class="property">height</span>: <span class="value">200px</span>;
+    <span class="property">border</span>: <span class="value">1px solid #1F2D3D</span>;
+}
+
+<span class="selector">.enfant</span> {
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">top</span>: <span class="value">20px</span>;
+    <span class="property">right</span>: <span class="value">20px</span>;
+    <span class="comment">/* Positionné à 20px du haut et 20px de la droite du parent */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple : badge "Nouveau"</h4>
+                            <div style="position: relative; width: 200px; height: 150px; background: #F6EDE7; border: 2px solid #1F2D3D; margin: 20px 0;">
+                                <div style="position: absolute; top: -10px; right: -10px; background: #FF7A45; color: white; padding: 5px 10px; border-radius: 20px;">Nouveau</div>
+                                <div style="padding: 20px;">Contenu de la carte</div>
+                            </div>
+                            <div class="code-block small">
+                                <pre><span class="selector">.carte</span> {
+    <span class="property">position</span>: <span class="value">relative</span>;
+}
+<span class="selector">.badge</span> {
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">top</span>: <span class="value">-10px</span>;
+    <span class="property">right</span>: <span class="value">-10px</span>;
+}</pre>
+                            </div>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Important :</strong> Pour qu'un élément en absolute se positionne par rapport à un parent, ce parent doit avoir une position autre que static (souvent relative).</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: position: fixed -->
+                    <div class="lecon-section">
+                        <h3>📌 7.4 position: fixed</h3>
+
+                        <p>Positionne l'élément par rapport à la fenêtre du navigateur. Il reste fixe même pendant le défilement.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.header-fixe</span> {
+    <span class="property">position</span>: <span class="value">fixed</span>;
+    <span class="property">top</span>: <span class="value">0</span>;
+    <span class="property">left</span>: <span class="value">0</span>;
+    <span class="property">width</span>: <span class="value">100%</span>;
+    <span class="property">background</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+    <span class="property">z-index</span>: <span class="value">1000</span>;
+}
+
+<span class="selector">.bouton-retour-haut</span> {
+    <span class="property">position</span>: <span class="value">fixed</span>;
+    <span class="property">bottom</span>: <span class="value">20px</span>;
+    <span class="property">right</span>: <span class="value">20px</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Utilisations courantes :</h4>
+                            <ul>
+                                <li>Barres de navigation fixes</li>
+                                <li>Boutons "Retour en haut"</li>
+                                <li>Fenêtres modales (avec overlay)</li>
+                                <li>Cookies banners</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: position: sticky -->
+                    <div class="lecon-section">
+                        <h3>🧲 7.5 position: sticky</h3>
+
+                        <p>Mélange de relative et fixed : l'élément se comporte comme relative jusqu'à un certain seuil de défilement, puis devient fixe.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.titre-section</span> {
+    <span class="property">position</span>: <span class="value">sticky</span>;
+    <span class="property">top</span>: <span class="value">0</span>;  <span class="comment">/* Seuil de déclenchement */</span>
+    <span class="property">background</span>: <span class="value">#FF7A45</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+    <span class="property">padding</span>: <span class="value">10px</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple : en-têtes de section collants</h4>
+                            <div style="height: 200px; overflow-y: auto; border: 1px solid #ccc; background: white;">
+                                <div style="position: sticky; top: 0; background: #FF7A45; color: white; padding: 10px;">Section 1</div>
+                                <p style="padding: 20px;">Contenu long...</p>
+                                <p style="padding: 20px;">Encore du contenu...</p>
+                                <div style="position: sticky; top: 0; background: #1F2D3D; color: white; padding: 10px;">Section 2</div>
+                                <p style="padding: 20px;">Contenu long...</p>
+                                <p style="padding: 20px;">Encore du contenu...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: z-index -->
+                    <div class="lecon-section">
+                        <h3>📊 7.6 z-index (superposition)</h3>
+
+                        <p>Contrôle l'ordre de superposition des éléments positionnés. Plus la valeur est élevée, plus l'élément est au-dessus.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element1</span> {
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">z-index</span>: <span class="value">10</span>;  <span class="comment">/* Au-dessus */</span>
+}
+
+<span class="selector">.element2</span> {
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">z-index</span>: <span class="value">5</span>;   <span class="comment">/* En-dessous */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <div style="position: relative; height: 150px; background: #F6EDE7;">
+                                <div style="position: absolute; top: 20px; left: 20px; width: 100px; height: 100px; background: #FF7A45; z-index: 1;">z-index:1</div>
+                                <div style="position: absolute; top: 50px; left: 50px; width: 100px; height: 100px; background: #1F2D3D; z-index: 2; color: white;">z-index:2</div>
+                                <div style="position: absolute; top: 80px; left: 80px; width: 100px; height: 100px; background: #6B7280; z-index: 3; color: white;">z-index:3</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 7.7 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Badge de promotion</h4>
+                            <p><strong>Objectif :</strong> Ajouter un badge "Promo" sur une carte.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une carte de produit (300x400px)</li>
+                                    <li>Ajoutez un badge "Promo -20%" dans le coin supérieur droit</li>
+                                    <li>Le badge doit dépasser légèrement de la carte</li>
+                                    <li>Utilisez position absolute et relative</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Barre de navigation sticky</h4>
+                            <p><strong>Objectif :</strong> Créer une navigation qui devient sticky après un certain point.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un header avec logo et menu</li>
+                                    <li>Le header doit être sticky en haut de la page</li>
+                                    <li>Ajoutez un z-index pour qu'il reste au-dessus du contenu</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Fenêtre modale</h4>
+                            <p><strong>Objectif :</strong> Simuler une fenêtre modale centrée.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un overlay (fond semi-transparent) en fixed</li>
+                                    <li>Créez une boîte modale centrée (absolute ou fixed)</li>
+                                    <li>La modale doit être au-dessus de l'overlay</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 8 : FLEXBOX ===== -->
+            <article class="lecon" id="lecon8">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 08</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">📦 Flexbox</h2>
+                    <p class="lecon-description">Mise en page flexible en une dimension</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction à Flexbox -->
+                    <div class="lecon-section">
+                        <h3>🔍 8.1 Qu'est-ce que Flexbox ?</h3>
+
+                        <div class="definition-box">
+                            <p><strong>Flexbox</strong> (Flexible Box) est un mode de mise en page qui permet de répartir l'espace entre des éléments et de les aligner facilement, même quand leurs tailles sont inconnues ou dynamiques.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Avantages de Flexbox :</strong>
+                                <ul>
+                                    <li>Alignement vertical simple</li>
+                                    <li>Répartition automatique de l'espace</li>
+                                    <li>Ordre des éléments indépendant du HTML</li>
+                                    <li>Adaptation à différentes tailles d'écran</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Conteneur flex -->
+                    <div class="lecon-section">
+                        <h3>📐 8.2 Le conteneur flex (display: flex)</h3>
+
+                        <p>Pour utiliser Flexbox, on définit d'abord un conteneur avec <code>display: flex</code>.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.conteneur</span> {
+    <span class="property">display</span>: <span class="value">flex</span>;           <span class="comment">/* Les enfants deviennent des éléments flex */</span>
+    <span class="comment">/* display: inline-flex; pour un conteneur inline */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Comparaison :</h4>
+                            <div style="background: #f0f0f0; padding: 20px;">
+                                <p><strong>Sans Flexbox (block) :</strong></p>
+                                <div style="background: white; padding: 10px;">
+                                    <div style="background: #FF7A45; padding: 10px; margin: 5px;">Élément 1</div>
+                                    <div style="background: #1F2D3D; padding: 10px; margin: 5px; color: white;">Élément 2</div>
+                                    <div style="background: #6B7280; padding: 10px; margin: 5px; color: white;">Élément 3</div>
+                                </div>
+                                
+                                <p style="margin-top: 20px;"><strong>Avec Flexbox :</strong></p>
+                                <div style="display: flex; background: white; padding: 10px;">
+                                    <div style="background: #FF7A45; padding: 10px; margin: 5px;">Élément 1</div>
+                                    <div style="background: #1F2D3D; padding: 10px; margin: 5px; color: white;">Élément 2</div>
+                                    <div style="background: #6B7280; padding: 10px; margin: 5px; color: white;">Élément 3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Direction (flex-direction) -->
+                    <div class="lecon-section">
+                        <h3>⬆️ 8.3 flex-direction</h3>
+
+                        <p>Définit la direction principale (axe principal) des éléments.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Valeur</th>
+                                    <th>Direction</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>row</code></td><td>→</td><td>Ligne horizontale (de gauche à droite) - défaut</td></tr>
+                                <tr><td><code>row-reverse</code></td><td>←</td><td>Ligne horizontale inversée (droite à gauche)</td></tr>
+                                <tr><td><code>column</code></td><td>↓</td><td>Colonne verticale (de haut en bas)</td></tr>
+                                <tr><td><code>column-reverse</code></td><td>↑</td><td>Colonne verticale inversée (bas en haut)</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.ligne</span> {
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">flex-direction</span>: <span class="value">row</span>;       <span class="comment">/* Par défaut */</span>
+}
+
+<span class="selector">.colonne</span> {
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">flex-direction</span>: <span class="value">column</span>;    <span class="comment">/* Empile verticalement */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples visuels :</h4>
+                            <div style="background: #f0f0f0; padding: 20px;">
+                                <p><strong>flex-direction: row</strong></p>
+                                <div style="display: flex; background: white; padding: 10px;">
+                                    <div style="background: #FF7A45; padding: 10px; margin: 5px;">1</div>
+                                    <div style="background: #1F2D3D; padding: 10px; margin: 5px; color: white;">2</div>
+                                    <div style="background: #6B7280; padding: 10px; margin: 5px; color: white;">3</div>
+                                </div>
+                                
+                                <p style="margin-top: 20px;"><strong>flex-direction: column</strong></p>
+                                <div style="display: flex; flex-direction: column; background: white; padding: 10px;">
+                                    <div style="background: #FF7A45; padding: 10px; margin: 5px;">1</div>
+                                    <div style="background: #1F2D3D; padding: 10px; margin: 5px; color: white;">2</div>
+                                    <div style="background: #6B7280; padding: 10px; margin: 5px; color: white;">3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Alignement sur l'axe principal (justify-content) -->
+                    <div class="lecon-section">
+                        <h3>⬅️➡️ 8.4 justify-content (axe principal)</h3>
+
+                        <p>Aligne les éléments sur l'axe principal (horizontal pour row, vertical pour column).</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Valeur</th>
+                                    <th>Description</th>
+                                    <th>Visuel</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>flex-start</code></td><td>Au début (par défaut)</td><td>[1][2][3].....</td></tr>
+                                <tr><td><code>flex-end</code></td><td>À la fin</td><td>.....[1][2][3]</td></tr>
+                                <tr><td><code>center</code></td><td>Au centre</td><td>...[1][2][3]...</td></tr>
+                                <tr><td><code>space-between</code></td><td>Espace égal entre les éléments</td><td>[1].....[2].....[3]</td></tr>
+                                <tr><td><code>space-around</code></td><td>Espace autour de chaque élément</td><td>..[1]..[2]..[3]..</td></tr>
+                 <tr><td><code>space-evenly</code></td><td>Espace égal partout</td><td>..[1]..[2]..[3].. (identique)</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.conteneur</span> {
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">justify-content</span>: <span class="value">center</span>;     <span class="comment">/* Centre horizontalement */</span>
+    <span class="property">justify-content</span>: <span class="value">space-between</span>; <span class="comment">/* Espace entre les éléments */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples :</h4>
+                            <div style="background: #f0f0f0; padding: 20px;">
+                                <p><strong>flex-start :</strong></p>
+                                <div style="display: flex; justify-content: flex-start; background: white; padding: 10px;">
+                                    <div style="background: #FF7A45; padding: 10px; width: 50px;">1</div>
+                                    <div style="background: #1F2D3D; padding: 10px; width: 50px; color: white;">2</div>
+                                    <div style="background: #6B7280; padding: 10px; width: 50px; color: white;">3</div>
+                                </div>
+                                
+                                <p><strong>center :</strong></p>
+                                <div style="display: flex; justify-content: center; background: white; padding: 10px;">
+                                    <div style="background: #FF7A45; padding: 10px; width: 50px;">1</div>
+                                    <div style="background: #1F2D3D; padding: 10px; width: 50px; color: white;">2</div>
+                                    <div style="background: #6B7280; padding: 10px; width: 50px; color: white;">3</div>
+                                </div>
+                                
+                                <p><strong>space-between :</strong></p>
+                                <div style="display: flex; justify-content: space-between; background: white; padding: 10px;">
+                                    <div style="background: #FF7A45; padding: 10px; width: 50px;">1</div>
+                                    <div style="background: #1F2D3D; padding: 10px; width: 50px; color: white;">2</div>
+                                    <div style="background: #6B7280; padding: 10px; width: 50px; color: white;">3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Alignement sur l'axe secondaire (align-items) -->
+                    <div class="lecon-section">
+                        <h3>⬆️⬇️ 8.5 align-items (axe secondaire)</h3>
+
+                        <p>Aligne les éléments sur l'axe secondaire (perpendiculaire à l'axe principal).</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Valeur</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>stretch</code></td><td>Étire pour remplir (par défaut)</td></tr>
+                                <tr><td><code>flex-start</code></td><td>Aligné en haut</td></tr>
+                                <tr><td><code>flex-end</code></td><td>Aligné en bas</td></tr>
+                                <tr><td><code>center</code></td><td>Centré verticalement</td></tr>
+                                <tr><td><code>baseline</code></td><td>Aligné sur la ligne de base du texte</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.conteneur</span> {
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">align-items</span>: <span class="value">center</span>;     <span class="comment">/* Centre verticalement */</span>
+    <span class="property">height</span>: <span class="value">200px</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples :</h4>
+                            <div style="background: #f0f0f0; padding: 20px;">
+                                <p><strong>stretch (défaut) :</strong></p>
+                                <div style="display: flex; align-items: stretch; background: white; height: 100px; padding: 10px;">
+                                    <div style="background: #FF7A45; padding: 10px;">1</div>
+                                    <div style="background: #1F2D3D; padding: 10px; color: white;">2</div>
+                                    <div style="background: #6B7280; padding: 10px; color: white;">3</div>
+                                </div>
+                                
+                                <p><strong>center :</strong></p>
+                                <div style="display: flex; align-items: center; background: white; height: 100px; padding: 10px;">
+                                    <div style="background: #FF7A45; padding: 10px;">1</div>
+                                    <div style="background: #1F2D3D; padding: 10px; color: white;">2</div>
+                                    <div style="background: #6B7280; padding: 10px; color: white;">3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: flex-wrap -->
+                    <div class="lecon-section">
+                        <h3>🔄 8.6 flex-wrap (passage à la ligne)</h3>
+
+                        <p>Contrôle si les éléments passent à la ligne quand ils dépassent la largeur du conteneur.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Valeur</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>nowrap</code></td><td>Pas de retour à la ligne (défaut)</td></tr>
+                                <tr><td><code>wrap</code></td><td>Retour à la ligne si nécessaire</td></tr>
+                                <tr><td><code>wrap-reverse</code></td><td>Retour à la ligne inversé</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.conteneur</span> {
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">flex-wrap</span>: <span class="value">wrap</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Sans wrap (nowrap) :</h4>
+                            <div style="display: flex; background: white; width: 300px; padding: 10px;">
+                                <div style="background: #FF7A45; padding: 10px; width: 100px;">1</div>
+                                <div style="background: #1F2D3D; padding: 10px; width: 100px; color: white;">2</div>
+                                <div style="background: #6B7280; padding: 10px; width: 100px; color: white;">3</div>
+                                <div style="background: #FF7A45; padding: 10px; width: 100px;">4</div>
+                            </div>
+                            <p>Les éléments débordent (ils ne passent pas à la ligne)</p>
+
+                            <h4>Avec wrap :</h4>
+                            <div style="display: flex; flex-wrap: wrap; background: white; width: 300px; padding: 10px;">
+                                <div style="background: #FF7A45; padding: 10px; width: 100px;">1</div>
+                                <div style="background: #1F2D3D; padding: 10px; width: 100px; color: white;">2</div>
+                                <div style="background: #6B7280; padding: 10px; width: 100px; color: white;">3</div>
+                                <div style="background: #FF7A45; padding: 10px; width: 100px;">4</div>
+                            </div>
+                            <p>Les éléments passent à la ligne automatiquement</p>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: align-content -->
+                    <div class="lecon-section">
+                        <h3>📊 8.7 align-content (alignement multi-lignes)</h3>
+
+                        <p>Aligne les lignes entre elles quand il y a plusieurs lignes (avec flex-wrap).</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.conteneur</span> {
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">flex-wrap</span>: <span class="value">wrap</span>;
+    <span class="property">align-content</span>: <span class="value">center</span>;    <span class="comment">/* Centre les lignes verticalement */</span>
+}</pre>
+                        </div>
+
+                        <p>Valeurs : flex-start, flex-end, center, space-between, space-around, stretch</p>
+                    </div>
+
+                    <!-- SECTION 8: Propriétés des enfants -->
+                    <div class="lecon-section">
+                        <h3>🧩 8.8 Propriétés des éléments enfants</h3>
+
+                        <h4>order</h4>
+                        <p>Change l'ordre d'affichage des éléments (indépendant du HTML).</p>
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">order</span>: <span class="value">2</span>;  <span class="comment">/* Plus petit nombre = apparaît en premier */</span>
+}</pre>
+                        </div>
+
+                        <h4>flex-grow</h4>
+                        <p>Capacité d'un élément à grandir pour remplir l'espace disponible.</p>
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">flex-grow</span>: <span class="value">1</span>;  <span class="comment">/* Prend tout l'espace disponible */</span>
+}
+
+<span class="selector">.element:nth-child(2)</span> {
+    <span class="property">flex-grow</span>: <span class="value">2</span>;  <span class="comment">/* Prend 2 fois plus d'espace que les autres */</span>
+}</pre>
+                        </div>
+
+                        <h4>flex-shrink</h4>
+                        <p>Capacité d'un élément à rétrécir si nécessaire.</p>
+
+                        <h4>flex-basis</h4>
+                        <p>Taille de base avant distribution de l'espace.</p>
+
+                        <h4>align-self</h4>
+                        <p>Permet de surcharger align-items pour un élément spécifique.</p>
+                        <div class="code-block">
+                            <pre><span class="selector">.element-special</span> {
+    <span class="property">align-self</span>: <span class="value">flex-end</span>;  <span class="comment">/* Aligné en bas alors que les autres sont centrés */</span>
+}</pre>
+                        </div>
+
+                        <h4>flex (raccourci)</h4>
+                        <p>Combine flex-grow, flex-shrink et flex-basis.</p>
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">flex</span>: <span class="value">1</span>;               <span class="comment">/* flex-grow: 1, flex-shrink: 1, flex-basis: 0 */</span>
+    <span class="property">flex</span>: <span class="value">1 0 200px</span>;       <span class="comment">/* grow:1, shrink:0, basis:200px */</span>
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 9: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 8.9 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Centrer parfaitement</h4>
+                            <p><strong>Objectif :</strong> Centrer un élément horizontalement et verticalement avec Flexbox.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un conteneur de 400x300px avec fond gris</li>
+                                    <li>Créez une boîte de 100x50px avec fond orange</li>
+                                    <li>Utilisez Flexbox pour centrer la boîte parfaitement</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Barre de navigation</h4>
+                            <p><strong>Objectif :</strong> Créer une barre de navigation avec Flexbox.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Logo à gauche</li>
+                                    <li>Liens centrés</li>
+                                    <li>Bouton de connexion à droite</li>
+                                    <li>Utilisez justify-content: space-between</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Grille de cartes</h4>
+                            <p><strong>Objectif :</strong> Créer une grille responsive de cartes.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un conteneur flex avec wrap</li>
+                                    <li>Ajoutez 6 cartes de largeur 250px</li>
+                                    <li>Espacement égal entre les cartes</li>
+                                    <li>Les cartes doivent passer à la ligne si nécessaire</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 9 : GRID ===== -->
+            <article class="lecon" id="lecon9">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 09</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">🔲 CSS Grid</h2>
+                    <p class="lecon-description">Mise en page en deux dimensions (lignes et colonnes)</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction à Grid -->
+                    <div class="lecon-section">
+                        <h3>🔍 9.1 Qu'est-ce que CSS Grid ?</h3>
+
+                        <div class="definition-box">
+                            <p><strong>CSS Grid</strong> est un système de mise en page en deux dimensions (lignes ET colonnes). Contrairement à Flexbox qui est unidimensionnel, Grid permet de contrôler à la fois les rangées et les colonnes.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚖️</div>
+                            <div class="encart-content">
+                                <strong>Flexbox vs Grid :</strong>
+                                <ul>
+                                    <li><strong>Flexbox</strong> : 1D (ligne OU colonne). Idéal pour les composants, navigation, centrage.</li>
+                                    <li><strong>Grid</strong> : 2D (lignes ET colonnes). Idéal pour la mise en page globale, les grilles complexes.</li>
+                                    <li>Ils sont complémentaires, pas concurrents !</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Conteneur grid -->
+                    <div class="lecon-section">
+                        <h3>📐 9.2 Le conteneur grid (display: grid)</h3>
+
+                        <p>Pour utiliser Grid, on définit un conteneur avec <code>display: grid</code>.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.conteneur</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Définir les colonnes -->
+                    <div class="lecon-section">
+                        <h3>📊 9.3 grid-template-columns</h3>
+                  
+                        <p>Définit le nombre et la taille des colonnes.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* 3 colonnes égales */</span>
+<span class="selector">.conteneur</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="value">1fr 1fr 1fr</span>;
+}
+
+<span class="comment">/* Colonnes de différentes tailles */</span>
+<span class="selector">.conteneur</span> {
+    <span class="property">grid-template-columns</span>: <span class="value">200px 1fr 300px</span>;
+}
+
+<span class="comment">/* Avec repeat() */</span>
+<span class="selector">.conteneur</span> {
+    <span class="property">grid-template-columns</span>: <span class="value">repeat(4, 1fr)</span>;  <span class="comment">/* 4 colonnes égales */</span>
+    <span class="property">grid-template-columns</span>: <span class="value">repeat(auto-fit, minmax(250px, 1fr))</span>; <span class="comment">/* Responsive */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple : 3 colonnes égales</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; background: #f0f0f0; padding: 10px;">
+                                <div style="background: #FF7A45; padding: 20px; text-align: center;">1</div>
+                                <div style="background: #1F2D3D; padding: 20px; text-align: center; color: white;">2</div>
+                                <div style="background: #6B7280; padding: 20px; text-align: center; color: white;">3</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Définir les lignes -->
+                    <div class="lecon-section">
+                        <h3>📏 9.4 grid-template-rows</h3>
+
+                        <p>Définit la hauteur des lignes.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.conteneur</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="value">1fr 1fr</span>;
+    <span class="property">grid-template-rows</span>: <span class="value">100px 200px 150px</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Gap (espacement) -->
+                    <div class="lecon-section">
+                        <h3>🕳️ 9.5 gap, row-gap, column-gap</h3>
+
+                        <p>Définit l'espacement entre les cellules.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.conteneur</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="value">1fr 1fr 1fr</span>;
+    <span class="property">gap</span>: <span class="value">20px</span>;           <span class="comment">/* Espacement entre lignes et colonnes */</span>
+    <span class="property">row-gap</span>: <span class="value">10px</span>;        <span class="comment">/* Espacement uniquement entre lignes */</span>
+    <span class="property">column-gap</span>: <span class="value">15px</span>;     <span class="comment">/* Espacement uniquement entre colonnes */</span>
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Placement des éléments -->
+                    <div class="lecon-section">
+                        <h3>🎯 9.6 Placement des éléments</h3>
+
+                        <p>On peut placer les éléments sur la grille en spécifiant où ils commencent et finissent.</p>
+
+                        <h4>Lignes de grille</h4>
+                        <p>Les lignes sont numérotées à partir de 1.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">grid-column-start</span>: <span class="value">1</span>;
+    <span class="property">grid-column-end</span>: <span class="value">3</span>;    <span class="comment">/* Occupe de la ligne 1 à 3 (2 colonnes) */</span>
+    
+    <span class="comment">/* Raccourci */</span>
+    <span class="property">grid-column</span>: <span class="value">1 / 3</span>;
+    
+    <span class="comment">/* Span (étendre) */</span>
+    <span class="property">grid-column</span>: <span class="value">1 / span 2</span>;  <span class="comment">/* Commence à 1 et s'étend sur 2 colonnes */</span>
+    
+    <span class="comment">/* Pour les lignes */</span>
+    <span class="property">grid-row</span>: <span class="value">1 / 3</span>;
+    
+    <span class="comment">/* Raccourci complet : grid-row-start / grid-column-start / grid-row-end / grid-column-end */</span>
+    <span class="property">grid-area</span>: <span class="value">1 / 1 / 3 / 3</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple : Header et sidebar</h4>
+                            <div style="display: grid; grid-template-columns: 200px 1fr; grid-template-rows: auto 1fr auto; gap: 10px; height: 300px; background: #f0f0f0; padding: 10px;">
+                                <div style="grid-column: 1 / 3; background: #FF7A45; padding: 10px; text-align: center;">Header</div>
+                                <div style="background: #1F2D3D; padding: 10px; color: white;">Sidebar</div>
+                                <div style="background: #6B7280; padding: 10px; color: white;">Contenu principal</div>
+                                <div style="grid-column: 1 / 3; background: #1F2D3D; padding: 10px; color: white; text-align: center;">Footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Template areas -->
+                    <div class="lecon-section">
+                        <h3>🗺️ 9.7 grid-template-areas</h3>
+
+                        <p>Façon plus visuelle de définir la disposition en nommant les zones.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.conteneur</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="value">200px 1fr 200px</span>;
+    <span class="property">grid-template-rows</span>: <span class="value">auto 1fr auto</span>;
+    <span class="property">grid-template-areas</span>: <span class="value">
+        "header header header"
+        "sidebar content aside"
+        "footer footer footer"
+    </span>;
+    <span class="property">gap</span>: <span class="value">10px</span>;
+}
+
+<span class="selector">.header</span> { <span class="property">grid-area</span>: <span class="value">header</span>; }
+<span class="selector">.sidebar</span> { <span class="property">grid-area</span>: <span class="value">sidebar</span>; }
+<span class="selector">.content</span> { <span class="property">grid-area</span>: <span class="value">content</span>; }
+<span class">.aside</span> { <span class="property">grid-area</span>: <span class="value">aside</span>; }
+<span class="selector">.footer</span> { <span class="property">grid-area</span>: <span class="value">footer</span>; }</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Visualisation :</h4>
+                            <pre style="background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px;">
+┌────────────┬─────────────┬────────────┐
+│   header   │   header    │   header   │
+├────────────┼─────────────┼────────────┤
+│  sidebar   │   content   │   aside    │
+├────────────┼─────────────┼────────────┤
+│   footer   │   footer    │   footer   │
+└────────────┴─────────────┴────────────┘</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 8: Unités spéciales -->
+                    <div class="lecon-section">
+                        <h3>📐 9.8 Unités spéciales pour Grid</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Unité</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>fr</code></td><td>Fraction de l'espace disponible</td></tr>
+                                <tr><td><code>min-content</code></td><td>Taille minimum nécessaire au contenu</td></tr>
+                                <tr><td><code>max-content</code></td><td>Taille maximum préférée du contenu</td></tr>
+                                <tr><td><code>minmax(min, max)</code></td><td>Taille entre un minimum et un maximum</td></tr>
+                                <tr><td><code>auto</code></td><td>Taille automatique (comme 1fr mais différent)</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Grille responsive avec minmax */</span>
+<span class="selector">.grille-responsive</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="value">repeat(auto-fit, minmax(250px, 1fr))</span>;
+    <span class="property">gap</span>: <span class="value">20px</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 9: Alignement dans Grid -->
+                    <div class="lecon-section">
+                        <h3>⚖️ 9.9 Alignement dans Grid</h3>
+
+                        <p>Grid reprend les propriétés d'alignement de Flexbox.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Propriété</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>justify-items</code></td><td>Alignement horizontal des éléments dans leur cellule</td></tr>
+                                <tr><td><code>align-items</code></td><td>Alignement vertical des éléments dans leur cellule</td></tr>
+                                <tr><td><code>justify-content</code></td><td>Alignement horizontal de la grille complète</td></tr>
+                                <tr><td><code>align-content</code></td><td>Alignement vertical de la grille complète</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.conteneur</span> {
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="value">repeat(3, 100px)</span>;
+    <span class="property">justify-content</span>: <span class="value">center</span>;  <span class="comment">/* Centre la grille horizontalement */</span>
+    <span class="property">align-content</span>: <span class="value">center</span>;     <span class="comment">/* Centre la grille verticalement */</span>
+    <span class="property">justify-items</span>: <span class="value">center</span>;      <span class="comment">/* Centre les éléments dans leurs cellules */</span>
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 10: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 9.10 Exercices pratiques</h3>
+                    <div class="exercice-card">
+                            <h4>Exercice 1 : Grille de galerie</h4>
+                            <p><strong>Objectif :</strong> Créer une galerie d'images en grille.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une grille 3x3 avec 9 cellules</li>
+                                    <li>Chaque cellule doit avoir une image (placeholder)</li>
+                                    <li>Espacement de 10px entre les cellules</li>
+                                    <li>Les images doivent remplir leur cellule</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Mise en page magazine</h4>
+                            <p><strong>Objectif :</strong> Créer une mise en page complexe avec grid-template-areas.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Définissez les zones : header, nav, main, sidebar, footer</li>
+                                    <li>Le header prend toute la largeur</li>
+                                    <li>Le nav et la sidebar font 200px</li>
+                                    <li>Le main prend l'espace restant</li>
+                                    <li>Le footer prend toute la largeur</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Grille responsive</h4>
+                            <p><strong>Objectif :</strong> Créer une grille qui s'adapte à la taille de l'écran.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Utilisez repeat(auto-fit, minmax(250px, 1fr))</li>
+                                    <li>Ajoutez 8 cartes</li>
+                                    <li>Les cartes doivent passer à la ligne quand l'écran rétrécit</li>
+                                    <li>Chaque carte doit avoir un minimum de 250px</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 10 : RESPONSIVE DESIGN ===== -->
+            <article class="lecon" id="lecon10">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 10</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">📱 Responsive Design</h2>
+                    <p class="lecon-description">Media queries, mobile-first, points de rupture</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🌍 10.1 Qu'est-ce que le Responsive Design ?</h3>
+
+                        <div class="definition-box">
+                            <p>Le <strong>responsive design</strong> est une approche de conception web qui vise à adapter l'affichage d'un site à tous les types d'écrans (mobile, tablette, desktop).</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">📱</div>
+                            <div class="encart-content">
+                                <strong>Pourquoi c'est important :</strong>
+                                <ul>
+                                    <li>Plus de 50% du trafic web est mobile</li>
+                                    <li>Google favorise les sites responsives (SEO)</li>
+                                    <li>Une seule codebase à maintenir</li>
+                                    <li>Meilleure expérience utilisateur</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Viewport meta -->
+                    <div class="lecon-section">
+                        <h3>📐 10.2 La balise meta viewport</h3>
+
+                        <p>Essentielle pour le responsive sur mobile, elle contrôle la mise à l'échelle.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- Dans le &lt;head&gt; du HTML --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span></pre>
+                        </div>
+
+                        <p><strong>Explication :</strong></p>
+                        <ul>
+                            <li><code>width=device-width</code> : utilise la largeur réelle de l'appareil</li>
+                            <li><code>initial-scale=1.0</code> : pas de zoom initial</li>
+                        </ul>
+                    </div>
+
+                    <!-- SECTION 3: Media queries -->
+                    <div class="lecon-section">
+                        <h3>📊 10.3 Les media queries</h3>
+
+                        <p>Les media queries permettent d'appliquer des styles conditionnellement selon les caractéristiques de l'appareil.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Syntaxe de base */</span>
+<span class="keyword">@media</span> <span class="property">(condition)</span> {
+    <span class="comment">/* Styles qui s'appliquent quand la condition est vraie */</span>
+}
+
+<span class="comment">/* Exemples */</span>
+<span class="keyword">@media</span> <span class="property">(max-width: 768px)</span> {
+    <span class="comment">/* Styles pour écrans de largeur <= 768px (tablette/mobile) */</span>
+    <span class="selector">body</span> {
+        <span class="property">font-size</span>: <span class="value">14px</span>;
+    }
+}
+
+<span class="keyword">@media</span> <span class="property">(min-width: 1024px)</span> {
+    <span class="comment">/* Styles pour écrans de largeur >= 1024px (desktop) */</span>
+    <span class="selector">.conteneur</span> {
+        <span class="property">max-width</span>: <span class="value">1200px</span>;
+    }
+}
+
+<span class="comment">/* Combinaisons */</span>
+<span class="keyword">@media</span> <span class="property">(min-width: 768px) and (max-width: 1023px)</span> {
+    <span class="comment">/* Tablettes */</span>
+}
+
+<span class="comment">/* Orientation */</span>
+<span class="keyword">@media</span> <span class="property">(orientation: landscape)</span> {
+    <span class="comment">/* Mode paysage */</span>
+}
+
+<span class="keyword">@media</span> <span class="property">(orientation: portrait)</span> {
+    <span class="comment">/* Mode portrait */</span>
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Points de rupture courants -->
+                    <div class="lecon-section">
+                        <h3>📏 10.4 Points de rupture (breakpoints) standards</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Appareil</th>
+                                    <th>Largeur</th>
+                                    <th>Media query</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Téléphone</td><td>< 576px</td><td><code>@media (max-width: 575px)</code></td></tr>
+                                <tr><td>Tablette</td><td>576px - 768px</td><td><code>@media (min-width: 576px) and (max-width: 768px)</code></td></tr>
+                                <tr><td>Desktop</td><td>769px - 992px</td><td><code>@media (min-width: 769px) and (max-width: 992px)</code></td></tr>
+                                <tr><td>Grand écran</td><td>> 992px</td><td><code>@media (min-width: 993px)</code></td></tr>
+                            </tbody>
+                        </table>
+
+                        <p>Ou approche plus simple :</p>
+                        <div class="code-block">
+                            <pre><span class="comment">/* Mobile : styles de base */</span>
+<span class="selector">.exemple</span> { <span class="property">width</span>: <span class="value">100%</span>; }
+
+<span class="comment">/* Tablette */</span>
+<span class="keyword">@media</span> <span class="property">(min-width: 768px)</span> {
+    <span class="selector">.exemple</span> { <span class="property">width</span>: <span class="value">50%</span>; }
+}
+
+<span class="comment">/* Desktop */</span>
+<span class="keyword">@media</span> <span class="property">(min-width: 1024px)</span> {
+    <span class="selector">.exemple</span> { <span class="property">width</span>: <span class="value">33.33%</span>; }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Mobile-first vs Desktop-first -->
+                    <div class="lecon-section">
+                        <h3>📱💻 10.5 Mobile-first vs Desktop-first</h3>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>Mobile-first (recommandé)</h4>
+                                <p>On part du mobile et on ajoute des styles pour les écrans plus grands.</p>
+                                <div class="code-block small">
+                                    <pre><span class="comment">/* Base : mobile */</span>
+<span class="selector">.sidebar</span> { <span class="property">display</span>: <span class="value">none</span>; }
+
+<span class="comment">/* Tablette et plus */</span>
+<span class="keyword">@media</span> <span class="property">(min-width: 768px)</span> {
+    <span class="selector">.sidebar</span> { <span class="property">display</span>: <span class="value">block</span>; }
+}</pre>
+                                </div>
+                                <p class="avantage">✅ Plus simple, plus performant sur mobile</p>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>Desktop-first</h4>
+                                <p>On part du desktop et on simplifie pour les petits écrans.</p>
+                                <div class="code-block small">
+                                    <pre><span class="comment">/* Base : desktop */</span>
+<span class="selector">.sidebar</span> { <span class="property">display</span>: <span class="value">block</span>; }
+
+<span class="comment">/* Mobile */</span>
+<span class="keyword">@media</span> <span class="property">(max-width: 767px)</span> {
+    <span class="selector">.sidebar</span> { <span class="property">display</span>: <span class="value">none</span>; }
+}</pre>
+                                </div>
+                                <p class="inconvenient">❌ Styles par défaut plus lourds</p>
+                           </div>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Recommandation :</strong> Utilisez l'approche mobile-first. C'est plus simple et plus performant car les appareils mobiles n'ont pas à charger et annuler des styles desktop.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Images responsives -->
+                    <div class="lecon-section">
+                        <h3>🖼️ 10.6 Images responsives</h3>
+
+                        <p>Techniques pour adapter les images aux différents écrans.</p>
+
+                        <h4>max-width: 100%</h4>
+                        <p>L'image ne dépasse jamais la largeur de son conteneur.</p>
+                        <div class="code-block">
+                            <pre><span class="selector">img</span> {
+    <span class="property">max-width</span>: <span class="value">100%</span>;
+    <span class="property">height</span>: <span class="value">auto</span>;  <span class="comment">/* Maintient les proportions */</span>
+}</pre>
+                        </div>
+
+                        <h4>srcset (plusieurs résolutions)</h4>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;img</span> 
+    <span class="attribute">src</span>=<span class="value">"image.jpg"</span>
+    <span class="attribute">srcset</span>=<span class="value">"image-petite.jpg 300w, image-moyenne.jpg 600w, image-grande.jpg 900w"</span>
+    <span class="attribute">sizes</span>=<span class="value">"(max-width: 600px) 300px, (max-width: 1200px) 600px, 900px"</span>
+    <span class="attribute">alt</span>=<span class="value">"Description"</span><span class="tag">&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Typographie responsive -->
+                    <div class="lecon-section">
+                        <h3>🔤 10.7 Typographie responsive</h3>
+
+                        <p>Adapter la taille du texte selon l'écran.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Avec media queries */</span>
+<span class="selector">h1</span> {
+    <span class="property">font-size</span>: <span class="value">24px</span>;
+}
+
+<span class="keyword">@media</span> <span class="property">(min-width: 768px)</span> {
+    <span class="selector">h1</span> { <span class="property">font-size</span>: <span class="value">32px</span>; }
+}
+
+<span class="keyword">@media</span> <span class="property">(min-width: 1024px)</span> {
+    <span class="selector">h1</span> { <span class="property">font-size</span>: <span class="value">48px</span>; }
+}
+
+<span class="comment">/* Avec des unités fluides (vw) */</span>
+<span class="selector">h1</span> {
+    <span class="property">font-size</span>: <span class="value">clamp(24px, 5vw, 48px)</span>;  <span class="comment">/* Minimum 24px, maximum 48px */</span>
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 8: Menu hamburger -->
+                    <div class="lecon-section">
+                        <h3>🍔 10.8 Menu hamburger (exemple simple)</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Styles de base (mobile) */</span>
+<span class="selector">.nav-links</span> {
+    <span class="property">display</span>: <span class="value">none</span>;  <span class="comment">/* Caché sur mobile */</span>
+}
+
+<span class="selector">.menu-icon</span> {
+    <span class="property">display</span>: <span class="value">block</span>;  <span class="comment">/* Affiche l'icône hamburger */</span>
+}
+
+<span class="comment">/* Desktop */</span>
+<span class="keyword">@media</span> <span class="property">(min-width: 768px)</span> {
+    <span class="selector">.nav-links</span> {
+        <span class="property">display</span>: <span class="value">flex</span>;  <span class="comment">/* Affiche le menu */</span>
+    }
+    
+    <span class="selector">.menu-icon</span> {
+        <span class="property">display</span>: <span class="value">none</span>;  <span class="comment">/* Cache l'icône hamburger */</span>
+    }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 9: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 10.9 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Grille responsive</h4>
+                            <p><strong>Objectif :</strong> Créer une grille qui change selon la taille d'écran.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Sur mobile (< 576px) : 1 colonne</li>
+                                    <li>Sur tablette (576px - 768px) : 2 colonnes</li>
+                                    <li>Sur desktop (> 768px) : 4 colonnes</li>
+                                    <li>Ajoutez 8 cartes</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Navigation responsive</h4>
+                            <p><strong>Objectif :</strong> Créer une navigation qui s'adapte.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Sur desktop : menu horizontal avec tous les liens</li>
+                                    <li>Sur mobile : menu caché, icône hamburger visible</li>
+                                    <li>Utilisez l'approche mobile-first</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Layout complexe responsive</h4>
+                            <p><strong>Objectif :</strong> Adapter une mise en page Grid selon l'écran.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Sur mobile : tout en colonne (header, main, sidebar, footer)</li>
+                                    <li>Sur tablette : header, puis main+sidebar côte à côte, footer</li>
+                                    <li>Sur desktop : header, main+sidebar, footer avec sidebar à droite</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== EXERCICES RÉCAPITULATIFS ===== -->
+            <section class="exercices-recap">
+                <h2 class="section-title">🏆 Projet récapitulatif (Leçons 6-10)</h2>
+
+                <div class="recap-card">
+                    <h3>Créez un site de portfolio responsive</h3>
+                    <p>Utilisez toutes les notions apprises dans les leçons 6 à 10.</p>
+
+                    <h4>Structure demandée :</h4>
+                    <ul>
+                        <li><strong>Header</strong> avec logo et navigation (sticky)</li>
+                        <li><strong>Section hero</strong> avec image de fond et dégradé</li>
+                        <li><strong>Section compétences</strong> en Flexbox (cartes)</li>
+                        <li><strong>Section projets</strong> en Grid (grille de projets)</li>
+                        <li><strong>Section contact</strong> avec formulaire</li>
+                        <li><strong>Footer</strong> avec liens</li>
+                    </ul>
+
+                    <h4>Contraintes :</h4>
+                    <ul>
+                        <li>Utilisez position: sticky pour le header</li>
+                        <li>Utilisez Flexbox pour les cartes de compétences</li>
+                        <li>Utilisez Grid pour la galerie de projets</li>
+                        <li>Images de fond avec cover et position</li>
+                        <li>Site entièrement responsive (mobile-first)</li>
+                        <li>Points de rupture : mobile (<576px), tablette (576-992px), desktop (>992px)</li>
+                        <li>Menu hamburger sur mobile (simple)</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <a href="1.html" class="pagination-prev"><i class="fas fa-arrow-left"></i> Leçons 1-5</a>
+                <div class="pagination-links">
+                    <a href="1.html">1</a>
+                    <a href="2.html" class="active">2</a>
+                    <a href="3.html">3</a>
+                    <a href="4.html">4</a>
+                </div>
+                <a href="3.html" class="pagination-next">Leçons 11-15 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+</html>                                                                                               </html>
+                                     
+                                                                                                  
