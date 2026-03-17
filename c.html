@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Master - Leçons 11 à 15</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="c.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">&lt;/&gt;</span>
+                    <div class="logo-text">
+                        <span class="logo-main">HTML MASTER</span>
+                        <span class="logo-sub">Leçons 11 à 15 : Concepts avancés</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 11-15 sur 20</span>
+                <span class="progress-percent">75%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%"></div>
+            </div>
+            <div class="progress-nav">
+                <a href="b.html" class="progress-prev"><i class="fas fa-arrow-left"></i> Leçons 6-10</a>
+                <span class="progress-current">Leçons 11-15</span>
+                <a href="d.html" class="progress-next">Leçons 16-20 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 11-15 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 11 à 15 : Concepts avancés</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon11" class="sommaire-card">
+                    <span class="lecon-numero">11</span>
+                    <h3>Attributs globaux</h3>
+                    <p>id, class, data-*, contenteditable</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon12" class="sommaire-card">
+                    <span class="lecon-numero">12</span>
+                    <h3>SEO et accessibilité</h3>
+                    <p>Meta tags, ARIA, bonnes pratiques</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon13" class="sommaire-card">
+                    <span class="lecon-numero">13</span>
+                    <h3>Entités HTML</h3>
+                    <p>Caractères spéciaux, symboles</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                </a>
+                <a href="#lecon14" class="sommaire-card">
+                    <span class="lecon-numero">14</span>
+                    <h3>Iframes avancés</h3>
+                    <p>Sandbox, sécurité, intégrations</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon15" class="sommaire-card">
+                    <span class="lecon-numero">15</span>
+                    <h3>Microdonnées</h3>
+                    <p>Schema.org, rich snippets</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 11 : ATTRIBUTS GLOBAUX ===== -->
+            <article class="lecon" id="lecon11">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 11</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">🏷️ Les attributs globaux</h2>
+                    <p class="lecon-description">Attributs universels applicables à toutes les balises HTML</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 11.1 Qu'est-ce qu'un attribut global ?</h3>
+                        
+                        <div class="definition-box">
+                            <p>Les <strong>attributs globaux</strong> sont des attributs qui peuvent être utilisés sur <strong>tous les éléments HTML</strong>, sans exception. Ils fournissent des fonctionnalités communes à toutes les balises.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">🌐</div>
+                            <div class="encart-content">
+                                <strong>Liste complète des attributs globaux :</strong> accesskey, autocapitalize, class, contenteditable, contextmenu, data-*, dir, draggable, enterkeyhint, hidden, id, inputmode, is, itemid, itemprop, itemref, itemscope, itemtype, lang, nonce, part, popover, slot, spellcheck, style, tabindex, title, translate
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: id et class -->
+                    <div class="lecon-section">
+                        <h3>🆔 11.2 id et class (les plus utilisés)</h3>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>id (identifiant unique)</h4>
+                                <p><strong>Règle :</strong> Un id doit être unique dans toute la page.</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"header"</span><span class="tag">&gt;</span>En-tête<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"menu"</span><span class="tag">&gt;</span>Menu<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"footer"</span><span class="tag">&gt;</span>Pied de page<span class="tag">&lt;/div&gt;</span></pre>
+                                </div>
+                                <p>Utilisations : ancres, JavaScript, CSS spécifique.</p>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>class (classe)</h4>
+                                <p>Peut être partagée par plusieurs éléments.</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"produit"</span><span class="tag">&gt;</span>Produit 1<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"produit promotion"</span><span class="tag">&gt;</span>Produit 2<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"produit"</span><span class="tag">&gt;</span>Produit 3<span class="tag">&lt;/div&gt;</span></pre>
+                                </div>
+                                <p>Plusieurs classes possibles (séparées par espaces).</p>
+                            </div>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Règles de nommage :</h4>
+                            <ul>
+                                <li>Commencer par une lettre (a-z A-Z)</li>
+                                <li>Peut contenir lettres, chiffres, tirets (-), underscores (_)</li>
+                                <li>Pas d'espaces (pour class, plusieurs classes sont séparées par espaces)</li>
+                                <li>Sensible à la casse (id="Menu" ≠ id="menu")</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: data-* attributs -->
+                    <div class="lecon-section">
+                        <h3>📊 11.3 Attributs data-* (données personnalisées)</h3>
+
+                        <p>Les attributs <code>data-*</code> permettent de stocker des informations personnalisées dans les balises HTML, accessibles via JavaScript.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;div</span> 
+    <span class="attribute">data-id</span>=<span class="value">"123"</span>
+    <span class="attribute">data-nom</span>=<span class="value">"Jean"</span>
+    <span class="attribute">data-prix</span>=<span class="value">"25.99"</span>
+    <span class="attribute">data-en-stock</span>=<span class="value">"true"</span>
+    <span class="attribute">data-couleurs</span>=<span class="value">'["rouge","bleu","vert"]'</span><span class="tag">&gt;</span>
+    Informations produit
+<span class="tag">&lt;/div&gt;</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple concret avec JavaScript :</h4>
+                            <div class="code-block">
+                                <pre><span class="comment">&lt;!-- HTML --&gt;</span>
+<span class="tag">&lt;button</span> 
+    <span class="attribute">data-produit-id</span>=<span class="value">"456"</span>
+    <span class="attribute">data-categorie</span>=<span class="value">"electronique"</span>
+    <span class="attribute">onclick</span>=<span class="value">"acheter(this)"</span><span class="tag">&gt;</span>
+    Acheter
+<span class="tag">&lt;/button&gt;</span>
+
+<span class="comment">&lt;!-- JavaScript --&gt;</span>
+&lt;script&gt;
+function acheter(element) {
+    const id = element.dataset.produitId;
+    const categorie = element.dataset.categorie;
+    console.log(`Achat du produit ${id} (catégorie: ${categorie})`);
+}
+&lt;/script&gt;</pre>
+                            </div>
+                            <p>En JavaScript, on accède aux data-* via <code>element.dataset</code> (ex: dataset.produitId)</p>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Bon à savoir :</strong> Les noms d'attributs data-* sont automatiquement convertis en camelCase en JavaScript : <code>data-user-id</code> → <code>dataset.userId</code></div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: contenteditable -->
+                    <div class="lecon-section">
+                        <h3>✏️ 11.4 contenteditable (contenu éditable)</h3>
+
+                        <p>L'attribut <code>contenteditable</code> rend le contenu d'un élément modifiable par l'utilisateur.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;div</span> <span class="attribute">contenteditable</span>=<span class="value">"true"</span><span class="tag">&gt;</span>
+    Ce texte peut être modifié par l'utilisateur.
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;h1</span> <span class="attribute">contenteditable</span>=<span class="value">"true"</span><span class="tag">&gt;</span>Titre modifiable<span class="tag">&lt;/h1&gt;</span>
+
+<span class="tag">&lt;ul</span> <span class="attribute">contenteditable</span>=<span class="value">"true"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Élément 1<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Élément 2<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Rendu :</h4>
+                            <div contenteditable="true" style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; background: white;">
+                                Cliquez ici et modifiez ce texte !
+                            </div>
+                        </div>
+
+                        <h4>Valeurs possibles :</h4>
+                        <ul>
+                            <li><code>contenteditable="true"</code> : élément éditable</li>
+                            <li><code>contenteditable="false"</code> : non éditable</li>
+                            <li><code>contenteditable="plaintext-only"</code> : éditable mais texte seul (pas de formatage)</li>
+                        </ul>
+                    </div>
+
+                    <!-- SECTION 5: hidden -->
+                    <div class="lecon-section">
+                        <h3>👻 11.5 hidden (élément caché)</h3>
+
+                        <p>L'attribut <code>hidden</code> (booléen) masque un élément de l'affichage.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;p</span> <span class="attribute">hidden</span><span class="tag">&gt;</span>Ce paragraphe est caché<span class="tag">&lt;/p&gt;</span>
+
+<span class="comment">&lt;!-- Peut être combiné avec JavaScript pour afficher/cacher --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"message"</span> <span class="attribute">hidden</span><span class="tag">&gt;</span>Message important<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;button</span> <span class="attribute">onclick</span>=<span class="value">"document.getElementById('message').hidden = false"</span><span class="tag">&gt;</span>
+    Afficher le message
+<span class="tag">&lt;/button&gt;</span></pre>
+                        </div>
+
+                        <p><strong>Note :</strong> hidden est l'équivalent de <code>display: none</code> en CSS.</p>
+                    </div>
+
+                    <!-- SECTION 6: tabindex -->
+                    <div class="lecon-section">
+                        <h3>↹ 11.6 tabindex (ordre de tabulation)</h3>
+
+                        <p><code>tabindex</code> contrôle l'ordre de navigation au clavier (touche Tab).</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Valeur</th>
+                                    <th>Comportement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>tabindex="0"</code></td>
+                                    <td>Élément focusable, dans l'ordre naturel du document</td>
+                                </tr>
+                                <tr>
+                                    <td><code>tabindex="-1"</code></td>
+                                    <td>Élément focusable uniquement par JavaScript (pas par Tab)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>tabindex="1"</code> (positif)</td>
+                                    <td>Ordre personnalisé (1 passe en premier, puis 2, etc.)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">tabindex</span>=<span class="value">"2"</span> <span class="attribute">placeholder</span>=<span class="value">"Deuxième"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">tabindex</span>=<span class="value">"1"</span> <span class="attribute">placeholder</span>=<span class="value">"Premier"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">tabindex</span>=<span class="value">"3"</span> <span class="attribute">placeholder</span>=<span class="value">"Troisième"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">tabindex</span>=<span class="value">"0"</span><span class="tag">&gt;</span>Élément focusable (div)<span class="tag">&lt;/div&gt;</span></pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Accessibilité :</strong> Évitez d'utiliser des valeurs positives (sauf cas très spécifiques). Privilégiez l'ordre naturel du document.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: draggable -->
+                    <div class="lecon-section">
+                        <h3>🖱️ 11.7 draggable (élément déplaçable)</h3>
+
+                        <p>Rend un élément déplaçable par glisser-déposer.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;div</span> <span class="attribute">draggable</span>=<span class="value">"true"</span> <span class="attribute">ondragstart</span>=<span class="value">"event.dataTransfer.setData('text/plain', 'valeur')"</span><span class="tag">&gt;</span>
+    Élément déplaçable
+<span class="tag">&lt;/div&gt;</span></pre>
+                        </div>
+
+                        <p><strong>Valeurs :</strong> <code>true</code> (déplaçable) ou <code>false</code> (non déplaçable).</p>
+                    </div>
+
+                    <!-- SECTION 8: lang et dir -->
+                    <div class="lecon-section">
+                        <h3>🌐 11.8 lang et dir (langue et direction)</h3>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>lang (langue)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;p</span> <span class="attribute">lang</span>=<span class="value">"fr"</span><span class="tag">&gt;</span>Texte en français<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p</span> <span class="attribute">lang</span>=<span class="value">"en"</span><span class="tag">&gt;</span>English text<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p</span> <span class="attribute">lang</span>=<span class="value">"mg"</span><span class="tag">&gt;</span>Lahatsoratra malagasy<span class="tag">&lt;/p&gt;</span></pre>
+                                </div>
+                                <p>Important pour l'accessibilité (prononciation) et le SEO.</p>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>dir (direction)</h4>
+                                <div class="code-block small">
+                                         <pre><span class="tag">&lt;p</span> <span class="attribute">dir</span>=<span class="value">"ltr"</span><span class="tag">&gt;</span>Gauche à droite (français)<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p</span> <span class="attribute">dir</span>=<span class="value">"rtl"</span><span class="tag">&gt;</span>يمين إلى يسار (arabe)<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p</span> <span class="attribute">dir</span>=<span class="value">"auto"</span><span class="tag">&gt;</span>Détection automatique<span class="tag">&lt;/p&gt;</span></pre>
+                                </div>
+                                <p><code>ltr</code> (left-to-right), <code>rtl</code> (right-to-left), <code>auto</code>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 9: title -->
+                    <div class="lecon-section">
+                        <h3>💬 11.9 title (infobulle)</h3>
+
+                        <p>Affiche une infobulle au survol de l'élément.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;abbr</span> <span class="attribute">title</span>=<span class="value">"HyperText Markup Language"</span><span class="tag">&gt;</span>HTML<span class="tag">&lt;/abbr&gt;</span>
+<span class="tag">&lt;button</span> <span class="attribute">title</span>=<span class="value">"Cliquez pour enregistrer"</span><span class="tag">&gt;</span>💾<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">title</span>=<span class="value">"Lien vers la page d'accueil"</span><span class="tag">&gt;</span>Accueil<span class="tag">&lt;/a&gt;</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple :</h4>
+                            <p>Survolez <span title="Ceci est une infobulle">ce texte</span> pour voir l'infobulle.</p>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 10: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 11.10 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Carte produit avec data-*</h4>
+                            <p><strong>Objectif :</strong> Créer une fiche produit utilisant les attributs data-*.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un div représentant un produit</li>
+                                    <li>Ajoutez data-id, data-nom, data-prix, data-stock</li>
+                                    <li>Affichez les informations dans le div</li>
+                                    <li>Ajoutez un bouton qui affiche les données dans une alerte (simulé)</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Éditeur de texte simple</h4>
+                            <p><strong>Objectif :</strong> Utiliser contenteditable pour créer un éditeur.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une zone de texte avec contenteditable</li>
+                                    <li>Ajoutez un bouton pour sauvegarder (simulé)</li>
+                                    <li>Ajoutez un bouton pour réinitialiser</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 12 : SEO ET ACCESSIBILITÉ ===== -->
+            <article class="lecon" id="lecon12">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 12</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">🔍 SEO et accessibilité</h2>
+                    <p class="lecon-description">Optimiser son site pour les moteurs de recherche et tous les utilisateurs</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>📈 12.1 Pourquoi SEO et accessibilité ?</h3>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>SEO (Search Engine Optimization)</h4>
+                                <p>Optimisation pour les moteurs de recherche (Google, Bing...)</p>
+                                <ul>
+                                    <li>✅ Meilleur classement dans les résultats</li>
+                                    <li>✅ Plus de visiteurs</li>
+                                    <li>✅ Crédibilité et confiance</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>Accessibilité (a11y)</h4>
+                                <p>Rendre le site utilisable par tous, y compris personnes handicapées</p>
+                                <ul>
+                                    <li>✅ Non-voyants (lecteurs d'écran)</li>
+                                    <li>✅ Personnes âgées</li>
+                                    <li>✅ Mobilité réduite</li>
+                                    <li>✅ Obligation légale dans certains pays</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">🎯</div>
+                            <div class="encart-content">
+                                <strong>Bon à savoir :</strong> Les bonnes pratiques d'accessibilité améliorent souvent le SEO !
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Meta tags SEO -->
+                    <div class="lecon-section">
+                        <h3>🏷️ 12.2 Meta tags essentiels pour le SEO</h3>
+
+                        <p>Les meta tags se placent dans la section <code>&lt;head&gt;</code>.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Meta tag</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>title</code></td>
+                                    <td>Titre de la page (affiché dans les résultats)</td>
+                                    <td><code>&lt;title&gt;Tutoriel HTML complet&lt;/title&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>meta description</code></td>
+                                    <td>Description courte (150-160 caractères)</td>
+                                    <td><code>&lt;meta name="description" content="Apprenez HTML de A à Z..."&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>meta keywords</code></td>
+                                    <td>Mots-clés (moins important aujourd'hui)</td>
+                                    <td><code>&lt;meta name="keywords" content="html, cours, tutoriel"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>meta author</code></td>
+                                    <td>Auteur de la page</td>
+                                    <td><code>&lt;meta name="author" content="Ambanivolo mi-DEV"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>meta robots</code></td>
+                                    <td>Instructions pour les robots</td>
+                                    <td><code>&lt;meta name="robots" content="index, follow"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>link canonical</code></td>
+                                    <td>URL principale (évite le contenu dupliqué)</td>
+                                    <td><code>&lt;link rel="canonical" href="https://site.com/page"&gt;</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="html-tag">HTML</span>
+                                <span>Exemple complet</span>
+                            </div>
+                            <pre><span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
+    
+    <span class="comment">&lt;!-- SEO de base --&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Tutoriel HTML Complet - Apprenez HTML en ligne<span class="tag">&lt;/title&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"description"</span> <span class="attribute">content</span>=<span class="value">"Cours HTML gratuit pour débutants et avancés. 20 leçons détaillées avec exercices pratiques. Maîtrisez le langage du web."</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"keywords"</span> <span class="attribute">content</span>=<span class="value">"HTML, cours HTML, tutoriel HTML, apprendre HTML, balises HTML"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"author"</span> <span class="attribute">content</span>=<span class="value">"Ambanivolo mi-DEV"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"robots"</span> <span class="attribute">content</span>=<span class="value">"index, follow"</span><span class="tag">&gt;</span>
+    
+    <span class="comment">&lt;!-- URL canonique --&gt;</span>
+    <span class="tag">&lt;link</span> <span class="attribute">rel</span>=<span class="value">"canonical"</span> <span class="attribute">href</span>=<span class="value">"https://ambanivolo-dev.mg/html"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/head&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Open Graph (réseaux sociaux) -->
+                    <div class="lecon-section">
+                        <h3>📱 12.3 Open Graph (pour les réseaux sociaux)</h3>
+
+                        <p>Ces meta tags contrôlent l'apparence de votre page quand elle est partagée sur Facebook, LinkedIn, etc.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- Open Graph (Facebook, LinkedIn) --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attribute">property</span>=<span class="value">"og:title"</span> <span class="attribute">content</span>=<span class="value">"Tutoriel HTML Complet"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attribute">property</span>=<span class="value">"og:description"</span> <span class="attribute">content</span>=<span class="value">"Apprenez HTML gratuitement en 20 leçons"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attribute">property</span>=<span class="value">"og:image"</span> <span class="attribute">content</span>=<span class="value">"https://ambanivolo-dev.mg/images/html-cours.jpg"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attribute">property</span>=<span class="value">"og:url"</span> <span class="attribute">content</span>=<span class="value">"https://ambanivolo-dev.mg/html"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attribute">property</span>=<span class="value">"og:type"</span> <span class="attribute">content</span>=<span class="value">"website"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attribute">property</span>=<span class="value">"og:locale"</span> <span class="attribute">content</span>=<span class="value">"fr_FR"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Twitter Cards --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"twitter:card"</span> <span class="attribute">content</span>=<span class="value">"summary_large_image"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"twitter:title"</span> <span class="attribute">content</span>=<span class="value">"Tutoriel HTML"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"twitter:description"</span> <span class="attribute">content</span>=<span class="value">"Apprenez HTML"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"twitter:image"</span> <span class="attribute">content</span>=<span class="value">"https://ambanivolo-dev.mg/images/html-cours.jpg"</span><span class="tag">&gt;</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Ce que ça donne :</h4>
+                            <div style="background: #f0f0f0; padding: 15px; border-radius: 8px;">
+                                <div style="display: flex; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; max-width: 500px;">
+                                    <div style="width: 120px; background: #1F2D3D; display: flex; align-items: center; justify-content: center; color: white;">Image</div>
+                                    <div style="padding: 10px;">
+                                        <div style="font-weight: bold;">Tutoriel HTML Complet</div>
+                                        <div style="font-size: 0.9rem; color: #666;">Apprenez HTML gratuitement en 20 leçons</div>
+                                        <div style="font-size: 0.8rem; color: #999;">ambanivolo-dev.mg</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Accessibilité ARIA -->
+                    <div class="lecon-section">
+                        <h3>♿ 12.4 ARIA (Accessible Rich Internet Applications)</h3>
+
+                        <p>ARIA est un ensemble d'attributs pour améliorer l'accessibilité des applications web complexes.</p>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">♿</div>
+                            <div class="encart-content">
+                                <strong>Règle d'or :</strong> Utilisez les éléments HTML sémantiques natifs quand c'est possible. ARIA est un complément, pas un remplacement.
+                            </div>
+                        </div>
+
+                        <h4>Rôles ARIA</h4>
+                        <p>Définissent le type d'élément pour les lecteurs d'écran.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Rôle</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>role="navigation"</code></td><td>Menu de navigation</td><td><code>&lt;div role="navigation"&gt;...&lt;/div&gt;</code></td></tr>
+                                <tr><td><code>role="main"</code></td><td>Contenu principal</td><td><code>&lt;div role="main"&gt;...&lt;/div&gt;</code></td></tr>
+                                <tr><td><code>role="banner"</code></td><td>En-tête</td><td><code>&lt;header role="banner"&gt;...&lt;/header&gt;</code></td></tr>
+                                <tr><td><code>role="contentinfo"</code></td><td>Pied de page</td><td><code>&lt;footer role="contentinfo"&gt;...&lt;/footer&gt;</code></td></tr>
+                                <tr><td><code>role="search"</code></td><td>Barre de recherche</td><td><code>&lt;div role="search"&gt;...&lt;/div&gt;</code></td></tr>
+                                <tr><td><code>role="form"</code></td><td>Formulaire</td><td><code>&lt;div role="form"&gt;...&lt;/div&gt;</code></td></tr>
+                                <tr><td><code>role="button"</code></td><td>Bouton</td><td><code>&lt;div role="button" tabindex="0"&gt;Cliquez&lt;/div&gt;</code></td></tr>
+                                <tr><td><code>role="alert"</code></td><td>Message d'alerte</td><td><code>&lt;div role="alert"&gt;Erreur&lt;/div&gt;</code></td></tr>
+                                <tr><td><code>role="dialog"</code></td><td>Fenêtre modale</td><td><code>&lt;div role="dialog"&gt;...&lt;/div&gt;</code></td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4>Propriétés ARIA</h4>
+                        <p>Donnent des informations supplémentaires sur l'état des éléments.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- aria-label : étiquette alternative --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attribute">aria-label</span>=<span class="value">"Fermer la fenêtre"</span><span class="tag">&gt;</span>X<span class="tag">&lt;/button&gt;</span>
+
+<span class="comment">&lt;!-- aria-labelledby : lié à un autre élément --&gt;</span>
+<span class="tag">&lt;h2</span> <span class="attribute">id</span>=<span class="value">"titre"</span><span class="tag">&gt;</span>Formulaire d'inscription<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">aria-labelledby</span>=<span class="value">"titre"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- aria-describedby : description supplémentaire --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">aria-describedby</span>=<span class="value">"aide-nom"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"aide-nom"</span><span class="tag">&gt;</span>Entrez votre nom complet<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- aria-required : champ obligatoire --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">aria-required</span>=<span class="value">"true"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- aria-disabled : désactivé --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attribute">aria-disabled</span>=<span class="value">"true"</span><span class="tag">&gt;</span>Envoyer<span class="tag">&lt;/button&gt;</span>
+
+<span class="comment">&lt;!-- aria-expanded : état déplié/replié --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attribute">aria-expanded</span>=<span class="value">"false"</span><span class="tag">&gt;</span>Afficher plus<span class="tag">&lt;/button&gt;</span>
+
+<span class="comment">&lt;!-- aria-hidden : cacher des lecteurs d'écran --&gt;</span>
+<span class="tag">&lt;i</span> <span class="attribute">class</span>=<span class="value">"fas fa-search"</span> <span class="attribute">aria-hidden</span>=<span class="value">"true"</span><span class="tag">&gt;&lt;/i&gt;</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple complet avec ARIA :</h4>
+                            <div class="code-block">
+                                <pre><span class="tag">&lt;nav</span> <span class="attribute">role</span>=<span class="value">"navigation"</span> <span class="attribute">aria-label</span>=<span class="value">"Menu principal"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;ul&gt;</span>
+        <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"/"</span> <span class="attribute">aria-current</span>=<span class="value">"page"</span><span class="tag">&gt;</span>Accueil<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+        <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"/cours"</span><span class="tag">&gt;</span>Cours<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;/ul&gt;</span>
+<span class="tag">&lt;/nav&gt;</span>
+
+<span class="tag">&lt;main</span> <span class="attribute">role</span>=<span class="value">"main"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Bienvenue<span class="tag">&lt;/h1&gt;</span>
+    
+    <span class="tag">&lt;button</span> 
+        <span class="attribute">aria-expanded</span>=<span class="value">"false"</span>
+        <span class="attribute">aria-controls</span>=<span class="value">"details"</span><span class="tag">&gt;</span>
+        Voir détails
+    <span class="tag">&lt;/button&gt;</span>
+    
+    <span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"details"</span> <span class="attribute">hidden</span><span class="tag">&gt;</span>
+        Détails supplémentaires...
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/main&gt;</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Bonnes pratiques d'accessibilité -->
+                    <div class="lecon-section">
+                        <h3>✅ 12.5 Bonnes pratiques essentielles</h3>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>📝 Textes alternatifs</h4>
+                                <p>Toujours mettre des <code>alt</code> descriptifs sur les images</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;img</span> <span class="attribute">src</span>=<span class="value">"chat.jpg"</span> 
+     <span class="attribute">alt</span>=<span class="value">"Chat roux qui dort sur un canapé"</span><span class="tag">&gt;</span></pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>🏷️ Labels de formulaires</h4>
+                                <p>Toujours associer des labels aux champs</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"nom"</span><span class="tag">&gt;</span>Nom :<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;input</span> <span class="attribute">id</span>=<span class="value">"nom"</span> <span class="attribute">type</span>=<span class="value">"text"</span><span class="tag">&gt;</span></pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>📐 Hiérarchie des titres</h4>
+                                <p>Structure logique (h1 → h2 → h3...)</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;h1&gt;</span>Titre principal<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;h2&gt;</span>Sous-titre<span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;h3&gt;</span>Détail<span class="tag">&lt;/h3&gt;</span></pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>🎨 Contraste des couleurs</h4>
+                                <p>Texte suffisamment contrasté (ratio minimum 4.5:1)</p>
+                                <div style="background: #1F2D3D; color: white; padding: 5px;">Bon contraste</div>
+                                <div style="background: #ccc; color: #999; padding: 5px;">Mauvais contraste</div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>⌨️ Navigation clavier</h4>
+                                <p>Tous les éléments doivent être accessibles au clavier</p>
+                                <ul>
+                                    <li>Tab pour naviguer</li>
+                                    <li>Enter pour activer</li>
+                                    <li>Focus visible (outline)</li>
+                                </ul>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>📄 Langue du document</h4>
+                                <p>Indiquer la langue principale</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;html</span> <span class="attribute">lang</span>=<span class="value">"fr"</span><span class="tag">&gt;</span></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">🎯</div>
+                            <div class="encart-content">
+                                <strong>Test d'accessibilité :</strong> Essayez de naviguer sur votre site uniquement avec le clavier (pas de souris). Si vous pouvez tout faire, c'est bon signe !
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 12.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Page optimisée SEO</h4>
+                            <p><strong>Objectif :</strong> Créer une page avec tous les meta tags importants.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une page "presentation.html"</li>
+                                    <li>Ajoutez title, description, keywords, author, robots</li>
+                                    <li>Ajoutez les tags Open Graph (og:title, og:description, og:image)</li>
+                                    <li>Ajoutez Twitter Cards</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Formulaire accessible</h4>
+                            <p><strong>Objectif :</strong> Rendre un formulaire accessible.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un formulaire d'inscription</li>
+                                    <li>Utilisez des labels associés</li>
+                                    <li>Ajoutez des aria-describedby pour les aides</li>
+                                    <li>Indiquez les champs obligatoires avec aria-required</li>
+                                    <li>Ajoutez des messages d'erreur avec role="alert"</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Navigation accessible</h4>
+                            <p><strong>Objectif :</strong> Créer un menu accessible.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un menu de navigation</li>
+                                    <li>Ajoutez role="navigation" et aria-label</li>
+                                    <li>Indiquez la page courante avec aria-current</li>
+                                    <li>Assurez-vous que la navigation est possible au clavier</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 13 : ENTITÉS HTML ===== -->
+            <article class="lecon" id="lecon13">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 13</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">&amp; Les entités HTML</h2>
+                    <p class="lecon-description">Caractères spéciaux, symboles et codes</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔤 13.1 Qu'est-ce qu'une entité HTML ?</h3>
+
+                        <div class="definition-box">
+                            <p>Les <strong>entités HTML</strong> sont des codes spéciaux qui représentent des caractères qui ont une signification particulière en HTML ou qui ne sont pas disponibles sur le clavier.</p>
+                        </div>
+
+                        <p><strong>Syntaxe :</strong> <code>&amp;nom;</code> (nommée) ou <code>&amp;#code;</code> (numérique)</p>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Pourquoi utiliser des entités ?</strong> Certains caractères comme &lt; et &gt; sont interprétés comme des balises par le navigateur. Les entités permettent de les afficher normalement.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Entités essentielles -->
+                    <div class="lecon-section">
+                        <h3>📋 13.2 Entités HTML essentielles</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Entité</th>
+                                    <th>Résultat</th>
+                                    <th>Description</th>
+                                    <th>Code numérique</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>&amp;lt;</code></td><td>&lt;</td><td>Inférieur à (less than)</td><td><code>&amp;#60;</code></td></tr>
+                                <tr><td><code>&amp;gt;</code></td><td>&gt;</td><td>Supérieur à (greater than)</td><td><code>&amp;#62;</code></td></tr>
+                                <tr><td><code>&amp;amp;</code></td><td>&</td><td>Esperluette (ampersand)</td><td><code>&amp;#38;</code></td></tr>
+                                <tr><td><code>&amp;quot;</code></td><td>"</td><td>Guillemet double</td><td><code>&amp;#34;</code></td></tr>
+                                <tr><td><code>&amp;apos;</code></td><td>'</td><td>Apostrophe</td><td><code>&amp;#39;</code></td></tr>
+                                <tr><td><code>&amp;nbsp;</code></td><td>&nbsp;</td><td>Espace insécable</td><td><code>&amp;#160;</code></td></tr>
+                                <tr><td><code>&amp;copy;</code></td><td>©</td><td>Copyright</td><td><code>&amp;#169;</code></td></tr>
+                                <tr><td><code>&amp;reg;</code></td><td>®</td><td>Marque déposée</td><td><code>&amp;#174;</code></td></tr>
+                                <tr><td><code>&amp;trade;</code></td><td>™</td><td>Trademark</td><td><code>&amp;#8482;</code></td></tr>
+                                <tr><td><code>&amp;euro;</code></td><td>€</td><td>Euro</td><td><code>&amp;#8364;</code></td></tr>
+                                <tr><td><code>&amp;pound;</code></td><td>£</td><td>Livre sterling</td><td><code>&amp;#163;</code></td></tr>
+                                <tr><td><code>&amp;yen;</code></td><td>¥</td><td>Yen</td><td><code>&amp;#165;</code></td></tr>
+                                <tr><td><code>&amp;cent;</code></td><td>¢</td><td>Cent</td><td><code>&amp;#162;</code></td></tr>
+                                <tr><td><code>&amp;sect;</code></td><td>§</td><td>Section</td><td><code>&amp;#167;</code></td></tr>
+                                <tr><td><code>&amp;para;</code></td><td>¶</td><td>Paragraphe</td><td><code>&amp;#182;</code></td></tr>
+                                <tr><td><code>&amp;deg;</code></td><td>°</td><td>Degré</td><td><code>&amp;#176;</code></td></tr>
+                                <tr><td><code>&amp;plusmn;</code></td><td>±</td><td>Plus ou moins</td><td><code>&amp;#177;</code></td></tr>
+                                <tr><td><code>&amp;times;</code></td><td>×</td><td>Multiplication</td><td><code>&amp;#215;</code></td></tr>
+                                <tr><td><code>&amp;divide;</code></td><td>÷</td><td>Division</td><td><code>&amp;#247;</code></td></tr>
+                                <tr><td><code>&amp;frac14;</code></td><td>¼</td><td>Un quart</td><td><code>&amp;#188;</code></td></tr>
+                                <tr><td><code>&amp;frac12;</code></td><td>½</td><td>Un demi</td><td><code>&amp;#189;</code></td></tr>
+                                <tr><td><code>&amp;frac34;</code></td><td>¾</td><td>Trois quarts</td><td><code>&amp;#190;</code></td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples concrets :</h4>
+                            <div class="code-block">
+                                <pre><span class="tag">&lt;p&gt;</span>
+    Pour afficher des balises : <span class="tag">&amp;lt;h1&amp;gt;</span>Titre<span class="tag">&amp;lt;/h1&amp;gt;</span>
+<span class="tag">&lt;/p&gt;</span>
+
+<span class="tag">&lt;p&gt;</span>
+    Copyright <span class="tag">&amp;copy;</span> 2026 Ambanivolo mi-DEV
+<span class="tag">&lt;/p&gt;</span>
+
+<span class="tag">&lt;p&gt;</span>
+    Prix : 25<span class="tag">&amp;euro;</span> (hors taxes)
+<span class="tag">&lt;/p&gt;</span>
+
+<span class="tag">&lt;p&gt;</span>
+    Température : 25<span class="tag">&amp;deg;</span>C
+<span class="tag">&lt;/p&gt;</span>
+
+<span class="tag">&lt;p&gt;</span>
+    Jean<span class="tag">&amp;nbsp;</span>Dupont (espace insécable)
+<span class="tag">&lt;/p&gt;</span></pre>
+                            </div>
+
+                            <div class="rendu-box">
+                                <h5>Rendu :</h5>
+                                <p>Pour afficher des balises : &lt;h1&gt;Titre&lt;/h1&gt;</p>
+                                <p>Copyright © 2026 Ambanivolo mi-DEV</p>
+                                <p>Prix : 25€ (hors taxes)</p>
+                                <p>Température : 25°C</p>
+                                <p>Jean&nbsp;Dupont (espace insécable)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Espace insécable -->
+                    <div class="lecon-section">
+                        <h3>🔒 13.3 L'espace insécable (&amp;nbsp;)</h3>
+
+                        <p>L'espace insécable empêche un retour à la ligne entre deux mots.</p>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>Sans espace insécable :</h4>
+                                <div class="code-block small">
+                                    <pre>M. Dupont</pre>
+                                </div>
+                                <p>Peut couper :<br>M.<br>Dupont</p>
+                            </div>
+                            
+                            <div>
+                                <h4>Avec espace insécable :</h4>
+                                <div class="code-block small">
+                                    <pre>M.<span class="tag">&amp;nbsp;</span>Dupont</pre>
+                                </div>
+                                <p>Restera ensemble :<br>M.&nbsp;Dupont</p>
+                            </div>
+                        </div>
+
+                        <p><strong>Cas d'usage :</strong></p>
+                        <ul>
+                            <li>Initiales (M. Dupont)</li>
+                            <li>Nombres (10 000 €)</li>
+                            <li>Unités (10 km)</li>
+                            <li>Prénoms composés (Jean-Pierre)</li>
+                            <li>Éviter les veuves orphelines en typographie</li>
+                        </ul>
+                    </div>
+
+                    <!-- SECTION 4: Symboles et icônes -->
+                    <div class="lecon-section">
+                        <h3>🎨 13.4 Symboles et caractères spéciaux</h3>
+
+                        <h4>Flèches</h4>
+                        <table class="table" style="width: auto;">
+                            <tr><td><code>&amp;larr;</code></td><td>←</td><td>Flèche gauche</td></tr>
+                            <tr><td><code>&amp;rarr;</code></td><td>→</td><td>Flèche droite</td></tr>
+                            <tr><td><code>&amp;uarr;</code></td><td>↑</td><td>Flèche haut</td></tr>
+                            <tr><td><code>&amp;darr;</code></td><td>↓</td><td>Flèche bas</td></tr>
+                                               <tr><td><code>&amp;harr;</code></td><td>↔</td><td>Flèche horizontale</td></tr>
+                            <tr><td><code>&amp;lrarr;</code></td><td>↔</td><td>Gauche/droite</td></tr>
+                        </table>
+
+                        <h4>Symboles mathématiques</h4>
+                        <table class="table" style="width: auto;">
+                            <tr><td><code>&amp;forall;</code></td><td>∀</td><td>Pour tout</td></tr>
+                            <tr><td><code>&amp;part;</code></td><td>∂</td><td>Dérivée partielle</td></tr>
+                            <tr><td><code>&amp;exist;</code></td><td>∃</td><td>Il existe</td></tr>
+                            <tr><td><code>&amp;empty;</code></td><td>∅</td><td>Ensemble vide</td></tr>
+                            <tr><td><code>&amp;nabla;</code></td><td>∇</td><td>Nabla</td></tr>
+                            <tr><td><code>&amp;isin;</code></td><td>∈</td><td>Appartient à</td></tr>
+                            <tr><td><code>&amp;notin;</code></td><td>∉</td><td>N'appartient pas</td></tr>
+                            <tr><td><code>&amp;ni;</code></td><td>∋</td><td>Contient</td></tr>
+                            <tr><td><code>&amp;prod;</code></td><td>∏</td><td>Produit</td></tr>
+                            <tr><td><code>&amp;sum;</code></td><td>∑</td><td>Somme</td></tr>
+                            <tr><td><code>&amp;radic;</code></td><td>√</td><td>Racine carrée</td></tr>
+                            <tr><td><code>&amp;infin;</code></td><td>∞</td><td>Infini</td></tr>
+                            <tr><td><code>&amp;cap;</code></td><td>∩</td><td>Intersection</td></tr>
+                            <tr><td><code>&amp;cup;</code></td><td>∪</td><td>Union</td></tr>
+                            <tr><td><code>&amp;int;</code></td><td>∫</td><td>Intégrale</td></tr>
+                            <tr><td><code>&amp;there4;</code></td><td>∴</td><td>Donc</td></tr>
+                            <tr><td><code>&amp;sim;</code></td><td>∼</td><td>Similaire</td></tr>
+                            <tr><td><code>&amp;cong;</code></td><td>≅</td><td>Approximativement</td></tr>
+                            <tr><td><code>&amp;asymp;</code></td><td>≈</td><td>Presque égal</td></tr>
+                            <tr><td><code>&amp;ne;</code></td><td>≠</td><td>Différent</td></tr>
+                            <tr><td><code>&amp;equiv;</code></td><td>≡</td><td>Équivalent</td></tr>
+                            <tr><td><code>&amp;le;</code></td><td>≤</td><td>Inférieur ou égal</td></tr>
+                            <tr><td><code>&amp;ge;</code></td><td>≥</td><td>Supérieur ou égal</td></tr>
+                        </table>
+
+                        <h4>Lettres grecques</h4>
+                        <table class="table" style="width: auto;">
+                            <tr><td><code>&amp;alpha;</code></td><td>α</td><td>Alpha</td></tr>
+                            <tr><td><code>&amp;beta;</code></td><td>β</td><td>Beta</td></tr>
+                            <tr><td><code>&amp;gamma;</code></td><td>γ</td><td>Gamma</td></tr>
+                            <tr><td><code>&amp;delta;</code></td><td>δ</td><td>Delta</td></tr>
+                            <tr><td><code>&amp;epsilon;</code></td><td>ε</td><td>Epsilon</td></tr>
+                            <tr><td><code>&amp;zeta;</code></td><td>ζ</td><td>Zeta</td></tr>
+                            <tr><td><code>&amp;eta;</code></td><td>η</td><td>Eta</td></tr>
+                            <tr><td><code>&amp;theta;</code></td><td>θ</td><td>Theta</td></tr>
+                            <tr><td><code>&amp;iota;</code></td><td>ι</td><td>Iota</td></tr>
+                            <tr><td><code>&amp;kappa;</code></td><td>κ</td><td>Kappa</td></tr>
+                            <tr><td><code>&amp;lambda;</code></td><td>λ</td><td>Lambda</td></tr>
+                            <tr><td><code>&amp;mu;</code></td><td>μ</td><td>Mu</td></tr>
+                            <tr><td><code>&amp;nu;</code></td><td>ν</td><td>Nu</td></tr>
+                            <tr><td><code>&amp;xi;</code></td><td>ξ</td><td>Xi</td></tr>
+                            <tr><td><code>&amp;pi;</code></td><td>π</td><td>Pi</td></tr>
+                            <tr><td><code>&amp;rho;</code></td><td>ρ</td><td>Rho</td></tr>
+                            <tr><td><code>&amp;sigma;</code></td><td>σ</td><td>Sigma</td></tr>
+                            <tr><td><code>&amp;tau;</code></td><td>τ</td><td>Tau</td></tr>
+                            <tr><td><code>&amp;upsilon;</code></td><td>υ</td><td>Upsilon</td></tr>
+                            <tr><td><code>&amp;phi;</code></td><td>φ</td><td>Phi</td></tr>
+                            <tr><td><code>&amp;chi;</code></td><td>χ</td><td>Chi</td></tr>
+                            <tr><td><code>&amp;psi;</code></td><td>ψ</td><td>Psi</td></tr>
+                            <tr><td><code>&amp;omega;</code></td><td>ω</td><td>Omega</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 13.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Afficher du code HTML</h4>
+                            <p><strong>Objectif :</strong> Afficher du code HTML sans qu'il soit interprété.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un paragraphe qui affiche : &lt;h1&gt;Titre&lt;/h1&gt;</li>
+                                    <li>Utilisez les entités appropriées</li>
+                                    <li>Ajoutez un autre exemple avec &lt;p&gt;Paragraphe&lt;/p&gt;</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Page de symboles</h4>
+                            <p><strong>Objectif :</strong> Créer une page qui présente divers symboles.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Affichez le symbole copyright, euro, degré</li>
+                                    <li>Affichez une flèche vers la droite</li>
+                                    <li>Affichez une formule mathématique avec symboles</li>
+                                    <li>Utilisez des espaces insécables pour les unités</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 14 : IFRAMES AVANCÉS ===== -->
+            <article class="lecon" id="lecon14">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 14</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">🖼️ Iframes avancés</h2>
+                    <p class="lecon-description">Sécurité, sandbox, communication, intégrations</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Rappel -->
+                    <div class="lecon-section">
+                        <h3>📌 14.1 Rappel : balise &lt;iframe&gt;</h3>
+
+                        <div class="definition-box">
+                            <p><code>&lt;iframe&gt;</code> (inline frame) permet d'intégrer une autre page HTML dans la page courante.</p>
+                        </div>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;iframe</span> 
+    <span class="attribute">src</span>=<span class="value">"https://example.com"</span>
+    <span class="attribute">width</span>=<span class="value">"100%"</span>
+    <span class="attribute">height</span>=<span class="value">"400"</span>
+    <span class="attribute">title</span>=<span class="value">"Description"</span>
+    <span class="attribute">frameborder</span>=<span class="value">"0"</span>
+    <span class="attribute">loading</span>=<span class="value">"lazy"</span>
+    <span class="attribute">allowfullscreen</span><span class="tag">&gt;</span>
+    <span class="comment">&lt;!-- Message si iframe non supporté --&gt;</span>
+    &lt;p&gt;Votre navigateur ne supporte pas les iframes.&lt;/p&gt;
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Attributs de sécurité -->
+                    <div class="lecon-section">
+                        <h3>🔒 14.2 Attributs de sécurité</h3>
+
+                        <h4>sandbox</h4>
+                        <p>L'attribut <code>sandbox</code> applique des restrictions de sécurité à l'iframe.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th>Valeur</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>allow-forms</code></td><td>Autorise la soumission de formulaires</td></tr>
+                                <tr><td><code>allow-modals</code></td><td>Autorise les fenêtres modales (alert, confirm)</td></tr>
+                                <tr><td><code>allow-orientation-lock</code></td><td>Autorise le verrouillage de l'orientation</td></tr>
+                                <tr><td><code>allow-pointer-lock</code></td><td>Autorise le verrouillage du pointeur</td></tr>
+                                <tr><td><code>allow-popups</code></td><td>Autorise les popups</td></tr>
+                                <tr><td><code>allow-popups-to-escape-sandbox</code></td><td>Autorise les popups à échapper au sandbox</td></tr>
+                                <tr><td><code>allow-presentation</code></td><td>Autorise le mode présentation</td></tr>
+                                <tr><td><code>allow-same-origin</code></td><td>Autorise à traiter le contenu comme de la même origine</td></tr>
+                                <tr><td><code>allow-scripts</code></td><td>Autorise l'exécution de scripts</td></tr>
+                                <tr><td><code>allow-top-navigation</code></td><td>Autorise la navigation dans le contexte parent</td></tr>
+                                <tr><td><code>allow-top-navigation-by-user-activation</code></td><td>Navigation top seulement après action utilisateur</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- Iframe très restrictive (rien autorisé) --&gt;</span>
+<span class="tag">&lt;iframe</span> <span class="attribute">src</span>=<span class="value">"page.html"</span> <span class="attribute">sandbox</span><span class="tag">&gt;</span><span class="tag">&lt;/iframe&gt;</span>
+
+<span class="comment">&lt;!-- Iframe avec scripts et formulaires autorisés --&gt;</span>
+<span class="tag">&lt;iframe</span> 
+    <span class="attribute">src</span>=<span class="value">"page.html"</span> 
+    <span class="attribute">sandbox</span>=<span class="value">"allow-scripts allow-forms"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span>
+
+<span class="comment">&lt;!-- Iframe de confiance (même origine) --&gt;</span>
+<span class="tag">&lt;iframe</span> 
+    <span class="attribute">src</span>=<span class="value">"https://mon-site.com/page.html"</span> 
+    <span class="attribute">sandbox</span>=<span class="value">"allow-same-origin allow-scripts allow-forms"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                        </div>
+
+                        <h4>Autres attributs de sécurité</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- referrerpolicy : contrôle les infos envoyées au référent --&gt;</span>
+<span class="tag">&lt;iframe</span> 
+    <span class="attribute">src</span>=<span class="value">"https://example.com"</span>
+    <span class="attribute">referrerpolicy</span>=<span class="value">"no-referrer"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span>
+
+<span class="comment">&lt;!-- allow : contrôle des fonctionnalités (geolocation, camera, etc.) --&gt;</span>
+<span class="tag">&lt;iframe</span> 
+    <span class="attribute">src</span>=<span class="value">"https://example.com"</span>
+    <span class="attribute">allow</span>=<span class="value">"geolocation 'self'; microphone 'none'"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Sécurité :</strong> Toujours utiliser sandbox pour les iframes de sources non fiables. N'autoriser que ce qui est strictement nécessaire.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Communication avec iframe -->
+                    <div class="lecon-section">
+                        <h3>📡 14.3 Communication parent-enfant (postMessage)</h3>
+
+                        <p>La méthode <code>postMessage</code> permet une communication sécurisée entre la page parente et l'iframe.</p>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>Page parente</h4>
+                                <div class="code-block small">
+                                    <pre><span class="comment">&lt;!-- HTML --&gt;</span>
+<span class="tag">&lt;iframe</span> <span class="attribute">id</span>=<span class="value">"monIframe"</span> 
+    <span class="attribute">src</span>=<span class="value">"enfant.html"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span>
+
+<span class="comment">&lt;!-- JavaScript --&gt;</span>
+<span class="tag">&lt;script&gt;</span>
+    const iframe = document.getElementById('monIframe');
+    
+    <span class="comment">// Envoyer un message à l'iframe</span>
+    iframe.contentWindow.postMessage({
+        type: 'INFO',
+        data: 'Message du parent'
+    }, 'https://enfant.example.com');
+    
+    <span class="comment">// Recevoir des messages de l'iframe</span>
+    window.addEventListener('message', (event) => {
+        if (event.origin !== 'https://enfant.example.com') return;
+        console.log('Message reçu:', event.data);
+    });
+<span class="tag">&lt;/script&gt;</span></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>Page enfant (iframe)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="comment">&lt;!-- JavaScript dans enfant.html --&gt;</span>
+<span class="tag">&lt;script&gt;</span>
+    <span class="comment">// Recevoir des messages du parent</span>
+    window.addEventListener('message', (event) => {
+        if (event.origin !== 'https://parent.example.com') return;
+        console.log('Message du parent:', event.data);
+        
+        <span class="comment">// Répondre au parent</span>
+        event.source.postMessage({
+            type: 'REPONSE',
+            data: 'Message de l\'enfant'
+        }, event.origin);
+    });
+<span class="tag">&lt;/script&gt;</span></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple d'utilisation :</h4>
+                            <ul>
+                                <li><strong>Widgets</strong> : communication entre un widget et la page</li>
+                                <li><strong>Jeux</strong> : score, actions</li>
+                                <li><strong>Formulaires</strong> : validation, soumission</li>
+                                <li><strong>Authentification</strong> : login via iframe</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: iframe et performance -->
+                    <div class="lecon-section">
+                        <h3>⚡ 14.4 Optimisation des performances</h3>
+
+                        <h4>loading="lazy"</h4>
+                        <p>Charge l'iframe seulement quand il est visible.</p>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;iframe</span> <span class="attribute">src</span>=<span class="value">"https://example.com"</span> <span class="attribute">loading</span>=<span class="value">"lazy"</span><span class="tag">&gt;</span><span class="tag">&lt;/iframe&gt;</span></pre>
+                        </div>
+
+                        <h4>srcdoc (contenu HTML direct)</h4>
+                        <p>Permet d'injecter du HTML directement sans fichier externe.</p>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;iframe</span> 
+    <span class="attribute">srcdoc</span>=<span class="value">"&lt;p&gt;Contenu HTML directement dans l'iframe&lt;/p&gt;"</span>
+    <span class="attribute">width</span>=<span class="value">"100%"</span>
+    <span class="attribute">height</span>=<span class="value">"100"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                        </div>
+
+                        <h4>name (ciblage)</h4>
+                        <p>Permet de cibler l'iframe depuis des liens.</p>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;iframe</span> <span class="attribute">name</span>=<span class="value">"cadre"</span> <span class="attribute">src</span>=<span class="value">"page1.html"</span><span class="tag">&gt;</span><span class="tag">&lt;/iframe&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"page2.html"</span> <span class="attribute">target</span>=<span class="value">"cadre"</span><span class="tag">&gt;</span>Charger page2 dans l'iframe<span class="tag">&lt;/a&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Intégrations courantes -->
+                    <div class="lecon-section">
+                        <h3>🔌 14.5 Intégrations courantes</h3>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>YouTube</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;iframe</span>
+    <span class="attribute">width</span>=<span class="value">"560"</span>
+    <span class="attribute">height</span>=<span class="value">"315"</span>
+    <span class="attribute">src</span>=<span class="value">"https://www.youtube.com/embed/VIDEO_ID"</span>
+    <span class="attribute">title</span>=<span class="value">"Vidéo YouTube"</span>
+    <span class="attribute">frameborder</span>=<span class="value">"0"</span>
+    <span class="attribute">allow</span>=<span class="value">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"</span>
+    <span class="attribute">allowfullscreen</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>Google Maps</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;iframe</span>
+    <span class="attribute">src</span>=<span class="value">"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345..."</span>
+    <span class="attribute">width</span>=<span class="value">"600"</span>
+    <span class="attribute">height</span>=<span class="value">"450"</span>
+    <span class="attribute">style</span>=<span class="value">"border:0;"</span>
+    <span class="attribute">allowfullscreen</span>=<span class="value">""</span>
+    <span class="attribute">loading</span>=<span class="value">"lazy"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>Vimeo</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;iframe</span>
+    <span class="attribute">src</span>=<span class="value">"https://player.vimeo.com/video/VIDEO_ID"</span>
+    <span class="attribute">width</span>=<span class="value">"640"</span>
+    <span class="attribute">height</span>=<span class="value">"360"</span>
+    <span class="attribute">frameborder</span>=<span class="value">"0"</span>
+    <span class="attribute">allow</span>=<span class="value">"autoplay; fullscreen; picture-in-picture"</span>
+    <span class="attribute">allowfullscreen</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                                </div>
+                                  </div>
+                                                        <div class="carte-type">
+                                <h4>Spotify</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;iframe</span>
+    <span class="attribute">src</span>=<span class="value">"https://open.spotify.com/embed/track/TRACK_ID"</span>
+    <span class="attribute">width</span>=<span class="value">"300"</span>
+    <span class="attribute">height</span>=<span class="value">"380"</span>
+    <span class="attribute">frameborder</span>=<span class="value">"0"</span>
+    <span class="attribute">allowtransparency</span>=<span class="value">"true"</span>
+    <span class="attribute">allow</span>=<span class="value">"encrypted-media"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 14.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Page avec intégrations</h4>
+                            <p><strong>Objectif :</strong> Créer une page avec diverses intégrations.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Intégrez une vidéo YouTube</li>
+                                    <li>Intégrez une carte Google Maps de Madagascar</li>
+                                    <li>Intégrez un PDF</li>
+                                    <li>Utilisez loading="lazy" pour les performances</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Iframe sécurisé</h4>
+                            <p><strong>Objectif :</strong> Utiliser sandbox pour sécuriser un iframe.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une page simple avec un formulaire</li>
+                                    <li>Intégrez cette page dans une autre via iframe</li>
+                                    <li>Utilisez sandbox pour n'autoriser que les formulaires</li>
+                                    <li>Testez le comportement</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 15 : MICRODONNÉES ===== -->
+            <article class="lecon" id="lecon15">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 15</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">📊 Microdonnées et Schema.org</h2>
+                    <p class="lecon-description">Structurer les données pour les moteurs de recherche</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 15.1 Qu'est-ce que les microdonnées ?</h3>
+
+                        <div class="definition-box">
+                            <p>Les <strong>microdonnées</strong> sont une façon d'ajouter des informations structurées dans une page HTML pour aider les moteurs de recherche à comprendre le contenu.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">🎯</div>
+                            <div class="encart-content">
+                                <strong>Résultat :</strong> Les microdonnées permettent d'obtenir des <strong>rich snippets</strong> (résultats enrichis) dans Google : étoiles d'avis, prix, événements, etc.
+                            </div>
+                        </div>
+
+                        <p><strong>Vocabulaire standard :</strong> <a href="https://schema.org" target="_blank">Schema.org</a> (projet commun de Google, Microsoft, Yahoo, Yandex)</p>
+                    </div>
+
+                    <!-- SECTION 2: Syntaxe des microdonnées -->
+                    <div class="lecon-section">
+                        <h3>📝 15.2 Syntaxe des microdonnées</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Attribut</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>itemscope</code></td>
+                                    <td>Déclare un élément contenant des microdonnées</td>
+                                    <td><code>&lt;div itemscope&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>itemtype</code></td>
+                                    <td>Type de l'élément (URL Schema.org)</td>
+                                    <td><code>itemtype="https://schema.org/Product"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>itemprop</code></td>
+                                    <td>Propriété de l'élément</td>
+                                    <td><code>itemprop="name"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>itemid</code></td>
+                                    <td>Identifiant unique global</td>
+                                    <td><code>itemid="sku:12345"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>itemref</code></td>
+                                    <td>Référence à d'autres éléments</td>
+                                    <td><code>itemref="adresse"</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;div</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/Product"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h1</span> <span class="attribute">itemprop</span>=<span class="value">"name"</span><span class="tag">&gt;</span>Smartphone XYZ<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;img</span> <span class="attribute">itemprop</span>=<span class="value">"image"</span> <span class="attribute">src</span>=<span class="value">"smartphone.jpg"</span> <span class="attribute">alt</span>=<span class="value">"Smartphone"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attribute">itemprop</span>=<span class="value">"description"</span><span class="tag">&gt;</span>Dernier modèle avec écran HD<span class="tag">&lt;/p&gt;</span>
+    
+    <span class="tag">&lt;div</span> <span class="attribute">itemprop</span>=<span class="value">"offers"</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/Offer"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"price"</span><span class="tag">&gt;</span>299<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"priceCurrency"</span><span class="tag">&gt;</span>EUR<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;link</span> <span class="attribute">itemprop</span>=<span class="value">"availability"</span> <span class="attribute">href</span>=<span class="value">"https://schema.org/InStock"</span><span class="tag">&gt;</span>En stock
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Types courants -->
+                    <div class="lecon-section">
+                        <h3>📋 15.3 Types Schema.org courants</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Propriétés courantes</th>
+                                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>Product</code></td>
+                                    <td>Produit</td>
+                                    <td>name, description, image, offers, brand, review</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Offer</code></td>
+                                    <td>Offre (prix, disponibilité)</td>
+                                    <td>price, priceCurrency, availability, seller</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Review</code></td>
+                                    <td>Avis</td>
+                                    <td>reviewRating, author, reviewBody</td>
+                                </tr>
+                                <tr>
+                                    <td><code>AggregateRating</code></td>
+                                    <td>Note moyenne</td>
+                                    <td>ratingValue, reviewCount, bestRating</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Person</code></td>
+                                    <td>Personne</td>
+                                    <td>name, email, telephone, address, jobTitle</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Organization</code></td>
+                                    <td>Organisation</td>
+                                    <td>name, url, logo, address, email</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Event</code></td>
+                                    <td>Événement</td>
+                                    <td>name, startDate, endDate, location, description</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Place</code></td>
+                                    <td>Lieu</td>
+                                    <td>name, address, geo</td>
+                                </tr>
+                                <tr>
+                                    <td><code>LocalBusiness</code></td>
+                                    <td>Commerce local</td>
+                                    <td>name, address, telephone, openingHours</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Recipe</code></td>
+                                    <td>Recette</td>
+                                    <td>name, recipeIngredient, recipeInstructions, cookTime</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Article</code></td>
+                                    <td>Article</td>
+                                    <td>headline, author, datePublished, articleBody</td>
+                                </tr>
+                                <tr>
+                                    <td><code>BreadcrumbList</code></td>
+                                    <td>Fil d'Ariane</td>
+                                    <td>itemListElement (avec ListItem)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- SECTION 4: Exemples concrets -->
+                    <div class="lecon-section">
+                        <h3>📌 15.4 Exemples concrets</h3>
+
+                        <h4>📦 Produit avec avis</h4>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;div</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/Product"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h2</span> <span class="attribute">itemprop</span>=<span class="value">"name"</span><span class="tag">&gt;</span>Smartphone Pro Max<span class="tag">&lt;/h2&gt;</span>
+    
+    <span class="tag">&lt;div</span> <span class="attribute">itemprop</span>=<span class="value">"aggregateRating"</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/AggregateRating"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"ratingValue"</span><span class="tag">&gt;</span>4.5<span class="tag">&lt;/span&gt;</span>/5
+        (<span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"reviewCount"</span><span class="tag">&gt;</span>128<span class="tag">&lt;/span&gt;</span> avis)
+    <span class="tag">&lt;/div&gt;</span>
+    
+    <span class="tag">&lt;div</span> <span class="attribute">itemprop</span>=<span class="value">"offers"</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/Offer"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"price"</span><span class="tag">&gt;</span>899<span class="tag">&lt;/span&gt;</span> 
+        <span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"priceCurrency"</span><span class="tag">&gt;</span>EUR<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;link</span> <span class="attribute">itemprop</span>=<span class="value">"availability"</span> <span class="attribute">href</span>=<span class="value">"https://schema.org/InStock"</span><span class="tag">&gt;</span>En stock
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+                        </div>
+
+                        <h4>👤 Personne</h4>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;div</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/Person"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h2</span> <span class="attribute">itemprop</span>=<span class="value">"name"</span><span class="tag">&gt;</span>Père Pedro Pablo Opeka<span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;img</span> <span class="attribute">itemprop</span>=<span class="value">"image"</span> <span class="attribute">src</span>=<span class="value">"pedro.jpg"</span> <span class="attribute">alt</span>=<span class="value">"Père Pedro"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attribute">itemprop</span>=<span class="value">"jobTitle"</span><span class="tag">&gt;</span>Missionnaire<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">itemprop</span>=<span class="value">"address"</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/PostalAddress"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"addressLocality"</span><span class="tag">&gt;</span>Antananarivo<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"addressCountry"</span><span class="tag">&gt;</span>Madagascar<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+                        </div>
+
+                        <h4>📅 Événement</h4>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;div</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/Event"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h2</span> <span class="attribute">itemprop</span>=<span class="value">"name"</span><span class="tag">&gt;</span>Concert de musique malgache<span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;time</span> <span class="attribute">itemprop</span>=<span class="value">"startDate"</span> <span class="attribute">datetime</span>=<span class="value">"2026-07-15T20:00"</span><span class="tag">&gt;</span>
+        15 juillet 2026, 20h00
+    <span class="tag">&lt;/time&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">itemprop</span>=<span class="value">"location"</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/Place"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"name"</span><span class="tag">&gt;</span>Salle de concert<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attribute">itemprop</span>=<span class="value">"address"</span><span class="tag">&gt;</span>Antananarivo<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"billetterie.html"</span> <span class="attribute">itemprop</span>=<span class="value">"offers"</span><span class="tag">&gt;</span>Billets<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+                        </div>
+       <h4>🍽️ Restaurant</h4>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;div</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/Restaurant"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h2</span> <span class="attribute">itemprop</span>=<span class="value">"name"</span><span class="tag">&gt;</span>Le Malagasy<span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attribute">itemprop</span>=<span class="value">"servesCuisine"</span><span class="tag">&gt;</span>Cuisine traditionnelle malgache<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">itemprop</span>=<span class="value">"address"</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/PostalAddress"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"streetAddress"</span><span class="tag">&gt;</span>Rue de l'Indépendance<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"addressLocality"</span><span class="tag">&gt;</span>Antananarivo<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"telephone"</span><span class="tag">&gt;</span>+261 34 12 345 67<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">itemprop</span>=<span class="value">"priceRange"</span> <span class="attribute">content</span>=<span class="value">"€€"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+                        </div>
+
+                        <h4>📰 Article</h4>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;article</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/Article"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h2</span> <span class="attribute">itemprop</span>=<span class="value">"headline"</span><span class="tag">&gt;</span>Comment apprendre le HTML<span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;img</span> <span class="attribute">itemprop</span>=<span class="value">"image"</span> <span class="attribute">src</span>=<span class="value">"html.jpg"</span> <span class="attribute">alt</span>=<span class="value">"HTML"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attribute">itemprop</span>=<span class="value">"description"</span><span class="tag">&gt;</span>Guide complet pour débutants<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">itemprop</span>=<span class="value">"author"</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/Person"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;span</span> <span class="attribute">itemprop</span>=<span class="value">"name"</span><span class="tag">&gt;</span>Jean Dupont<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;time</span> <span class="attribute">itemprop</span>=<span class="value">"datePublished"</span> <span class="attribute">datetime</span>=<span class="value">"2026-03-16"</span><span class="tag">&gt;</span>16 mars 2026<span class="tag">&lt;/time&gt;</span>
+<span class="tag">&lt;/article&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Outils de test -->
+                    <div class="lecon-section">
+                        <h3>🔧 15.5 Outils de test</h3>
+
+                        <p>Pour valider vos microdonnées :</p>
+                        <ul>
+                            <li><strong>Google Rich Results Test :</strong> https://search.google.com/test/rich-results</li>
+                            <li><strong>Schema Markup Validator :</strong> https://validator.schema.org/</li>
+                            <li><strong>Google Search Console :</strong> Pour voir les performances</li>
+                        </ul>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Astuce :</strong> Après avoir ajouté des microdonnées, testez toujours avec les outils Google pour vérifier que tout est correct.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 15.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Fiche produit</h4>
+                            <p><strong>Objectif :</strong> Créer une fiche produit avec microdonnées.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Choisissez un produit (téléphone, ordinateur, etc.)</li>
+                                    <li>Ajoutez itemscope et itemtype Product</li>
+                                    <li>Ajoutez name, description, image</li>
+                                    <li>Ajoutez une offre (price, priceCurrency, availability)</li>
+                                    <li>Ajoutez des avis (aggregateRating)</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Page d'organisation</h4>
+                            <p><strong>Objectif :</strong> Créer une page pour USVPA Université.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Utilisez Organization</li>
+                                    <li>Ajoutez name, url, logo, address, telephone</li>
+                                    <li>Ajoutez les fondateurs (Person)</li>
+                                    <li>Ajoutez les cours proposés (Course)</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Page d'événement</h4>
+                            <p><strong>Objectif :</strong> Créer un événement avec microdonnées.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un événement (concert, conférence, etc.)</li>
+                                    <li>Ajoutez name, startDate, endDate</li>
+                                    <li>Ajoutez location (Place avec address)</li>
+                                    <li>Ajoutez offers (billetterie)</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== EXERCICES RÉCAPITULATIFS ===== -->
+            <section class="exercices-recap">
+                <h2 class="section-title">🏆 Projet récapitulatif (Leçons 11-15)</h2>
+
+                <div class="recap-card">
+                    <h3>Créez un site d'organisation avec microdonnées</h3>
+                    <p>Utilisez toutes les notions avancées apprises.</p>
+
+                    <h4>Structure demandée :</h4>
+                    <ul>
+                        <li><strong>Page d'accueil</strong> avec meta tags SEO complets</li>
+                        <li><strong>Présentation de l'organisation</strong> avec microdonnées Organization</li>
+                        <li><strong>Fiches produits/services</strong> avec Product, Offer, AggregateRating</li>
+                        <li><strong>Page d'équipe</strong> avec Person pour chaque membre</li>
+                        <li><strong>Page d'événements</strong> avec Event</li>
+                        <li><strong>Iframe sécurisé</strong> pour intégrer une carte ou une vidéo</li>
+                        <li><strong>Accessibilité</strong> : ARIA, labels, navigation clavier</li>
+                        <li><strong>Attributs data-*</strong> pour stocker des informations</li>
+                    </ul>
+
+                    <details>
+                        <summary>Voir les consignes détaillées</summary>
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- Structure de base --&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute">lang</span>=<span class="value">"fr"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="comment">&lt;!-- Meta tags SEO complets --&gt;</span>
+    <span class="comment">&lt;!-- Open Graph --&gt;</span>
+    <span class="comment">&lt;!-- Twitter Cards --&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    <span class="comment">&lt;!-- Header avec navigation (aria) --&gt;</span>
+    
+    <span class="comment">&lt;!-- Main avec microdonnées Organization --&gt;</span>
+    <span class="tag">&lt;main</span> <span class="attribute">itemscope</span> <span class="attribute">itemtype</span>=<span class="value">"https://schema.org/Organization"</span><span class="tag">&gt;</span>
+        
+        <span class="comment">&lt;!-- Section produits avec data-* --&gt;</span>
+        
+        <span class="comment">&lt;!-- Section équipe avec Person --&gt;</span>
+        
+        <span class="comment">&lt;!-- Section événements avec Event --&gt;</span>
+        
+        <span class="comment">&lt;!-- Iframe sécurisé --&gt;</span>
+        
+    <span class="tag">&lt;/main&gt;</span>
+    
+    <span class="comment">&lt;!-- Footer accessible --&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+                        </div>
+                    </details>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <a href="b.html" class="pagination-prev"><i class="fas fa-arrow-left"></i> Leçons 6-10</a>
+                <div class="pagination-links">
+                    <a href="a.html">1</a>
+                    <a href="b.html">2</a>
+                    <a href="c.html" class="active">3</a>
+                    <a href="d.html">4</a>
+                </div>
+                <a href="d.html" class="pagination-next">Leçons 16-20 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+                                                                                    </html>
+                                                                                                                   
+                                   
