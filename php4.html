@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Master - Leçons 16 à 20</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="php4.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">&#60;?&#62;</span>
+                    <div class="logo-text">
+                        <span class="logo-main">PHP MASTER</span>
+                        <span class="logo-sub">Leçons 16 à 20 : Base de données et POO</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 16-20 sur 20</span>
+                <span class="progress-percent">100%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%"></div>
+            </div>
+            <div class="progress-nav">
+                <a href="php3.html" class="progress-prev"><i class="fas fa-arrow-left"></i> Leçons 11-15</a>
+                <span class="progress-current">Leçons 16-20</span>
+                <span class="progress-next disabled">Fin du cours <i class="fas fa-check-circle"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 16-20 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 16 à 20 : Base de données et POO</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon16" class="sommaire-card">
+                    <span class="lecon-numero">16</span>
+                    <h3>Connexion MySQL</h3>
+                    <p>PDO, connexion, erreurs</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon17" class="sommaire-card">
+                    <span class="lecon-numero">17</span>
+                    <h3>Requêtes SQL avec PDO</h3>
+                    <p>query, prepare, execute</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon18" class="sommaire-card">
+                    <span class="lecon-numero">18</span>
+                    <h3>CRUD complet</h3>
+                    <p>Create, Read, Update, Delete</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                </a>
+                <a href="#lecon19" class="sommaire-card">
+                    <span class="lecon-numero">19</span>
+                    <h3>Programmation Orientée Objet</h3>
+                    <p>Classes, objets, méthodes</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon20" class="sommaire-card projet">
+                    <span class="lecon-numero">20</span>
+                    <h3>Projet final</h3>
+                    <p>Application complète</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 60 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 16 : CONNEXION MYSQL ===== -->
+            <article class="lecon" id="lecon16">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 16</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">🗄️ Connexion MySQL avec PDO</h2>
+                    <p class="lecon-description">Se connecter à une base de données</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 16.1 Qu'est-ce que PDO ?</h3>
+
+                        <div class="definition-box">
+                            <p><strong>PDO (PHP Data Objects)</strong> est une extension PHP qui fournit une interface uniforme pour accéder à différentes bases de données (MySQL, PostgreSQL, SQLite, etc.).</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Avantages de PDO :</strong>
+                                <ul>
+                                    <li>Sécurisé (requêtes préparées contre injections SQL)</li>
+                                    <li>Multi-base de données (même code pour MySQL, PostgreSQL...)</li>
+                                    <li>Gestion d'erreurs avancée (exceptions)</li>
+                                    <li>Réutilisable</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Configuration -->
+                    <div class="lecon-section">
+                        <h3>⚙️ 16.2 Paramètres de connexion</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+// Paramètres de connexion
+$host = 'localhost';      // Serveur MySQL
+$dbname = 'ma_base';      // Nom de la base
+$username = 'root';       // Nom d'utilisateur
+$password = '';           // Mot de passe
+$charset = 'utf8mb4';     // Encodage
+
+// DSN (Data Source Name)
+$dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+
+// Options PDO
+$options = [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Lance des exceptions
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, // Retourne tableau associatif
+    PDO::ATTR_EMULATE_PREPARES => false, // Désactive l'émulation des requêtes préparées
+];
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Connexion -->
+                    <div class="lecon-section">
+                        <h3>🔌 16.3 Établir la connexion</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+try {
+    // Tentative de connexion
+    $pdo = new PDO($dsn, $username, $password, $options);
+    
+    echo "Connexion réussie à la base de données !";
+    
+} catch (PDOException $e) {
+    // En cas d'erreur de connexion
+    die("Erreur de connexion : " . $e->getMessage());
+}
+
+// Plus tard, fermer la connexion (optionnel, PHP le fait automatiquement)
+$pdo = null;
+?></span></pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> Mettez vos paramètres de connexion dans un fichier séparé (ex: config.php) et incluez-le avec <code>require_once</code>.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Fichier de configuration -->
+                    <div class="lecon-section">
+                        <h3>📁 16.4 Fichier config.php</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+// config.php
+$host = 'localhost';
+$dbname = 'mon_site';
+$username = 'root';
+$password = '';
+$charset = 'utf8mb4';
+
+$dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+
+$options = [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES => false,
+];
+
+try {
+    $pdo = new PDO($dsn, $username, $password, $options);
+} catch (PDOException $e) {
+    // Log l'erreur dans un fichier (ne pas afficher en production)
+    error_log("Erreur BDD: " . $e->getMessage());
+    die("Désolé, une erreur technique est survenue.");
+}
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 16.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Première connexion</h4>
+                            <p><strong>Objectif :</strong> Créer une connexion à MySQL.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une base de données "test" dans phpMyAdmin</li>
+                                    <li>Créez un fichier config.php avec les paramètres de connexion</li>
+                                    <li>Testez la connexion avec try/catch</li>
+                                    <li>Affichez un message de succès ou d'erreur</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 17 : REQUÊTES SQL AVEC PDO ===== -->
+            <article class="lecon" id="lecon17">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 17</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">📊 Requêtes SQL avec PDO</h2>
+                    <p class="lecon-description">Interroger la base de données</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Créer une table -->
+                    <div class="lecon-section">
+                        <h3>🏗️ 17.1 Créer une table</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+require_once 'config.php';
+
+$sql = "CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    age INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
+
+try {
+    $pdo->exec($sql);
+    echo "Table créée avec succès";
+} catch (PDOException $e) {
+    echo "Erreur : " . $e->getMessage();
+}
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: query() (simple) -->
+                    <div class="lecon-section">
+                        <h3>🔍 17.2 query() pour SELECT</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+require_once 'config.php';
+
+// Requête simple (sans paramètres utilisateur)
+$sql = "SELECT * FROM users ORDER BY created_at DESC";
+
+$stmt = $pdo->query($sql);
+
+// Récupérer tous les résultats
+$users = $stmt->fetchAll();
+
+// Afficher les résultats
+foreach ($users as $user) {
+    echo $user['nom'] . " - " . $user['email'] . "<br>";
+}
+
+// Autres méthodes de fetch
+$stmt = $pdo->query("SELECT * FROM users WHERE id = 1");
+$user = $stmt->fetch(); // Un seul résultat
+
+$count = $stmt->rowCount(); // Nombre de lignes affectées
+?></span></pre>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Méthode</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>fetch()</code></td><td>Retourne la prochaine ligne</td></tr>
+                                <tr><td><code>fetchAll()</code></td><td>Retourne toutes les lignes</td></tr>
+                                <tr><td><code>fetchColumn()</code></td><td>Retourne une seule colonne</td></tr>
+                                <tr><td><code>rowCount()</code></td><td>Nombre de lignes</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- SECTION 3: Requêtes préparées (sécurisées) -->
+                    <div class="lecon-section">
+                        <h3>🛡️ 17.3 Requêtes préparées (prepare/execute)</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+require_once 'config.php';
+
+// INSERT avec paramètres
+$sql = "INSERT INTO users (nom, email, age) VALUES (:nom, :email, :age)";
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute([
+    ':nom' => 'Jean Dupont',
+    ':email' => 'jean@email.com',
+    ':age' => 25
+]);
+
+echo "Utilisateur ajouté avec l'ID : " . $pdo->lastInsertId();
+
+// SELECT avec paramètre
+$sql = "SELECT * FROM users WHERE age > :age_min";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([':age_min' => 18]);
+$majeurs = $stmt->fetchAll();
+
+// Plusieurs insertions
+$utilisateurs = [
+    ['nom' => 'Marie', 'email' => 'marie@email.com', 'age' => 22],
+    ['nom' => 'Pierre', 'email' => 'pierre@email.com', 'age' => 30],
+];
+
+$sql = "INSERT INTO users (nom, email, age) VALUES (:nom, :email, :age)";
+$stmt = $pdo->prepare($sql);
+
+foreach ($utilisateurs as $user) {
+    $stmt->execute($user);
+}
+?></span></pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Pourquoi les requêtes préparées ?</strong> Elles protègent contre les injections SQL. Ne concaténez JAMAIS directement des variables utilisateur dans vos requêtes !
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 17.4 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Insérer des données</h4>
+                            <p><strong>Objectif :</strong> Insérer plusieurs utilisateurs.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un tableau d'au moins 3 utilisateurs</li>
+                                    <li>Utilisez une requête préparée pour les insérer</li>
+                                    <li>Affichez le nombre d'insertions réussies</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 18 : CRUD COMPLET ===== -->
+            <article class="lecon" id="lecon18">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 18</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">🔄 CRUD complet</h2>
+                    <p class="lecon-description">Create, Read, Update, Delete</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Create (INSERT) -->
+                    <div class="lecon-section">
+                        <h3>➕ 18.1 Create - Ajouter</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+function ajouterUtilisateur($pdo, $nom, $email, $age) {
+    $sql = "INSERT INTO users (nom, email, age) VALUES (:nom, :email, :age)";
+    $stmt = $pdo->prepare($sql);
+    
+    try {
+        $stmt->execute([
+            ':nom' => $nom,
+            ':email' => $email,
+            ':age' => $age
+        ]);
+        return $pdo->lastInsertId();
+    } catch (PDOException $e) {
+        // Gérer l'erreur (email en double, etc.)
+        return false;
+    }
+}
+
+// Utilisation
+$id = ajouterUtilisateur($pdo, 'Alice', 'alice@email.com', 28);
+if ($id) {
+    echo "Utilisateur ajouté avec l'ID $id";
+} else {
+    echo "Erreur lors de l'ajout";
+}
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Read (SELECT) -->
+                    <div class="lecon-section">
+                        <h3>📖 18.2 Read - Lire</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+// Récupérer un utilisateur par ID
+function getUtilisateurById($pdo, $id) {
+    $sql = "SELECT * FROM users WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([':id' => $id]);
+    return $stmt->fetch(); // false si non trouvé
+}
+
+// Récupérer tous les utilisateurs
+function getAllUtilisateurs($pdo) {
+    $sql = "SELECT * FROM users ORDER BY created_at DESC";
+    $stmt = $pdo->query($sql);
+    return $stmt->fetchAll();
+}
+
+// Récupérer avec filtre
+function getUtilisateursByAge($pdo, $ageMin, $ageMax) {
+    $sql = "SELECT * FROM users WHERE age BETWEEN :min AND :max";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([':min' => $ageMin, ':max' => $ageMax]);
+    return $stmt->fetchAll();
+}
+
+$user = getUtilisateurById($pdo, 1);
+if ($user) {
+    echo $user['nom'] . ' - ' . $user['email'];
+}
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Update -->
+                    <div class="lecon-section">
+                        <h3>✏️ 18.3 Update - Modifier</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+function updateUtilisateur($pdo, $id, $nom, $email, $age) {
+    $sql = "UPDATE users 
+            SET nom = :nom, email = :email, age = :age 
+            WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    
+    return $stmt->execute([
+        ':id' => $id,
+        ':nom' => $nom,
+        ':email' => $email,
+        ':age' => $age
+    ]);
+}
+
+function updateAge($pdo, $id, $age) {
+    $sql = "UPDATE users SET age = :age WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    return $stmt->execute([':id' => $id, ':age' => $age]);
+}
+
+// Utilisation
+if (updateAge($pdo, 1, 26)) {
+    echo "Âge mis à jour";
+}
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Delete -->
+                    <div class="lecon-section">
+                        <h3>🗑️ 18.4 Delete - Supprimer</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+function deleteUtilisateur($pdo, $id) {
+    $sql = "DELETE FROM users WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    return $stmt->execute([':id' => $id]);
+}
+
+function deleteAllUsers($pdo) {
+    return $pdo->exec("DELETE FROM users");
+}
+
+// Supprimer avec vérification
+$id = 5;
+if (deleteUtilisateur($pdo, $id)) {
+    echo "Utilisateur $id supprimé";
+} else {
+    echo "Erreur lors de la suppression";
+}
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exemple complet -->
+                    <div class="lecon-section">
+                        <h3>📋 18.5 Exemple : Gestion des utilisateurs</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+// users.php
+require_once 'config.php';
+
+$message = '';
+$error = '';
+
+// Traitement du formulaire d'ajout
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+    if ($_POST['action'] === 'add') {
+        $nom = $_POST['nom'] ?? '';
+        $email = $_POST['email'] ?? '';
+        $age = $_POST['age'] ?? '';
+        
+        if (empty($nom) || empty($email)) {
+            $error = "Nom et email requis";
+        } else {
+            $id = ajouterUtilisateur($pdo, $nom, $email, $age);
+            if ($id) {
+                $message = "Utilisateur ajouté avec succès";
+            } else {
+                $error = "Email déjà utilisé ou erreur";
+            }
+        }
+    } elseif ($_POST['action'] === 'delete' && isset($_POST['id'])) {
+        if (deleteUtilisateur($pdo, $_POST['id'])) {
+            $message = "Utilisateur supprimé";
+        }
+    }
+}
+
+// Récupérer tous les utilisateurs
+$users = getAllUtilisateurs($pdo);
+?>
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Gestion des utilisateurs&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Gestion des utilisateurs&lt;/h1&gt;
+    
+    &lt;?php if ($message): ?&gt;
+        &lt;div class="success"&gt;&lt;?= $message ?&gt;&lt;/div&gt;
+    &lt;?php endif; ?&gt;
+    
+    &lt;?php if ($error): ?&gt;
+        &lt;div class="error"&gt;&lt;?= $error ?&gt;&lt;/div&gt;
+    &lt;?php endif; ?&gt;
+    
+    &lt;h2&gt;Ajouter un utilisateur&lt;/h2&gt;
+    &lt;form method="POST"&gt;
+        &lt;input type="hidden" name="action" value="add"&gt;
+        &lt;input type="text" name="nom" placeholder="Nom" required&gt;
+        &lt;input type="email" name="email" placeholder="Email" required&gt;
+        &lt;input type="number" name="age" placeholder="Âge"&gt;
+        &lt;button type="submit"&gt;Ajouter&lt;/button&gt;
+    &lt;/form&gt;
+    
+    &lt;h2&gt;Liste des utilisateurs&lt;/h2&gt;
+    &lt;table border="1"&gt;
+        &lt;tr&gt;
+            &lt;th&gt;ID&lt;/th&gt;
+            &lt;th&gt;Nom&lt;/th&gt;
+            &lt;th&gt;Email&lt;/th&gt;
+            &lt;th&gt;Âge&lt;/th&gt;
+            &lt;th&gt;Action&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;?php foreach ($users as $user): ?&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;?= $user['id'] ?&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;?= htmlspecialchars($user['nom']) ?&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;?= htmlspecialchars($user['email']) ?&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;?= $user['age'] ?&gt;&lt;/td&gt;
+            &lt;td&gt;
+                &lt;a href="edit.php?id=&lt;?= $user['id'] ?&gt;"&gt;Modifier&lt;/a&gt;
+                &lt;form method="POST" style="display:inline"&gt;
+                    &lt;input type="hidden" name="action" value="delete"&gt;
+                    &lt;input type="hidden" name="id" value="&lt;?= $user['id'] ?&gt;"&gt;
+                    &lt;button type="submit" onclick="return confirm('Supprimer ?')"&gt;Supprimer&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;?php endforeach; ?&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 18.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Page d'édition</h4>
+                            <p><strong>Objectif :</strong> Créer une page edit.php pour modifier un utilisateur.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une page edit.php qui reçoit un ID en paramètre</li>
+                                    <li>Affichez un formulaire pré-rempli avec les données</li>
+                                    <li>Traitez la mise à jour à la soumission</li>
+                                    <li>Redirigez vers users.php après modification</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 19 : PROGRAMMATION ORIENTÉE OBJET ===== -->
+            <article class="lecon" id="lecon19">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 19</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">🧩 Programmation Orientée Objet</h2>
+                    <p class="lecon-description">Classes, objets, méthodes en PHP</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 19.1 Qu'est-ce que la POO ?</h3>
+
+                        <div class="definition-box">
+                            <p>La <strong>Programmation Orientée Objet (POO)</strong> est un paradigme qui organise le code autour d'objets qui contiennent des données (propriétés) et des comportements (méthodes).</p>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Créer une classe -->
+                    <div class="lecon-section">
+                        <h3>🏗️ 19.2 Créer une classe</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+class Utilisateur {
+    // Propriétés
+    public $nom;
+    public $email;
+    private $motDePasse; // Privé (accessible seulement dans la classe)
+    protected $role;     // Protégé (accessible dans la classe et les classes filles)
+    
+    // Constructeur (appelé à la création)
+    public function __construct($nom, $email, $motDePasse) {
+        $this->nom = $nom;
+        $this->email = $email;
+        $this->setMotDePasse($motDePasse);
+        $this->role = 'user';
+    }
+    
+    // Méthodes
+    public function sePresenter() {
+        return "Bonjour, je m'appelle " . $this->nom;
+    }
+    
+    public function setMotDePasse($mdp) {
+        // Hacher le mot de passe
+        $this->motDePasse = password_hash($mdp, PASSWORD_DEFAULT);
+    }
+    
+    public function verifierMotDePasse($mdp) {
+        return password_verify($mdp, $this->motDePasse);
+    }
+    
+    // Getter
+    public function getRole() {
+        return $this->role;
+    }
+}
+
+// Créer un objet (instance)
+$user = new Utilisateur("Jean", "jean@email.com", "123456");
+echo $user->sePresenter(); // "Bonjour, je m'appelle Jean"
+
+// Accès aux propriétés publiques
+echo $user->nom; // "Jean"
+// echo $user->motDePasse; // Erreur ! (privé)
+?></span></pre>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Visibilité</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>public</code></td><td>Accessible partout</td></tr>
+                                <tr><td><code>private</code></td><td>Accessible seulement dans la classe</td></tr>
+                                <tr><td><code>protected</code></td><td>Accessible dans la classe et les classes filles</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- SECTION 3: Héritage -->
+                    <div class="lecon-section">
+                        <h3>👪 19.3 Héritage (extends)</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+class Admin extends Utilisateur {
+    public function __construct($nom, $email, $motDePasse) {
+        parent::__construct($nom, $email, $motDePasse);
+        $this->role = 'admin'; // Propriété protégée accessible
+    }
+    
+    public function administrer() {
+        return "L'administrateur " . $this->nom . " gère le site";
+    }
+    
+    // Surcharge de méthode (override)
+    public function sePresenter() {
+        return parent::sePresenter() . " (Admin)";
+    }
+}
+
+$admin = new Admin("Pierre", "pierre@site.com", "admin123");
+echo $admin->sePresenter(); // "Bonjour, je m'appelle Pierre (Admin)"
+echo $admin->administrer();
+echo $admin->getRole(); // "admin"
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Classes avec base de données -->
+                    <div class="lecon-section">
+                        <h3>🗄️ 19.4 Exemple avec PDO</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+class UserModel {
+    private $pdo;
+    
+    public function __construct($pdo) {
+        $this->pdo = $pdo;
+    }
+    
+    public function findById($id) {
+        $sql = "SELECT * FROM users WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([':id' => $id]);
+        return $stmt->fetch();
+    }
+    
+    public function findAll() {
+        $sql = "SELECT * FROM users ORDER BY created_at DESC";
+        return $this->pdo->query($sql)->fetchAll();
+    }
+    
+    public function create($data) {
+        $sql = "INSERT INTO users (nom, email, age) VALUES (:nom, :email, :age)";
+        $stmt = $this->pdo->prepare($sql);
+        
+        if ($stmt->execute($data)) {
+            return $this->pdo->lastInsertId();
+        }
+        return false;
+    }
+    
+    public function update($id, $data) {
+        $sql = "UPDATE users SET nom = :nom, email = :email, age = :age WHERE id = :id";
+        $data[':id'] = $id;
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute($data);
+    }
+    
+    public function delete($id) {
+        $sql = "DELETE FROM users WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([':id' => $id]);
+    }
+}
+
+// Utilisation
+require_once 'config.php';
+$userModel = new UserModel($pdo);
+$users = $userModel->findAll();
+$user = $userModel->findById(1);
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 19.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Classe Produit</h4>
+                            <p><strong>Objectif :</strong> Créer une classe Produit.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une classe <code>Produit</code> avec nom, prix, stock</li>
+                                    <li>Ajoutez une méthode <code>afficher()</code> qui résume le produit</li>
+                                    <li>Ajoutez une méthode <code>vendre($quantite)</code> qui réduit le stock</li>
+                                    <li>Ajoutez une méthode <code>getValeurStock()</code> (prix * stock)</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 20 : PROJET FINAL ===== -->
+            <article class="lecon projet" id="lecon20">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre projet-bg">Chapitre 20</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 60 min</span>
+                        <span class="lecon-niveau projet">Projet final</span>
+                    </div>
+                    <h2 class="lecon-titre">🚀 Projet final</h2>
+                    <p class="lecon-description">Application complète de gestion de tâches</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Présentation -->
+                    <div class="lecon-section">
+                        <h3>🎯 20.1 Objectif du projet</h3>
+
+                        <p>Créer une application de gestion de tâches (Todo List) complète en utilisant <strong>toutes les notions PHP</strong> apprises.</p>
+
+                        <div class="encart-important" style="background: #388e3c;">
+                            <div class="encart-icon">🏆</div>
+                            <div class="encart-content">
+                                <strong>Compétences évaluées :</strong> Variables, tableaux, formulaires, sessions, base de données, PDO, CRUD, POO
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Structure de la base -->
+                    <div class="lecon-section">
+                        <h3>🗄️ 20.2 Structure de la base</h3>
+
+                        <div class="code-block">
+                            <pre><span class="sql">CREATE DATABASE todo_app CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE todo_app;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    status ENUM('pending', 'in_progress', 'completed') DEFAULT 'pending',
+    priority ENUM('low', 'medium', 'high') DEFAULT 'medium',
+    due_date DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    color VARCHAR(7) DEFAULT '#FF7A45',
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE task_categories (
+    task_id INT,
+    category_id INT,
+    PRIMARY KEY (task_id, category_id),
+    FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE,
+    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
+);</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Structure du projet -->
+                    <div class="lecon-section">
+                        <h3>📁 20.3 Structure du projet</h3>
+
+                        <div class="code-block">
+                            <pre>📁 todo-app/
+│
+├── index.php              # Accueil / Liste des tâches
+├── login.php              # Connexion
+├── register.php           # Inscription
+├── logout.php             # Déconnexion
+├── profile.php            # Profil utilisateur
+│
+├── config/
+│   └── database.php       # Connexion PDO
+│
+├── classes/
+│   ├── User.php           # Classe User
+│   ├── Task.php           # Classe Task
+│   ├── Category.php       # Classe Category
+│   └── Database.php       # Classe de base pour BDD
+│
+├── includes/
+│   ├── header.php         # En-tête commun
+│   ├── footer.php         # Pied de page
+│   └── auth.php           # Vérification authentification
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── app.js
+│
+└── uploads/               # (optionnel) Avatars</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Classe Database (exemple) -->
+                    <div class="lecon-section">
+                        <h3>🔧 20.4 Classe Database</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+// config/database.php
+class Database {
+    private static $instance = null;
+    private $pdo;
+    
+    private function __construct() {
+        $host = 'localhost';
+        $dbname = 'todo_app';
+        $username = 'root';
+        $password = '';
+        $charset = 'utf8mb4';
+        
+        $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+        $options = [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES => false,
+        ];
+        
+        try {
+            $this->pdo = new PDO($dsn, $username, $password, $options);
+        } catch (PDOException $e) {
+            error_log("Erreur de connexion: " . $e->getMessage());
+            die("Erreur technique, veuillez réessayer plus tard.");
+        }
+    }
+    
+    public static function getInstance() {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+     public function getConnection() {
+        return $this->pdo;
+    }
+    
+    // Méthode utilitaire pour les requêtes préparées
+    public function prepareAndExecute($sql, $params = []) {
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+        return $stmt;
+    }
+}
+
+// Utilisation
+// $db = Database::getInstance();
+// $pdo = $db->getConnection();
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Classe Task (exemple) -->
+                    <div class="lecon-section">
+                        <h3>📋 20.5 Classe Task</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+// classes/Task.php
+require_once __DIR__ . '/../config/database.php';
+
+class Task {
+    private $db;
+    
+    public function __construct() {
+        $this->db = Database::getInstance()->getConnection();
+    }
+    
+    public function getTasksByUser($userId, $status = null) {
+        $sql = "SELECT * FROM tasks WHERE user_id = :user_id";
+        $params = [':user_id' => $userId];
+        
+        if ($status) {
+            $sql .= " AND status = :status";
+            $params[':status'] = $status;
+        }
+        
+        $sql .= " ORDER BY 
+            CASE priority 
+                WHEN 'high' THEN 1 
+                WHEN 'medium' THEN 2 
+                WHEN 'low' THEN 3 
+            END,
+            due_date ASC,
+            created_at DESC";
+        
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute($params);
+        return $stmt->fetchAll();
+    }
+    
+    public function getTask($id, $userId) {
+        $sql = "SELECT * FROM tasks WHERE id = :id AND user_id = :user_id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([':id' => $id, ':user_id' => $userId]);
+        return $stmt->fetch();
+    }
+    
+    public function createTask($userId, $data) {
+        $sql = "INSERT INTO tasks (user_id, title, description, priority, due_date, status) 
+                VALUES (:user_id, :title, :description, :priority, :due_date, :status)";
+        
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute([
+            ':user_id' => $userId,
+            ':title' => $data['title'],
+            ':description' => $data['description'] ?? '',
+            ':priority' => $data['priority'] ?? 'medium',
+            ':due_date' => $data['due_date'] ?? null,
+            ':status' => $data['status'] ?? 'pending'
+        ]);
+    }
+    
+    public function updateTask($id, $userId, $data) {
+        $sql = "UPDATE tasks 
+                SET title = :title, 
+                    description = :description, 
+                    priority = :priority, 
+                    due_date = :due_date,
+                    status = :status
+                WHERE id = :id AND user_id = :user_id";
+        
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute([
+            ':id' => $id,
+            ':user_id' => $userId,
+            ':title' => $data['title'],
+            ':description' => $data['description'] ?? '',
+            ':priority' => $data['priority'] ?? 'medium',
+            ':due_date' => $data['due_date'] ?? null,
+            ':status' => $data['status'] ?? 'pending'
+        ]);
+    }
+    
+    public function deleteTask($id, $userId) {
+        $sql = "DELETE FROM tasks WHERE id = :id AND user_id = :user_id";
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute([':id' => $id, ':user_id' => $userId]);
+    }
+    
+    public function getStats($userId) {
+        $sql = "SELECT 
+                    COUNT(*) as total,
+                    SUM(CASE WHEN status = 'completed' THEN 1 ELSE 0 END) as completed,
+                    SUM(CASE WHEN status = 'pending' THEN 1 ELSE 0 END) as pending,
+                    SUM(CASE WHEN status = 'in_progress' THEN 1 ELSE 0 END) as in_progress
+                FROM tasks 
+                WHERE user_id = :user_id";
+        
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([':user_id' => $userId]);
+        return $stmt->fetch();
+    }
+}
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Page d'accueil (extrait) -->
+                    <div class="lecon-section">
+                        <h3>🏠 20.6 Page principale (index.php)</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+// index.php
+session_start();
+require_once 'includes/auth.php';
+require_once 'classes/Task.php';
+require_once 'classes/Category.php';
+
+$taskModel = new Task();
+$categoryModel = new Category();
+
+$filter = $_GET['filter'] ?? 'all';
+$tasks = $taskModel->getTasksByUser($_SESSION['user_id'], 
+    $filter !== 'all' ? $filter : null);
+$stats = $taskModel->getStats($_SESSION['user_id']);
+$categories = $categoryModel->getCategoriesByUser($_SESSION['user_id']);
+
+include 'includes/header.php';
+?>
+
+&lt;div class="dashboard"&gt;
+    &lt;h1&gt;Mes tâches&lt;/h1&gt;
+    
+    &lt;div class="stats"&gt;
+        &lt;div class="stat-card"&gt;
+            &lt;span class="stat-value"&gt;&lt;?= $stats['total'] ?&gt;&lt;/span&gt;
+            &lt;span class="stat-label"&gt;Total&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="stat-card"&gt;
+            &lt;span class="stat-value"&gt;&lt;?= $stats['completed'] ?&gt;&lt;/span&gt;
+            &lt;span class="stat-label"&gt;Terminées&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="stat-card"&gt;
+            &lt;span class="stat-value"&gt;&lt;?= $stats['pending'] ?&gt;&lt;/span&gt;
+            &lt;span class="stat-label"&gt;En attente&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="filters"&gt;
+        &lt;a href="?filter=all" class="btn &lt;?= $filter == 'all' ? 'active' : '' ?&gt;"&gt;Toutes&lt;/a&gt;
+        &lt;a href="?filter=pending" class="btn &lt;?= $filter == 'pending' ? 'active' : '' ?&gt;"&gt;En attente&lt;/a&gt;
+        &lt;a href="?filter=in_progress" class="btn &lt;?= $filter == 'in_progress' ? 'active' : '' ?&gt;"&gt;En cours&lt;/a&gt;
+        &lt;a href="?filter=completed" class="btn &lt;?= $filter == 'completed' ? 'active' : '' ?&gt;"&gt;Terminées&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;a href="task_form.php" class="btn-add"&gt;+ Nouvelle tâche&lt;/a&gt;
+    
+    &lt;div class="tasks-list"&gt;
+        &lt;?php foreach ($tasks as $task): ?&gt;
+            &lt;div class="task-card priority-&lt;?= $task['priority'] ?&gt;"&gt;
+                &lt;h3&gt;&lt;?= htmlspecialchars($task['title']) ?&gt;&lt;/h3&gt;
+                &lt;p&gt;&lt;?= nl2br(htmlspecialchars($task['description'])) ?&gt;&lt;/p&gt;
+                
+                &lt;div class="task-meta"&gt;
+                    &lt;span class="status status-&lt;?= $task['status'] ?&gt;"&gt;
+                        &lt;?= $task['status'] ?&gt;
+                    &lt;/span&gt;
+                    
+                    &lt;?php if ($task['due_date']): ?&gt;
+                        &lt;span class="due-date"&gt;
+                            📅 &lt;?= date('d/m/Y', strtotime($task['due_date'])) ?&gt;
+                        &lt;/span&gt;
+                    &lt;?php endif; ?&gt;
+                &lt;/div&gt;
+                
+                &lt;div class="task-actions"&gt;
+                    &lt;a href="task_edit.php?id=&lt;?= $task['id'] ?&gt;" class="btn-edit"&gt;Modifier&lt;/a&gt;
+                    &lt;a href="task_delete.php?id=&lt;?= $task['id'] ?&gt;" 
+                       class="btn-delete" 
+                       onclick="return confirm('Supprimer cette tâche ?')"&gt;Supprimer&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;?php endforeach; ?&gt;
+        
+        &lt;?php if (empty($tasks)): ?&gt;
+            &lt;p class="empty"&gt;Aucune tâche pour le moment.&lt;/p&gt;
+        &lt;?php endif; ?&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;?php include 'includes/footer.php'; ?&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Checklist finale -->
+                    <div class="lecon-section">
+                        <h3>✅ 20.7 Checklist des fonctionnalités</h3>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>Fonctionnalités de base</h4>
+                                <ul>
+                                    <li><input type="checkbox" checked disabled> Inscription / Connexion</li>
+                                    <li><input type="checkbox" checked disabled> Déconnexion</li>
+                                    <li><input type="checkbox" checked disabled> Créer une tâche</li>
+                                    <li><input type="checkbox" checked disabled> Lister les tâches</li>
+                                    <li><input type="checkbox" checked disabled> Modifier une tâche</li>
+                                    <li><input type="checkbox" checked disabled> Supprimer une tâche</li>
+                                    <li><input type="checkbox" checked disabled> Filtrer par statut</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Fonctionnalités avancées</h4>
+                                <ul>
+                                    <li><input type="checkbox" disabled> Catégories / Tags</li>
+                                    <li><input type="checkbox" disabled> Recherche</li>
+                                    <li><input type="checkbox" disabled> Upload de fichiers</li>
+                                    <li><input type="checkbox" disabled> API REST</li>
+                                    <li><input type="checkbox" disabled> Export CSV</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 8: Rendu final -->
+                    <div class="lecon-section exercices-recap">
+                        <h3>🎓 20.8 Félicitations !</h3>
+
+                        <p>Vous avez terminé les 20 leçons du cours PHP Master. Vous avez appris :</p>
+
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 30px 0;">
+                            <div style="background: #4F5B93; padding: 15px; border-radius: 8px; text-align: center; color: white;">
+                                <i class="fas fa-code" style="font-size: 2rem;"></i>
+                                <h4>Syntaxe</h4>
+                            </div>
+                            <div style="background: #4F5B93; padding: 15px; border-radius: 8px; text-align: center; color: white;">
+                                <i class="fas fa-table" style="font-size: 2rem;"></i>
+                                <h4>Tableaux</h4>
+                            </div>
+                            <div style="background: #4F5B93; padding: 15px; border-radius: 8px; text-align: center; color: white;">
+                                <i class="fas fa-database" style="font-size: 2rem;"></i>
+                                <h4>MySQL/PDO</h4>
+                            </div>
+                            <div style="background: #4F5B93; padding: 15px; border-radius: 8px; text-align: center; color: white;">
+                                <i class="fas fa-cube" style="font-size: 2rem;"></i>
+                                <h4>POO</h4>
+                            </div>
+                        </div>
+
+                        <div class="encart-important" style="background: #388e3c;">
+                            <div class="encart-icon">🏁</div>
+                            <div class="encart-content">
+                                <strong>Félicitations !</strong> Vous êtes maintenant un développeur PHP complet, capable de créer des applications web dynamiques avec base de données.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- ===== SECTION CERTIFICATION ===== -->
+    <section class="certification">
+        <div class="container">
+            <div class="certification-content">
+                <i class="fas fa-trophy certification-icon"></i>
+                <h2>Félicitations !</h2>
+                <p>Vous avez terminé les 20 leçons du cours PHP Master</p>
+                <p class="certification-stats">20 leçons • 250+ exemples • 15+ heures de contenu</p>
+                
+                <div class="certification-badges">
+                    <span class="badge">PHP</span>
+                    <span class="badge">MySQL</span>
+                    <span class="badge">PDO</span>
+                    <span class="badge">POO</span>
+                    <span class="badge">CRUD</span>
+                </div>
+                
+                <div class="certification-actions">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-home"></i> Retour à l'accueil
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fas fa-download"></i> Télécharger le certificat
+                    </a>
+                </div>
+            </div>
+        </div>
+  </section>
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <a href="php3.html" class="pagination-prev"><i class="fas fa-arrow-left"></i> Leçons 11-15</a>
+                <div class="pagination-links">
+                    <a href="php1.html">1</a>
+                    <a href="php2.html">2</a>
+                    <a href="php3.html">3</a>
+                    <a href="php4.html" class="active">4</a>
+                </div>
+                <span class="pagination-next disabled">Fin du cours <i class="fas fa-check-circle"></i></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+</html>
+  
