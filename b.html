@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Master - Leçons 6 à 10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="b.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">&lt;/&gt;</span>
+                    <div class="logo-text">
+                        <span class="logo-main">HTML MASTER</span>
+                        <span class="logo-sub">Leçons 6 à 10 : Tableaux, formulaires et multimédia</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 6-10 sur 20</span>
+                <span class="progress-percent">50%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%"></div>
+            </div>
+            <div class="progress-nav">
+                <a href="a.html" class="progress-prev"><i class="fas fa-arrow-left"></i> Leçons 1-5</a>
+                <span class="progress-current">Leçons 6-10</span>
+                <a href="c.html" class="progress-next">Leçons 11-15 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 6-10 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 6 à 10 : Approfondissement</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon6" class="sommaire-card">
+                    <span class="lecon-numero">06</span>
+                    <h3>Les tableaux avancés</h3>
+                    <p>Fusion, en-têtes, structure complexe</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon7" class="sommaire-card">
+                    <span class="lecon-numero">07</span>
+                    <h3>Les formulaires (partie 1)</h3>
+                    <p>Inputs, labels, boutons</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                </a>
+                <a href="#lecon8" class="sommaire-card">
+                    <span class="lecon-numero">08</span>
+                    <h3>Les balises sémantiques</h3>
+                    <p>Structure HTML5, accessibilité</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon9" class="sommaire-card">
+                    <span class="lecon-numero">09</span>
+                    <h3>Le multimédia</h3>
+                    <p>Audio, vidéo, iframe</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon10" class="sommaire-card">
+                    <span class="lecon-numero">10</span>
+                    <h3>Les formulaires avancés</h3>
+                    <p>Validation, types spéciaux</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 6 : TABLEAUX AVANCÉS ===== -->
+            <article class="lecon" id="lecon6">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 06</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">📊 Les tableaux avancés</h2>
+                    <p class="lecon-description">Fusion de cellules, en-têtes complexes, structuration</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Rappel des bases -->
+                    <div class="lecon-section">
+                        <h3>🔍 6.1 Rappel : Structure de base</h3>
+                        
+                        <p>Un tableau HTML se construit avec les balises suivantes :</p>
+                        
+                        <ul>
+                            <li><code>&lt;table&gt;</code> : conteneur principal</li>
+                            <li><code>&lt;tr&gt;</code> : ligne (table row)</li>
+                            <li><code>&lt;td&gt;</code> : cellule (table data)</li>
+                            <li><code>&lt;th&gt;</code> : cellule d'en-tête (table header)</li>
+                        </ul>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="html-tag">HTML</span>
+                                <span>Tableau simple</span>
+                            </div>
+                            <pre><span class="tag">&lt;table&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Nom<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Âge<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Ville<span class="tag">&lt;/th&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;td&gt;</span>Jean<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>25<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>Paris<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+<span class="tag">&lt;/table&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Fusion de cellules -->
+                    <div class="lecon-section">
+                        <h3>🔄 6.2 Fusion de cellules (colspan et rowspan)</h3>
+                        
+                        <p>Les attributs <code>colspan</code> et <code>rowspan</code> permettent de fusionner des cellules.</p>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>colspan (fusion horizontale)</h4>
+                                <p>Fusionne plusieurs colonnes</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;td</span> <span class="attribute">colspan</span>=<span class="value">"2"</span><span class="tag">&gt;</span>Texte sur 2 colonnes<span class="tag">&lt;/td&gt;</span></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>rowspan (fusion verticale)</h4>
+                                <p>Fusionne plusieurs lignes</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;td</span> <span class="attribute">rowspan</span>=<span class="value">"3"</span><span class="tag">&gt;</span>Texte sur 3 lignes<span class="tag">&lt;/td&gt;</span></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>📋 Exemple d'emploi du temps</h4>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;table</span> <span class="attribute">border</span>=<span class="value">"1"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Heure<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Lundi<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Mardi<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Mercredi<span class="tag">&lt;/th&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;td&gt;</span>8h - 10h<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>HTML<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td</span> <span class="attribute">colspan</span>=<span class="value">"2"</span><span class="tag">&gt;</span>Projet<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;td&gt;</span>10h - 12h<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td</span> <span class="attribute">rowspan</span>=<span class="value">"2"</span><span class="tag">&gt;</span>CSS<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>JavaScript<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>PHP<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;td&gt;</span>14h - 16h<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>Base de données<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>Révision<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+<span class="tag">&lt;/table&gt;</span></pre>
+                        </div>
+
+                        <div class="rendu-box">
+                            <h5>Rendu visuel :</h5>
+                            <table border="1" style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <th>Heure</th>
+                                    <th>Lundi</th>
+                                    <th>Mardi</th>
+                                    <th>Mercredi</th>
+                                </tr>
+                                <tr>
+                                    <td>8h - 10h</td>
+                                    <td>HTML</td>
+                                    <td colspan="2">Projet</td>
+                                </tr>
+                                <tr>
+                                    <td>10h - 12h</td>
+                                    <td rowspan="2">CSS</td>
+                                    <td>JavaScript</td>
+                                    <td>PHP</td>
+                                </tr>
+                                <tr>
+                                    <td>14h - 16h</td>
+                                    <td>Base de données</td>
+                                    <td>Révision</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Règles importantes :</h4>
+                            <ul>
+                                <li><strong>colspan="n"</strong> : la cellule occupe n colonnes (les cellules suivantes sont décalées)</li>
+                                <li><strong>rowspan="n"</strong> : la cellule occupe n lignes (il faut sauter les cellules dans les lignes suivantes)</li>
+                                <li>Le nombre total de colonnes doit être cohérent sur toutes les lignes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: En-têtes et structure -->
+                    <div class="lecon-section">
+                        <h3>🏷️ 6.3 En-têtes de tableau (thead, tbody, tfoot)</h3>
+                        
+                        <p>HTML5 permet de structurer un tableau en trois parties :</p>
+
+                        <ul>
+                            <li><code>&lt;thead&gt;</code> : en-tête du tableau (une seule fois)</li>
+                            <li><code>&lt;tbody&gt;</code> : corps du tableau (peut être multiple)</li>
+                            <li><code>&lt;tfoot&gt;</code> : pied du tableau (une seule fois)</li>
+                        </ul>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;table&gt;</span>
+    <span class="tag">&lt;caption&gt;</span>Ventes trimestrielles 2026<span class="tag">&lt;/caption&gt;</span>
+    
+    <span class="tag">&lt;thead&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Produit<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th&gt;</span>T1<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th&gt;</span>T2<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th&gt;</span>T3<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th&gt;</span>T4<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/thead&gt;</span>
+    
+    <span class="tag">&lt;tbody&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Ordinateurs<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;td&gt;</span>150<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>180<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>200<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>250<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Téléphones<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;td&gt;</span>300<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>320<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>280<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>400<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/tbody&gt;</span>
+    
+    <span class="tag">&lt;tfoot&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Total<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;td&gt;</span>450<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>500<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>480<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>650<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/tfoot&gt;</span>
+<span class="tag">&lt;/table&gt;</span></pre>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>🔍 Pourquoi utiliser thead/tbody/tfoot ?</h4>
+                            <ul>
+                                <li><strong>Accessibilité</strong> : les lecteurs d'écran comprennent mieux la structure</li>
+                                <li><strong>Impression</strong> : l'en-tête peut être répété sur chaque page</li>
+                                <li><strong>Défilement</strong> : l'en-tête peut rester fixe pendant le scroll</li>
+                                <li><strong>Style</strong> : possibilité de styliser différemment chaque section</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Tableaux complexes -->
+                    <div class="lecon-section">
+                        <h3>🏗️ 6.4 Tableaux complexes avec en-têtes multiples</h3>
+                        
+                        <p>On peut créer des tableaux avec des en-têtes sur plusieurs niveaux.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;table&gt;</span>
+    <span class="tag">&lt;thead&gt;</span>
+        <span class="comment">&lt;!-- Première ligne d'en-tête --&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th</span> <span class="attribute">rowspan</span>=<span class="value">"2"</span><span class="tag">&gt;</span>Région<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th</span> <span class="attribute">colspan</span>=<span class="value">"2"</span><span class="tag">&gt;</span>2025<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th</span> <span class="attribute">colspan</span>=<span class="value">"2"</span><span class="tag">&gt;</span>2026<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+        
+        <span class="comment">&lt;!-- Deuxième ligne d'en-tête --&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Ventes<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Objectif<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Ventes<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Objectif<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/thead&gt;</span>
+    
+    <span class="tag">&lt;tbody&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Nord<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;td&gt;</span>100<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>110<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>120<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>130<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Sud<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;td&gt;</span>80<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>90<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>100<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>110<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/tbody&gt;</span>
+<span class="tag">&lt;/table&gt;</span></pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> Pour des tableaux complexes, dessinez d'abord la structure sur papier pour visualiser les fusions.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 6.5 Exercices pratiques</h3>
+                        
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Emploi du temps</h4>
+                            <p><strong>Objectif :</strong> Créer un emploi du temps avec fusions.</p>
+                                  <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un tableau avec les jours (lun, mar, mer, jeu, ven)</li>
+                                    <li>Ajoutez les heures (8h-10h, 10h-12h, 14h-16h)</li>
+                                    <li>Fusionnez les cellules pour une pause déjeuner (12h-14h) sur toutes les colonnes</li>
+                                    <li>Ajoutez des matières dans chaque case</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Bulletin de notes</h4>
+                            <p><strong>Objectif :</strong> Créer un bulletin scolaire structuré.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Utilisez thead, tbody, tfoot</li>
+                                    <li>Colonnes : Matière, Note1, Note2, Note3, Moyenne</li>
+                                    <li>Ajoutez 4 matières</li>
+                                    <li>Dans tfoot, calculez la moyenne générale</li>
+                                </ol>
+                            </div>
+                            
+                            <details class="solution">
+                                <summary>Voir un exemple</summary>
+                                <div class="code-block">
+                                    <pre><span class="tag">&lt;table&gt;</span>
+    <span class="tag">&lt;thead&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Matière<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Note 1<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Note 2<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Note 3<span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;th&gt;</span>Moyenne<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/thead&gt;</span>
+    <span class="tag">&lt;tbody&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;td&gt;</span>Mathématiques<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>15<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>12<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>18<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>15<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+        <span class="comment">&lt;!-- autres matières --&gt;</span>
+    <span class="tag">&lt;/tbody&gt;</span>
+    <span class="tag">&lt;tfoot&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;td</span> <span class="attribute">colspan</span>=<span class="value">"4"</span><span class="tag">&gt;</span>Moyenne générale<span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span>14.5<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/tfoot&gt;</span>
+<span class="tag">&lt;/table&gt;</span></pre>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 7 : FORMULAIRES (PARTIE 1) ===== -->
+            <article class="lecon" id="lecon7">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 07</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">📝 Les formulaires (partie 1)</h2>
+                    <p class="lecon-description">Structure, inputs, labels, boutons</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Structure du formulaire -->
+                    <div class="lecon-section">
+                        <h3>🏗️ 7.1 La balise &lt;form&gt;</h3>
+                        
+                        <p>La balise <code>&lt;form&gt;</code> est le conteneur de tous les éléments d'un formulaire.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;form</span> <span class="attribute">action</span>=<span class="value">"traitement.php"</span> <span class="attribute">method</span>=<span class="value">"post"</span><span class="tag">&gt;</span>
+    <span class="comment">&lt;!-- Tous les champs du formulaire --&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attribute">type</span>=<span class="value">"submit"</span><span class="tag">&gt;</span>Envoyer<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre>
+                        </div>
+
+                        <h4>Attributs importants de &lt;form&gt; :</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Attribut</th>
+                                    <th>Description</th>
+                                    <th>Valeurs</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>action</code></td>
+                                    <td>URL où les données sont envoyées</td>
+                                    <td>URL absolue ou relative</td>
+                                </tr>
+                                <tr>
+                                    <td><code>method</code></td>
+                                    <td>Méthode HTTP d'envoi</td>
+                                    <td><code>get</code> (visible dans l'URL) ou <code>post</code> (caché)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>name</code></td>
+                                    <td>Nom du formulaire</td>
+                                    <td>texte</td>
+                                </tr>
+                                <tr>
+                                    <td><code>enctype</code></td>
+                                    <td>Encodage des données</td>
+                                    <td><code>multipart/form-data</code> pour fichiers</td>
+                                </tr>
+                                <tr>
+                                    <td><code>target</code></td>
+                                    <td>Où afficher la réponse</td>
+                                    <td><code>_blank</code>, <code>_self</code>, etc.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 GET vs POST :</h4>
+                            <ul>
+                                <li><strong>GET</strong> : les données sont dans l'URL (ex: ?nom=Jean&age=25). Limité à 2048 caractères. Pour les recherches, filtres.</li>
+                                <li><strong>POST</strong> : les données sont dans le corps de la requête. Pas de limite. Pour les mots de passe, fichiers, données sensibles.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Input text et password -->
+                    <div class="lecon-section">
+                        <h3>⌨️ 7.2 Input de type texte et mot de passe</h3>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>Texte simple</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> 
+       <span class="attribute">name</span>=<span class="value">"nom"</span> 
+       <span class="attribute">placeholder</span>=<span class="value">"Votre nom"</span>
+       <span class="attribute">maxlength</span>=<span class="value">"50"</span><span class="tag">&gt;</span></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>Mot de passe</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"password"</span> 
+       <span class="attribute">name</span>=<span class="value">"mdp"</span> 
+       <span class="attribute">placeholder</span>=<span class="value">"Votre mot de passe"</span>
+       <span class="attribute">minlength</span>=<span class="value">"8"</span><span class="tag">&gt;</span></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Attributs communs aux inputs :</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Attribut</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>name</code></td><td>Nom du champ (clé lors de l'envoi)</td><td><code>name="email"</code></td></tr>
+                                <tr><td><code>placeholder</code></td><td>Texte indicatif dans le champ</td><td><code>placeholder="exemple@mail.com"</code></td></tr>
+                                <tr><td><code>value</code></td><td>Valeur par défaut</td><td><code>value="Jean"</code></td></tr>
+                                <tr><td><code>required</code></td><td>Champ obligatoire</td><td><code>required</code></td></tr>
+                                <tr><td><code>disabled</code></td><td>Champ désactivé</td><td><code>disabled</code></td></tr>
+                                <tr><td><code>readonly</code></td><td>Lecture seule</td><td><code>readonly</code></td></tr>
+                                <tr><td><code>maxlength</code></td><td>Nombre max de caractères</td><td><code>maxlength="10"</code></td></tr>
+                                <tr><td><code>minlength</code></td><td>Nombre min de caractères</td><td><code>minlength="3"</code></td></tr>
+                                <tr><td><code>autofocus</code></td><td>Focus automatique</td><td><code>autofocus</code></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- SECTION 3: Labels -->
+                    <div class="lecon-section">
+                        <h3>🏷️ 7.3 Les labels</h3>
+                        
+                        <p>La balise <code>&lt;label&gt;</code> associe un texte descriptif à un champ. Améliore l'accessibilité et l'expérience utilisateur (cliquer sur le label focus le champ).</p>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>Méthode 1 : for + id</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"nom"</span><span class="tag">&gt;</span>Nom :<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">id</span>=<span class="value">"nom"</span> <span class="attribute">name</span>=<span class="value">"nom"</span><span class="tag">&gt;</span></pre>
+                                </div>
+                                <p>L'attribut <code>for</code> du label doit correspondre à l'<code>id</code> de l'input.</p>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>Méthode 2 : Label englobant</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;label&gt;</span>
+    Nom :
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"nom"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/label&gt;</span></pre>
+                                </div>
+                                <p>Le champ est à l'intérieur du label.</p>
+                            </div>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple complet :</h4>
+                            <div class="code-block">
+                                <pre><span class="tag">&lt;form&gt;</span>
+    <span class="tag">&lt;p&gt;</span>
+        <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"prenom"</span><span class="tag">&gt;</span>Prénom :<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">id</span>=<span class="value">"prenom"</span> <span class="attribute">name</span>=<span class="value">"prenom"</span> <span class="attribute">placeholder</span>=<span class="value">"Jean"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;/p&gt;</span>
+    
+    <span class="tag">&lt;p&gt;</span>
+        <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"email"</span><span class="tag">&gt;</span>Email :<span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">id</span>=<span class="value">"email"</span> <span class="attribute">name</span>=<span class="value">"email"</span> <span class="attribute">required</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Boutons -->
+                    <div class="lecon-section">
+                        <h3>🔘 7.4 Les boutons</h3>
+                        
+                        <p>Il existe plusieurs façons de créer des boutons :</p>
+
+                        <div class="grid-3">
+                            <div class="carte-type">
+                                <h4>&lt;button&gt;</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;button</span> <span class="attribute">type</span>=<span class="value">"submit"</span><span class="tag">&gt;</span>
+    Envoyer
+<span class="tag">&lt;/button&gt;</span></pre>
+                                </div>
+                                <p>Peut contenir du HTML (icônes, images).</p>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>&lt;input type="submit"&gt;</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> 
+       <span class="attribute">value</span>=<span class="value">"Envoyer"</span><span class="tag">&gt;</span></pre>
+                                </div>
+                                <p>Simple, texte seulement.</p>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>&lt;input type="reset"&gt;</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"reset"</span> 
+       <span class="attribute">value</span>=<span class="value">"Effacer"</span><span class="tag">&gt;</span></pre>
+                                </div>
+                                <p>Remet le formulaire à son état initial.</p>
+                            </div>
+                        </div>
+
+                        <h4>Types de button :</h4>
+                        <ul>
+                            <li><code>type="submit"</code> (défaut) : envoie le formulaire</li>
+                            <li><code>type="reset"</code> : réinitialise le formulaire</li>
+                            <li><code>type="button"</code> : bouton simple, sans action par défaut (pour JavaScript)</li>
+                        </ul>
+                    </div>
+
+                    <!-- SECTION 5: Textarea -->
+                    <div class="lecon-section">
+                        <h3>📄 7.5 Zone de texte multiligne (textarea)</h3>
+                        
+                        <p>Pour les messages longs, commentaires, etc.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"message"</span><span class="tag">&gt;</span>Votre message :<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;textarea</span> <span class="attribute">id</span>=<span class="value">"message"</span> 
+          <span class="attribute">name</span>=<span class="value">"message"</span> 
+          <span class="attribute">rows</span>=<span class="value">"5"</span> 
+          <span class="attribute">cols</span>=<span class="value">"40"</span>
+          <span class="attribute">placeholder</span>=<span class="value">"Écrivez votre message ici..."</span><span class="tag">&gt;&lt;/textarea&gt;</span></pre>
+                        </div>
+
+                        <h4>Attributs de textarea :</h4>
+                        <ul>
+                            <li><code>rows</code> : nombre de lignes visibles</li>
+                            <li><code>cols</code> : nombre de colonnes (caractères par ligne)</li>
+                            <li><code>wrap</code> : gestion des retours à la ligne (soft/hard)</li>
+                        </ul>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> Contrairement à input, textarea a une balise fermante et le contenu par défaut se met entre les balises, pas dans value.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 7.6 Exercices pratiques</h3>
+                        
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Formulaire d'inscription</h4>
+                            <p><strong>Objectif :</strong> Créer un formulaire d'inscription complet.</p>
+                               <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un formulaire avec method="post"</li>
+                                    <li>Ajoutez les champs : nom, prénom, email, mot de passe</li>
+                                    <li>Utilisez des labels associés correctement</li>
+                                    <li>Ajoutez des placeholders</li>
+                                    <li>Rendez l'email et le mot de passe obligatoires</li>
+                                    <li>Ajoutez un bouton "S'inscrire"</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Formulaire de contact</h4>
+                            <p><strong>Objectif :</strong> Créer un formulaire avec zone de texte.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Champs : nom, email, sujet (input text), message (textarea)</li>
+                                    <li>La textarea doit avoir 6 lignes</li>
+                                    <li>Ajoutez un bouton "Envoyer" et un bouton "Effacer"</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 8 : BALISES SÉMANTIQUES ===== -->
+            <article class="lecon" id="lecon8">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 08</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">🏗️ Les balises sémantiques HTML5</h2>
+                    <p class="lecon-description">Structure de page, accessibilité, SEO</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 8.1 Qu'est-ce que la sémantique ?</h3>
+                        
+                        <div class="definition-box">
+                            <p>La <strong>sémantique</strong> en HTML signifie donner du sens au contenu, pas seulement définir son apparence.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">🎯</div>
+                            <div class="encart-content">
+                                <strong>Pourquoi la sémantique ?</strong>
+                                <ul>
+                                    <li>✅ Meilleur référencement (SEO) - Google comprend mieux votre page</li>
+                                    <li>✅ Accessibilité - Les lecteurs d'écran naviguent mieux</li>
+                                    <li>✅ Maintenabilité - Code plus lisible pour les développeurs</li>
+                                    <li>✅ Compatibilité future - Standards du web</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h4>Avant HTML5 : tout en &lt;div&gt;</h4>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"header"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"nav"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"main"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"footer"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/div&gt;</span></pre>
+                        </div>
+
+                        <h4>Avec HTML5 : balises sémantiques</h4>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;header&gt;</span>...<span class="tag">&lt;/header&gt;</span>
+<span class="tag">&lt;nav&gt;</span>...<span class="tag">&lt;/nav&gt;</span>
+<span class="tag">&lt;main&gt;</span>...<span class="tag">&lt;/main&gt;</span>
+<span class="tag">&lt;footer&gt;</span>...<span class="tag">&lt;/footer&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Les balises sémantiques -->
+                    <div class="lecon-section">
+                        <h3>📋 8.2 Les différentes balises sémantiques</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Balise</th>
+                                    <th>Description</th>
+                                    <th>Utilisation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>&lt;header&gt;</code></td>
+                                    <td>En-tête d'une page ou d'une section</td>
+                                    <td>Logo, titre principal, menu</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;nav&gt;</code></td>
+                                    <td>Menu de navigation principal</td>
+                                    <td>Liens vers les pages du site</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;main&gt;</code></td>
+                                    <td>Contenu principal unique</td>
+                                    <td>Un seul par page, contenu central</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;article&gt;</code></td>
+                                    <td>Contenu indépendant</td>
+                                    <td>Article de blog, actualité, commentaire</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;section&gt;</code></td>
+                                    <td>Section thématique</td>
+                                    <td>Chapitre, partie d'article</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;aside&gt;</code></td>
+                                    <td>Contenu complémentaire</td>
+                                    <td>Barre latérale, publicité, liens connexes</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;footer&gt;</code></td>
+                                    <td>Pied de page</td>
+                                    <td>Copyright, contact, liens légaux</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;address&gt;</code></td>
+                                    <td>Informations de contact</td>
+                                    <td>Email, téléphone, adresse</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;time&gt;</code></td>
+                                    <td>Date ou heure</td>
+                                    <td>Date de publication, événement</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;figure&gt;</code> / <code>&lt;figcaption&gt;</code></td>
+                                    <td>Illustration avec légende</td>
+                                    <td>Images, graphiques, code</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;mark&gt;</code></td>
+                                    <td>Texte surligné</td>
+                                    <td>Mettre en évidence</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- SECTION 3: Structure complète -->
+                    <div class="lecon-section">
+                        <h3>🏛️ 8.3 Structure sémantique complète</h3>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;header&gt;</span>
+        <span class="tag">&lt;h1&gt;</span>Titre du site<span class="tag">&lt;/h1&gt;</span>
+        <span class="tag">&lt;nav&gt;</span>
+            <span class="tag">&lt;ul&gt;</span>
+                <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"/"</span><span class="tag">&gt;</span>Accueil<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+                <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"/blog"</span><span class="tag">&gt;</span>Blog<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+                <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"/contact"</span><span class="tag">&gt;</span>Contact<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+            <span class="tag">&lt;/ul&gt;</span>
+        <span class="tag">&lt;/nav&gt;</span>
+    <span class="tag">&lt;/header&gt;</span>
+
+    <span class="tag">&lt;main&gt;</span>
+        <span class="tag">&lt;article&gt;</span>
+            <span class="tag">&lt;header&gt;</span>
+                <span class="tag">&lt;h2&gt;</span>Titre de l'article<span class="tag">&lt;/h2&gt;</span>
+                <span class="tag">&lt;p&gt;</span>Publié le <span class="tag">&lt;time</span> <span class="attribute">datetime</span>=<span class="value">"2026-03-16"</span><span class="tag">&gt;</span>16 mars 2026<span class="tag">&lt;/time&gt;</span><span class="tag">&lt;/p&gt;</span>
+            <span class="tag">&lt;/header&gt;</span>
+
+            <span class="tag">&lt;section&gt;</span>
+                <span class="tag">&lt;h3&gt;</span>Introduction<span class="tag">&lt;/h3&gt;</span>
+                <span class="tag">&lt;p&gt;</span>Contenu de l'introduction...<span class="tag">&lt;/p&gt;</span>
+            <span class="tag">&lt;/section&gt;</span>
+
+            <span class="tag">&lt;section&gt;</span>
+                <span class="tag">&lt;h3&gt;</span>Développement<span class="tag">&lt;/h3&gt;</span>
+                <span class="tag">&lt;p&gt;</span>Contenu principal...<span class="tag">&lt;/p&gt;</span>
+                
+                <span class="tag">&lt;figure&gt;</span>
+                    <span class="tag">&lt;img</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span> <span class="attribute">alt</span>=<span class="value">"Description"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;figcaption&gt;</span>Légende de l'image<span class="tag">&lt;/figcaption&gt;</span>
+                <span class="tag">&lt;/figure&gt;</span>
+            <span class="tag">&lt;/section&gt;</span>
+
+            <span class="tag">&lt;footer&gt;</span>
+                <span class="tag">&lt;p&gt;</span>Écrit par Jean<span class="tag">&lt;/p&gt;</span>
+            <span class="tag">&lt;/footer&gt;</span>
+        <span class="tag">&lt;/article&gt;</span>
+
+        <span class="tag">&lt;aside&gt;</span>
+            <span class="tag">&lt;h3&gt;</span>Articles récents<span class="tag">&lt;/h3&gt;</span>
+            <span class="tag">&lt;ul&gt;</span>
+                <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#"</span><span class="tag">&gt;</span>Article 1<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+                <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#"</span><span class="tag">&gt;</span>Article 2<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+            <span class="tag">&lt;/ul&gt;</span>
+        <span class="tag">&lt;/aside&gt;</span>
+    <span class="tag">&lt;/main&gt;</span>
+
+    <span class="tag">&lt;footer&gt;</span>
+        <span class="tag">&lt;p&gt;</span>&amp;copy; 2026 Ambanivolo mi-DEV<span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;address&gt;</span>
+            Contact : <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"mailto:contact@example.com"</span><span class="tag">&gt;</span>contact@example.com<span class="tag">&lt;/a&gt;</span>
+        <span class="tag">&lt;/address&gt;</span>
+    <span class="tag">&lt;/footer&gt;</span>
+<span class="tag">&lt;/body&gt;</span></pre>
+                        </div>
+
+                        <div class="schema-box">
+                            <h4>📊 Schéma de la structure :</h4>
+                            <pre style="background: #f0f0f0; padding: 20px; border-radius: 5px;">
+┌─────────────────────┐
+│      &lt;header&gt;       │
+│  ┌─────────────────┐│
+│  │     &lt;nav&gt;       ││
+│  └─────────────────┘│
+└─────────────────────┘
+┌─────────────────────┐
+│      &lt;main&gt;         │
+│  ┌───────────────┐  │
+│  │  &lt;article&gt;    │  │
+│  │  ┌───────┐    │  │
+│  │  │&lt;section&gt;│   │  │
+│  │  └───────┘    │  │
+│  └───────────────┘  │
+│  ┌───────────────┐  │
+│  │   &lt;aside&gt;     │  │
+│  └───────────────┘  │
+└─────────────────────┘
+┌─────────────────────┐
+│     &lt;footer&gt;        │
+└─────────────────────┘</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Accessibilité -->
+                    <div class="lecon-section">
+                        <h3>♿ 8.4 Accessibilité avec les balises sémantiques</h3>
+
+                        <p>Les balises sémantiques améliorent considérablement l'accessibilité pour les personnes utilisant des lecteurs d'écran.</p>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">♿</div>
+                            <div class="encart-content">
+                                <strong>Rôles ARIA implicites :</strong>
+            <ul>
+                                    <li><code>&lt;nav&gt;</code> a un rôle <code>navigation</code> implicite</li>
+                                    <li><code>&lt;main&gt;</code> a un rôle <code>main</code> implicite</li>
+                                    <li><code>&lt;article&gt;</code> a un rôle <code>article</code> implicite</li>
+                                    <li><code>&lt;header&gt;</code> a un rôle <code>banner</code> (si dans body)</li>
+                                    <li><code>&lt;footer&gt;</code> a un rôle <code>contentinfo</code> (si dans body)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h4>Bonnes pratiques d'accessibilité :</h4>
+                        <ul>
+                            <li>Utilisez un seul <code>&lt;main&gt;</code> par page</li>
+                            <li>Hiérarchie des titres correcte (h1 → h2 → h3...)</li>
+                            <li>Navigation clavier possible (tabindex)</li>
+                            <li>Ajoutez des <code>aria-label</code> si nécessaire</li>
+                        </ul>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 8.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Structure de blog</h4>
+                            <p><strong>Objectif :</strong> Créer la structure sémantique d'un blog.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Header avec titre et navigation</li>
+                                    <li>Main avec 2 articles</li>
+                                    <li>Chaque article doit avoir son propre header</li>
+                                    <li>Une barre latérale (aside) avec des catégories</li>
+                                    <li>Footer avec copyright et contact</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Page d'accueil</h4>
+                            <p><strong>Objectif :</strong> Structurer une page d'accueil.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Hero section (avec h1 et description)</li>
+                                    <li>Section "Nos services" avec 3 articles</li>
+                                    <li>Section "Témoignages" avec figures</li>
+                                    <li>Section "Contact" avec adresse</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 9 : MULTIMÉDIA ===== -->
+            <article class="lecon" id="lecon9">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 09</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">🎵 Le multimédia</h2>
+                    <p class="lecon-description">Audio, vidéo, iframe et intégrations</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Audio -->
+                    <div class="lecon-section">
+                        <h3>🔊 9.1 La balise &lt;audio&gt;</h3>
+
+                        <p>HTML5 permet d'intégrer de l'audio directement sans plugins externes.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;audio</span> <span class="attribute">controls</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;source</span> <span class="attribute">src</span>=<span class="value">"musique.mp3"</span> <span class="attribute">type</span>=<span class="value">"audio/mpeg"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;source</span> <span class="attribute">src</span>=<span class="value">"musique.ogg"</span> <span class="attribute">type</span>=<span class="value">"audio/ogg"</span><span class="tag">&gt;</span>
+    Votre navigateur ne supporte pas l'élément audio.
+<span class="tag">&lt;/audio&gt;</span></pre>
+                        </div>
+
+                        <h4>Attributs de &lt;audio&gt; :</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Attribut</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>controls</code></td><td>Affiche les contrôles (play, pause, volume)</td></tr>
+                                <tr><td><code>autoplay</code></td><td>Lecture automatique (souvent bloqué par navigateurs)</td></tr>
+                                <tr><td><code>loop</code></td><td>Répète en boucle</td></tr>
+                                <tr><td><code>muted</code></td><td>Désactive le son</td></tr>
+                                <tr><td><code>preload</code></td><td>Charge avant lecture (auto, metadata, none)</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple avec plusieurs sources :</h4>
+                            <div class="code-block">
+                                <pre><span class="tag">&lt;audio</span> <span class="attribute">controls</span> <span class="attribute">preload</span>=<span class="value">"metadata"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;source</span> <span class="attribute">src</span>=<span class="value">"audio.mp3"</span> <span class="attribute">type</span>=<span class="value">"audio/mpeg"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;source</span> <span class="attribute">src</span>=<span class="value">"audio.ogg"</span> <span class="attribute">type</span>=<span class="value">"audio/ogg"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;source</span> <span class="attribute">src</span>=<span class="value">"audio.wav"</span> <span class="attribute">type</span>=<span class="value">"audio/wav"</span><span class="tag">&gt;</span>
+    <span class="comment">&lt;!-- Message si aucun format supporté --&gt;</span>
+    &lt;p&gt;Votre navigateur ne supporte pas l'audio. &lt;a href="audio.mp3"&gt;Télécharger&lt;/a&gt;&lt;/p&gt;
+<span class="tag">&lt;/audio&gt;</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Vidéo -->
+                    <div class="lecon-section">
+                        <h3>🎬 9.2 La balise &lt;video&gt;</h3>
+
+                        <p>Intégration de vidéos directement dans la page.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;video</span> <span class="attribute">width</span>=<span class="value">"640"</span> <span class="attribute">height</span>=<span class="value">"360"</span> <span class="attribute">controls</span> <span class="attribute">poster</span>=<span class="value">"miniature.jpg"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;source</span> <span class="attribute">src</span>=<span class="value">"video.mp4"</span> <span class="attribute">type</span>=<span class="value">"video/mp4"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;source</span> <span class="attribute">src</span>=<span class="value">"video.webm"</span> <span class="attribute">type</span>=<span class="value">"video/webm"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;source</span> <span class="attribute">src</span>=<span class="value">"video.ogg"</span> <span class="attribute">type</span>=<span class="value">"video/ogg"</span><span class="tag">&gt;</span>
+    
+    <span class="comment">&lt;!-- Sous-titres --&gt;</span>
+    <span class="tag">&lt;track</span> <span class="attribute">src</span>=<span class="value">"sous-titres.vtt"</span> <span class="attribute">kind</span>=<span class="value">"subtitles"</span> <span class="attribute">srclang</span>=<span class="value">"fr"</span> <span class="attribute">label</span>=<span class="value">"Français"</span><span class="tag">&gt;</span>
+    
+    <span class="comment">&lt;!-- Message de secours --&gt;</span>
+    &lt;p&gt;Votre navigateur ne supporte pas la vidéo. &lt;a href="video.mp4"&gt;Télécharger&lt;/a&gt;&lt;/p&gt;
+<span class="tag">&lt;/video&gt;</span></pre>
+                        </div>
+
+                        <h4>Attributs spécifiques à la vidéo :</h4>
+                        <ul>
+                            <li><code>poster</code> : image affichée avant la lecture</li>
+                            <li><code>width</code> / <code>height</code> : dimensions</li>
+                            <li><code>controlslist</code> : contrôle les contrôles affichés</li>
+                            <li><code>disablepictureinpicture</code> : désactive le mode picture-in-picture</li>
+                        </ul>
+
+                        <h4>Formats vidéo supportés :</h4>
+                        <ul>
+                            <li><strong>MP4</strong> (H.264) : meilleure compatibilité</li>
+                            <li><strong>WebM</strong> : format libre, bon pour le web</li>
+                            <li><strong>OGG</strong> : format libre, moins utilisé</li>
+                        </ul>
+                    </div>
+
+                    <!-- SECTION 3: Iframe -->
+                    <div class="lecon-section">
+                        <h3>🖼️ 9.3 La balise &lt;iframe&gt;</h3>
+
+                        <p><code>&lt;iframe&gt;</code> permet d'intégrer une autre page HTML dans la page courante.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;iframe</span> 
+    <span class="attribute">src</span>=<span class="value">"https://example.com"</span>
+    <span class="attribute">width</span>=<span class="value">"800"</span>
+    <span class="attribute">height</span>=<span class="value">"600"</span>
+    <span class="attribute">title</span>=<span class="value">"Description"</span>
+    <span class="attribute">frameborder</span>=<span class="value">"0"</span>
+    <span class="attribute">allowfullscreen</span><span class="tag">&gt;</span>
+    &lt;p&gt;Votre navigateur ne supporte pas les iframes.&lt;/p&gt;
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                        </div>
+
+                        <h4>Cas d'usage courants :</h4>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>📺 Intégrer YouTube</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;iframe</span> 
+    <span class="attribute">width</span>=<span class="value">"560"</span>
+    <span class="attribute">height</span>=<span class="value">"315"</span>
+    <span class="attribute">src</span>=<span class="value">"https://www.youtube.com/embed/VIDEO_ID"</span>
+    <span class="attribute">title</span>=<span class="value">"Vidéo YouTube"</span>
+    <span class="attribute">frameborder</span>=<span class="value">"0"</span>
+    <span class="attribute">allow</span>=<span class="value">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"</span>
+    <span class="attribute">allowfullscreen</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>🗺️ Intégrer Google Maps</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;iframe</span>
+    <span class="attribute">src</span>=<span class="value">"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345..."</span>
+    <span class="attribute">width</span>=<span class="value">"600"</span>
+    <span class="attribute">height</span>=<span class="value">"450"</span>
+    <span class="attribute">style</span>=<span class="value">"border:0;"</span>
+    <span class="attribute">allowfullscreen</span>=<span class="value">""</span>
+    <span class="attribute">loading</span>=<span class="value">"lazy"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>📄 Intégrer un PDF</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;iframe</span>
+    <span class="attribute">src</span>=<span class="value">"document.pdf"</span>
+    <span class="attribute">width</span>=<span class="value">"100%"</span>
+    <span class="attribute">height</span>=<span class="value">"500px"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>📱 Intégrer une page</h4>
+                                <div class="code-block small">
+                                 <pre><span class="tag">&lt;iframe</span>
+    <span class="attribute">srcdoc</span>=<span class="value">"&lt;p&gt;Contenu HTML direct&lt;/p&gt;"</span>
+    <span class="attribute">width</span>=<span class="value">"100%"</span>
+    <span class="attribute">height</span>=<span class="value">"200px"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                                </div>
+                                <p><code>srcdoc</code> permet d'injecter du HTML directement.</p>
+                            </div>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Sécurité des iframes :</strong>
+                                <p>Utilisez l'attribut <code>sandbox</code> pour restreindre les capacités de l'iframe :</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;iframe</span>
+    <span class="attribute">src</span>=<span class="value">"https://example.com"</span>
+    <span class="attribute">sandbox</span>=<span class="value">"allow-scripts allow-same-origin allow-forms"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/iframe&gt;</span></pre>
+                                </div>
+                                <p>Options : <code>allow-scripts</code>, <code>allow-forms</code>, <code>allow-popups</code>, <code>allow-modals</code>, etc.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Autres balises multimédia -->
+                    <div class="lecon-section">
+                        <h3>📦 9.4 Embed et Object</h3>
+
+                        <p>Balises plus anciennes pour intégrer du contenu externe.</p>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>&lt;embed&gt;</h4>
+                                <div class="code-block">
+                                    <pre><span class="tag">&lt;embed</span>
+    <span class="attribute">src</span>=<span class="value">"fichier.swf"</span>
+    <span class="attribute">type</span>=<span class="value">"application/x-shockwave-flash"</span>
+    <span class="attribute">width</span>=<span class="value">"400"</span>
+    <span class="attribute">height</span>=<span class="value">"300"</span><span class="tag">&gt;</span></pre>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4>&lt;object&gt;</h4>
+                                <div class="code-block">
+                                    <pre><span class="tag">&lt;object</span>
+    <span class="attribute">data</span>=<span class="value">"fichier.swf"</span>
+    <span class="attribute">type</span>=<span class="value">"application/x-shockwave-flash"</span>
+    <span class="attribute">width</span>=<span class="value">"400"</span>
+    <span class="attribute">height</span>=<span class="value">"300"</span><span class="tag">&gt;</span>
+    Texte alternatif
+<span class="tag">&lt;/object&gt;</span></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p><strong>Note :</strong> Ces balises sont moins utilisées aujourd'hui au profit de solutions natives HTML5.</p>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 9.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Page vidéo</h4>
+                            <p><strong>Objectif :</strong> Créer une page avec une vidéo.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Intégrez une vidéo avec les contrôles</li>
+                                    <li>Ajoutez une miniature (poster)</li>
+                                    <li>Proposez deux formats (mp4 et webm)</li>
+                                    <li>Ajoutez un message si non supporté</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Page d'intégration</h4>
+                            <p><strong>Objectif :</strong> Créer une page avec iframes.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Intégrez une vidéo YouTube</li>
+                                    <li>Intégrez une carte Google Maps</li>
+                                    <li>Intégrez un PDF</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 10 : FORMULAIRES AVANCÉS ===== -->
+            <article class="lecon" id="lecon10">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 10</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">⚙️ Les formulaires avancés</h2>
+                    <p class="lecon-description">Types spéciaux, validation, organisation</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Types d'input spéciaux -->
+                    <div class="lecon-section">
+                        <h3>🎨 10.1 Les types d'input HTML5</h3>
+
+                        <p>HTML5 introduit de nouveaux types d'input pour des cas spécifiques.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>color</code></td>
+                                    <td>Sélecteur de couleur</td>
+                                    <td><code>&lt;input type="color" value="#FF7A45"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>date</code></td>
+                                    <td>Sélecteur de date</td>
+                                    <td><code>&lt;input type="date" min="2026-01-01" max="2026-12-31"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>datetime-local</code></td>
+                                    <td>Date et heure locale</td>
+                                    <td><code>&lt;input type="datetime-local"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>month</code></td>
+                                    <td>Sélection de mois</td>
+                                    <td><code>&lt;input type="month"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>week</code></td>
+                                    <td>Sélection de semaine</td>
+                                    <td><code>&lt;input type="week"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>time</code></td>
+                                    <td>Sélection d'heure</td>
+                                    <td><code>&lt;input type="time" step="900"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>range</code></td>
+                                    <td>Curseur</td>
+                                    <td><code>&lt;input type="range" min="0" max="100" value="50"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>number</code></td>
+                                    <td>Nombre avec contrôles</td>
+                                    <td><code>&lt;input type="number" min="1" max="10" step="1"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tel</code></td>
+                                    <td>Téléphone</td>
+                                    <td><code>&lt;input type="tel" pattern="[0-9]{10}"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>url</code></td>
+                                    <td>URL</td>
+                                    <td><code>&lt;input type="url" placeholder="https://example.com"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>search</code></td>
+                                    <td>Champ de recherche</td>
+                                    <td><code>&lt;input type="search"&gt;</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples avec rendu :</h4>
+                            <div style="display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; background: #f0f0f0; padding: 20px;">
+                                <div>Color : <input type="color" value="#FF7A45"></div>
+                                <div>Date : <input type="date"></div>
+                                <div>Range : <input type="range" min="0" max="100"></div>
+                                <div>Number : <input type="number" min="1" max="10"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Select et options -->
+                    <div class="lecon-section">
+                        <h3>📋 10.2 Listes déroulantes (select)</h3>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"pays"</span><span class="tag">&gt;</span>Pays :<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;select</span> <span class="attribute">id</span>=<span class="value">"pays"</span> <span class="attribute">name</span>=<span class="value">"pays"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">""</span><span class="tag">&gt;</span>Choisissez...<span class="tag">&lt;/option&gt;</span>
+    <span class="tag">&lt;optgroup</span> <span class="attribute">label</span>=<span class="value">"Europe"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"fr"</span><span class="tag">&gt;</span>France<span class="tag">&lt;/option&gt;</span>
+        <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"be"</span><span class="tag">&gt;</span>Belgique<span class="tag">&lt;/option&gt;</span>
+    <span class="tag">&lt;/optgroup&gt;</span>
+    <span class="tag">&lt;optgroup</span> <span class="attribute">label</span>=<span class="value">"Afrique"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"mg"</span> <span class="attribute">selected</span><span class="tag">&gt;</span>Madagascar<span class="tag">&lt;/option&gt;</span>
+        <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"ma"</span><span class="tag">&gt;</span>Maroc<span class="tag">&lt;/option&gt;</span>
+    <span class="tag">&lt;/optgroup&gt;</span>
+<span class="tag">&lt;/select&gt;</span></pre>
+                        </div>
+
+                        <h4>Attributs de select :</h4>
+                        <ul>
+                            <li><code>multiple</code> : sélection multiple (avec Ctrl)</li>
+                            <li><code>size</code> : nombre d'options visibles</li>
+                            <li><code>disabled</code> : désactiver la liste</li>
+                        </ul>
+
+                        <h4>Attributs d'option :</h4>
+                        <ul>
+                            <li><code>selected</code> : option sélectionnée par défaut</li>
+                            <li><code>value</code> : valeur envoyée au serveur</li>
+                            <li><code>disabled</code> : option non sélectionnable</li>
+                        </ul>
+                    </div>
+
+                    <!-- SECTION 3: Checkboxes et radios -->
+                    <div class="lecon-section">
+                        <h3>✅ 10.3 Cases à cocher et boutons radio</h3>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>Checkbox (cases à cocher)</h4>
+                                <div class="code-block small">
+                                                     <pre><span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">id</span>=<span class="value">"newsletter"</span> <span class="attribute">name</span>=<span class="value">"newsletter"</span> <span class="attribute">checked</span><span class="tag">&gt;</span>
+<span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"newsletter"</span><span class="tag">&gt;</span>S'abonner à la newsletter<span class="tag">&lt;/label&gt;</span></pre>
+                                </div>
+                                <p>Plusieurs choix possibles, indépendants.</p>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>Radio (boutons radio)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">id</span>=<span class="value">"homme"</span> <span class="attribute">name</span>=<span class="value">"sexe"</span> <span class="attribute">value</span>=<span class="value">"H"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"homme"</span><span class="tag">&gt;</span>Homme<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">id</span>=<span class="value">"femme"</span> <span class="attribute">name</span>=<span class="value">"sexe"</span> <span class="attribute">value</span>=<span class="value">"F"</span> <span class="attribute">checked</span><span class="tag">&gt;</span>
+<span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"femme"</span><span class="tag">&gt;</span>Femme<span class="tag">&lt;/label&gt;</span></pre>
+                                </div>
+                                <p>Un seul choix possible dans un groupe (même name).</p>
+                            </div>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple :</h4>
+                            <div style="background: #f0f0f0; padding: 20px;">
+                                <h5>Préférences :</h5>
+                                <input type="checkbox" id="html" checked> <label for="html">HTML</label><br>
+                                <input type="checkbox" id="css"> <label for="css">CSS</label><br>
+                                <input type="checkbox" id="js"> <label for="js">JavaScript</label><br>
+                                
+                                <h5 style="margin-top: 15px;">Niveau :</h5>
+                                <input type="radio" name="niveau" id="debutant" checked> <label for="debutant">Débutant</label><br>
+                                <input type="radio" name="niveau" id="intermediaire"> <label for="intermediaire">Intermédiaire</label><br>
+                                <input type="radio" name="niveau" id="expert"> <label for="expert">Expert</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Validation HTML5 -->
+                    <div class="lecon-section">
+                        <h3>✅ 10.4 Validation native HTML5</h3>
+
+                        <p>HTML5 intègre des mécanismes de validation sans JavaScript.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Attribut</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>required</code></td><td>Champ obligatoire</td><td><code>required</code></td></tr>
+                                <tr><td><code>min</code> / <code>max</code></td><td>Valeurs min/max pour number, date</td><td><code>min="18" max="99"</code></td></tr>
+                                <tr><td><code>minlength</code> / <code>maxlength</code></td><td>Longueur min/max du texte</td><td><code>minlength="3" maxlength="20"</code></td></tr>
+                                <tr><td><code>pattern</code></td><td>Validation par expression régulière</td><td><code>pattern="[A-Za-z]+"</code></td></tr>
+                                <tr><td><code>step</code></td><td>Pas pour number, range</td><td><code>step="0.5"</code></td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;form&gt;</span>
+    <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"nom"</span><span class="tag">&gt;</span>Nom (3-20 lettres) :<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">id</span>=<span class="value">"nom"</span> <span class="attribute">name</span>=<span class="value">"nom"</span>
+           <span class="attribute">minlength</span>=<span class="value">"3"</span> <span class="attribute">maxlength</span>=<span class="value">"20"</span> 
+           <span class="attribute">pattern</span>=<span class="value">"[A-Za-z]+"</span> 
+           <span class="attribute">required</span><span class="tag">&gt;</span>
+    
+    <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"age"</span><span class="tag">&gt;</span>Âge (18-99) :<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"number"</span> <span class="attribute">id</span>=<span class="value">"age"</span> <span class="attribute">name</span>=<span class="value">"age"</span>
+           <span class="attribute">min</span>=<span class="value">"18"</span> <span class="attribute">max</span>=<span class="value">"99"</span> 
+           <span class="attribute">step</span>=<span class="value">"1"</span> 
+           <span class="attribute">required</span><span class="tag">&gt;</span>
+    
+    <span class="tag">&lt;button</span> <span class="attribute">type</span>=<span class="value">"submit"</span><span class="tag">&gt;</span>Envoyer<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Personnalisation des messages :</strong>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> 
+       <span class="attribute">required</span>
+       <span class="attribute">oninvalid</span>=<span class="value">"this.setCustomValidity('Veuillez remplir ce champ')"</span>
+       <span class="attribute">oninput</span>=<span class="value">"this.setCustomValidity('')"</span><span class="tag">&gt;</span></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Fieldset et legend -->
+                    <div class="lecon-section">
+                        <h3>📦 10.5 Grouper les champs avec fieldset</h3>
+
+                        <p><code>&lt;fieldset&gt;</code> permet de grouper des champs liés, avec une légende <code>&lt;legend&gt;</code>.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;fieldset&gt;</span>
+    <span class="tag">&lt;legend&gt;</span>Informations personnelles<span class="tag">&lt;/legend&gt;</span>
+    
+    <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"nom"</span><span class="tag">&gt;</span>Nom :<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">id</span>=<span class="value">"nom"</span> <span class="attribute">name</span>=<span class="value">"nom"</span><span class="tag">&gt;</span>
+    
+    <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"email"</span><span class="tag">&gt;</span>Email :<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">id</span>=<span class="value">"email"</span> <span class="attribute">name</span>=<span class="value">"email"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/fieldset&gt;</span>
+
+<span class="tag">&lt;fieldset</span> <span class="attribute">disabled</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;legend&gt;</span>Options désactivées<span class="tag">&lt;/legend&gt;</span>
+    <span class="comment">&lt;!-- Tous les champs ici sont désactivés --&gt;</span>
+<span class="tag">&lt;/fieldset&gt;</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Rendu :</h4>
+                            <fieldset style="border: 1px solid #ccc; padding: 15px; border-radius: 5px;">
+                                <legend style="font-weight: bold;">Informations personnelles</legend>
+                                <label for="exemple-nom">Nom :</label>
+                                <input type="text" id="exemple-nom" style="margin-bottom: 10px;"><br>
+                                <label for="exemple-email">Email :</label>
+                                <input type="email" id="exemple-email">
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Datalist -->
+                    <div class="lecon-section">
+                        <h3>🔍 10.6 Auto-complétion avec datalist</h3>
+
+                        <p><code>&lt;datalist&gt;</code> fournit une liste d'options pré-définies pour un input.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"navigateur"</span><span class="tag">&gt;</span>Choisissez un navigateur :<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;input</span> <span class="attribute">list</span>=<span class="value">"navigateurs"</span> <span class="attribute">id</span>=<span class="value">"navigateur"</span> <span class="attribute">name</span>=<span class="value">"navigateur"</span><span class="tag">&gt;</span>
+
+<span class="tag">&lt;datalist</span> <span class="attribute">id</span>=<span class="value">"navigateurs"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"Chrome"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"Firefox"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"Edge"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"Safari"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"Opera"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/datalist&gt;</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Rendu :</h4>
+                            <input list="demo-browsers" placeholder="Tapez...">
+                            <datalist id="demo-browsers">
+                                <option value="Chrome">
+                                <option value="Firefox">
+                                <option value="Edge">
+                                <option value="Safari">
+                            </datalist>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Output -->
+                    <div class="lecon-section">
+                        <h3>📊 10.7 La balise output</h3>
+
+                        <p><code>&lt;output&gt;</code> affiche le résultat d'un calcul.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;form</span> <span class="attribute">oninput</span>=<span class="value">"result.value=parseInt(a.value)+parseInt(b.value)"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"range"</span> <span class="attribute">id</span>=<span class="value">"a"</span> <span class="attribute">value</span>=<span class="value">"50"</span><span class="tag">&gt;</span>
+    +
+    <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"number"</span> <span class="attribute">id</span>=<span class="value">"b"</span> <span class="attribute">value</span>=<span class="value">"25"</span><span class="tag">&gt;</span>
+    =
+    <span class="tag">&lt;output</span> <span class="attribute">name</span>=<span class="value">"result"</span> <span class="attribute">for</span>=<span class="value">"a b"</span><span class="tag">&gt;</span>75<span class="tag">&lt;/output&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 8: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 10.8 Exercices pratiques</h3>
+                                <div class="exercice-card">
+                            <h4>Exercice 1 : Formulaire d'inscription complet</h4>
+                            <p><strong>Objectif :</strong> Créer un formulaire d'inscription avec validation.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Champs : nom, prénom, email, mot de passe, confirmation</li>
+                                    <li>Date de naissance (type date)</li>
+                                    <li>Sexe (boutons radio)</li>
+                                    <li>Pays (select avec optgroup)</li>
+                                    <li>Centres d'intérêt (checkboxes)</li>
+                                    <li>Couleur préférée (color)</li>
+                                    <li>Niveau de compétence (range 0-100)</li>
+                                    <li>Utilisez fieldset pour grouper</li>
+                                    <li>Ajoutez des validations (required, minlength, etc.)</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Calculateur simple</h4>
+                            <p><strong>Objectif :</strong> Utiliser output pour des calculs.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un calculateur d'IMC (poids / taille²)</li>
+                                    <li>Utilisez des inputs type range</li>
+                                    <li>Affichez le résultat dans output</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Formulaire de réservation</h4>
+                            <p><strong>Objectif :</strong> Créer un formulaire complet.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Date d'arrivée et de départ (date)</li>
+                                    <li>Nombre de personnes (number)</li>
+                                    <li>Type de chambre (select)</li>
+                                    <li>Options supplémentaires (checkboxes)</li>
+                                    <li>Demandes spéciales (textarea)</li>
+                                    <li>Validation : date départ > date arrivée</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== EXERCICES RÉCAPITULATIFS ===== -->
+            <section class="exercices-recap">
+                <h2 class="section-title">🏆 Projet récapitulatif (Leçons 6-10)</h2>
+
+                <div class="recap-card">
+                    <h3>Créez un site de réservation de voyage</h3>
+                    <p>Utilisez toutes les notions apprises dans les leçons 6 à 10.</p>
+
+                    <h4>Structure demandée :</h4>
+                    <ul>
+                        <li><strong>Header sémantique</strong> avec navigation</li>
+                        <li><strong>Section héros</strong> avec image de fond</li>
+                        <li><strong>Tableau des destinations</strong> avec fusions (colspan/rowspan)</li>
+                        <li><strong>Formulaire de réservation complet</strong> avec :
+                            <ul>
+                                <li>Date d'arrivée/départ</li>
+                                <li>Nombre de personnes</li>
+                                <li>Type de chambre (select)</li>
+                                <li>Options (checkboxes)</li>
+                                <li>Informations personnelles</li>
+                                <li>Validation HTML5</li>
+                            </ul>
+                        </li>
+                        <li><strong>Intégration Google Maps</strong> (iframe)</li>
+                        <li><strong>Témoignages vidéo</strong> (vidéo ou YouTube)</li>
+                        <li><strong>Footer</strong> avec adresse et contact</li>
+                    </ul>
+
+                    <details>
+                        <summary>Voir un exemple de structure</summary>
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- Structure sémantique --&gt;</span>
+<span class="tag">&lt;header&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Voyages Malagasy<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;nav&gt;</span>...<span class="tag">&lt;/nav&gt;</span>
+<span class="tag">&lt;/header&gt;</span>
+
+<span class="tag">&lt;main&gt;</span>
+    <span class="comment">&lt;!-- Section héros --&gt;</span>
+    <span class="tag">&lt;section</span> <span class="attribute">class</span>=<span class="value">"hero"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/section&gt;</span>
+    
+    <span class="comment">&lt;!-- Tableau des destinations --&gt;</span>
+    <span class="tag">&lt;section&gt;</span>
+        <span class="tag">&lt;h2&gt;</span>Nos destinations<span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;table&gt;</span>
+            <span class="tag">&lt;thead&gt;</span>...<span class="tag">&lt;/thead&gt;</span>
+            <span class="tag">&lt;tbody&gt;</span>...<span class="tag">&lt;/tbody&gt;</span>
+            <span class="tag">&lt;tfoot&gt;</span>...<span class="tag">&lt;/tfoot&gt;</span>
+        <span class="tag">&lt;/table&gt;</span>
+    <span class="tag">&lt;/section&gt;</span>
+    
+    <span class="comment">&lt;!-- Formulaire de réservation --&gt;</span>
+    <span class="tag">&lt;section&gt;</span>
+        <span class="tag">&lt;h2&gt;</span>Réserver maintenant<span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;form&gt;</span>
+            <span class="tag">&lt;fieldset&gt;</span>
+                <span class="tag">&lt;legend&gt;</span>Dates<span class="tag">&lt;/legend&gt;</span>
+                <span class="comment">&lt;!-- inputs date --&gt;</span>
+            <span class="tag">&lt;/fieldset&gt;</span>
+            
+            <span class="tag">&lt;fieldset&gt;</span>
+                <span class="tag">&lt;legend&gt;</span>Informations<span class="tag">&lt;/legend&gt;</span>
+                <span class="comment">&lt;!-- inputs divers --&gt;</span>
+            <span class="tag">&lt;/fieldset&gt;</span>
+        <span class="tag">&lt;/form&gt;</span>
+    <span class="tag">&lt;/section&gt;</span>
+    
+    <span class="comment">&lt;!-- Carte et vidéo --&gt;</span>
+    <span class="tag">&lt;section&gt;</span>
+        <span class="tag">&lt;h2&gt;</span>Où nous trouver<span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;iframe</span> <span class="attribute">src</span>=<span class="value">"..."</span><span class="tag">&gt;</span><span class="tag">&lt;/iframe&gt;</span>
+        <span class="tag">&lt;video</span> <span class="attribute">controls</span><span class="tag">&gt;</span>...<span class="tag">&lt;/video&gt;</span>
+    <span class="tag">&lt;/section&gt;</span>
+<span class="tag">&lt;/main&gt;</span>
+
+<span class="tag">&lt;footer&gt;</span>
+    <span class="tag">&lt;address&gt;</span>...<span class="tag">&lt;/address&gt;</span>
+<span class="tag">&lt;/footer&gt;</span></pre>
+                        </div>
+                    </details>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <a href="a.html" class="pagination-prev"><i class="fas fa-arrow-left"></i> Leçons 1-5</a>
+                <div class="pagination-links">
+                    <a href="a.html">1</a>
+                    <a href="b.html" class="active">2</a>
+                    <a href="c.html">3</a>
+                    <a href="d.html">4</a>
+                </div>
+                <a href="c.html" class="pagination-next">Leçons 11-15 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+  </html>
+  
+                         
+       
