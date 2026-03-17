@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Master - Leçons 16 à 20</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="js4.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">{ }</span>
+                    <div class="logo-text">
+                        <span class="logo-main">JAVASCRIPT MASTER</span>
+                        <span class="logo-sub">Leçons 16 à 20 : Expertise finale</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 16-20 sur 20</span>
+                <span class="progress-percent">100%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%"></div>
+            </div>
+            <div class="progress-nav">
+                <a href="js3.html" class="progress-prev"><i class="fas fa-arrow-left"></i> Leçons 11-15</a>
+                <span class="progress-current">Leçons 16-20</span>
+                <span class="progress-next disabled">Fin du cours <i class="fas fa-check-circle"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 16-20 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 16 à 20 : Expertise finale</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon16" class="sommaire-card">
+                    <span class="lecon-numero">16</span>
+                    <h3>Classes et Programmation Orientée Objet</h3>
+                    <p>class, constructor, héritage</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon17" class="sommaire-card">
+                    <span class="lecon-numero">17</span>
+                    <h3>Modules JavaScript</h3>
+                    <p>import, export, modules ES6</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon18" class="sommaire-card">
+                    <span class="lecon-numero">18</span>
+                    <h3>Gestion des erreurs</h3>
+                    <p>try/catch, throw, Error object</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                </a>
+                <a href="#lecon19" class="sommaire-card">
+                    <span class="lecon-numero">19</span>
+                    <h3>Fonctions avancées</h3>
+                    <p>closures, currying, IIFE</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon20" class="sommaire-card projet">
+                    <span class="lecon-numero">20</span>
+                    <h3>Projet final</h3>
+                    <p>Application complète</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 60 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 16 : CLASSES ET POO ===== -->
+            <article class="lecon" id="lecon16">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 16</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">🏷️ Classes et Programmation Orientée Objet</h2>
+                    <p class="lecon-description">Créer des modèles d'objets réutilisables</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction à la POO -->
+                    <div class="lecon-section">
+                        <h3>🔍 16.1 Qu'est-ce que la Programmation Orientée Objet ?</h3>
+
+                        <div class="definition-box">
+                            <p>La <strong>Programmation Orientée Objet (POO)</strong> est un paradigme qui organise le code autour d'objets qui contiennent des données (propriétés) et des comportements (méthodes).</p>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Concepts clés :</h4>
+                            <ul>
+                                <li><strong>Classe</strong> : modèle/plan pour créer des objets</li>
+                                <li><strong>Objet</strong> : instance d'une classe</li>
+                                <li><strong>Constructeur</strong> : méthode appelée à la création</li>
+                                <li><strong>Héritage</strong> : une classe peut hériter d'une autre</li>
+                                <li><strong>Encapsulation</strong> : cacher les détails internes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Créer une classe -->
+                    <div class="lecon-section">
+                        <h3>🏗️ 16.2 Créer une classe (ES6)</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Déclaration de classe</span>
+<span class="keyword">class</span> Personne {
+    <span class="comment">// Constructeur (appelé avec new)</span>
+    <span class="keyword">constructor</span>(nom, age) {
+        <span class="keyword">this</span>.nom = nom;
+        <span class="keyword">this</span>.age = age;
+    }
+    
+    <span class="comment">// Méthode</span>
+    sePresenter() {
+        console.log(`Bonjour, je m'appelle ${this.nom} et j'ai ${this.age} ans.`);
+    }
+    
+    <span class="comment">// Autre méthode</span>
+    anniversaire() {
+        <span class="keyword">this</span>.age++;
+        console.log(`Joyeux anniversaire ${this.nom} ! Vous avez maintenant ${this.age} ans.`);
+    }
+}
+
+<span class="comment">// Créer une instance</span>
+<span class="keyword">const</span> personne1 = <span class="keyword">new</span> Personne("Jean", 25);
+<span class="keyword">const</span> personne2 = <span class="keyword">new</span> Personne("Marie", 30);
+
+personne1.sePresenter(); <span class="comment">// "Bonjour, je m'appelle Jean et j'ai 25 ans."</span>
+personne2.sePresenter(); <span class="comment">// "Bonjour, je m'appelle Marie et j'ai 30 ans."</span>
+personne1.anniversaire(); <span class="comment">// "Joyeux anniversaire Jean ! Vous avez maintenant 26 ans."</span></pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Note :</strong> Par convention, les noms de classes commencent par une majuscule (PascalCase).</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Propriétés et méthodes -->
+                    <div class="lecon-section">
+                        <h3>⚙️ 16.3 Propriétés et méthodes avancées</h3>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">class</span> CompteBancaire {
+    <span class="keyword">constructor</span>(titulaire, soldeInitial = 0) {
+        <span class="keyword">this</span>.titulaire = titulaire;
+        <span class="keyword">this</span>._solde = soldeInitial; <span class="comment">// Convention : _ pour "privé"</span>
+    }
+    
+    <span class="comment">// Getter</span>
+    get solde() {
+        <span class="keyword">return</span> <span class="keyword">this</span>._solde;
+    }
+    
+    <span class="comment">// Setter</span>
+    set solde(montant) {
+        <span class="keyword">if</span> (montant < 0) {
+            console.error("Le solde ne peut pas être négatif");
+            <span class="keyword">return</span>;
+        }
+        <span class="keyword">this</span>._solde = montant;
+    }
+    
+    <span class="comment">// Méthode</span>
+    deposer(montant) {
+        <span class="keyword">if</span> (montant <= 0) {
+            console.error("Le montant doit être positif");
+            <span class="keyword">return</span>;
+        }
+        <span class="keyword">this</span>._solde += montant;
+        console.log(`Dépôt de ${montant}€. Nouveau solde: ${this._solde}€`);
+    }
+    
+    retirer(montant) {
+        <span class="keyword">if</span> (montant <= 0) {
+            console.error("Le montant doit être positif");
+            <span class="keyword">return</span>;
+        }
+        <span class="keyword">if</span> (montant > <span class="keyword">this</span>._solde) {
+            console.error("Solde insuffisant");
+            <span class="keyword">return</span>;
+        }
+        <span class="keyword">this</span>._solde -= montant;
+        console.log(`Retrait de ${montant}€. Nouveau solde: ${this._solde}€`);
+    }
+    
+    <span class="comment">// Méthode statique (appelée sur la classe, pas sur l'instance)</span>
+    <span class="keyword">static</span> convertirEnEuro(montant, devise) {
+        <span class="keyword">const</span> taux = { USD: 0.92, GBP: 1.17, MGA: 0.00022 };
+        <span class="keyword">return</span> montant * (taux[devise] || 1);
+    }
+}
+
+<span class="comment">// Utilisation</span>
+<span class="keyword">const</span> compte = <span class="keyword">new</span> CompteBancaire("Jean", 1000);
+console.log(compte.solde); <span class="comment">// 1000 (getter)</span>
+compte.deposer(500);        <span class="comment">// Dépôt de 500€. Nouveau solde: 1500€</span>
+compte.retirer(200);        <span class="comment">// Retrait de 200€. Nouveau solde: 1300€</span>
+
+<span class="comment">// Méthode statique</span>
+console.log(CompteBancaire.convertirEnEuro(100, "USD")); <span class="comment">// 92</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Héritage -->
+                    <div class="lecon-section">
+                        <h3>👪 16.4 Héritage (extends)</h3>
+
+                        <p>Une classe peut hériter d'une autre classe avec <code>extends</code>.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">class</span> Animal {
+    <span class="keyword">constructor</span>(nom) {
+        <span class="keyword">this</span>.nom = nom;
+    }
+    
+    parler() {
+        console.log(`${this.nom} fait un bruit.`);
+    }
+}
+
+<span class="keyword">class</span> Chien <span class="keyword">extends</span> Animal {
+    <span class="keyword">constructor</span>(nom, race) {
+        <span class="keyword">super</span>(nom); <span class="comment">// Appelle le constructeur parent</span>
+        <span class="keyword">this</span>.race = race;
+    }
+    
+    <span class="comment">// Redéfinition de méthode (override)</span>
+    parler() {
+        console.log(`${this.nom} (${this.race}) aboie: Ouaf !`);
+    }
+    
+    <span class="comment">// Nouvelle méthode spécifique</span>
+    rapporter() {
+        console.log(`${this.nom} rapporte la balle !`);
+    }
+}
+
+<span class="keyword">class</span> Chat <span class="keyword">extends</span> Animal {
+    parler() {
+        console.log(`${this.nom} miaule: Miaou !`);
+    }
+}
+
+<span class="keyword">const</span> rex = <span class="keyword">new</span> Chien("Rex", "Berger Allemand");
+<span class="keyword">const</span> felix = <span class="keyword">new</span> Chat("Félix");
+
+rex.parler();    <span class="comment">// "Rex (Berger Allemand) aboie: Ouaf !"</span>
+felix.parler();  <span class="comment">// "Félix miaule: Miaou !"</span>
+rex.rapporter(); <span class="comment">// "Rex rapporte la balle !"</span>
+<span class="comment">// felix.rapporter(); // Erreur !</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Encapsulation avec # (privé) -->
+                    <div class="lecon-section">
+                        <h3>🔒 16.5 Propriétés privées (#)</h3>
+
+                        <p>Depuis ES2020, on peut utiliser <code>#</code> pour des propriétés vraiment privées.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">class</span> Banque {
+    <span class="comment">// Propriété privée</span>
+    <span class="comment">#solde</span>;
+    
+    <span class="keyword">constructor</span>(titulaire, soldeInitial) {
+        <span class="keyword">this</span>.titulaire = titulaire;
+        <span class="keyword">this</span>.#solde = soldeInitial;
+    }
+    
+    get solde() {
+        <span class="keyword">return</span> <span class="keyword">this</span>.#solde;
+    }
+    
+    deposer(montant) {
+        <span class="keyword">if</span> (montant > 0) {
+            <span class="keyword">this</span>.#solde += montant;
+        }
+    }
+    
+    <span class="comment">// Impossible d'accéder à #solde de l'extérieur</span>
+}
+
+<span class="keyword">const</span> compte = <span class="keyword">new</span> Banque("Jean", 1000);
+console.log(compte.solde);     <span class="comment">// 1000 (via getter)</span>
+<span class="comment">// console.log(compte.#solde); // Erreur ! (privé)</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 16.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Créer une classe Produit</h4>
+                            <p><strong>Objectif :</strong> Créer une classe pour gérer des produits.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une classe <code>Produit</code> avec nom, prix, quantité</li>
+                                    <li>Ajoutez une méthode <code>afficher()</code> qui résume le produit</li>
+                                    <li>Ajoutez une méthode <code>vendre(quantite)</code> qui réduit le stock</li>
+                                    <li>Ajoutez un getter pour la valeur totale (prix * quantité)</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Héritage - Véhicules</h4>
+                            <p><strong>Objectif :</strong> Créer une hiérarchie de classes.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Classe mère <code>Vehicule</code> avec marque, modèle, année</li>
+                                    <li>Méthode <code>demarrer()</code> générique</li>
+                                    <li>Classe <code>Voiture</code> qui ajoute nbPortes</li>
+                                    <li>Classe <code>Moto</code> qui ajoute typeGuidon</li>
+                                    <li>Redéfinissez demarrer() pour chaque</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 17 : MODULES JAVASCRIPT ===== -->
+            <article class="lecon" id="lecon17">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 17</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">📦 Modules JavaScript</h2>
+                    <p class="lecon-description">Organiser et partager du code</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 17.1 Pourquoi les modules ?</h3>
+
+                        <div class="definition-box">
+                            <p>Les <strong>modules</strong> permettent de diviser le code en fichiers séparés, chacun avec sa propre portée. On peut exporter des parties d'un module et les importer dans d'autres.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Avantages :</strong>
+                                <ul>
+                                    <li>Code plus organisé</li>
+                                    <li>Réutilisable</li>
+                                    <li>Évite les conflits de noms</li>
+                                    <li>Meilleure maintenabilité</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Exporter et Importer -->
+                    <div class="lecon-section">
+                        <h3>📤 17.2 export et import</h3>
+
+                        <h4>Fichier math.js (export)</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">// Export nommé</span>
+<span class="keyword">export</span> <span class="keyword">const</span> PI = 3.14159;
+
+<span class="keyword">export</span> <span class="keyword">function</span> addition(a, b) {
+    <span class="keyword">return</span> a + b;
+}
+
+<span class="keyword">export</span> <span class="keyword">function</span> multiplication(a, b) {
+    <span class="keyword">return</span> a * b;
+}
+
+<span class="comment">// Export par défaut (un seul par module)</span>
+<span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> saluer(nom) {
+    <span class="keyword">return</span> `Bonjour ${nom} !`;
+}</pre>
+                        </div>
+
+                        <h4>Fichier app.js (import)</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">// Importer des exports nommés</span>
+<span class="keyword">import</span> { addition, multiplication, PI } <span class="keyword">from</span> './math.js';
+
+console.log(addition(5, 3));      <span class="comment">// 8</span>
+console.log(multiplication(4, 2)); <span class="comment">// 8</span>
+console.log(PI);                   <span class="comment">// 3.14159</span>
+
+<span class="comment">// Importer l'export par défaut</span>
+<span class="keyword">import</span> saluer <span class="keyword">from</span> './math.js';
+console.log(saluer("Jean"));       <span class="comment">// "Bonjour Jean !"</span>
+
+<span class="comment">// Importer avec alias</span>
+<span class="keyword">import</span> { addition as add, multiplication as mult } <span class="keyword">from</span> './math.js';
+console.log(add(10, 5));           <span class="comment">// 15</span>
+
+<span class="comment">// Tout importer sous un namespace</span>
+<span class="keyword">import</span> * <span class="keyword">as</span> Maths <span class="keyword">from</span> './math.js';
+console.log(Maths.addition(7, 2)); <span class="comment">// 9</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Modules dans le HTML -->
+                    <div class="lecon-section">
+                        <h3>🌐 17.3 Utiliser des modules dans le navigateur</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- Dans le HTML --&gt;</span>
+&lt;script type="module" src="app.js"&gt;&lt;/script&gt;
+
+<span class="comment">&lt;!-- Ou directement dans le HTML --&gt;</span>
+&lt;script type="module"&gt;
+    import { addition } from './math.js';
+    console.log(addition(5, 3));
+&lt;/script&gt;</pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Attention :</strong> Les modules CORS (Cross-Origin Resource Sharing) nécessitent un serveur. Vous ne pouvez pas les tester directement avec le protocole file://. Utilisez Live Server ou un serveur local.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 17.4 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Créer une bibliothèque mathématique</h4>
+                            <p><strong>Objectif :</strong> Créer un module avec des fonctions mathématiques.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un fichier <code>operations.js</code></li>
+                                    <li>Exportez des fonctions : carre, cube, puissance</li>
+                                    <li>Exportez une constante VERSION</li>
+                                    <li>Importez et utilisez dans un autre fichier</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 18 : GESTION DES ERREURS ===== -->
+            <article class="lecon" id="lecon18">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 18</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">⚠️ Gestion des erreurs</h2>
+                    <p class="lecon-description">try, catch, finally, throw</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: try/catch -->
+                    <div class="lecon-section">
+                        <h3>🔍 18.1 try/catch</h3>
+
+                        <div class="definition-box">
+                            <p>Le bloc <code>try/catch</code> permet de gérer les erreurs sans interrompre l'exécution du programme.</p>
+                        </div>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">try</span> {
+    <span class="comment">// Code qui peut générer une erreur</span>
+    <span class="keyword">let</span> resultat = 10 / 0;
+    console.log("Résultat:", resultat);
+    
+    <span class="comment">// Erreur volontaire</span>
+    <span class="keyword">throw</span> <span class="keyword">new</span> Error("Quelque chose s'est mal passé");
+    
+    console.log("Ceci ne sera pas exécuté");
+} <span class="keyword">catch</span> (erreur) {
+    <span class="comment">// Gérer l'erreur</span>
+    console.error("Une erreur est survenue:", erreur.message);
+    console.error("Stack trace:", erreur.stack);
+} <span class="keyword">finally</span> {
+    <span class="comment">// S'exécute toujours, qu'il y ait erreur ou non</span>
+    console.log("Bloc finally exécuté");
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Types d'erreurs -->
+                    <div class="lecon-section">
+                        <h3>📋 18.2 Types d'erreurs natives</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>Error</code></td>
+                                    <td>Erreur générique</td>
+                                    <td><code>new Error("Message")</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>SyntaxError</code></td>
+                                    <td>Erreur de syntaxe</td>
+                                    <td><code>eval("if()")</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>TypeError</code></td>
+                                    <td>Type incorrect</td>
+                                    <td><code>null.toUpperCase()</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>ReferenceError</code></td>
+                                    <td>Variable non définie</td>
+                                    <td><code>console.log(x)</code> si x non défini</td>
+                                </tr>
+                                <tr>
+                                    <td><code>RangeError</code></td>
+                                    <td>Valeur hors limites</td>
+                                    <td><code>new Array(-1)</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>URIError</code></td>
+                                    <td>URI invalide</td>
+                                    <td><code>decodeURI("%")</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">try</span> {
+    <span class="comment">// Différents types d'erreurs</span>
+    <span class="comment">// throw new SyntaxError("Erreur de syntaxe");</span>
+    <span class="comment">// throw new TypeError("Type incorrect");</span>
+    <span class="comment">// throw new ReferenceError("Variable non définie");</span>
+    <span class="comment">// throw new RangeError("Valeur hors limites");</span>
+    
+    <span class="keyword">throw</span> <span class="keyword">new</span> Error("Erreur personnalisée");
+} <span class="keyword">catch</span> (erreur) {
+    <span class="keyword">if</span> (erreur <span class="keyword">instanceof</span> TypeError) {
+        console.log("Erreur de type:", erreur.message);
+    } <span class="keyword">else</span> <span class="keyword">if</span> (erreur <span class="keyword">instanceof</span> ReferenceError) {
+        console.log("Erreur de référence:", erreur.message);
+    } <span class="keyword">else</span> {
+        console.log("Autre erreur:", erreur.message);
+    }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Créer ses propres erreurs -->
+                    <div class="lecon-section">
+                        <h3>🔧 18.3 Créer des classes d'erreur personnalisées</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Créer une classe d'erreur personnalisée</span>
+<span class="keyword">class</span> ValidationError <span class="keyword">extends</span> Error {
+    <span class="keyword">constructor</span>(message, champ) {
+        <span class="keyword">super</span>(message);
+        <span class="keyword">this</span>.name = <span class="string">"ValidationError"</span>;
+        <span class="keyword">this</span>.champ = champ;
+    }
+}
+
+<span class="keyword">class</span> DatabaseError <span class="keyword">extends</span> Error {
+    <span class="keyword">constructor</span>(message, code) {
+        <span class="keyword">super</span>(message);
+        <span class="keyword">this</span>.name = <span class="string">"DatabaseError"</span>;
+        <span class="keyword">this</span>.code = code;
+    }
+}
+
+<span class="keyword">function</span> validerAge(age) {
+    <span class="keyword">if</span> (age < 0) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> ValidationError("L'âge ne peut pas être négatif", "age");
+    }
+    <span class="keyword">if</span> (age > 150) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> ValidationError("L'âge semble trop élevé", "age");
+    }
+    <span class="keyword">return</span> true;
+}
+
+<span class="keyword">try</span> {
+    validerAge(-5);
+} <span class="keyword">catch</span> (erreur) {
+    <span class="keyword">if</span> (erreur <span class="keyword">instanceof</span> ValidationError) {
+        console.log(`Erreur de validation sur ${erreur.champ}: ${erreur.message}`);
+    } <span class="keyword">else</span> {
+        console.log("Erreur inconnue:", erreur);
+    }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 18.4 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Validation de formulaire</h4>
+                            <p><strong>Objectif :</strong> Créer une fonction de validation avec gestion d'erreurs.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une fonction <code>validerUtilisateur(nom, email, age)</code></li>
+                                    <li>Lancez des erreurs si nom vide, email invalide, age < 13</li>
+                                    <li>Utilisez des types d'erreur appropriés</li>
+                                    <li>Testez avec try/catch</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 19 : FONCTIONS AVANCÉES ===== -->
+            <article class="lecon" id="lecon19">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 19</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">⚡ Fonctions avancées</h2>
+                    <p class="lecon-description">Closures, currying, IIFE, higher-order functions</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Closures (fermetures) -->
+                    <div class="lecon-section">
+                        <h3>🔒 19.1 Les closures</h3>
+
+                        <div class="definition-box">
+                            <p>Une <strong>closure</strong> est une fonction qui se souvient de son environnement lexical même après que la fonction parente a fini de s'exécuter.</p>
+                        </div>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">function</span> creerCompteur() {
+    <span class="keyword">let</span> compteur = 0; <span class="comment">// Variable "privée"</span>
+    
+    <span class="keyword">return</span> <span class="keyword">function</span>() {
+        compteur++;
+        <span class="keyword">return</span> compteur;
+    };
+}
+
+<span class="keyword">const</span> compteur1 = creerCompteur();
+<span class="keyword">const</span> compteur2 = creerCompteur();
+
+console.log(compteur1()); <span class="comment">// 1</span>
+console.log(compteur1()); <span class="comment">// 2</span>
+console.log(compteur1()); <span class="comment">// 3</span>
+console.log(compteur2()); <span class="comment">// 1 (indépendant)</span>
+console.log(compteur2()); <span class="comment">// 2</span>
+
+<span class="comment">// Exemple pratique : fabrique de fonctions</span>
+<span class="keyword">function</span> multiplier(facteur) {
+    <span class="keyword">return</span> <span class="keyword">function</span>(nombre) {
+        <span class="keyword">return</span> nombre * facteur;
+    };
+}
+
+<span class="keyword">const</span> double = multiplier(2);
+<span class="keyword">const</span> triple = multiplier(3);
+
+console.log(double(5)); <span class="comment">// 10</span>
+console.log(triple(5)); <span class="comment">// 15</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Currying -->
+                    <div class="lecon-section">
+                        <h3>🎯 19.2 Currying</h3>
+
+                        <p>Le <strong>currying</strong> transforme une fonction qui prend plusieurs arguments en une série de fonctions qui prennent un argument à la fois.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Fonction normale</span>
+<span class="keyword">function</span> addition(a, b, c) {
+    <span class="keyword">return</span> a + b + c;
+}
+
+<span class="comment">// Version curryfiée</span>
+<span class="keyword">function</span> additionCurry(a) {
+    <span class="keyword">return</span> <span class="keyword">function</span>(b) {
+        <span class="keyword">return</span> <span class="keyword">function</span>(c) {
+            <span class="keyword">return</span> a + b + c;
+        };
+    };
+}
+
+console.log(addition(1, 2, 3)); <span class="comment">// 6</span>
+console.log(additionCurry(1)(2)(3)); <span class="comment">// 6</span>
+
+<span class="comment">// Version fléchée plus concise</span>
+<span class="keyword">const</span> additionCurry2 = a => b => c => a + b + c;
+
+<span class="comment">// Utilisation pratique : pré-configurer des fonctions</span>
+<span class="keyword">const</span> avecTaxe = taux => prix => prix * (1 + taux);
+<span class="keyword">const</span> tva20 = avecTaxe(0.20);
+<span class="keyword">const</span> tva5 = avecTaxe(0.05);
+
+console.log(tva20(100)); <span class="comment">// 120</span>
+console.log(tva5(100));  <span class="comment">// 105</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: IIFE (Immediately Invoked Function Expression) -->
+                    <div class="lecon-section">
+                        <h3>⚡ 19.3 IIFE</h3>
+
+                        <p>Une <strong>IIFE</strong> est une fonction qui s'exécute immédiatement après sa définition. Utile pour créer un scope privé.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Syntaxe</span>
+(<span class="keyword">function</span>() {
+    console.log("IIFE classique");
+})();
+
+(<span class="keyword">function</span>(nom) {
+    console.log(`Bonjour ${nom}`);
+})("Jean");
+
+<span class="comment">// Avec fonctions fléchées</span>
+(() => {
+    console.log("IIFE fléchée");
+})();
+
+<span class="comment">// Utilité : créer un espace privé</span>
+<span class="keyword">const</span> compteur = (() => {
+    <span class="keyword">let</span> count = 0; <span class="comment">// Privé</span>
+    
+    <span class="keyword">return</span> {
+        incrementer: () => ++count,
+        decrementer: () => --count,
+        valeur: () => count
+    };
+})();
+
+console.log(compteur.valeur());      <span class="comment">// 0</span>
+console.log(compteur.incrementer()); <span class="comment">// 1</span>
+console.log(compteur.incrementer()); <span class="comment">// 2</span>
+console.log(compteur.decrementer()); <span class="comment">// 1</span>
+<span class="comment">// console.log(compteur.count); // undefined (privé)</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Higher-Order Functions -->
+                    <div class="lecon-section">
+                        <h3>🔄 19.4 Higher-Order Functions</h3>
+
+                        <p>Une <strong>higher-order function</strong> est une fonction qui prend une fonction en paramètre ou retourne une fonction.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// map, filter, reduce sont des HOF (déjà vues)</span>
+
+<span class="comment">// Exemple : fonction qui applique une opération plusieurs fois</span>
+<span class="keyword">function</span> repeter(n, action) {
+    <span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i < n; i++) {
+        action(i);
+    }
+}
+
+repeter(3, console.log);
+
+<span class="comment">// Exemple : fonction qui crée un validateur</span>
+<span class="keyword">function</span> creerValidateur(regle, message) {
+    <span class="keyword">return</span> <span class="keyword">function</span>(valeur) {
+        <span class="keyword">return</span> regle(valeur) ? null : message;
+    };
+}
+      
+<span class="keyword">const</span> estNonVide = creerValidateur(
+    val => val && val.trim().length > 0,
+    "Ce champ ne peut pas être vide"
+);
+
+<span class="keyword">const</span> estEmail = creerValidateur(
+    val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+    "Email invalide"
+);
+
+console.log(estNonVide(""));        <span class="comment">// "Ce champ ne peut pas être vide"</span>
+console.log(estNonVide("Jean"));    <span class="comment">// null</span>
+console.log(estEmail("test"));      <span class="comment">// "Email invalide"</span>
+console.log(estEmail("test@test.com")); <span class="comment">// null</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 19.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Créer un compteur avec closure</h4>
+                            <p><strong>Objectif :</strong> Créer une fonction qui génère des compteurs indépendants.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une fonction <code>creerCompteur</code> qui prend une valeur initiale</li>
+                                    <li>Retournez un objet avec des méthodes increment, decrement, reset</li>
+                                    <li>Chaque compteur doit être indépendant</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Curry pour remises</h4>
+                            <p><strong>Objectif :</strong> Créer une fonction curryfiée pour calculer des prix avec remises.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une fonction <code>appliquerRemise</code> qui prend d'abord le pourcentage</li>
+                                    <li>Puis le prix, et retourne le prix réduit</li>
+                                    <li>Créez des fonctions pré-configurées (remise20, remise50)</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 20 : PROJET FINAL ===== -->
+            <article class="lecon projet" id="lecon20">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre projet-bg">Chapitre 20</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 60 min</span>
+                        <span class="lecon-niveau projet">Projet final</span>
+                    </div>
+                    <h2 class="lecon-titre">🚀 Projet final</h2>
+                    <p class="lecon-description">Application complète de gestion de tâches</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Présentation -->
+                    <div class="lecon-section">
+                        <h3>🎯 20.1 Objectif du projet</h3>
+
+                        <p>Créer une application de gestion de tâches (Todo List) complète en utilisant <strong>toutes les notions JavaScript</strong> apprises.</p>
+
+                        <div class="encart-important" style="background: #388e3c;">
+                            <div class="encart-icon">🏆</div>
+                            <div class="encart-content">
+                                <strong>Compétences évaluées :</strong> Variables, fonctions, tableaux, objets, DOM, événements, stockage, classes, modules, asynchrone, fetch
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Spécifications -->
+                    <div class="lecon-section">
+                        <h3>📋 20.2 Spécifications fonctionnelles</h3>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>Fonctionnalités de base :</h4>
+                                <ul>
+                                    <li>✅ Ajouter une tâche (titre, description, date)</li>
+                                    <li>✅ Marquer comme terminée</li>
+                                    <li>✅ Supprimer une tâche</li>
+                                    <li>✅ Modifier une tâche</li>
+                                    <li>✅ Filtrer (toutes, actives, terminées)</li>
+                                    <li>✅ Persistance avec localStorage</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Fonctionnalités avancées :</h4>
+                                <ul>
+                                    <li>🔲 Catégories / tags</li>
+                                    <li>🔲 Date d'échéance avec rappel</li>
+                                    <li>🔲 Priorité (haute, moyenne, basse)</li>
+                                    <li>🔲 Recherche en temps réel</li>
+                                    <li>🔲 Export/Import des données</li>
+                                    <li>🔲 Statistiques</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Structure du projet -->
+                    <div class="lecon-section">
+                        <h3>📁 20.3 Structure du projet (modulaire)</h3>
+
+                        <div class="code-block">
+                            <pre>📁 todo-app/
+│
+├── index.html
+├── style.css
+│
+├── js/
+│   ├── app.js                 # Point d'entrée
+│   ├── modules/
+│   │   ├── Task.js            # Classe Task
+│   │   ├── TaskManager.js     # Gestionnaire de tâches
+│   │   ├── Storage.js         # Gestion localStorage
+│   │   ├── UI.js              # Manipulation du DOM
+│   │   └── utils.js           # Fonctions utilitaires
+│   └── data/
+│       └── tasks.json         # Données d'exemple
+│
+└── assets/
+    └── icons/</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Code de base - Classe Task -->
+                    <div class="lecon-section">
+                        <h3>🏗️ 20.4 Module Task.js</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Task.js</span>
+<span class="keyword">export</span> <span class="keyword">class</span> Task {
+    <span class="keyword">constructor</span>(titre, description = "", dateEcheance = null, priorite = "moyenne") {
+        <span class="keyword">this</span>.id = Date.now().toString() + Math.random().toString(36).substr(2, 5);
+        <span class="keyword">this</span>.titre = titre;
+        <span class="keyword">this</span>.description = description;
+        <span class="keyword">this</span>.dateEcheance = dateEcheance;
+        <span class="keyword">this</span>.priorite = priorite; <span class="comment">// "haute", "moyenne", "basse"</span>
+        <span class="keyword">this</span>.termine = <span class="keyword">false</span>;
+        <span class="keyword">this</span>.dateCreation = <span class="keyword">new</span> Date().toISOString();
+        <span class="keyword">this</span>.dateModification = <span class="keyword">this</span>.dateCreation;
+    }
+    
+    toggle() {
+        <span class="keyword">this</span>.termine = !<span class="keyword">this</span>.termine;
+        <span class="keyword">this</span>.dateModification = <span class="keyword">new</span> Date().toISOString();
+    }
+    
+    mettreAJour(donnees) {
+        <span class="keyword">if</span> (donnees.titre) <span class="keyword">this</span>.titre = donnees.titre;
+        <span class="keyword">if</span> (donnees.description !== <span class="keyword">undefined</span>) <span class="keyword">this</span>.description = donnees.description;
+        <span class="keyword">if</span> (donnees.dateEcheance) <span class="keyword">this</span>.dateEcheance = donnees.dateEcheance;
+        <span class="keyword">if</span> (donnees.priorite) <span class="keyword">this</span>.priorite = donnees.priorite;
+        <span class="keyword">this</span>.dateModification = <span class="keyword">new</span> Date().toISOString();
+    }
+    
+    toJSON() {
+        <span class="keyword">return</span> {
+            id: <span class="keyword">this</span>.id,
+            titre: <span class="keyword">this</span>.titre,
+            description: <span class="keyword">this</span>.description,
+            dateEcheance: <span class="keyword">this</span>.dateEcheance,
+            priorite: <span class="keyword">this</span>.priorite,
+            termine: <span class="keyword">this</span>.termine,
+            dateCreation: <span class="keyword">this</span>.dateCreation,
+            dateModification: <span class="keyword">this</span>.dateModification
+        };
+    }
+    
+    <span class="keyword">static</span> fromJSON(data) {
+        <span class="keyword">const</span> task = <span class="keyword">new</span> Task(data.titre);
+        task.id = data.id;
+        task.description = data.description;
+        task.dateEcheance = data.dateEcheance;
+        task.priorite = data.priorite;
+        task.termine = data.termine;
+        task.dateCreation = data.dateCreation;
+        task.dateModification = data.dateModification;
+        <span class="keyword">return</span> task;
+    }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Module Storage.js -->
+                    <div class="lecon-section">
+                        <h3>💾 20.5 Module Storage.js</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Storage.js</span>
+<span class="keyword">import</span> { Task } <span class="keyword">from</span> './Task.js';
+
+<span class="keyword">export</span> <span class="keyword">class</span> Storage {
+    <span class="keyword">static</span> STORAGE_KEY = "todo_app_tasks";
+    
+    <span class="keyword">static</span> sauvegarder(tasks) {
+        <span class="keyword">try</span> {
+            <span class="keyword">const</span> tasksData = tasks.map(task => task.toJSON());
+            localStorage.setItem(<span class="keyword">this</span>.STORAGE_KEY, JSON.stringify(tasksData));
+            <span class="keyword">return</span> true;
+        } <span class="keyword">catch</span> (erreur) {
+            console.error("Erreur lors de la sauvegarde:", erreur);
+            <span class="keyword">return</span> <span class="keyword">false</span>;
+        }
+    }
+    
+    <span class="keyword">static</span> charger() {
+        <span class="keyword">try</span> {
+            <span class="keyword">const</span> data = localStorage.getItem(<span class="keyword">this</span>.STORAGE_KEY);
+            <span class="keyword">if</span> (!data) <span class="keyword">return</span> [];
+            
+            <span class="keyword">const</span> tasksData = JSON.parse(data);
+            <span class="keyword">return</span> tasksData.map(taskData => Task.fromJSON(taskData));
+        } <span class="keyword">catch</span> (erreur) {
+            console.error("Erreur lors du chargement:", erreur);
+            <span class="keyword">return</span> [];
+        }
+    }
+    
+    <span class="keyword">static</span> vider() {
+        localStorage.removeItem(<span class="keyword">this</span>.STORAGE_KEY);
+    }
+    
+    <span class="keyword">static</span> exporter() {
+        <span class="keyword">const</span> data = localStorage.getItem(<span class="keyword">this</span>.STORAGE_KEY);
+        <span class="keyword">const</span> blob = <span class="keyword">new</span> Blob([data], { type: "application/json" });
+        <span class="keyword">const</span> url = URL.createObjectURL(blob);
+        
+        <span class="keyword">const</span> a = document.createElement("a");
+        a.href = url;
+        a.download = `todo-backup-${<span class="keyword">new</span> Date().toISOString().slice(0, 10)}.json`;
+        a.click();
+        
+        URL.revokeObjectURL(url);
+    }
+    
+    <span class="keyword">static</span> async importer(fichier) {
+        <span class="keyword">return</span> <span class="keyword">new</span> Promise((resolve, reject) => {
+            <span class="keyword">const</span> reader = <span class="keyword">new</span> FileReader();
+            
+            reader.onload = (e) => {
+                <span class="keyword">try</span> {
+                    <span class="keyword">const</span> data = JSON.parse(e.target.result);
+                    <span class="keyword">const</span> tasks = data.map(taskData => Task.fromJSON(taskData));
+                    resolve(tasks);
+                } <span class="keyword">catch</span> (erreur) {
+                    reject(erreur);
+                }
+            };
+            
+            reader.onerror = reject;
+            reader.readAsText(fichier);
+        });
+    }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Module TaskManager.js -->
+                    <div class="lecon-section">
+                        <h3>⚙️ 20.6 Module TaskManager.js</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// TaskManager.js</span>
+<span class="keyword">import</span> { Storage } <span class="keyword">from</span> './Storage.js';
+<span class="keyword">import</span> { Task } <span class="keyword">from</span> './Task.js';
+
+<span class="keyword">export</span> <span class="keyword">class</span> TaskManager {
+    <span class="keyword">constructor</span>() {
+        <span class="keyword">this</span>.tasks = [];
+        <span class="keyword">this</span>.filtre = "toutes"; <span class="comment">// toutes, actives, terminees</span>
+        <span class="keyword">this</span>.recherche = "";
+        <span class="keyword">this</span>.observateurs = [];
+    }
+    
+    <span class="comment">// Charger les tâches</span>
+    async charger() {
+        <span class="keyword">try</span> {
+            <span class="keyword">const</span> tasks = Storage.charger();
+            <span class="keyword">this</span>.tasks = tasks;
+            <span class="keyword">this</span>.notifierObservateurs();
+            <span class="keyword">return</span> tasks;
+        } <span class="keyword">catch</span> (erreur) {
+            console.error("Erreur chargement:", erreur);
+            <span class="keyword">return</span> [];
+        }
+    }
+    
+    <span class="comment">// Sauvegarder</span>
+    sauvegarder() {
+        <span class="keyword">return</span> Storage.sauvegarder(<span class="keyword">this</span>.tasks);
+    }
+    
+    <span class="comment">// Ajouter une tâche</span>
+    ajouter(titre, description = "", dateEcheance = null, priorite = "moyenne") {
+        <span class="keyword">const</span> nouvelleTask = <span class="keyword">new</span> Task(titre, description, dateEcheance, priorite);
+        <span class="keyword">this</span>.tasks.push(nouvelleTask);
+        <span class="keyword">this</span>.sauvegarder();
+        <span class="keyword">this</span>.notifierObservateurs();
+        <span class="keyword">return</span> nouvelleTask;
+    }
+    
+    <span class="comment">// Supprimer une tâche</span>
+    supprimer(id) {
+        <span class="keyword">this</span>.tasks = <span class="keyword">this</span>.tasks.filter(task => task.id !== id);
+        <span class="keyword">this</span>.sauvegarder();
+        <span class="keyword">this</span>.notifierObservateurs();
+    }
+    
+    <span class="comment">// Modifier une tâche</span>
+    modifier(id, donnees) {
+        <span class="keyword">const</span> task = <span class="keyword">this</span>.tasks.find(t => t.id === id);
+        <span class="keyword">if</span> (task) {
+            task.mettreAJour(donnees);
+            <span class="keyword">this</span>.sauvegarder();
+            <span class="keyword">this</span>.notifierObservateurs();
+        }
+    }
+    
+    <span class="comment">// Toggle terminé</span>
+    toggleTermine(id) {
+        <span class="keyword">const</span> task = <span class="keyword">this</span>.tasks.find(t => t.id === id);
+        <span class="keyword">if</span> (task) {
+            task.toggle();
+            <span class="keyword">this</span>.sauvegarder();
+            <span class="keyword">this</span>.notifierObservateurs();
+        }
+    }
+                                     <span class="comment">// Obtenir les tâches filtrées</span>
+    getTachesFiltrees() {
+        <span class="keyword">let</span> resultat = [...<span class="keyword">this</span>.tasks];
+        
+        <span class="comment">// Filtrer par statut</span>
+        <span class="keyword">if</span> (<span class="keyword">this</span>.filtre === "actives") {
+            resultat = resultat.filter(task => !task.termine);
+        } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.filtre === "terminees") {
+            resultat = resultat.filter(task => task.termine);
+        }
+        
+        <span class="comment">// Filtrer par recherche</span>
+        <span class="keyword">if</span> (<span class="keyword">this</span>.recherche) {
+            <span class="keyword">const</span> searchLower = <span class="keyword">this</span>.recherche.toLowerCase();
+            resultat = resultat.filter(task => 
+                task.titre.toLowerCase().includes(searchLower) ||
+                task.description.toLowerCase().includes(searchLower)
+            );
+        }
+        
+        <span class="keyword">return</span> resultat;
+    }
+    
+    <span class="comment">// Observer pattern pour UI</span>
+    ajouterObservateur(observateur) {
+        <span class="keyword">this</span>.observateurs.push(observateur);
+    }
+    
+    notifierObservateurs() {
+        <span class="keyword">const</span> tachesFiltrees = <span class="keyword">this</span>.getTachesFiltrees();
+        <span class="keyword">this</span>.observateurs.forEach(obs => obs(tachesFiltrees, <span class="keyword">this</span>.tasks));
+    }
+    
+    <span class="comment">// Statistiques</span>
+    getStatistiques() {
+        <span class="keyword">const</span> total = <span class="keyword">this</span>.tasks.length;
+        <span class="keyword">const</span> terminees = <span class="keyword">this</span>.tasks.filter(t => t.termine).length;
+        <span class="keyword">const</span> actives = total - terminees;
+        
+        <span class="keyword">return</span> {
+            total,
+            terminees,
+            actives,
+            pourcentage: total ? Math.round((terminees / total) * 100) : 0
+        };
+    }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Module UI.js -->
+                    <div class="lecon-section">
+                        <h3>🎨 20.7 Module UI.js (extrait)</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// UI.js</span>
+<span class="keyword">export</span> <span class="keyword">class</span> UI {
+    <span class="keyword">constructor</span>(taskManager) {
+        <span class="keyword">this</span>.taskManager = taskManager;
+        <span class="keyword">this</span>.elements = <span class="keyword">this</span>.capturerElements();
+        <span class="keyword">this</span>.initialiserEvenements();
+        <span class="keyword">this</span>.taskManager.ajouterObservateur(<span class="keyword">this</span>.afficher.bind(<span class="keyword">this</span>));
+    }
+    
+    capturerElements() {
+        <span class="keyword">return</span> {
+            taskList: document.getElementById("task-list"),
+            taskForm: document.getElementById("task-form"),
+            taskInput: document.getElementById("task-input"),
+            descInput: document.getElementById("desc-input"),
+            filterSelect: document.getElementById("filter-select"),
+            searchInput: document.getElementById("search-input"),
+            statsContainer: document.getElementById("stats-container"),
+            exportBtn: document.getElementById("export-btn"),
+            importBtn: document.getElementById("import-btn"),
+            importFile: document.getElementById("import-file")
+        };
+    }
+    
+    initialiserEvenements() {
+        <span class="comment">// Formulaire d'ajout</span>
+        <span class="keyword">this</span>.elements.taskForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            <span class="keyword">const</span> titre = <span class="keyword">this</span>.elements.taskInput.value.trim();
+            <span class="keyword">if</span> (titre) {
+                <span class="keyword">this</span>.taskManager.ajouter(titre, <span class="keyword">this</span>.elements.descInput.value);
+                <span class="keyword">this</span>.elements.taskForm.reset();
+            }
+        });
+        
+        <span class="comment">// Filtre</span>
+        <span class="keyword">this</span>.elements.filterSelect.addEventListener("change", (e) => {
+            <span class="keyword">this</span>.taskManager.filtre = e.target.value;
+            <span class="keyword">this</span>.taskManager.notifierObservateurs();
+        });
+        
+        <span class="comment">// Recherche (debounce)</span>
+        <span class="keyword">let</span> timeout;
+        <span class="keyword">this</span>.elements.searchInput.addEventListener("input", (e) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                <span class="keyword">this</span>.taskManager.recherche = e.target.value;
+                <span class="keyword">this</span>.taskManager.notifierObservateurs();
+            }, 300);
+        });
+        
+        <span class="comment">// Export</span>
+        <span class="keyword">this</span>.elements.exportBtn.addEventListener("click", () => {
+            Storage.exporter();
+        });
+        
+        <span class="comment">// Import</span>
+        <span class="keyword">this</span>.elements.importBtn.addEventListener("click", () => {
+            <span class="keyword">this</span>.elements.importFile.click();
+        });
+        
+        <span class="keyword">this</span>.elements.importFile.addEventListener("change", async (e) => {
+            <span class="keyword">const</span> fichier = e.target.files[0];
+            <span class="keyword">if</span> (!fichier) <span class="keyword">return</span>;
+            
+            <span class="keyword">try</span> {
+                <span class="keyword">const</span> tasks = await Storage.importer(fichier);
+                <span class="comment">// Mettre à jour...</span>
+            } <span class="keyword">catch</span> (erreur) {
+                alert("Erreur lors de l'import: " + erreur.message);
+            }
+            
+            <span class="keyword">this</span>.elements.importFile.value = "";
+        });
+    }
+    
+    afficher(tachesFiltrees, toutesTaches) {
+        <span class="keyword">this</span>.afficherListe(tachesFiltrees);
+        <span class="keyword">this</span>.afficherStats(toutesTaches);
+    }
+    
+    afficherListe(tasks) {
+        <span class="keyword">this</span>.elements.taskList.innerHTML = tasks.map(task => `
+            &lt;li class="task-item ${task.termine ? 'termine' : ''}" data-id="${task.id}"&gt;
+                &lt;input type="checkbox" class="task-checkbox" ${task.termine ? 'checked' : ''}&gt;
+                &lt;div class="task-content"&gt;
+                    &lt;h3 class="task-title"&gt;${this.escapeHtml(task.titre)}&lt;/h3&gt;
+                    &lt;p class="task-desc"&gt;${this.escapeHtml(task.description)}&lt;/p&gt;
+                    &lt;div class="task-meta"&gt;
+                        &lt;span class="task-priority ${task.priorite}"&gt;${task.priorite}&lt;/span&gt;
+                        ${task.dateEcheance ? `&lt;span class="task-date"&gt;📅 ${new Date(task.dateEcheance).toLocaleDateString()}&lt;/span&gt;` : ''}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="task-actions"&gt;
+                    &lt;button class="edit-btn" title="Modifier"&gt;✏️&lt;/button&gt;
+                    &lt;button class="delete-btn" title="Supprimer"&gt;🗑️&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/li&gt;
+        `).join("");
+        
+        <span class="comment">// Ajouter les événements sur les nouveaux éléments</span>
+        <span class="keyword">this</span>.ajouterEvenementsTaches();
+    }
+    
+    afficherStats(taches) {
+        <span class="keyword">const</span> total = taches.length;
+        <span class="keyword">const</span> terminees = taches.filter(t => t.termine).length;
+        <span class="keyword">const</span> pourcentage = total ? Math.round((terminees / total) * 100) : 0;
+        
+        <span class="keyword">this</span>.elements.statsContainer.innerHTML = `
+            &lt;div class="stat-card"&gt;
+                &lt;span class="stat-value"&gt;${total}&lt;/span&gt;
+                &lt;span class="stat-label"&gt;Total&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="stat-card"&gt;
+                &lt;span class="stat-value"&gt;${terminees}&lt;/span&gt;
+                &lt;span class="stat-label"&gt;Terminées&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="stat-card"&gt;
+                &lt;span class="stat-value"&gt;${total - terminees}&lt;/span&gt;
+                &lt;span class="stat-label"&gt;Actives&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="stat-card"&gt;
+                &lt;span class="stat-value"&gt;${pourcentage}%&lt;/span&gt;
+                &lt;span class="stat-label"&gt;Progression&lt;/span&gt;
+            &lt;/div&gt;
+        `;
+    }
+    
+    ajouterEvenementsTaches() {
+        <span class="comment">// Checkboxes (toggle)</span>
+        document.querySelectorAll(".task-checkbox").forEach(checkbox => {
+            checkbox.addEventListener("change", (e) => {
+                <span class="keyword">const</span> li = e.target.closest(".task-item");
+                <span class="keyword">const</span> id = li.dataset.id;
+                <span class="keyword">this</span>.taskManager.toggleTermine(id);
+            });
+        });
+        
+        <span class="comment">// Boutons supprimer</span>
+        document.querySelectorAll(".delete-btn").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                <span class="keyword">const</span> li = e.target.closest(".task-item");
+                <span class="keyword">const</span> id = li.dataset.id;
+                <span class="keyword">if</span> (confirm("Supprimer cette tâche ?")) {
+                    <span class="keyword">this</span>.taskManager.supprimer(id);
+                }
+            });
+        });
+        
+        <span class="comment">// Boutons modifier</span>
+        document.querySelectorAll(".edit-btn").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                <span class="keyword">const</span> li = e.target.closest(".task-item");
+                <span class="keyword">const</span> id = li.dataset.id;
+                <span class="keyword">const</span> task = <span class="keyword">this</span>.taskManager.tasks.find(t => t.id === id);
+                <span class="keyword">if</span> (task) {
+                    <span class="keyword">const</span> nouveauTitre = prompt("Modifier le titre", task.titre);
+                    <span class="keyword">if</span> (nouveauTitre &amp;&amp; nouveauTitre.trim()) {
+                        <span class="keyword">this</span>.taskManager.modifier(id, { titre: nouveauTitre.trim() });
+                    }
+                }
+            });
+        });
+    }
+    
+    escapeHtml(texte) {
+        <span class="keyword">const</span> div = document.createElement("div");
+        div.textContent = texte;
+        <span class="keyword">return</span> div.innerHTML;
+    }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 8: Checklist finale -->
+                    <div class="lecon-section">
+                        <h3>✅ 20.8 Checklist des notions utilisées</h3>
+                <div class="grid-2">
+                            <div>
+                                <h4>Fondamentaux</h4>
+                                <ul>
+                                    <li><input type="checkbox" checked disabled> Variables (let, const)</li>
+                                    <li><input type="checkbox" checked disabled> Fonctions (fléchées, classiques)</li>
+                                    <li><input type="checkbox" checked disabled> Tableaux et méthodes (map, filter)</li>
+                                    <li><input type="checkbox" checked disabled> Objets</li>
+                                    <li><input type="checkbox" checked disabled> Template strings</li>
+                                </ul>
+
+                                <h4>DOM et événements</h4>
+                                <ul>
+                                    <li><input type="checkbox" checked disabled> Sélection d'éléments</li>
+                                    <li><input type="checkbox" checked disabled> Manipulation du DOM</li>
+                                    <li><input type="checkbox" checked disabled> Gestion d'événements</li>
+                                    <li><input type="checkbox" checked disabled> Event delegation</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4>Avancé</h4>
+                                <ul>
+                                    <li><input type="checkbox" checked disabled> Classes POO</li>
+                                    <li><input type="checkbox" checked disabled> Héritage</li>
+                                    <li><input type="checkbox" checked disabled> Modules (import/export)</li>
+                                    <li><input type="checkbox" checked disabled> localStorage</li>
+                                    <li><input type="checkbox" checked disabled> JSON</li>
+                                    <li><input type="checkbox" checked disabled> Gestion d'erreurs (try/catch)</li>
+                                    <li><input type="checkbox" checked disabled> Promises / async/await</li>
+                                    <li><input type="checkbox" checked disabled> Observer pattern</li>
+                                    <li><input type="checkbox" checked disabled> Debounce</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 9: Rendu final -->
+                    <div class="lecon-section exercices-recap">
+                        <h3>🎓 20.9 Félicitations !</h3>
+
+                        <p>Vous avez terminé les 20 leçons du cours JavaScript Master. Vous avez appris :</p>
+
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 30px 0;">
+                            <div style="background: var(--couleur-primaire); padding: 15px; border-radius: 8px; text-align: center; color: var(--couleur-secondaire);">
+                                <i class="fas fa-code" style="font-size: 2rem;"></i>
+                                <h4>Syntaxe</h4>
+                            </div>
+                            <div style="background: var(--couleur-primaire); padding: 15px; border-radius: 8px; text-align: center; color: var(--couleur-secondaire);">
+                                <i class="fas fa-table" style="font-size: 2rem;"></i>
+                                <h4>Tableaux</h4>
+                            </div>
+                            <div style="background: var(--couleur-primaire); padding: 15px; border-radius: 8px; text-align: center; color: var(--couleur-secondaire);">
+                                <i class="fas fa-cube" style="font-size: 2rem;"></i>
+                                <h4>Objets</h4>
+                            </div>
+                            <div style="background: var(--couleur-primaire); padding: 15px; border-radius: 8px; text-align: center; color: var(--couleur-secondaire);">
+                                <i class="fas fa-window-maximize" style="font-size: 2rem;"></i>
+                                <h4>DOM</h4>
+                            </div>
+                            <div style="background: var(--couleur-primaire); padding: 15px; border-radius: 8px; text-align: center; color: var(--couleur-secondaire);">
+                                <i class="fas fa-bolt" style="font-size: 2rem;"></i>
+                                <h4>Événements</h4>
+                            </div>
+                            <div style="background: var(--couleur-primaire); padding: 15px; border-radius: 8px; text-align: center; color: var(--couleur-secondaire);">
+                                <i class="fas fa-save" style="font-size: 2rem;"></i>
+                                <h4>Stockage</h4>
+                            </div>
+                            <div style="background: var(--couleur-primaire); padding: 15px; border-radius: 8px; text-align: center; color: var(--couleur-secondaire);">
+                                <i class="fas fa-clock" style="font-size: 2rem;"></i>
+                                <h4>Async</h4>
+                            </div>
+                            <div style="background: var(--couleur-primaire); padding: 15px; border-radius: 8px; text-align: center; color: var(--couleur-secondaire);">
+                                <i class="fas fa-database" style="font-size: 2rem;"></i>
+                                <h4>API</h4>
+                            </div>
+                        </div>
+
+                        <div class="encart-important" style="background: #388e3c;">
+                            <div class="encart-icon">🏁</div>
+                            <div class="encart-content">
+                                <strong>Félicitations !</strong> Vous êtes maintenant un développeur JavaScript complet, capable de créer des applications web modernes et interactives.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- ===== SECTION CERTIFICATION ===== -->
+    <section class="certification">
+        <div class="container">
+            <div class="certification-content">
+                <i class="fas fa-trophy certification-icon"></i>
+                <h2>Félicitations !</h2>
+                <p>Vous avez terminé les 20 leçons du cours JavaScript Master</p>
+                <p class="certification-stats">20 leçons • 250+ exemples • 15+ heures de contenu</p>
+                
+                <div class="certification-badges">
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">ES6+</span>
+                    <span class="badge">DOM</span>
+                    <span class="badge">Async</span>
+                    <span class="badge">POO</span>
+                    <span class="badge">API</span>
+                </div>
+                
+                <div class="certification-actions">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-home"></i> Retour à l'accueil
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fas fa-download"></i> Télécharger le certificat
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <a href="js3.html" class="pagination-prev"><i class="fas fa-arrow-left"></i> Leçons 11-15</a>
+                <div class="pagination-links">
+                    <a href="js1.html">1</a>
+                    <a href="js2.html">2</a>
+                    <a href="js3.html">3</a>
+                    <a href="js4.html" class="active">4</a>
+                </div>
+                <span class="pagination-next disabled">Fin du cours <i class="fas fa-check-circle"></i></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+  </html>
+                                          
+          
