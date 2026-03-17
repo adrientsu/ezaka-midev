@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Master - Leçons 1 à 5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="a.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">&lt;/&gt;</span>
+                    <div class="logo-text">
+                        <span class="logo-main">HTML MASTER</span>
+                        <span class="logo-sub">Leçons 1 à 5 : Les fondamentaux</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 1-5 sur 20</span>
+                <span class="progress-percent">25%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 25%"></div>
+            </div>
+            <div class="progress-nav">
+                <span class="progress-current">Leçons 1-5</span>
+                <a href="#lecon6" class="progress-next">Leçons 6-10 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 1-5 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 1 à 5 : Les fondamentaux</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon1" class="sommaire-card">
+                    <span class="lecon-numero">01</span>
+                    <h3>Introduction au HTML</h3>
+                    <p>Histoire, structure, premières balises</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon2" class="sommaire-card">
+                    <span class="lecon-numero">02</span>
+                    <h3>Les balises de texte</h3>
+                    <p>Titres, paragraphes, formatage</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon3" class="sommaire-card">
+                    <span class="lecon-numero">03</span>
+                    <h3>Les listes</h3>
+                    <p>Ordonnées, non-ordonnées, de définition</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                </a>
+                <a href="#lecon4" class="sommaire-card">
+                    <span class="lecon-numero">04</span>
+                    <h3>Les liens</h3>
+                    <p>Ancres, chemins, attributs</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon5" class="sommaire-card">
+                    <span class="lecon-numero">05</span>
+                    <h3>Les images</h3>
+                    <p>Formats, attributs, figures</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 1 : INTRODUCTION AU HTML ===== -->
+            <article class="lecon" id="lecon1">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 01</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">📌 Introduction au HTML</h2>
+                    <p class="lecon-description">Comprendre ce qu'est le HTML et comment il fonctionne</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Qu'est-ce que le HTML ? -->
+                    <div class="lecon-section">
+                        <h3>🔍 1.1 Qu'est-ce que le HTML ?</h3>
+                        
+                        <div class="definition-box">
+                            <p><strong>HTML</strong> signifie <strong>HyperText Markup Language</strong> (Langage de balisage hypertexte). C'est le langage standard utilisé pour créer les pages web.</p>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Explication approfondie :</h4>
+                            <p>Le HTML n'est pas un langage de programmation (comme JavaScript ou Python), mais un <strong>langage de balisage</strong>. Cela signifie qu'il utilise des "balises" pour décrire la structure et le contenu d'une page web. Pensez-y comme à un squelette : il définit où vont les titres, les paragraphes, les images, etc.</p>
+                            
+                            <div class="encart-important">
+                                <div class="encart-icon">💡</div>
+                                <div class="encart-content">
+                                    <strong>À retenir :</strong> Le navigateur lit le code HTML et l'interprète pour afficher une page web structurée. Sans HTML, le web ne serait qu'un amas de texte sans organisation.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="histoire-box">
+                            <h4>📜 Un peu d'histoire :</h4>
+                            <ul>
+                                <li><strong>1991 :</strong> Tim Berners-Lee, chercheur au CERN, invente le HTML pour partager des documents scientifiques.</li>
+                                <li><strong>1995 :</strong> HTML 2.0 - Première standardisation.</li>
+                                <li><strong>1997 :</strong> HTML 3.2 - Introduction des tableaux et des scripts.</li>
+                                <li><strong>1999 :</strong> HTML 4.01 - Séparation du contenu et de la présentation (CSS).</li>
+                                <li><strong>2014 :</strong> HTML5 - Révolution avec le multimédia natif (vidéo, audio) et les balises sémantiques.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Structure de base -->
+                    <div class="lecon-section">
+                        <h3>🏗️ 1.2 Structure de base d'une page HTML</h3>
+                        
+                        <p>Toute page HTML valide suit une structure minimale obligatoire. Voici le squelette de base :</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="html-tag">HTML</span>
+                                <span>Structure minimale</span>
+                            </div>
+                            <pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute">lang</span>=<span class="value">"fr"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Ma première page<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+                        </div>
+
+                        <div class="explication-lignes">
+                            <h4>🔬 Analyse ligne par ligne :</h4>
+                            
+                            <div class="ligne-explication">
+                                <code>&lt;!DOCTYPE html&gt;</code>
+                                <p>Déclare que le document utilise HTML5. C'est obligatoire pour que le navigateur interprète correctement la page.</p>
+                            </div>
+                            
+                            <div class="ligne-explication">
+                                <code>&lt;html lang="fr"&gt;</code>
+                                <p>La balise racine qui englobe tout le contenu. L'attribut <code>lang="fr"</code> indique que la page est en français (utile pour l'accessibilité et le SEO).</p>
+                            </div>
+                            
+                            <div class="ligne-explication">
+                                <code>&lt;head&gt; ... &lt;/head&gt;</code>
+                                <p>Contient les <strong>métadonnées</strong> (informations sur la page) qui ne sont pas affichées directement. C'est ici qu'on met le titre, les liens CSS, les meta descriptions, etc.</p>
+                            </div>
+                            
+                            <div class="ligne-explication">
+                                <code>&lt;meta charset="UTF-8"&gt;</code>
+                                <p>Définit l'encodage des caractères. UTF-8 permet d'afficher correctement tous les caractères spéciaux (accents, emojis, etc.).</p>
+                            </div>
+                            
+                            <div class="ligne-explication">
+                                <code>&lt;meta name="viewport" ...&gt;</code>
+                                <p>Essentiel pour le responsive design. Il dit au navigateur comment adapter la page aux différents écrans (mobile, tablette, desktop).</p>
+                            </div>
+                            
+                            <div class="ligne-explication">
+                                <code>&lt;title&gt;...&lt;/title&gt;</code>
+                                <p>Le titre qui apparaît dans l'onglet du navigateur et dans les résultats de recherche.</p>
+                            </div>
+                            
+                            <div class="ligne-explication">
+                                <code>&lt;body&gt; ... &lt;/body&gt;</code>
+                                <p>Contient tout le contenu <strong>visible</strong> de la page : textes, images, vidéos, etc.</p>
+                            </div>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple concret :</h4>
+                            <p>Voici une page HTML minimale avec un peu de contenu :</p>
+                            
+                            <div class="code-block">
+                                <pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute">lang</span>=<span class="value">"fr"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Ma première page<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Bonjour le monde !<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Ceci est mon premier paragraphe en HTML.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+                            </div>
+                            
+                            <div class="rendu-box">
+                                <h5>Rendu dans le navigateur :</h5>
+                                <div class="rendu-simule">
+                                    <h1 style="font-size: 2rem; margin: 0 0 10px 0;">Bonjour le monde !</h1>
+                                    <p style="margin: 0;">Ceci est mon premier paragraphe en HTML.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Les balises -->
+                    <div class="lecon-section">
+                        <h3>🏷️ 1.3 Comprendre les balises</h3>
+                        
+                        <div class="definition-box">
+                            <p>Une <strong>balise</strong> est un élément de marquage qui indique au navigateur comment afficher le contenu. Les balises sont entourées de chevrons <code>&lt; &gt;</code>.</p>
+                        </div>
+
+                        <h4>🔹 Les deux types de balises :</h4>
+                        
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h5>Balises en paires (ouvrante/fermante)</h5>
+                                <p>La plupart des balises fonctionnent par paires :</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;h1&gt;</span>Titre<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;p&gt;</span>Paragraphe<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;div&gt;</span>Conteneur<span class="tag">&lt;/div&gt;</span></pre>
+                                </div>
+                                <p>La balise fermante a un slash <code>/</code> avant le nom.</p>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h5>Balises orphelines (auto-fermantes)</h5>
+                                <p>Certaines balises n'ont pas de contenu et se ferment elles-mêmes :</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;img</span> <span class="attribute">src</span>=<span class="value">"image.jpg"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;br&gt;</span>
+<span class="tag">&lt;hr&gt;</span>
+<span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"text"</span><span class="tag">&gt;</span></pre>
+                                </div>
+                                <p>En HTML5, le slash final est optionnel. Les deux sont corrects : <code>&lt;br&gt;</code> ou <code>&lt;br /&gt;</code>.</p>
+                            </div>
+                        </div>
+
+                        <h4>🔹 Les attributs :</h4>
+                        <p>Les attributs donnent des informations supplémentaires sur une balise. Ils se placent dans la balise ouvrante.</p>
+                        
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;img</span> <span class="attribute">src</span>=<span class="value">"photo.jpg"</span> <span class="attribute">alt</span>=<span class="value">"Description"</span> <span class="attribute">width</span>=<span class="value">"300"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"https://google.com"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span><span class="tag">&gt;</span>Google<span class="tag">&lt;/a&gt;</span></pre>
+                        </div>
+                        
+                        <p>Structure : <code>nom="valeur"</code>. Les guillemets sont obligatoires.</p>
+                    </div>
+
+                    <!-- SECTION 4: Exercices pratiques -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 1.4 Exercices pratiques</h3>
+                        
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Créez votre première page</h4>
+                            <p><strong>Objectif :</strong> Créer une page HTML minimale avec un titre et un paragraphe.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un fichier <code>index.html</code></li>
+                                    <li>Ajoutez la structure de base (DOCTYPE, html, head, body)</li>
+                                    <li>Dans le head, mettez un titre "Ma première page"</li>
+                                    <li>Dans le body, ajoutez un titre h1 "Bonjour !"</li>
+                                    <li>Ajoutez un paragraphe avec votre nom</li>
+                                </ol>
+                            </div>
+                            
+                            <details class="solution">
+                                <summary>Voir la solution</summary>
+                                <div class="code-block">
+                                    <pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute">lang</span>=<span class="value">"fr"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Ma première page<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Bonjour !<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Je m'appelle Jean et j'apprends le HTML.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+                                </div>
+                            </details>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Expérimentez avec les attributs</h4>
+                            <p><strong>Objectif :</strong> Ajouter des attributs à vos balises.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Reprenez votre page de l'exercice 1</li>
+                                    <li>Ajoutez l'attribut <code>lang="fr"</code> à la balise html</li>
+                                    <li>Ajoutez un commentaire HTML <code>&lt;!-- Ceci est un commentaire --&gt;</code></li>
+                                    <li>Testez l'affichage</li>
+                                </ol>
+                            </div>
+                            
+                            <details class="solution">
+                                <summary>Voir la solution</summary>
+                                <div class="code-block">
+                                    <pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute">lang</span>=<span class="value">"fr"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+   <span class="tag">&lt;meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Ma première page<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    <span class="comment">&lt;!-- Ceci est un commentaire, il ne s'affiche pas --&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Bonjour !<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Je m'appelle Jean et j'apprends le HTML.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Résumé -->
+                    <div class="lecon-section resume">
+                        <h3>📝 Résumé de la leçon 1</h3>
+                        <div class="resume-box">
+                            <ul>
+                                <li>HTML = HyperText Markup Language (langage de balisage)</li>
+                                <li>Structure de base : DOCTYPE, html, head, body</li>
+                                <li>Les balises peuvent être en paires ou orphelines</li>
+                                <li>Les attributs complètent les balises : <code>nom="valeur"</code></li>
+                                <li>Les commentaires : <code>&lt;!-- ... --&gt;</code> ne sont pas affichés</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 2 : LES BALISES DE TEXTE ===== -->
+            <article class="lecon" id="lecon2">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 02</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">📝 Les balises de texte</h2>
+                    <p class="lecon-description">Titres, paragraphes et formatage du texte</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Les titres -->
+                    <div class="lecon-section">
+                        <h3>🔤 2.1 Les titres (h1 à h6)</h3>
+                        
+                        <p>HTML propose 6 niveaux de titres, de <code>&lt;h1&gt;</code> (le plus important) à <code>&lt;h6&gt;</code> (le moins important).</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;h1&gt;</span>Titre principal de la page<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;h2&gt;</span>Sous-titre de section<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;h3&gt;</span>Titre de sous-section<span class="tag">&lt;/h3&gt;</span>
+<span class="tag">&lt;h4&gt;</span>Titre niveau 4<span class="tag">&lt;/h4&gt;</span>
+<span class="tag">&lt;h5&gt;</span>Titre niveau 5<span class="tag">&lt;/h5&gt;</span>
+<span class="tag">&lt;h6&gt;</span>Titre niveau 6<span class="tag">&lt;/h6&gt;</span></pre>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Règles importantes :</h4>
+                            <ul>
+                                <li><strong>Un seul h1 par page :</strong> Il représente le titre principal. En avoir plusieurs nuit au SEO.</li>
+                                <li><strong>Hiérarchie logique :</strong> Ne sautez pas de niveaux (h1 → h3 directement est incorrect).</li>
+                                <li><strong>Les titres structurent le contenu :</strong> Comme un plan de dissertation.</li>
+                            </ul>
+                        </div>
+
+                        <div class="rendu-box">
+                            <h5>Rendu visuel :</h5>
+                            <div class="rendu-simule">
+                                <h1 style="font-size: 2.2rem; margin: 0 0 5px 0;">h1 - Titre principal</h1>
+                                <h2 style="font-size: 1.8rem; margin: 0 0 5px 0;">h2 - Sous-titre</h2>
+                                <h3 style="font-size: 1.5rem; margin: 0 0 5px 0;">h3 - Titre niveau 3</h3>
+                                <h4 style="font-size: 1.2rem; margin: 0 0 5px 0;">h4 - Titre niveau 4</h4>
+                                <h5 style="font-size: 1rem; margin: 0 0 5px 0;">h5 - Titre niveau 5</h5>
+                                <h6 style="font-size: 0.9rem; margin: 0;">h6 - Titre niveau 6</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Les paragraphes -->
+                    <div class="lecon-section">
+                        <h3>📄 2.2 Les paragraphes</h3>
+                        
+                        <p>La balise <code>&lt;p&gt;</code> définit un paragraphe. Les navigateurs ajoutent automatiquement un espace avant et après.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;p&gt;</span>Ceci est un premier paragraphe. Il peut contenir plusieurs phrases et s'étendre sur plusieurs lignes dans le code source. Le navigateur gère automatiquement le retour à la ligne.<span class="tag">&lt;/p&gt;</span>
+
+<span class="tag">&lt;p&gt;</span>Ceci est un second paragraphe. Il sera séparé du premier par un espace vertical.<span class="tag">&lt;/p&gt;</span></pre>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>🔍 À savoir :</h4>
+                            <p>Dans le code source, vous pouvez écrire un paragraphe sur plusieurs lignes. Le navigateur ignorera ces sauts de ligne et formatera le texte selon sa largeur. Pour forcer un retour à la ligne, utilisez <code>&lt;br&gt;</code>.</p>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple avec retour à la ligne :</h4>
+                            <div class="code-block">
+                                <pre><span class="tag">&lt;p&gt;</span>
+    Première ligne.<span class="tag">&lt;br&gt;</span>
+    Deuxième ligne après un saut.<span class="tag">&lt;br&gt;</span>
+    Troisième ligne.
+<span class="tag">&lt;/p&gt;</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Formatage de texte -->
+                    <div class="lecon-section">
+                        <h3>✨ 2.3 Les balises de formatage</h3>
+                        
+                        <p>HTML offre plusieurs balises pour donner du style et du sens au texte :</p>
+
+                        <table class="table-formatage">
+                            <thead>
+                                <tr>
+                                    <th>Balise</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                    <th>Rendu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>&lt;strong&gt;</code></td>
+                                    <td>Texte important (gras)</td>
+                                    <td><code>&lt;strong&gt;Attention !&lt;/strong&gt;</code></td>
+                                    <td><strong>Attention !</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;em&gt;</code></td>
+                                    <td>Emphase (italique)</td>
+                                    <td><code>&lt;em&gt;Très important&lt;/em&gt;</code></td>
+                                    <td><em>Très important</em></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;mark&gt;</code></td>
+                                    <td>Texte surligné</td>
+                                    <td><code>&lt;mark&gt;À retenir&lt;/mark&gt;</code></td>
+                                    <td><mark>À retenir</mark></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;small&gt;</code></td>
+                                    <td>Texte plus petit</td>
+                                    <td><code>&lt;small&gt;Mentions légales&lt;/small&gt;</code></td>
+                                    <td><small>Mentions légales</small></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;del&gt;</code></td>
+                                    <td>Texte supprimé (barré)</td>
+                                    <td><code>&lt;del&gt;Ancien prix 100€&lt;/del&gt;</code></td>
+                                    <td><del>Ancien prix 100€</del></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;ins&gt;</code></td>
+                                    <td>Texte inséré (souligné)</td>
+                                    <td><code>&lt;ins&gt;Nouveau prix 80€&lt;/ins&gt;</code></td>
+                                    <td><ins>Nouveau prix 80€</ins></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;sub&gt;</code></td>
+                                    <td>Indice</td>
+                                    <td><code>H&lt;sub&gt;2&lt;/sub&gt;O</code></td>
+                                    <td>H<sub>2</sub>O</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;sup&gt;</code></td>
+                                    <td>Exposant</td>
+                                    <td><code>10&lt;sup&gt;2&lt;/sup&gt; = 100</code></td>
+                                    <td>10<sup>2</sup> = 100</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;blockquote&gt;</code></td>
+                                    <td>Citation longue</td>
+                                    <td><code>&lt;blockquote&gt;Citation...&lt;/blockquote&gt;</code></td>
+                                    <td>Citation en retrait</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;q&gt;</code></td>
+                                    <td>Citation courte</td>
+                                    <td><code>&lt;q&gt;Bonjour&lt;/q&gt;</code></td>
+                                    <td><q>Bonjour</q></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;abbr&gt;</code></td>
+                                    <td>Abréviation</td>
+                                    <td><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></td>
+                                    <td><abbr title="HyperText Markup Language">HTML</abbr></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;code&gt;</code></td>
+                                    <td>Code informatique</td>
+                                    <td><code>&lt;code&gt;var x = 10;&lt;/code&gt;</code></td>
+                                    <td><code>var x = 10;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;pre&gt;</code></td>
+                                    <td>Texte préformaté</td>
+                                    <td><code>&lt;pre&gt;  Ligne1    Ligne2&lt;/pre&gt;</code></td>
+                                    <td>Conserve les espaces</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple combiné :</h4>
+                            <div class="code-block">
+                                <pre><span class="tag">&lt;p&gt;</span>
+    <span class="tag">&lt;strong&gt;</span>Important :<span class="tag">&lt;/strong&gt;</span> 
+    Le <span class="tag">&lt;em&gt;</span>HTML&lt;em&gt;</span> est un langage de <span class="tag">&lt;mark&gt;</span>balisage&lt;/mark&gt;</span>.
+    La molécule d'eau est H<span class="tag">&lt;sub&gt;</span>2&lt;/sub&gt;</span>O.
+    En maths, 10<span class="tag">&lt;sup&gt;</span>2&lt;/sup&gt;</span> = 100.
+    <span class="tag">&lt;small&gt;</span>(c) 2026&lt;/small&gt;</span>
+<span class="tag">&lt;/p&gt;</span></pre>
+                            </div>
+                            
+                            <div class="rendu-box">
+                                <h5>Rendu :</h5>
+                                <div class="rendu-simule">
+                                    <p>
+                                        <strong>Important :</strong> Le <em>HTML</em> est un langage de <mark>balisage</mark>.
+                                        La molécule d'eau est H<sub>2</sub>O.
+                                        En maths, 10<sup>2</sup> = 100.
+                                        <small>(c) 2026</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 2.4 Exercices pratiques</h3>
+                        
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Créez une page avec titres et paragraphes</h4>
+                            <p><strong>Objectif :</strong> Structurer une page simple.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un fichier <code>presentation.html</code></li>
+                                    <li>Ajoutez un titre principal h1 : "Présentation"</li>
+                                    <li>Ajoutez un sous-titre h2 : "Qui suis-je ?"</li>
+                                    <li>Ajoutez un paragraphe de présentation</li>
+                                    <li>Ajoutez un sous-titre h2 : "Mes passions"</li>
+                                    <li>Ajoutez un paragraphe sur vos passions</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Utilisez les balises de formatage</h4>
+                            <p><strong>Objectif :</strong> Mettre en forme un texte.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Écrivez un paragraphe avec :</li>
+                                    <li>Un mot en <strong>gras</strong> (strong)</li>
+                                    <li>Un mot en <em>italique</em> (em)</li>
+                                    <li>Un mot <mark>surligné</mark> (mark)</li>
+                                    <li>Une formule chimique : H<sub>2</sub>O</li>
+                                    <li>Une formule mathématique : x<sup>2</sup></li>
+                                </ol>
+                            </div>
+                            
+                            <details class="solution">
+                                <summary>Voir la solution</summary>
+                                <div class="code-block">
+                                    <pre><span class="tag">&lt;p&gt;</span>
+    J'apprends le <span class="tag">&lt;strong&gt;</span>HTML<span class="tag">&lt;/strong&gt;</span> 
+    et c'est <span class="tag">&lt;em&gt;</span>vraiment passionnant<span class="tag">&lt;/em&gt;</span> !
+    Le point le plus <span class="tag">&lt;mark&gt;</span>important<span class="tag">&lt;/mark&gt;</span> est de pratiquer.
+    La formule chimique de l'eau est H<span class="tag">&lt;sub&gt;</span>2&lt;/sub&gt;</span>O.
+    En maths, x<span class="tag">&lt;sup&gt;</span>2&lt;/sup&gt;</span> signifie x au carré.
+<span class="tag">&lt;/p&gt;</span></pre>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Résumé -->
+                    <div class="lecon-section resume">
+                        <h3>📝 Résumé de la leçon 2</h3>
+                        <div class="resume-box">
+                            <ul>
+                                <li><strong>Titres :</strong> h1 à h6 (hiérarchie, un seul h1)</li>
+                                <li><strong>Paragraphes :</strong> p avec br pour les sauts de ligne</li>
+                                <li><strong>Gras :</strong> strong (important) ou b (simple)</li>
+                                <li><strong>Italique :</strong> em (emphase) ou i (simple)</li>
+                                <li><strong>Autres :</strong> mark, small, del, ins, sub, sup, code, pre</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 3 : LES LISTES ===== -->
+            <article class="lecon" id="lecon3">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 03</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">📋 Les listes</h2>
+                    <p class="lecon-description">Listes ordonnées, non-ordonnées et de définition</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Listes non-ordonnées -->
+                    <div class="lecon-section">
+                        <h3>🔹 3.1 Les listes non-ordonnées (ul)</h3>
+                        
+                        <p>La balise <code>&lt;ul&gt;</code> (Unordered List) crée une liste avec des puces. Chaque élément est dans <code>&lt;li&gt;</code> (List Item).</p>
+        <div class="code-block">
+                            <pre><span class="tag">&lt;ul&gt;</span>
+    <span class="tag">&lt;li&gt;</span>HTML<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span>CSS<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span>JavaScript<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></pre>
+                        </div>
+
+                        <div class="rendu-box">
+                            <h5>Rendu :</h5>
+                            <ul style="margin-left: 20px;">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+
+                        <h4>🎨 Personnalisation avec CSS :</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- Changer le style des puces --&gt;</span>
+<span class="tag">&lt;ul</span> <span class="attribute">style</span>=<span class="value">"list-style-type: square;"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/ul&gt;</span>
+<span class="tag">&lt;ul</span> <span class="attribute">style</span>=<span class="value">"list-style-type: circle;"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/ul&gt;</span>
+<span class="tag">&lt;ul</span> <span class="attribute">style</span>=<span class="value">"list-style-type: none;"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/ul&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Listes ordonnées -->
+                    <div class="lecon-section">
+                        <h3>🔢 3.2 Les listes ordonnées (ol)</h3>
+                        
+                        <p>La balise <code>&lt;ol&gt;</code> (Ordered List) crée une liste numérotée.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;ol&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Préparer le matériel<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Écrire le code<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Tester la page<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Mettre en ligne<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ol&gt;</span></pre>
+                        </div>
+
+                        <div class="rendu-box">
+                            <h5>Rendu :</h5>
+                            <ol style="margin-left: 20px;">
+                                <li>Préparer le matériel</li>
+                                <li>Écrire le code</li>
+                                <li>Tester la page</li>
+                                <li>Mettre en ligne</li>
+                            </ol>
+                        </div>
+
+                        <h4>⚙️ Attributs des listes ordonnées :</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Attribut</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>type</code></td>
+                                    <td>Type de numérotation</td>
+                                    <td>
+                                        <code>type="1"</code> (1,2,3)<br>
+                                        <code>type="A"</code> (A,B,C)<br>
+                                        <code>type="a"</code> (a,b,c)<br>
+                                        <code>type="I"</code> (I,II,III)<br>
+                                        <code>type="i"</code> (i,ii,iii)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>start</code></td>
+                                    <td>Valeur de départ</td>
+                                    <td><code>start="5"</code> commence à 5</td>
+                                </tr>
+                                <tr>
+                                    <td><code>reversed</code></td>
+                                    <td>Ordre inverse</td>
+                                    <td><code>reversed</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;ol</span> <span class="attribute">type</span>=<span class="value">"A"</span> <span class="attribute">start</span>=<span class="value">"3"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Troisième lettre (C)<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Quatrième lettre (D)<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ol&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Listes imbriquées -->
+                    <div class="lecon-section">
+                        <h3>🪆 3.3 Les listes imbriquées</h3>
+                        
+                        <p>On peut mettre des listes dans des listes pour créer des hiérarchies.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;ul&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Langages front-end
+        <span class="tag">&lt;ul&gt;</span>
+            <span class="tag">&lt;li&gt;</span>HTML<span class="tag">&lt;/li&gt;</span>
+            <span class="tag">&lt;li&gt;</span>CSS<span class="tag">&lt;/li&gt;</span>
+            <span class="tag">&lt;li&gt;</span>JavaScript<span class="tag">&lt;/li&gt;</span>
+        <span class="tag">&lt;/ul&gt;</span>
+    <span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Langages back-end
+        <span class="tag">&lt;ul&gt;</span>
+            <span class="tag">&lt;li&gt;</span>PHP<span class="tag">&lt;/li&gt;</span>
+            <span class="tag">&lt;li&gt;</span>Python<span class="tag">&lt;/li&gt;</span>
+            <span class="tag">&lt;li&gt;</span>Java<span class="tag">&lt;/li&gt;</span>
+        <span class="tag">&lt;/ul&gt;</span>
+    <span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></pre>
+                        </div>
+
+                        <div class="rendu-box">
+                            <h5>Rendu :</h5>
+                            <ul style="margin-left: 20px;">
+                                <li>Langages front-end
+                                    <ul style="margin-left: 20px;">
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                        <li>JavaScript</li>
+                                    </ul>
+                                </li>
+                                <li>Langages back-end
+                                    <ul style="margin-left: 20px;">
+                                        <li>PHP</li>
+                                        <li>Python</li>
+                                        <li>Java</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Listes de définition -->
+                    <div class="lecon-section">
+                        <h3>📚 3.4 Les listes de définition (dl, dt, dd)</h3>
+                        
+                        <p>Les listes de définition servent à présenter des termes et leurs définitions.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;dl&gt;</span>
+    <span class="tag">&lt;dt&gt;</span>HTML<span class="tag">&lt;/dt&gt;</span>
+    <span class="tag">&lt;dd&gt;</span>HyperText Markup Language - Langage de balisage pour le web<span class="tag">&lt;/dd&gt;</span>
+    
+    <span class="tag">&lt;dt&gt;</span>CSS<span class="tag">&lt;/dt&gt;</span>
+    <span class="tag">&lt;dd&gt;</span>Cascading Style Sheets - Langage de style pour le web<span class="tag">&lt;/dd&gt;</span>
+    
+    <span class="tag">&lt;dt&gt;</span>JS<span class="tag">&lt;/dt&gt;</span>
+    <span class="tag">&lt;dd&gt;</span>JavaScript - Langage de programmation pour le web<span class="tag">&lt;/dd&gt;</span>
+<span class="tag">&lt;/dl&gt;</span></pre>
+                        </div>
+
+                        <div class="rendu-box">
+                            <h5>Rendu :</h5>
+                            <dl>
+                                <dt style="font-weight: bold;">HTML</dt>
+                                <dd style="margin-left: 20px;">HyperText Markup Language - Langage de balisage pour le web</dd>
+                                <dt style="font-weight: bold; margin-top: 10px;">CSS</dt>
+                                <dd style="margin-left: 20px;">Cascading Style Sheets - Langage de style pour le web</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 3.5 Exercices pratiques</h3>
+                        
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Créez une liste de courses</h4>
+                            <p><strong>Objectif :</strong> Utiliser une liste non-ordonnée.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un titre h2 "Ma liste de courses"</li>
+                                    <li>Créez une liste ul avec 5 éléments (fruits, légumes, etc.)</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Créez un mode d'emploi</h4>
+                            <p><strong>Objectif :</strong> Utiliser une liste ordonnée.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un titre h2 "Comment faire du café"</li>
+                                    <li>Créez une liste ol avec les étapes</li>
+                                    <li>Utilisez l'attribut type="A"</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Créez une table des matières</h4>
+                            <p><strong>Objectif :</strong> Utiliser des listes imbriquées.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un titre h2 "Table des matières"</li>
+                                    <li>Créez une liste imbriquée avec :
+                                        <ul>
+                                            <li>Chapitre 1 : Introduction</li>
+                                            <li>Chapitre 2 : Les bases
+                                                <ul>
+                                                    <li>2.1 HTML</li>
+                                                    <li>2.2 CSS</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 4 : Dictionnaire</h4>
+                            <p><strong>Objectif :</strong> Utiliser une liste de définition.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un titre h2 "Glossaire web"</li>
+                                    <li>Créez une dl avec 3 termes et leurs définitions</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 4 : LES LIENS ===== -->
+            <article class="lecon" id="lecon4">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 04</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">🔗 Les liens</h2>
+                    <p class="lecon-description">Ancres, chemins absolus/relatifs, attributs</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Syntaxe de base -->
+                    <div class="lecon-section">
+                        <h3>🔤 4.1 Syntaxe de base</h3>
+                        
+                        <p>La balise <code>&lt;a&gt;</code> (anchor) crée un lien hypertexte. L'attribut <code>href</code> définit la destination.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"https://google.com"</span><span class="tag">&gt;</span>Aller sur Google<span class="tag">&lt;/a&gt;</span></pre>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Structure :</h4>
+                            <p>Le texte entre les balises est le <strong>texte du lien</strong> (ce que voit l'utilisateur). L'attribut <code>href</code> est la <strong>cible</strong> (où on va).</p>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Types de chemins -->
+                    <div class="lecon-section">
+                        <h3>📍 4.2 Chemins absolus vs relatifs</h3>
+                        
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>Chemin absolu</h4>
+                                <p>URL complète avec protocole (http:// ou https://)</p>
+                                <div class="code-block small">
+                                                      <pre><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"https://google.com"</span><span class="tag">&gt;</span>Google<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"https://example.com/page.html"</span><span class="tag">&gt;</span>Page externe<span class="tag">&lt;/a&gt;</span></pre>
+                                </div>
+                                <p>Utilisé pour les liens vers d'autres sites web.</p>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>Chemin relatif</h4>
+                                <p>Chemin par rapport à la page actuelle</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"page2.html"</span><span class="tag">&gt;</span>Page dans même dossier<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"dossier/page.html"</span><span class="tag">&gt;</span>Dans sous-dossier<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"../page.html"</span><span class="tag">&gt;</span>Dossier parent<span class="tag">&lt;/a&gt;</span></pre>
+                                </div>
+                                <p>Utilisé pour naviguer dans votre propre site.</p>
+                            </div>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📁 Explication des chemins :</h4>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Chemin</th>
+                                        <th>Signification</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><code>fichier.html</code></td><td>Fichier dans le même dossier</td></tr>
+                                    <tr><td><code>dossier/fichier.html</code></td><td>Fichier dans un sous-dossier</td></tr>
+                                    <tr><td><code>../fichier.html</code></td><td>Fichier dans le dossier parent</td></tr>
+                                    <tr><td><code>../../fichier.html</code></td><td>Fichier deux niveaux au-dessus</td></tr>
+                                    <tr><td><code>/fichier.html</code></td><td>À partir de la racine du site</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Attributs des liens -->
+                    <div class="lecon-section">
+                        <h3>⚙️ 4.3 Attributs importants</h3>
+                        
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Attribut</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>target</code></td>
+                                    <td>Où ouvrir le lien</td>
+                                    <td>
+                                        <code>target="_blank"</code> (nouvel onglet)<br>
+                                        <code>target="_self"</code> (même onglet - défaut)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>title</code></td>
+                                    <td>Infobulle au survol</td>
+                                    <td><code>title="Visiter Google"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>download</code></td>
+                                    <td>Forcer le téléchargement</td>
+                                    <td><code>download="fichier.pdf"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>rel</code></td>
+                                    <td>Relation avec le lien</td>
+                                    <td><code>rel="noopener"</code> (sécurité)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"https://google.com"</span> 
+   <span class="attribute">target</span>=<span class="value">"_blank"</span> 
+   <span class="attribute">title</span>=<span class="value">"Ouvrir Google dans un nouvel onglet"</span>
+   <span class="attribute">rel</span>=<span class="value">"noopener"</span><span class="tag">&gt;</span>
+    Google
+<span class="tag">&lt;/a&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Ancres -->
+                    <div class="lecon-section">
+                        <h3>⚓ 4.4 Les ancres (liens internes)</h3>
+                        
+                        <p>Les ancres permettent de naviguer à l'intérieur d'une même page.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- 1. Créer l'ancre (destination) --&gt;</span>
+<span class="tag">&lt;h2</span> <span class="attribute">id</span>=<span class="value">"section1"</span><span class="tag">&gt;</span>Section 1<span class="tag">&lt;/h2&gt;</span>
+
+<span class="comment">&lt;!-- 2. Lien vers l'ancre --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#section1"</span><span class="tag">&gt;</span>Aller à la section 1<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- 3. Lien vers ancre d'une autre page --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"page.html#section2"</span><span class="tag">&gt;</span>Aller à section 2 sur autre page<span class="tag">&lt;/a&gt;</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple concret :</h4>
+                            <div class="code-block">
+                                <pre><span class="comment">&lt;!-- Menu de navigation --&gt;</span>
+<span class="tag">&lt;nav&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#presentation"</span><span class="tag">&gt;</span>Présentation<span class="tag">&lt;/a&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#competences"</span><span class="tag">&gt;</span>Compétences<span class="tag">&lt;/a&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#contact"</span><span class="tag">&gt;</span>Contact<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;/nav&gt;</span>
+
+<span class="comment">&lt;!-- Sections correspondantes --&gt;</span>
+<span class="tag">&lt;section</span> <span class="attribute">id</span>=<span class="value">"presentation"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/section&gt;</span>
+<span class="tag">&lt;section</span> <span class="attribute">id</span>=<span class="value">"competences"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/section&gt;</span>
+<span class="tag">&lt;section</span> <span class="attribute">id</span>=<span class="value">"contact"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/section&gt;</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Liens spéciaux -->
+                    <div class="lecon-section">
+                        <h3>📧 4.5 Liens spéciaux</h3>
+                        
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>Lien email</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"mailto:contact@example.com"</span><span class="tag">&gt;</span>
+    Nous écrire
+<span class="tag">&lt;/a&gt;</span></pre>
+                                </div>
+                                <p>Ouvre le client mail par défaut.</p>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>Lien téléphone</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"tel:+261341234567"</span><span class="tag">&gt;</span>
+    +261 34 12 345 67
+<span class="tag">&lt;/a&gt;</span></pre>
+                                </div>
+                                <p>Sur mobile, lance l'appel.</p>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>Lien SMS</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"sms:+261341234567"</span><span class="tag">&gt;</span>
+    Envoyer SMS
+<span class="tag">&lt;/a&gt;</span></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>Lien WhatsApp</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"https://wa.me/261341234567"</span><span class="tag">&gt;</span>
+    WhatsApp
+<span class="tag">&lt;/a&gt;</span></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 4.6 Exercices pratiques</h3>
+                        
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Créez un menu de navigation</h4>
+                            <p><strong>Objectif :</strong> Utiliser des ancres.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une page avec 3 sections (Accueil, Services, Contact)</li>
+                                    <li>Ajoutez un menu en haut avec des liens vers chaque section</li>
+                                    <li>Chaque section doit avoir un id correspondant</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Page avec liens externes</h4>
+                            <p><strong>Objectif :</strong> Utiliser des liens absolus.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une page "ressources.html"</li>
+                                    <li>Ajoutez des liens vers Google, YouTube, GitHub</li>
+                                    <li>Tous les liens doivent s'ouvrir dans un nouvel onglet</li>
+                                    <li>Ajoutez des titres descriptifs</li>
+                                </ol>
+                            </div>
+                            </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Navigation entre pages</h4>
+                            <p><strong>Objectif :</strong> Utiliser des chemins relatifs.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Structure de dossiers :</p>
+                                <pre>mon-site/
+├── index.html
+├── pages/
+│   ├── about.html
+│   └── contact.html
+└── images/
+    └── logo.png</pre>
+                                <ol>
+                                    <li>Dans index.html, créez des liens vers about.html et contact.html</li>
+                                    <li>Dans about.html, créez un lien retour vers index.html</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 5 : LES IMAGES ===== -->
+            <article class="lecon" id="lecon5">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 05</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">🖼️ Les images</h2>
+                    <p class="lecon-description">Formats, attributs, figures, responsive</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Balise img -->
+                    <div class="lecon-section">
+                        <h3>🖼️ 5.1 La balise &lt;img&gt;</h3>
+                        
+                        <p>La balise <code>&lt;img&gt;</code> est une balise orpheline qui affiche des images.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;img</span> <span class="attribute">src</span>=<span class="value">"chemin/vers/image.jpg"</span> <span class="attribute">alt</span>=<span class="value">"Description de l'image"</span><span class="tag">&gt;</span></pre>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Attributs obligatoires :</h4>
+                            <ul>
+                                <li><code>src</code> (source) : chemin vers le fichier image</li>
+                                <li><code>alt</code> (alternative) : texte décrivant l'image (pour accessibilité et si l'image ne charge pas)</li>
+                            </ul>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple :</h4>
+                            <div class="code-block">
+                                <pre><span class="tag">&lt;img</span> <span class="attribute">src</span>=<span class="value">"images/logo.png"</span> 
+     <span class="attribute">alt</span>=<span class="value">"Logo de notre site"</span>
+     <span class="attribute">width</span>=<span class="value">"200"</span>
+     <span class="attribute">height</span>=<span class="value">"100"</span><span class="tag">&gt;</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Formats d'images -->
+                    <div class="lecon-section">
+                        <h3>📁 5.2 Les formats d'images web</h3>
+                        
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Format</th>
+                                    <th>Description</th>
+                                    <th>Utilisation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>JPEG/JPG</strong></td>
+                                    <td>Format avec perte, bonne compression</td>
+                                    <td>Photos, images complexes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>PNG</strong></td>
+                                    <td>Sans perte, supporte la transparence</td>
+                                    <td>Logos, icônes, captures d'écran</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>GIF</strong></td>
+                                    <td>Animations, 256 couleurs max</td>
+                                    <td>Animations simples</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SVG</strong></td>
+                                    <td>Vectoriel (code XML), redimensionnable</td>
+                                    <td>Logos, icônes, illustrations</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>WebP</strong></td>
+                                    <td>Format moderne, meilleure compression</td>
+                                    <td>Tous types (support moderne)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>AVIF</strong></td>
+                                    <td>Très bonne compression, support limité</td>
+                                    <td>Images modernes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- SECTION 3: Attributs -->
+                    <div class="lecon-section">
+                        <h3>⚙️ 5.3 Attributs des images</h3>
+                        
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Attribut</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>width</code></td>
+                                    <td>Largeur en pixels</td>
+                                    <td><code>width="300"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>height</code></td>
+                                    <td>Hauteur en pixels</td>
+                                    <td><code>height="200"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>loading</code></td>
+                                    <td>Chargement paresseux</td>
+                                    <td><code>loading="lazy"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>title</code></td>
+                                    <td>Infobulle au survol</td>
+                                    <td><code>title="Notre équipe"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>srcset</code></td>
+                                    <td>Plusieurs résolutions (responsive)</td>
+                                    <td><code>srcset="petit.jpg 300w, grand.jpg 600w"</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- Image responsive avec srcset --&gt;</span>
+<span class="tag">&lt;img</span> 
+    <span class="attribute">src</span>=<span class="value">"image.jpg"</span>
+    <span class="attribute">srcset</span>=<span class="value">"image-petite.jpg 300w, image-moyenne.jpg 600w, image-grande.jpg 900w"</span>
+    <span class="attribute">sizes</span>=<span class="value">"(max-width: 600px) 300px, (max-width: 1200px) 600px, 900px"</span>
+    <span class="attribute">alt</span>=<span class="value">"Description"</span>
+    <span class="attribute">loading</span>=<span class="value">"lazy"</span><span class="tag">&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Figures et légendes -->
+                    <div class="lecon-section">
+                        <h3>📸 5.4 Figures et légendes</h3>
+                        
+                        <p>Les balises <code>&lt;figure&gt;</code> et <code>&lt;figcaption&gt;</code> associent une image à sa légende.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;figure&gt;</span>
+    <span class="tag">&lt;img</span> <span class="attribute">src</span>=<span class="value">"graphique.png"</span> <span class="attribute">alt</span>=<span class="value">"Graphique des ventes"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;figcaption&gt;</span>Figure 1: Évolution des ventes en 2026<span class="tag">&lt;/figcaption&gt;</span>
+<span class="tag">&lt;/figure&gt;</span></pre>
+                        </div>
+
+                        <div class="rendu-box">
+                            <h5>Rendu :</h5>
+                            <figure style="border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+                                <div style="background: #f0f0f0; height: 100px; display: flex; align-items: center; justify-content: center;">[Graphique]</div>
+                                <figcaption style="text-align: center; margin-top: 5px;">Figure 1: Évolution des ventes en 2026</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Images liens -->
+                    <div class="lecon-section">
+                        <h3>🔗 5.5 Images cliquables</h3>
+                        
+                        <p>Une image peut être un lien en l'entourant d'une balise <code>&lt;a&gt;</code>.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"https://example.com"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;img</span> <span class="attribute">src</span>=<span class="value">"bouton.png"</span> <span class="attribute">alt</span>=<span class="value">"Cliquez ici"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/a&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 5.6 Exercices pratiques</h3>
+                        
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Galerie d'images</h4>
+                            <p><strong>Objectif :</strong> Afficher plusieurs images.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une galerie avec 3 images</li>
+                                    <li>Utilisez des images de placeholder (https://picsum.photos/200/150?random=1)</li>
+                                    <li>Ajoutez des attributs alt descriptifs</li>
+                                    <li>Fixez une largeur de 200px pour toutes</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Image avec légende</h4>
+                            <p><strong>Objectif :</strong> Utiliser figure et figcaption.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Choisissez une image</li>
+                                    <li>Ajoutez une légende descriptive</li>
+                                    <li>Ajoutez un titre au survol</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Image cliquable</h4>
+                            <p><strong>Objective :</strong> Créer un lien sur une image.</p>
+                            
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une image qui sert de bouton</li>
+                                    <li>Le lien doit s'ouvrir dans un nouvel onglet</li>
+                                    <li>Ajoutez un texte alternatif</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== SECTION EXERCICES RÉCAPITULATIFS ===== -->
+            <section class="exercices-recap">
+                <h2 class="section-title">🏆 Exercices récapitulatifs (Leçons 1-5)</h2>
+                
+                <div class="recap-card">
+                    <h3>Projet : Créez votre première page personnelle</h3>
+                    <p>Créez une page HTML complète qui présente une personne fictive.</p>
+                    
+                    <h4>Structure demandée :</h4>
+                    <ul>
+                        <li>Un titre principal h1 avec le nom</li>
+                        <li>Une photo (image) avec légende</li>
+                        <li>Une section "À propos" avec un paragraphe</li>
+                        <li>Une liste de compétences (ul)</li>
+                        <li>Un classement par ordre de préférence (ol)</li>
+                        <li>Un lien vers un site externe qui s'ouvre dans un nouvel onglet</li>
+                        <li>Un lien email</li>
+                        <li>Un menu de navigation (ancres)</li>
+                    </ul>
+                    
+                    <details>
+                        <summary>Voir un exemple</summary>
+                        <div class="code-block">
+                            <pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute">lang</span>=<span class="value">"fr"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Ma page personnelle<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;nav&gt;</span>
+        <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#accueil"</span><span class="tag">&gt;</span>Accueil<span class="tag">&lt;/a&gt;</span>
+        <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#apropos"</span><span class="tag">&gt;</span>À propos<span class="tag">&lt;/a&gt;</span>
+        <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#contact"</span><span class="tag">&gt;</span>Contact<span class="tag">&lt;/a&gt;</span>
+    <span class="tag">&lt;/nav&gt;</span>
+
+    <span class="tag">&lt;h1</span> <span class="attribute">id</span>=<span class="value">"accueil"</span><span class="tag">&gt;</span>Jean Dupont<span class="tag">&lt;/h1&gt;</span>
+
+    <span class="tag">&lt;figure&gt;</span>
+        <span class="tag">&lt;img</span> <span class="attribute">src</span>=<span class="value">"https://picsum.photos/200/200"</span> <span class="attribute">alt</span>=<span class="value">"Photo de profil"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;figcaption&gt;</span>Photo de profil<span class="tag">&lt;/figcaption&gt;</span>
+    <span class="tag">&lt;/figure&gt;</span>
+
+    <span class="tag">&lt;h2</span> <span class="attribute">id</span>=<span class="value">"apropos"</span><span class="tag">&gt;</span>À propos<span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Je suis développeur web passionné par le <span class="tag">&lt;strong&gt;</span>HTML<span class="tag">&lt;/strong&gt;</span> et le <span class="tag">&lt;em&gt;</span>CSS<span class="tag">&lt;/em&gt;</span>.<span class="tag">&lt;/p&gt;</span>
+
+    <span class="tag">&lt;h3&gt;</span>Compétences<span class="tag">&lt;/h3&gt;</span>
+    <span class="tag">&lt;ul&gt;</span>
+        <span class="tag">&lt;li&gt;</span>HTML<span class="tag">&lt;/li&gt;</span>
+        <span class="tag">&lt;li&gt;</span>CSS<span class="tag">&lt;/li&gt;</span>
+        <span class="tag">&lt;li&gt;</span>JavaScript<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;/ul&gt;</span>
+
+    <span class="tag">&lt;h3&gt;</span>Langues préférées<span class="tag">&lt;/h3&gt;</span>
+    <span class="tag">&lt;ol</span> <span class="attribute">type</span>=<span class="value">"A"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;li&gt;</span>HTML<span class="tag">&lt;/li&gt;</span>
+        <span class="tag">&lt;li&gt;</span>CSS<span class="tag">&lt;/li&gt;</span>
+        <span class="tag">&lt;li&gt;</span>JavaScript<span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;/ol&gt;</span>
+
+    <span class="tag">&lt;h2</span> <span class="attribute">id</span>=<span class="value">"contact"</span><span class="tag">&gt;</span>Contact<span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;p&gt;</span>
+        <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"mailto:jean@example.com"</span><span class="tag">&gt;</span>Email<span class="tag">&lt;/a&gt;</span> |
+        <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"https://github.com"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span><span class="tag">&gt;</span>GitHub<span class="tag">&lt;/a&gt;</span>
+    <span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+                        </div>
+                    </details>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <span class="pagination-current">Page 1 (Leçons 1-5)</span>
+                <div class="pagination-links">
+                    <a href="a.html" class="active">1</a>
+                    <a href="b.html">2</a>
+                    <a href="c.html">3</a>
+                    <a href="d.html">4</a>
+                </div>
+                <a href="b.html" class="pagination-next">Leçons 6-10 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+  </html>
+                      
