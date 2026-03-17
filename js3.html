@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Master - Leçons 11 à 15</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="js3.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">{ }</span>
+                    <div class="logo-text">
+                        <span class="logo-main">JAVASCRIPT MASTER</span>
+                        <span class="logo-sub">Leçons 11 à 15 : Concepts avancés</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 11-15 sur 20</span>
+                <span class="progress-percent">75%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%"></div>
+            </div>
+            <div class="progress-nav">
+                <a href="js2.html" class="progress-prev"><i class="fas fa-arrow-left"></i> Leçons 6-10</a>
+                <span class="progress-current">Leçons 11-15</span>
+                <a href="js4.html" class="progress-next">Leçons 16-20 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 11-15 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 11 à 15 : Concepts avancés</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon11" class="sommaire-card">
+                    <span class="lecon-numero">11</span>
+                    <h3>Manipulation du DOM</h3>
+                    <p>Sélection, modification, création</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                </a>
+                <a href="#lecon12" class="sommaire-card">
+                    <span class="lecon-numero">12</span>
+                    <h3>Événements</h3>
+                    <p>addEventListener, types d'événements</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon13" class="sommaire-card">
+                    <span class="lecon-numero">13</span>
+                    <h3>JSON et Stockage</h3>
+                    <p>localStorage, sessionStorage</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon14" class="sommaire-card">
+                    <span class="lecon-numero">14</span>
+                    <h3>Programmation asynchrone</h3>
+                    <p>Callbacks, Promises, async/await</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 45 min</span>
+                </a>
+                <a href="#lecon15" class="sommaire-card">
+                    <span class="lecon-numero">15</span>
+                    <h3>API Fetch</h3>
+                    <p>Requêtes HTTP, données externes</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 11 : MANIPULATION DU DOM ===== -->
+            <article class="lecon" id="lecon11">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 11</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">🖥️ Manipulation du DOM</h2>
+                    <p class="lecon-description">Interagir avec la page HTML</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction au DOM -->
+                    <div class="lecon-section">
+                        <h3>🔍 11.1 Qu'est-ce que le DOM ?</h3>
+
+                        <div class="definition-box">
+                            <p>Le <strong>DOM (Document Object Model)</strong> est une représentation de la page HTML sous forme d'arbre d'objets. JavaScript peut manipuler cet arbre pour modifier dynamiquement la page.</p>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Visualisation :</h4>
+                            <pre style="background: #f0f0f0; padding: 15px; border-radius: 5px;">
+                    document
+                       │
+                ┌──────┴──────┐
+              html            │
+               │              │
+           ┌──┴──┐          body
+         head    │            │
+          │      │        ┌───┼───┐
+        title   body     h1   p   div</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Sélectionner des éléments -->
+                    <div class="lecon-section">
+                        <h3>🎯 11.2 Sélectionner des éléments</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Méthode</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>getElementById()</code></td>
+                                    <td>Sélection par ID (unique)</td>
+                                    <td><code>document.getElementById("monId")</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>getElementsByClassName()</code></td>
+                                    <td>Sélection par classe (collection)</td>
+                                    <td><code>document.getElementsByClassName("maclasse")</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>getElementsByTagName()</code></td>
+                                    <td>Sélection par balise (collection)</td>
+                                    <td><code>document.getElementsByTagName("p")</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>querySelector()</code></td>
+                                    <td>Sélection avec sélecteur CSS (premier)</td>
+                                    <td><code>document.querySelector(".maclasse")</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>querySelectorAll()</code></td>
+                                    <td>Sélection avec sélecteur CSS (tous)</td>
+                                    <td><code>document.querySelectorAll("p.important")</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// HTML : &lt;div id="app"&gt;&lt;p class="texte"&gt;Bonjour&lt;/p&gt;&lt;/div&gt;</span>
+
+<span class="comment">// Par ID</span>
+<span class="keyword">const</span> app = document.getElementById("app");
+
+<span class="comment">// Par classe</span>
+<span class="keyword">const</span> textes = document.getElementsByClassName("texte");
+
+<span class="comment">// Par sélecteur CSS (recommandé)</span>
+<span class="keyword">const</span> premier = document.querySelector(".texte");
+<span class="keyword">const</span> tous = document.querySelectorAll(".texte");
+
+console.log(premier.textContent); <span class="comment">// "Bonjour"</span></pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> Préférez <code>querySelector()</code> et <code>querySelectorAll()</code> car ils sont plus flexibles et utilisent la syntaxe CSS que vous connaissez déjà.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Modifier le contenu -->
+                    <div class="lecon-section">
+                        <h3>✏️ 11.3 Modifier le contenu</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Propriété</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>textContent</code></td>
+                                    <td>Texte seul (ignorer les balises)</td>
+                                    <td><code>el.textContent = "Nouveau texte"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>innerHTML</code></td>
+                                    <td>HTML complet (peut créer des balises)</td>
+                                    <td><code>el.innerHTML = "&lt;strong&gt;Gras&lt;/strong&gt;"</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>innerText</code></td>
+                                    <td>Texte visible (respecte CSS)</td>
+                                    <td><code>el.innerText = "Texte visible"</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// HTML : &lt;div id="demo"&gt;Ancien contenu&lt;/div&gt;</span>
+
+<span class="keyword">const</span> demo = document.getElementById("demo");
+
+<span class="comment">// Modifier le texte</span>
+demo.textContent = "Nouveau texte simple";
+
+<span class="comment">// Ajouter du HTML</span>
+demo.innerHTML = "&lt;h2&gt;Titre&lt;/h2&gt;&lt;p&gt;Paragraphe&lt;/p&gt;";
+
+<span class="comment">// Ajouter du contenu sans effacer</span>
+demo.innerHTML += " &lt;span&gt;supplément&lt;/span&gt;";</pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Sécurité :</strong> Évitez <code>innerHTML</code> avec du contenu utilisateur (risque XSS). Préférez <code>textContent</code> pour le texte simple.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Modifier les styles et attributs -->
+                    <div class="lecon-section">
+                        <h3>🎨 11.4 Modifier les styles et attributs</h3>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">const</span> element = document.querySelector(".maclasse");
+
+<span class="comment">// Modifier les styles</span>
+element.style.color = "red";
+element.style.backgroundColor = "#FF7A45";
+element.style.fontSize = "20px";
+element.style.display = "flex";
+
+<span class="comment">// Modifier les classes</span>
+element.classList.add("nouvelle-classe");
+element.classList.remove("ancienne");
+element.classList.toggle("actif");    <span class="comment">// Ajoute si absent, enlève si présent</span>
+element.classList.contains("actif");  <span class="comment">// true/false</span>
+
+<span class="comment">// Modifier les attributs</span>
+element.setAttribute("data-id", "123");
+element.getAttribute("data-id");      <span class="comment">// "123"</span>
+element.hasAttribute("disabled");     <span class="comment">// true/false</span>
+element.removeAttribute("disabled");</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple interactif :</h4>
+                            <div id="demo-interactif" style="padding: 20px; background: #f0f0f0; border-radius: 5px;">
+                                <p id="texte-demo">Ce texte va changer</p>
+                                <button onclick="document.getElementById('texte-demo').style.color='#FF7A45'; document.getElementById('texte-demo').classList.toggle('gras');">Changer</button>
+                                <style>.gras { font-weight: bold; }</style>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Créer et supprimer des éléments -->
+                    <div class="lecon-section">
+                        <h3>➕ 11.5 Créer et supprimer des éléments</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Créer un nouvel élément</span>
+<span class="keyword">const</span> nouvelleDiv = document.createElement("div");
+nouvelleDiv.textContent = "Je suis nouveau !";
+nouvelleDiv.classList.add("carte");
+
+<span class="comment">// Ajouter au DOM</span>
+document.body.appendChild(nouvelleDiv);           <span class="comment">// À la fin du body</span>
+conteneur.appendChild(nouvelleDiv);               <span class="comment">// Dans un conteneur spécifique</span>
+conteneur.insertBefore(nouvelleDiv, reference);   <span class="comment">// Avant un élément</span>
+
+<span class="comment">// Supprimer un élément</span>
+element.remove();                                 <span class="comment">// Supprime l'élément</span>
+parent.removeChild(element);                       <span class="comment">// Supprime l'enfant</span></pre>
+                        </div>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Exemple complet : créer une liste</span>
+<span class="keyword">const</span> liste = document.createElement("ul");
+<span class="keyword">const</span> fruits = ["pomme", "banane", "orange"];
+
+fruits.forEach(fruit => {
+    <span class="keyword">const</span> li = document.createElement("li");
+    li.textContent = fruit;
+    liste.appendChild(li);
+});
+
+document.body.appendChild(liste);</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 11.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Modifier une page</h4>
+                            <p><strong>Objectif :</strong> Créer un script qui modifie le DOM.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une page avec un h1, un paragraphe et un bouton</li>
+                                    <li>Au clic sur le bouton, changez le texte du h1</li>
+                                    <li>Changez la couleur du paragraphe</li>
+                                    <li>Ajoutez une classe au bouton</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Liste dynamique</h4>
+                            <p><strong>Objectif :</strong> Créer une liste où on peut ajouter des éléments.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un input et un bouton "Ajouter"</li>
+                                    <li>Au clic, ajoutez le texte de l'input dans une liste</li>
+                                    <li>Videz l'input après ajout</li>
+                                    <li>Chaque élément doit avoir un bouton "Supprimer"</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 12 : ÉVÉNEMENTS ===== -->
+            <article class="lecon" id="lecon12">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 12</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">🖱️ Les événements</h2>
+                    <p class="lecon-description">Réagir aux actions de l'utilisateur</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 12.1 Qu'est-ce qu'un événement ?</h3>
+
+                        <div class="definition-box">
+                            <p>Un <strong>événement</strong> est une action ou une occurrence qui peut être détectée par JavaScript : clic, survol, frappe au clavier, chargement de page, etc.</p>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: addEventListener -->
+                    <div class="lecon-section">
+                        <h3>👂 12.2 addEventListener()</h3>
+
+                        <p>La méthode moderne pour gérer les événements.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">const</span> bouton = document.querySelector("#monBouton");
+
+bouton.addEventListener("click", <span class="keyword">function</span>() {
+    console.log("Bouton cliqué !");
+});
+
+<span class="comment">// Avec fonction fléchée</span>
+bouton.addEventListener("click", () => {
+    console.log("Encore cliqué !");
+});
+
+<span class="comment">// Fonction nommée</span>
+<span class="keyword">function</span> handleClick() {
+    console.log("Clic détecté");
+}
+bouton.addEventListener("click", handleClick);
+
+<span class="comment">// Supprimer un écouteur</span>
+bouton.removeEventListener("click", handleClick);</pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Avantages :</strong> On peut ajouter plusieurs écouteurs pour le même événement, et les supprimer facilement.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Types d'événements courants -->
+                    <div class="lecon-section">
+                          <h3>📋 12.3 Types d'événements courants</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Catégorie</th>
+                                    <th>Événements</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Souris</td>
+                                    <td><code>click</code>, <code>dblclick</code>, <code>mouseenter</code>, <code>mouseleave</code>, <code>mousemove</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Clavier</td>
+                                    <td><code>keydown</code>, <code>keyup</code>, <code>keypress</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Formulaire</td>
+                                    <td><code>submit</code>, <code>change</code>, <code>input</code>, <code>focus</code>, <code>blur</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Document</td>
+                                    <td><code>DOMContentLoaded</code>, <code>load</code>, <code>scroll</code>, <code>resize</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Exemples</span>
+input.addEventListener("input", (e) => {
+    console.log("Valeur actuelle:", e.target.value);
+});
+
+window.addEventListener("resize", () => {
+    console.log("Fenêtre redimensionnée:", window.innerWidth);
+});
+
+document.addEventListener("keydown", (e) => {
+    console.log(`Touche pressée: ${e.key}`);
+});</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: L'objet événement -->
+                    <div class="lecon-section">
+                        <h3>📦 12.4 L'objet événement (e)</h3>
+
+                        <p>Le gestionnaire reçoit un paramètre contenant des informations sur l'événement.</p>
+
+                        <div class="code-block">
+                            <pre>bouton.addEventListener("click", (e) => {
+    console.log(e.type);          <span class="comment">// "click"</span>
+    console.log(e.target);        <span class="comment">// L'élément qui a déclenché l'événement</span>
+    console.log(e.currentTarget); <span class="comment">// L'élément avec l'écouteur</span>
+    console.log(e.clientX);       <span class="comment">// Position X de la souris</span>
+    console.log(e.clientY);       <span class="comment">// Position Y de la souris</span>
+});
+
+input.addEventListener("keydown", (e) => {
+    <span class="keyword">if</span> (e.key === "Enter") {
+        console.log("Entrée pressée");
+    }
+    
+    <span class="keyword">if</span> (e.ctrlKey && e.key === "s") {
+        e.preventDefault();       <span class="comment">// Empêche l'action par défaut (sauvegarde)</span>
+        console.log("Ctrl+S détecté");
+    }
+});</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Propagation des événements -->
+                    <div class="lecon-section">
+                        <h3>🌊 12.5 Propagation (bubbling et capturing)</h3>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>Bubbling (remontée)</h4>
+                                <p>L'événement remonte du plus spécifique au plus général.</p>
+                                <div class="code-block small">
+                                    <pre>parent.addEventListener("click", () => {
+    console.log("Parent cliqué");
+});
+
+enfant.addEventListener("click", () => {
+    console.log("Enfant cliqué");
+});
+<span class="comment">// Cliquer sur enfant affiche les deux</span></pre>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4>Arrêter la propagation</h4>
+                                <div class="code-block small">
+                                    <pre>enfant.addEventListener("click", (e) => {
+    e.stopPropagation(); <span class="comment">// Empêche la remontée</span>
+    console.log("Seulement enfant");
+});</pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Empêcher le comportement par défaut</span>
+lien.addEventListener("click", (e) => {
+    e.preventDefault(); <span class="comment">// Empêche la navigation</span>
+    console.log("Lien cliqué mais pas de navigation");
+});</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 12.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Compteur de clics</h4>
+                            <p><strong>Objectif :</strong> Créer un compteur qui s'incrémente à chaque clic.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un bouton "Cliquez-moi" et un affichage du compteur</li>
+                                    <li>Ajoutez un écouteur de clic qui incrémente le compteur</li>
+                                    <li>Ajoutez un deuxième bouton "Reset" pour remettre à zéro</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Changement de couleur</h4>
+                            <p><strong>Objectif :</strong> Changer la couleur de fond au survol.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez plusieurs carrés de couleurs différentes</li>
+                                    <li>Au survol d'un carré, changez la couleur de fond de la page</li>
+                                    <li>Utilisez mouseenter et mouseleave</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 13 : JSON ET STOCKAGE ===== -->
+            <article class="lecon" id="lecon13">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 13</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">💾 JSON et Stockage</h2>
+                    <p class="lecon-description">Sauvegarder des données dans le navigateur</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: JSON -->
+                    <div class="lecon-section">
+                        <h3>📋 13.1 JSON (JavaScript Object Notation)</h3>
+
+                        <div class="definition-box">
+                            <p><strong>JSON</strong> est un format léger pour échanger des données. Il ressemble aux objets JavaScript mais avec des règles plus strictes.</p>
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>JavaScript</th>
+                                    <th>JSON</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>{ nom: "Jean", age: 25 }</code></td>
+                                    <td><code>{"nom":"Jean","age":25}</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Les clés sans guillemets</td>
+                                    <td>Les clés DOIVENT être en guillemets</td>
+                                </tr>
+                                <tr>
+                                    <td>Peut avoir des fonctions</td>
+                                    <td>Uniquement des données</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Convertir un objet JavaScript en JSON</span>
+<span class="keyword">const</span> personne = {
+    nom: "Jean",
+    age: 25,
+    adresse: {
+        ville: "Antananarivo",
+        pays: "Madagascar"
+    }
+};
+
+<span class="keyword">const</span> json = JSON.stringify(personne);
+console.log(json); 
+<span class="comment">// "{\"nom\":\"Jean\",\"age\":25,\"adresse\":{\"ville\":\"Antananarivo\",\"pays\":\"Madagascar\"}}"</span>
+
+<span class="comment">// Convertir JSON en objet JavaScript</span>
+<span class="keyword">const</span> objet = JSON.parse(json);
+console.log(objet.nom); <span class="comment">// "Jean"</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: localStorage -->
+                    <div class="lecon-section">
+                        <h3>💿 13.2 localStorage (stockage persistant)</h3>
+
+                        <p><code>localStorage</code> permet de stocker des données qui persistent même après fermeture du navigateur.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Méthode</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>localStorage.setItem(clé, valeur)</code></td>
+                                    <td>Stocke une valeur</td>
+                                </tr>
+                                <tr>
+                                    <td><code>localStorage.getItem(clé)</code></td>
+                                    <td>Récupère une valeur</td>
+                                </tr>
+                                <tr>
+                                    <td><code>localStorage.removeItem(clé)</code></td>
+                                    <td>Supprime une clé</td>
+                                </tr>
+                                <tr>
+                                    <td><code>localStorage.clear()</code></td>
+                                    <td>Vide tout le stockage</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Stocker des données simples</span>
+localStorage.setItem("nom", "Jean");
+localStorage.setItem("age", "25");
+
+<span class="comment">// Récupérer</span>
+<span class="keyword">const</span> nom = localStorage.getItem("nom");
+console.log(nom); <span class="comment">// "Jean"</span>
+
+<span class="comment">// Stocker des objets (besoin de JSON)</span>
+<span class="keyword">const</span> utilisateur = { prenom: "Jean", age: 25 };
+localStorage.setItem("user", JSON.stringify(utilisateur));
+
+<span class="comment">// Récupérer l'objet</span>
+<span class="keyword">const</span> userData = JSON.parse(localStorage.getItem("user"));
+console.log(userData.prenom); <span class="comment">// "Jean"</span></pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Important :</strong> localStorage ne stocke que des chaînes de caractères. Utilisez <code>JSON.stringify()</code> et <code>JSON.parse()</code> pour les objets/tableaux.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: sessionStorage -->
+                    <div class="lecon-section">
+                        <h3>⏱️ 13.3 sessionStorage (temporaire)</h3>
+
+                        <p><code>sessionStorage</code> fonctionne comme localStorage mais les données sont supprimées à la fermeture de l'onglet.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Même API que localStorage</span>
+sessionStorage.setItem("temporaire", "Ceci disparaîtra");
+sessionStorage.getItem("temporaire");
+sessionStorage.removeItem("temporaire");
+sessionStorage.clear();</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Exemple pratique -->
+                    <div class="lecon-section">
+                        <h3>🎯 13.4 Exemple : Thème sombre/clair</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Au chargement, appliquer le thème sauvegardé</span>
+<span class="keyword">const</span> themeSauvegarde = localStorage.getItem("theme");
+<span class="keyword">if</span> (themeSauvegarde) {
+    document.body.classList.add(themeSauvegarde);
+}
+
+<span class="comment">// Changer de thème</span>
+<span class="keyword">function</span> setTheme(theme) {
+    document.body.classList.remove("clair", "sombre");
+    document.body.classList.add(theme);
+    localStorage.setItem("theme", theme);
+}
+
+document.querySelector("#themeClair").addEventListener("click", () => {
+    setTheme("clair");
+});
+
+document.querySelector("#themeSombre").addEventListener("click", () => {
+    setTheme("sombre");
+});</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 13.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Formulaire avec sauvegarde</h4>
+                            <p><strong>Objectif :</strong> Sauvegarder les données d'un formulaire.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un formulaire avec nom, email, message</li>
+                                    <li>À chaque saisie, sauvegardez les données dans localStorage</li>
+                                    <li>Au chargement, restaurez les données</li>
+                                    <li>Ajoutez un bouton "Effacer"</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Liste de tâches persistante</h4>
+                            <p><strong>Objectif :</strong> Améliorer la todo list avec persistance.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Reprenez la todo list de la leçon précédente</li>
+                                    <li>Sauvegardez la liste dans localStorage à chaque modification</li>
+                                    <li>Au chargement, chargez la liste depuis localStorage</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 14 : PROGRAMMATION ASYNCHRONE ===== -->
+            <article class="lecon" id="lecon14">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 14</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 45 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">⏱️ Programmation asynchrone</h2>
+                    <p class="lecon-description">Callbacks, Promises, async/await</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 14.1 Synchrone vs Asynchrone</h3>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>Synchrone (bloquant)</h4>
+                                <p>Les instructions s'exécutent une par une, dans l'ordre. Si une instruction prend du temps, tout le reste attend.</p>
+                                <div class="code-block small">
+                                    <pre>console.log("1");
+<span class="comment">// Opération longue (bloquante)</span>
+console.log("2"); <span class="comment">// Attend la fin</span></pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>Asynchrone (non-bloquant)</h4>
+                                <p>Les opérations longues démarrent, mais le code continue. Une fonction de callback est appelée quand l'opération est terminée.</p>
+                                <div class="code-block small">
+                                    <pre>console.log("1");
+setTimeout(() => {
+    console.log("2");
+}, 1000);
+console.log("3"); <span class="comment">// S'affiche avant 2</span></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Résultat : 1, 3, 2 (après 1 seconde)</h4>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Callbacks -->
+                    <div class="lecon-section">
+                        <h3>📞 14.2 Les callbacks</h3>
+               <div class="definition-box">
+                            <p>Un <strong>callback</strong> est une fonction passée en paramètre à une autre fonction, qui sera appelée quand une opération est terminée.</p>
+                        </div>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Exemple avec setTimeout</span>
+console.log("Début");
+
+setTimeout(<span class="keyword">function</span>() {
+    console.log("Ceci s'affiche après 2 secondes");
+}, 2000);
+
+console.log("Fin");
+
+<span class="comment">// Callback personnalisé</span>
+<span class="keyword">function</span> chargerDonnees(callback) {
+    console.log("Chargement...");
+    setTimeout(() => {
+        <span class="keyword">const</span> donnees = { nom: "Jean", age: 25 };
+        callback(donnees); <span class="comment">// Appelle le callback avec les données</span>
+    }, 2000);
+}
+
+chargerDonnees(<span class="keyword">function</span>(donnees) {
+    console.log("Données reçues:", donnees);
+});</pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Callback Hell :</strong> L'utilisation excessive de callbacks imbriqués rend le code illisible (pyramide de la mort). C'est pourquoi Promises et async/await ont été créés.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Promises -->
+                    <div class="lecon-section">
+                        <h3>🤝 14.3 Les Promises (Promesses)</h3>
+
+                        <p>Une Promise est un objet qui représente l'achèvement ou l'échec d'une opération asynchrone.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Créer une Promise</span>
+<span class="keyword">const</span> maPromise = <span class="keyword">new</span> Promise((resolve, reject) => {
+    <span class="comment">// Opération asynchrone</span>
+    setTimeout(() => {
+        <span class="keyword">const</span> succes = true;
+        
+        <span class="keyword">if</span> (succes) {
+            resolve("Opération réussie !"); <span class="comment">// Succès</span>
+        } <span class="keyword">else</span> {
+            reject("Échec de l'opération"); <span class="comment">// Erreur</span>
+        }
+    }, 2000);
+});
+
+<span class="comment">// Utiliser la Promise</span>
+maPromise
+    .then(resultat => {
+        console.log("Succès:", resultat);
+    })
+    .catch(erreur => {
+        console.error("Erreur:", erreur);
+    })
+    .finally(() => {
+        console.log("Terminé (succès ou échec)");
+    });</pre>
+                        </div>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Exemple plus concret : simulation de chargement</span>
+<span class="keyword">function</span> chargerUtilisateur(id) {
+    <span class="keyword">return</span> <span class="keyword">new</span> Promise((resolve, reject) => {
+        console.log(`Chargement de l'utilisateur ${id}...`);
+        
+        setTimeout(() => {
+            <span class="keyword">if</span> (id === 1) {
+                resolve({ id: 1, nom: "Jean" });
+            } <span class="keyword">else</span> {
+                reject("Utilisateur non trouvé");
+            }
+        }, 1500);
+    });
+}
+
+chargerUtilisateur(1)
+    .then(utilisateur => console.log("Utilisateur:", utilisateur))
+    .catch(erreur => console.error("Erreur:", erreur));</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Chaînage de Promises -->
+                    <div class="lecon-section">
+                        <h3>⛓️ 14.4 Chaînage de Promises</h3>
+
+                        <p>On peut enchaîner plusieurs opérations asynchrones.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">function</span> etape1() {
+    <span class="keyword">return</span> <span class="keyword">new</span> Promise(resolve => {
+        setTimeout(() => resolve("Étape 1 terminée"), 1000);
+    });
+}
+
+<span class="keyword">function</span> etape2(message) {
+    console.log(message);
+    <span class="keyword">return</span> <span class="keyword">new</span> Promise(resolve => {
+        setTimeout(() => resolve("Étape 2 terminée"), 1000);
+    });
+}
+
+<span class="keyword">function</span> etape3(message) {
+    console.log(message);
+    <span class="keyword">return</span> <span class="keyword">new</span> Promise(resolve => {
+        setTimeout(() => resolve("Étape 3 terminée"), 1000);
+    });
+}
+
+etape1()
+    .then(resultat1 => etape2(resultat1))
+    .then(resultat2 => etape3(resultat2))
+    .then(resultat3 => console.log(resultat3))
+    .catch(erreur => console.error("Erreur:", erreur));
+
+<span class="comment">// Version simplifiée</span>
+etape1()
+    .then(etape2)
+    .then(etape3)
+    .then(console.log)
+    .catch(console.error);</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: async/await -->
+                    <div class="lecon-section">
+                        <h3>✨ 14.5 async/await (ES2017)</h3>
+
+                        <p><code>async/await</code> est une syntaxe plus lisible pour travailler avec les Promises.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Fonction asynchrone avec async</span>
+<span class="keyword">async</span> <span class="keyword">function</span> chargerDonnees() {
+    <span class="keyword">try</span> {
+        console.log("Chargement...");
+        
+        <span class="comment">// await attend la résolution de la Promise</span>
+        <span class="keyword">const</span> utilisateur = <span class="keyword">await</span> chargerUtilisateur(1);
+        console.log("Utilisateur chargé:", utilisateur);
+        
+        <span class="keyword">const</span> commandes = <span class="keyword">await</span> chargerCommandes(utilisateur.id);
+        console.log("Commandes chargées:", commandes);
+        
+        <span class="keyword">return</span> commandes;
+    } <span class="keyword">catch</span> (erreur) {
+        console.error("Erreur lors du chargement:", erreur);
+    }
+}
+
+<span class="comment">// Appel de la fonction</span>
+chargerDonnees().then(resultat => {
+    console.log("Terminé avec:", resultat);
+});
+
+<span class="comment">// Ou avec await au niveau supérieur (dans un module)</span>
+<span class="comment">// const resultat = await chargerDonnees();</span></pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Bon à savoir :</strong> async/await est du sucre syntaxique sur les Promises. Le code est plus lisible et plus proche du synchrone, mais il faut gérer les erreurs avec try/catch.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Promise.all -->
+                    <div class="lecon-section">
+                        <h3>⚡ 14.6 Promise.all (parallélisme)</h3>
+
+                        <p>Exécute plusieurs Promises en parallèle et attend qu'elles soient toutes résolues.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">const</span> p1 = chargerUtilisateur(1);
+<span class="keyword">const</span> p2 = chargerUtilisateur(2);
+<span class="keyword">const</span> p3 = chargerUtilisateur(3);
+
+Promise.all([p1, p2, p3])
+    .then(utilisateurs => {
+        console.log("Tous les utilisateurs:", utilisateurs);
+    })
+    .catch(erreur => {
+        console.error("Une des promesses a échoué:", erreur);
+    });
+
+<span class="comment">// Avec async/await</span>
+<span class="keyword">async</span> <span class="keyword">function</span> chargerTous() {
+    <span class="keyword">try</span> {
+        <span class="keyword">const</span> utilisateurs = <span class="keyword">await</span> Promise.all([
+            chargerUtilisateur(1),
+            chargerUtilisateur(2),
+            chargerUtilisateur(3)
+        ]);
+        console.log("Tous chargés:", utilisateurs);
+    } <span class="keyword">catch</span> (erreur) {
+        console.error("Erreur:", erreur);
+    }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 14.7 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Simuler un chargement</h4>
+                            <p><strong>Objectif :</strong> Créer une fonction asynchrone avec Promise.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une fonction <code>tirerDe(lancer)</code> qui retourne une Promise</li>
+                                    <li>Si le lancer est entre 1 et 6, résolvez avec le nombre</li>
+                                    <li>Sinon, rejetez avec "Lancer invalide"</li>
+                                    <li>Utilisez setTimeout pour simuler un délai de 1 seconde</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Chaînage asynchrone</h4>
+                            <p><strong>Objectif :</strong> Enchaîner plusieurs opérations asynchrones.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez trois fonctions async : <code>cuirePate()</code>, <code>preparerSauce()</code>, <code>melanger()</code></li>
+                                    <li>Chaque fonction prend 2 secondes et retourne une étape</li>
+                                    <li>Utilisez async/await pour exécuter en séquence</li>
+                                    <li>Affichez l'avancement</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 15 : API FETCH ===== -->
+            <article class="lecon" id="lecon15">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 15</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">🌐 API Fetch</h2>
+                    <p class="lecon-description">Faire des requêtes HTTP vers des serveurs</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 15.1 Qu'est-ce que l'API Fetch ?</h3>
+
+                        <div class="definition-box">
+                            <p><strong>Fetch</strong> est une API moderne pour faire des requêtes HTTP (GET, POST, etc.) et récupérer des ressources depuis le réseau.</p>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <p>C'est l'évolution de XMLHttpRequest (AJAX). Fetch retourne une Promise, ce qui le rend facile à utiliser avec async/await.</p>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Requête GET simple -->
+                    <div class="lecon-section">
+                        <h3>📥 15.2 Requête GET (récupérer des données)</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Avec Promises</span>
+fetch("https://jsonplaceholder.typicode.com/users/1")
+    .then(reponse => {
+        <span class="comment">// Vérifier si la requête a réussi</span>
+        <span class="keyword">if</span> (!reponse.ok) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> Error(`Erreur HTTP: ${reponse.status}`);
+        }
+        <span class="keyword">return</span> reponse.json(); <span class="comment">// Convertir en objet JavaScript</span>
+    })
+    .then(donnees => {
+        console.log("Utilisateur:", donnees);
+    })
+    .catch(erreur => {
+        console.error("Erreur de fetch:", erreur);
+    });
+
+<span class="comment">// Avec async/await (plus lisible)</span>
+<span class="keyword">async</span> <span class="keyword">function</span> chargerUtilisateur() {
+    <span class="keyword">try</span> {
+        <span class="keyword">const</span> reponse = <span class="keyword">await</span> fetch("https://jsonplaceholder.typicode.com/users/1");
+        
+        <span class="keyword">if</span> (!reponse.ok) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> Error(`Erreur ${reponse.status}`);
+        }
+        
+        <span class="keyword">const</span> utilisateur = <span class="keyword">await</span> reponse.json();
+        console.log("Utilisateur:", utilisateur);
+    } <span class="keyword">catch</span> (erreur) {
+        console.error("Erreur:", erreur);
+    }
+}</pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Note :</strong> <code>jsonplaceholder.typicode.com</code> est une API gratuite pour tester. <code>reponse.json()</code> retourne une Promise, donc il faut await ou .then().</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Différents formats de réponse -->
+                    <div class="lecon-section">
+                        <h3>📄 15.3 Types de réponses</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Méthode</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>reponse.json()</code></td>
+                                    <td>Convertit en objet JavaScript (pour API JSON)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>reponse.text()</code></td>
+                                    <td>Récupère comme texte brut</td>
+                                </tr>
+                                <tr>
+                                    <td><code>reponse.blob()</code></td>
+                                    <td>Pour les fichiers binaires (images)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>reponse.formData()</code></td>
+                                    <td>Pour les données de formulaire</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Récupérer du texte</span>
+<span class="keyword">const</span> reponseTexte = <span class="keyword">await</span> fetch("https://example.com/texte.txt");
+<span class="keyword">const</span> texte = <span class="keyword">await</span> reponseTexte.text();
+
+<span class="comment">// Récupérer une image</span>
+<span class="keyword">const</span> reponseImage = <span class="keyword">await</span> fetch("https://example.com/image.jpg");
+<span class="keyword">const</span> blob = <span class="keyword">await</span> reponseImage.blob();
+<span class="keyword">const</span> url = URL.createObjectURL(blob);
+document.querySelector("img").src = url;</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Requête POST (envoyer des données) -->
+                    <div class="lecon-section">
+                        <h3>📤 15.4 Requête POST</h3>
+
+                        <p>Pour envoyer des données au serveur (créer une ressource).</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">async</span> <span class="keyword">function</span> creerUtilisateur() {
+    <span class="keyword">const</span> nouvelUtilisateur = {
+        nom: "Jean Dupont",
+        email: "jean@example.com"
+    };
+
+    <span class="keyword">try</span> {
+        <span class="keyword">const</span> reponse = <span class="keyword">await</span> fetch("https://jsonplaceholder.typicode.com/users", {
+            method: "POST",                           <span class="comment">// Méthode HTTP</span>
+            headers: {
+                "Content-Type": "application/json"    <span class="comment">// Type de données envoyées</span>
+            },
+            body: JSON.stringify(nouvelUtilisateur)   <span class="comment">// Convertir en JSON</span>
+        });
+
+        <span class="keyword">if</span> (!reponse.ok) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> Error(`Erreur ${reponse.status}`);
+        }
+
+        <span class="keyword">const</span> resultat = <span class="keyword">await</span> reponse.json();
+        console.log("Utilisateur créé:", resultat);
+    } <span class="keyword">catch</span> (erreur) {
+        console.error("Erreur:", erreur);
+    }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Gestion des erreurs -->
+                    <div class="lecon-section">
+                        <h3>⚠️ 15.5 Gestion des erreurs</h3>
+                  <p>Fetch ne rejette la Promise que pour des erreurs réseau. Les erreurs HTTP (404, 500) doivent être vérifiées manuellement.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">async</span> <span class="keyword">function</span> fetchSecurise(url) {
+    <span class="keyword">try</span> {
+        <span class="keyword">const</span> reponse = <span class="keyword">await</span> fetch(url);
+        
+        <span class="comment">// Vérifier les erreurs HTTP</span>
+        <span class="keyword">if</span> (!reponse.ok) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> Error(`HTTP ${reponse.status}: ${reponse.statusText}`);
+        }
+        
+        <span class="keyword">return</span> <span class="keyword">await</span> reponse.json();
+    } <span class="keyword">catch</span> (erreur) {
+        <span class="comment">// Erreur réseau ou HTTP</span>
+        console.error("Échec de la requête:", erreur.message);
+        
+        <span class="comment">// Afficher un message à l'utilisateur</span>
+        document.querySelector("#erreur").textContent = 
+            "Impossible de charger les données. Vérifiez votre connexion.";
+        
+        <span class="keyword">return</span> <span class="keyword">null</span>;
+    }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exemple complet -->
+                    <div class="lecon-section">
+                        <h3>🎯 15.6 Exemple : Afficher des utilisateurs</h3>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">async</span> <span class="keyword">function</span> afficherUtilisateurs() {
+    <span class="keyword">try</span> {
+        <span class="keyword">const</span> reponse = <span class="keyword">await</span> fetch("https://jsonplaceholder.typicode.com/users");
+        <span class="keyword">const</span> utilisateurs = <span class="keyword">await</span> reponse.json();
+        
+        <span class="keyword">const</span> liste = document.querySelector("#user-list");
+        liste.innerHTML = ""; <span class="comment">// Vider</span>
+        
+        utilisateurs.forEach(user => {
+            <span class="keyword">const</span> li = document.createElement("li");
+            li.innerHTML = `
+                &lt;strong&gt;${user.name}&lt;/strong&gt; (${user.email})
+                &lt;br&gt;Ville: ${user.address.city}
+            `;
+            liste.appendChild(li);
+        });
+    } <span class="keyword">catch</span> (erreur) {
+        console.error("Erreur:", erreur);
+    }
+}
+
+document.querySelector("#charger").addEventListener("click", afficherUtilisateurs);</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 15.7 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Afficher des posts</h4>
+                            <p><strong>Objectif :</strong> Récupérer et afficher des articles depuis une API.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Utilisez l'API JSONPlaceholder (https://jsonplaceholder.typicode.com/posts)</li>
+                                    <li>Affichez les 10 premiers posts (titre et extrait)</li>
+                                    <li>Ajoutez un bouton pour charger plus</li>
+                                    <li>Gérez les erreurs</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Recherche en direct</h4>
+                            <p><strong>Objectif :</strong> Créer un champ de recherche qui filtre les utilisateurs.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Chargez la liste des utilisateurs au démarrage</li>
+                                    <li>Ajoutez un champ de recherche</li>
+                                    <li>Filtrez les utilisateurs en temps réel (input event)</li>
+                                    <li>Affichez les résultats filtrés</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== EXERCICES RÉCAPITULATIFS ===== -->
+            <section class="exercices-recap">
+                <h2 class="section-title">🏆 Projet récapitulatif (Leçons 11-15)</h2>
+
+                <div class="recap-card">
+                    <h3>Créez une application météo</h3>
+                    <p>Utilisez toutes les notions avancées apprises.</p>
+
+                    <h4>Instructions :</h4>
+                    <ol>
+                        <li>Interface avec un champ de recherche de ville</li>
+                        <li>Au clic sur "Rechercher", faites une requête à une API météo (ex: OpenWeatherMap)</li>
+                        <li>Affichez : température, conditions, humidité, vent</li>
+                        <li>Ajoutez une icône selon la météo</li>
+                        <li>Gérez les erreurs (ville non trouvée, pas de connexion)</li>
+                        <li>Sauvegardez la dernière recherche dans localStorage</li>
+                        <li>Ajoutez un loader pendant le chargement</li>
+                    </ol>
+
+                    <h4>API recommandée :</h4>
+                    <p>https://api.openweathermap.org/data/2.5/weather?q={ville}&appid={API_KEY}&units=metric&lang=fr</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <a href="js2.html" class="pagination-prev"><i class="fas fa-arrow-left"></i> Leçons 6-10</a>
+                <div class="pagination-links">
+                    <a href="js1.html">1</a>
+                    <a href="js2.html">2</a>
+                    <a href="js3.html" class="active">3</a>
+                    <a href="js4.html">4</a>
+                </div>
+                <a href="js4.html" class="pagination-next">Leçons 16-20 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+  </html>
+      
+      
