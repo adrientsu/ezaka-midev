@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Master - Leçons 17 à 20</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="4.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">{ }</span>
+                    <div class="logo-text">
+                        <span class="logo-main">CSS MASTER</span>
+                        <span class="logo-sub">Leçons 17 à 20 : Expertise finale</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 17-20 sur 20</span>
+                <span class="progress-percent">100%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%"></div>
+            </div>
+            <div class="progress-nav">
+                <a href="3.html" class="progress-prev"><i class="fas fa-arrow-left"></i> Leçons 11-16</a>
+                <span class="progress-current">Leçons 17-20</span>
+                <span class="progress-next disabled">Fin du cours <i class="fas fa-check-circle"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 17-20 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 17 à 20 : Expertise finale</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon17" class="sommaire-card">
+                    <span class="lecon-numero">17</span>
+                    <h3>Pseudo-éléments</h3>
+                    <p>::before, ::after, ::first-letter</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon18" class="sommaire-card">
+                    <span class="lecon-numero">18</span>
+                    <h3>Pseudo-classes avancées</h3>
+                    <p>:nth-child, :not, :is, :where</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon19" class="sommaire-card">
+                    <span class="lecon-numero">19</span>
+                    <h3>Fonctions CSS avancées</h3>
+                    <p>calc(), clamp(), min(), max()</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon20" class="sommaire-card projet">
+                    <span class="lecon-numero">20</span>
+                    <h3>Projet final</h3>
+                    <p>Site complet avec toutes les notions</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 60 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 17 : PSEUDO-ÉLÉMENTS ===== -->
+            <article class="lecon" id="lecon17">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 17</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">✨ Pseudo-éléments</h2>
+                    <p class="lecon-description">::before, ::after, ::first-letter, ::first-line</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 17.1 Qu'est-ce qu'un pseudo-élément ?</h3>
+
+                        <div class="definition-box">
+                            <p>Les <strong>pseudo-éléments</strong> permettent de styliser des parties spécifiques d'un élément, sans avoir à ajouter de balises HTML supplémentaires. Ils commencent par <code>::</code> (double deux-points).</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Différence :</strong>
+                                <ul>
+                                    <li><strong>Pseudo-classes (:)</strong> - État de l'élément (:hover, :focus)</li>
+                                    <li><strong>Pseudo-éléments (::)</strong> - Partie de l'élément (::before, ::first-letter)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: ::before et ::after -->
+                    <div class="lecon-section">
+                        <h3>🎭 17.2 ::before et ::after (les plus utilisés)</h3>
+
+                        <p>Ces pseudo-éléments insèrent du contenu avant ou après le contenu de l'élément.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">position</span>: <span class="value">relative</span>;
+}
+
+<span class="selector">.element::before</span> {
+    <span class="property">content</span>: <span class="value">"🔥"</span>;           <span class="comment">/* Obligatoire ! */</span>
+    <span class="property">margin-right</span>: <span class="value">5px</span>;
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;
+}
+
+<span class="selector">.element::after</span> {
+    <span class="property">content</span>: <span class="value">"✨"</span>;
+    <span class="property">margin-left</span>: <span class="value">5px</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples :</h4>
+                            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                                <div>
+                                    <p style="font-size: 1.2rem;"><span style="color: #FF7A45;">🔥</span> Texte avec before</p>
+                                    <p style="font-size: 1.2rem;">Texte avec after <span style="color: #1F2D3D;">✨</span></p>
+                                </div>
+                                <div>
+                                    <style>
+                                        .demo-before::before {
+                                            content: "→ ";
+                                            color: #FF7A45;
+                                            font-weight: bold;
+                                        }
+                                        .demo-after::after {
+                                            content: " ←";
+                                            color: #1F2D3D;
+                                            font-weight: bold;
+                                        }
+                                    </style>
+                                    <p class="demo-before">Ce texte a un before</p>
+                                    <p class="demo-after">Ce texte a un after</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>La propriété content</h4>
+                        <p><code>content</code> est obligatoire pour ::before et ::after. Peut prendre différentes valeurs :</p>
+                        <ul>
+                            <li><code>content: "texte";</code> - Texte simple</li>
+                            <li><code>content: "";</code> - Vide (utile pour les éléments décoratifs)</li>
+                            <li><code>content: url('image.png');</code> - Image</li>
+                            <li><code>content: attr(data-attr);</code> - Valeur d'un attribut</li>
+                            <li><code>content: counter(compteur);</code> - Compteur</li>
+                            <li><code>content: open-quote;</code> - Guillemets</li>
+                        </ul>
+                    </div>
+
+                    <!-- SECTION 3: Utilisations créatives -->
+                    <div class="lecon-section">
+                        <h3>🎨 17.3 Utilisations créatives de ::before et ::after</h3>
+
+                        <h4>Icônes décoratives</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">h1::before</span> {
+    <span class="property">content</span>: <span class="value">"★"</span>;
+    <span class="property">color</span>: <span class="value">gold</span>;
+    <span class="property">margin-right</span>: <span class="value">10px</span>;
+}</pre>
+                        </div>
+
+                        <h4>Guillemets stylisés pour citations</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">blockquote::before</span> {
+    <span class="property">content</span>: <span class="value">"«"</span>;
+    <span class="property">font-size</span>: <span class="value">2em</span>;
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">left</span>: <span class="value">-20px</span>;
+    <span class="property">top</span>: <span class="value">-10px</span>;
+}
+
+<span class="selector">blockquote::after</span> {
+    <span class="property">content</span>: <span class="value">"»"</span>;
+    <span class="property">font-size</span>: <span class="value">2em</span>;
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">right</span>: <span class="value">-20px</span>;
+    <span class="property">bottom</span>: <span class="value">-10px</span>;
+}</pre>
+                        </div>
+
+                        <h4>Bordures décoratives</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">.titre-section</span> {
+    <span class="property">position</span>: <span class="value">relative</span>;
+    <span class="property">text-align</span>: <span class="value">center</span>;
+}
+
+<span class="selector">.titre-section::before</span> {
+    <span class="property">content</span>: <span class="value">""</span>;
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">bottom</span>: <span class="value">-10px</span>;
+    <span class="property">left</span>: <span class="value">50%</span>;
+    <span class="property">transform</span>: <span class="value">translateX(-50%)</span>;
+    <span class="property">width</span>: <span class="value">50px</span>;
+    <span class="property">height</span>: <span class="value">3px</span>;
+    <span class="property">background</span>: <span class="value">#FF7A45</span>;
+}</pre>
+                        </div>
+
+                        <h4>Tooltips (infobulles) avec CSS pur</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">.tooltip</span> {
+    <span class="property">position</span>: <span class="value">relative</span>;
+    <span class="property">cursor</span>: <span class="value">help</span>;
+}
+
+<span class="selector">.tooltip:hover::after</span> {
+    <span class="property">content</span>: <span class="value">attr(data-tooltip)</span>;
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">bottom</span>: <span class="value">100%</span>;
+    <span class="property">left</span>: <span class="value">50%</span>;
+    <span class="property">transform</span>: <span class="value">translateX(-50%)</span>;
+    <span class="property">background</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+    <span class="property">padding</span>: <span class="value">5px 10px</span>;
+    <span class="property">border-radius</span>: <span class="value">4px</span>;
+    <span class="property">white-space</span>: <span class="value">nowrap</span>;
+    <span class="property">font-size</span>: <span class="value">0.8rem</span>;
+}</pre>
+                        </div>
+                        <div style="position: relative; display: inline-block; cursor: help; padding: 10px; background: #FF7A45; color: white; border-radius: 5px; margin-top: 10px;" 
+                             onmouseover="this.setAttribute('data-tooltip', 'Info bulle'); this.style.setProperty('--tooltip-display', 'block')" 
+                             onmouseout="this.style.setProperty('--tooltip-display', 'none')">
+                            Survolez-moi
+                            <style>
+                                [data-tooltip]::after {
+                                    content: attr(data-tooltip);
+                                    position: absolute;
+                                    bottom: 100%;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    background: #1F2D3D;
+                                    color: white;
+                                    padding: 5px 10px;
+                                    border-radius: 4px;
+                                    white-space: nowrap;
+                                    font-size: 0.8rem;
+                                    display: var(--tooltip-display, none);
+                                }
+                            </style>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: ::first-letter et ::first-line -->
+                    <div class="lecon-section">
+                        <h3>📝 17.4 ::first-letter et ::first-line</h3>
+
+                        <p>Permettent de styliser la première lettre ou la première ligne d'un texte.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">p::first-letter</span> {
+    <span class="property">font-size</span>: <span class="value">3em</span>;
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;
+    <span class="property">float</span>: <span class="value">left</span>;
+    <span class="property">margin-right</span>: <span class="value">5px</span>;
+    <span class="property">font-weight</span>: <span class="value">bold</span>;
+}
+
+<span class="selector">p::first-line</span> {
+    <span class="property">font-weight</span>: <span class="value">bold</span>;
+    <span class="property">color</span>: <span class="value">#1F2D3D</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <style>
+                                .demo-first-letter::first-letter {
+                                    font-size: 3em;
+                                    color: #FF7A45;
+                                    float: left;
+                                    margin-right: 5px;
+                                    font-weight: bold;
+                                }
+                                .demo-first-line::first-line {
+                                    font-weight: bold;
+                                    color: #1F2D3D;
+                                }
+                            </style>
+                            <p class="demo-first-letter">Ceci est un paragraphe avec une première lettre stylisée. C'est un effet typographique classique comme dans les livres anciens.</p>
+                            <p class="demo-first-line">Ceci est un paragraphe où seule la première ligne est en gras. Si le texte est long, la première ligne seule sera modifiée jusqu'au premier retour à la ligne automatique.</p>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: ::selection et ::placeholder -->
+                    <div class="lecon-section">
+                        <h3>🖱️ 17.5 ::selection et ::placeholder</h3>
+
+                        <p>Stylise la sélection de texte et les placeholders de formulaires.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Style du texte sélectionné */</span>
+<span class="selector">::selection</span> {
+    <span class="property">background</span>: <span class="value">#FF7A45</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+}
+
+<span class="comment">/* Style du placeholder */</span>
+<span class="selector">input::placeholder</span> {
+    <span class="property">color</span>: <span class="value">#6B7280</span>;
+    <span class="property">font-style</span>: <span class="value">italic</span>;
+    <span class="property">opacity</span>: <span class="value">0.8</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <style>
+                                .demo-selection::selection {
+                                    background: #FF7A45;
+                                    color: white;
+                                }
+                            </style>
+                            <p class="demo-selection">Sélectionnez ce texte pour voir le style personnalisé !</p>
+                            <input type="text" placeholder="Placeholder stylisé" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; margin-top: 10px;">
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 17.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Bouton avec icône</h4>
+                            <p><strong>Objectif :</strong> Créer un bouton avec une icône avant le texte.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un bouton simple</li>
+                                    <li>Utilisez ::before pour ajouter une icône (ex: "→")</li>
+                                    <li>Ajoutez une transition pour que l'icône bouge au survol</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Cartes avec badge</h4>
+                            <p><strong>Objectif :</strong> Ajouter un badge "Nouveau" sur une carte avec ::before.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une carte (div avec padding, border, etc.)</li>
+                                    <li>Ajoutez un badge "Nouveau" dans le coin supérieur droit</li>
+                                       <li>Utilisez position absolute et ::before/::after</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Effet de citation</h4>
+                            <p><strong>Objectif :</strong> Créer une citation avec des guillemets stylisés.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un bloc de citation</li>
+                                    <li>Utilisez ::before pour ajouter un guillemet ouvrant</li>
+                                    <li>Utilisez ::after pour ajouter un guillemet fermant</li>
+                                    <li>Stylisez-les avec une couleur et une taille différentes</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 18 : PSEUDO-CLASSES AVANCÉES ===== -->
+            <article class="lecon" id="lecon18">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 18</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">🎯 Pseudo-classes avancées</h2>
+                    <p class="lecon-description">:nth-child, :not, :is, :where, :has</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Rappel -->
+                    <div class="lecon-section">
+                        <h3>📌 18.1 Rappel des pseudo-classes de base</h3>
+
+                        <p>Pseudo-classes déjà vues : <code>:hover</code>, <code>:focus</code>, <code>:active</code>, <code>:first-child</code>, <code>:last-child</code>, etc.</p>
+                    </div>
+
+                    <!-- SECTION 2: :nth-child() et :nth-of-type() -->
+                    <div class="lecon-section">
+                        <h3>🔢 18.2 :nth-child() et :nth-of-type()</h3>
+
+                        <p>Sélectionne des éléments selon leur position parmi leurs frères.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Syntaxe</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>:nth-child(3)</code></td><td>Troisième enfant</td></tr>
+                                <tr><td><code>:nth-child(odd)</code></td><td>Enfants impairs (1, 3, 5...)</td></tr>
+                                <tr><td><code>:nth-child(even)</code></td><td>Enfants pairs (2, 4, 6...)</td></tr>
+                                <tr><td><code>:nth-child(2n+1)</code></td><td>Impairs (équivalent à odd)</td></tr>
+                                <tr><td><code>:nth-child(3n)</code></td><td>Tous les 3 éléments (3, 6, 9...)</td></tr>
+                                <tr><td><code>:nth-child(n+4)</code></td><td>À partir du 4ème élément</td></tr>
+                                <tr><td><code>:nth-child(-n+3)</code></td><td>Les 3 premiers éléments</td></tr>
+                                <tr><td><code>:nth-of-type(2)</code></td><td>Deuxième élément du même type</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Exemples */</span>
+<span class="selector">li:nth-child(odd)</span> {
+    <span class="property">background</span>: <span class="value">#F6EDE7</span>;
+}
+
+<span class="selector">li:nth-child(3n+1)</span> {
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;
+}
+
+<span class="selector">p:nth-of-type(2)</span> {
+    <span class="property">font-weight</span>: <span class="value">bold</span>;  <span class="comment">/* Deuxième paragraphe (ignorer les autres types) */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple visuel :</h4>
+                            <style>
+                                .demo-nth li:nth-child(odd) { background: #F6EDE7; }
+                                .demo-nth li:nth-child(3) { color: #FF7A45; font-weight: bold; }
+                            </style>
+                            <ul class="demo-nth" style="list-style: none; padding: 0;">
+                                <li style="padding: 5px;">Élément 1 (impair)</li>
+                                <li style="padding: 5px;">Élément 2 (pair)</li>
+                                <li style="padding: 5px;">Élément 3 (spécial)</li>
+                                <li style="padding: 5px;">Élément 4 (pair)</li>
+                                <li style="padding: 5px;">Élément 5 (impair)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: :not() (négation) -->
+                    <div class="lecon-section">
+                        <h3>🚫 18.3 :not() - la négation</h3>
+
+                        <p>Sélectionne les éléments qui ne correspondent pas au sélecteur donné.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Tous les paragraphes sauf ceux avec la classe .special */</span>
+<span class="selector">p:not(.special)</span> {
+    <span class="property">color</span>: <span class="value">#6B7280</span>;
+}
+
+<span class="comment">/* Tous les liens sauf ceux dans le footer */</span>
+<span class="selector">a:not(footer a)</span> {
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;
+}
+
+<span class="comment">/* Tous les inputs sauf les boutons */</span>
+<span class="selector">input:not([type="submit"])</span> {
+    <span class="property">border</span>: <span class="value">1px solid #6B7280</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <style>
+                                .demo-not p:not(.special) {
+                                    color: #6B7280;
+                                }
+                            </style>
+                            <div class="demo-not">
+                                <p>Paragraphe normal (gris)</p>
+                                <p class="special">Paragraphe spécial (couleur normale)</p>
+                                <p>Encore un gris</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: :is() et :where() -->
+                    <div class="lecon-section">
+                        <h3>🔗 18.4 :is() et :where() (regroupement)</h3>
+
+                        <p>Permettent de regrouper plusieurs sélecteurs pour simplifier le code.</p>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>Sans :is()</h4>
+                                <div class="code-block small">
+                                    <pre><span class="selector">header h1, header h2, header h3</span> {
+    <span class="property">font-family</span>: <span class="value">'Arial', sans-serif</span>;
+}</pre>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>Avec :is()</h4>
+                                <div class="code-block small">
+                                    <pre><span class="selector">header :is(h1, h2, h3)</span> {
+    <span class="property">font-family</span>: <span class="value">'Arial', sans-serif</span>;
+}</pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p><strong>Différence entre :is() et :where() :</strong> :where() a une spécificité de 0 (toujours), tandis que :is() prend la spécificité la plus élevée de ses arguments.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Plus d'exemples */</span>
+<span class="comment">/* Cibler les titres dans header ET footer */</span>
+<span class="selector">:is(header, footer) :is(h1, h2, h3)</span> {
+    <span class="property">color</span>: <span class="value">#1F2D3D</span>;
+}
+
+<span class="comment">/* Formulaires */</span>
+<span class="selector">:is(input, textarea, select):focus</span> {
+    <span class="property">outline</span>: <span class="value">2px solid #FF7A45</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: :has() (le parent selector) -->
+                    <div class="lecon-section">
+                        <h3>👪 18.5 :has() - le sélecteur parent</h3>
+
+                        <p><code>:has()</code> permet de sélectionner un élément qui contient un certain élément enfant. C'est une nouveauté puissante.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Sélectionner les articles qui contiennent une image */</span>
+<span class="selector">article:has(img)</span> {
+    <span class="property">border</span>: <span class="value">2px solid #FF7A45</span>;
+}
+
+<span class="comment">/* Sélectionner les liens qui contiennent une icône */</span>
+<span class="selector">a:has(i)</span> {
+    <span class="property">padding-left</span>: <span class="value">5px</span>;
+}
+
+<span class="comment">/* Sélectionner les formulaires qui contiennent une erreur */</span>
+<span class="selector">form:has(.error)</span> {
+    <span class="property">border-color</span>: <span class="value">red</span>;
+}
+
+<span class="comment">/* Style différent pour les éléments qui suivent un élément */</span>
+<span class="selector">h2:has(+ p)</span> {
+    <span class="property">margin-bottom</span>: <span class="value">0</span>;  <span class="comment">/* Si le h2 est suivi d'un p */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <style>
+                                .demo-has .conteneur {
+                                    display: flex;
+                                    gap: 20px;
+                                }
+                                .demo-has .carte {
+                                    width: 150px;
+                                    padding: 15px;
+                                    border: 1px solid #ccc;
+                                    border-radius: 5px;
+                                }
+                                .demo-has .carte:has(img) {
+                                    border-color: #FF7A45;
+                                    background: #FFF0E6;
+                                }
+                            </style>
+                            <div class="demo-has">
+                                <div class="conteneur">
+                                    <div class="carte">
+                                        <p>Carte sans image</p>
+                                    </div>
+                                    <div class="carte">
+                                        <img src="https://picsum.photos/100/100?random=1" style="width: 100%; border-radius: 5px;">
+                                        <p>Carte avec image</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                              </div>
+                                 <!-- SECTION 6: Autres pseudo-classes utiles -->
+                    <div class="lecon-section">
+                        <h3>📋 18.6 Autres pseudo-classes</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Pseudo-classe</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>:empty</code></td><td>Éléments sans enfants (vides)</td></tr>
+                                <tr><td><code>:checked</code></td><td>Inputs de type checkbox/radio cochés</td></tr>
+                                <tr><td><code>:disabled</code></td><td>Éléments désactivés</td></tr>
+                                <tr><td><code>:enabled</code></td><td>Éléments activés</td></tr>
+                                <tr><td><code>:required</code></td><td>Champs obligatoires</td></tr>
+                                <tr><td><code>:optional</code></td><td>Champs optionnels</td></tr>
+                                <tr><td><code>:valid</code></td><td>Champs valides</td></tr>
+                                <tr><td><code>:invalid</code></td><td>Champs invalides</td></tr>
+                                <tr><td><code>:in-range</code></td><td>Valeurs dans l'intervalle</td></tr>
+                                <tr><td><code>:out-of-range</code></td><td>Valeurs hors intervalle</td></tr>
+                                <tr><td><code>:read-only</code></td><td>Champs en lecture seule</td></tr>
+                                <tr><td><code>:read-write</code></td><td>Champs modifiables</td></tr>
+                                <tr><td><code>:target</code></td><td>Élément ciblé par une ancre (#)</td></tr>
+                                <tr><td><code>:root</code></td><td>Élément racine (html)</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Exemples */</span>
+<span class="selector">input:checked + label</span> {
+    <span class="property">font-weight</span>: <span class="value">bold</span>;
+}
+
+<span class="selector">input:invalid</span> {
+    <span class="property">border-color</span>: <span class="value">red</span>;
+}
+
+<span class="selector">:target</span> {
+    <span class="property">background</span>: <span class="value">#FF7A45</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 18.7 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Tableau zébré</h4>
+                            <p><strong>Objectif :</strong> Créer un tableau avec des lignes de couleurs alternées.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un tableau avec 10 lignes</li>
+                                    <li>Utilisez :nth-child(odd) pour les lignes impaires</li>
+                                    <li>La première ligne (en-tête) ne doit pas être colorée</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Validation de formulaire</h4>
+                            <p><strong>Objectif :</strong> Styliser un formulaire selon la validation.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un formulaire avec email, mot de passe, etc.</li>
+                                    <li>Utilisez :valid et :invalid pour colorer les champs</li>
+                                    <li>Affichez un message d'erreur avec :invalid</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Mise en évidence des sections</h4>
+                            <p><strong>Objectif :</strong> Utiliser :target pour mettre en évidence une section.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une page avec plusieurs sections</li>
+                                    <li>Ajoutez un menu avec des ancres</li>
+                                    <li>Utilisez :target pour styliser la section ciblée</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 19 : FONCTIONS CSS AVANCÉES ===== -->
+            <article class="lecon" id="lecon19">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 19</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">🧮 Fonctions CSS avancées</h2>
+                    <p class="lecon-description">calc(), clamp(), min(), max()</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: calc() -->
+                    <div class="lecon-section">
+                        <h3>🧮 19.1 calc() - Calculs dynamiques</h3>
+
+                        <p><code>calc()</code> permet d'effectuer des opérations mathématiques avec différentes unités.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">width</span>: <span class="value">calc(100% - 40px)</span>;
+    <span class="property">height</span>: <span class="value">calc(100vh - 80px)</span>;
+    <span class="property">margin</span>: <span class="value">calc(1rem + 5px)</span>;
+    <span class="property">font-size</span>: <span class="value">calc(16px + 0.5vw)</span>;
+    <span class="property">top</span>: <span class="value">calc(50% - 50px)</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples concrets :</h4>
+                            <ul>
+                                <li><strong>Sidebar fixe + contenu fluide :</strong> <code>width: calc(100% - 250px);</code></li>
+                                <li><strong>Centrage parfait :</strong> <code>top: calc(50% - 50px); left: calc(50% - 50px);</code></li>
+                                <li><strong>Typographie fluide :</strong> <code>font-size: calc(14px + 0.5vw);</code></li>
+                                <li><strong>Colonnes avec gouttières :</strong> <code>width: calc(33.33% - 10px);</code></li>
+                            </ul>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Opérateurs :</strong> + - * / . Attention aux espaces autour des + et - !</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: min() et max() -->
+                    <div class="lecon-section">
+                        <h3>📏 19.2 min() et max() - Choisir la plus petite/grande valeur</h3>
+
+                        <p>Sélectionnent la valeur minimale ou maximale parmi une liste.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* min() - ne dépasse jamais une certaine taille */</span>
+<span class="selector">.conteneur</span> {
+    <span class="property">width</span>: <span class="value">min(90%, 1200px)</span>;
+    <span class="comment">/* = prend 90% de la largeur, mais jamais plus de 1200px */</span>
+}
+
+<span class="selector">.image</span> {
+    <span class="property">width</span>: <span class="value">min(100%, 300px)</span>;
+    <span class="comment">/* = s'adapte mais ne dépasse pas 300px */</span>
+}
+
+<span class="comment">/* max() - a toujours au moins une certaine taille */</span>
+<span class="selector">.titre</span> {
+    <span class="property">font-size</span>: <span class="value">max(24px, 5vw)</span>;
+    <span class="comment">/* = au moins 24px, mais peut grandir avec 5vw */</span>
+}
+
+<span class="selector">.sidebar</span> {
+    <span class="property">width</span>: <span class="value">max(200px, 20%)</span>;
+    <span class="comment">/* = au moins 200px, mais peut être plus large si 20% est plus grand */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 min() pour le responsive :</h4>
+                            <div style="background: #f0f0f0; padding: 20px;">
+                                <div style="background: #FF7A45; color: white; padding: 10px; width: min(90%, 400px); margin: 0 auto;">
+                                    Cette boîte fait 90% de la largeur, max 400px
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: clamp() -->
+                    <div class="lecon-section">
+                        <h3>📐 19.3 clamp() - La fonction ultime</h3>
+
+                        <p><code>clamp(min, préféré, max)</code> définit une valeur entre un minimum et un maximum.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">h1</span> {
+    <span class="comment">/* font-size: clamp(minimum, préféré, maximum) */</span>
+    <span class="property">font-size</span>: <span class="value">clamp(24px, 5vw, 48px)</span>;
+    <span class="comment">/* = entre 24px et 48px, de préférence 5vw */</span>
+}
+
+<span class="selector">.conteneur</span> {
+    <span class="property">width</span>: <span class="value">clamp(300px, 80%, 1200px)</span>;
+    <span class="comment">/* = entre 300px et 1200px, de préférence 80% */</span>
+}
+
+<span class="selector">.padding</span> {
+    <span class="property">padding</span>: <span class="value">clamp(10px, 3vw, 30px)</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Typographie responsive parfaite :</h4>
+                            <style>
+                                .demo-clamp {
+                                    font-size: clamp(16px, 3vw, 24px);
+                                    background: #1F2D3D;
+                                    color: white;
+                                    padding: 20px;
+                                    border-radius: 5px;
+                                }
+                            </style>
+                            <div class="demo-clamp">
+                                Ce texte s'adapte : minimum 16px, maximum 24px, taille préférée 3vw. Redimensionnez la fenêtre !
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Combinaisons avancées -->
+                    <div class="lecon-section">
+                        <h3>🔗 19.4 Combiner les fonctions</h3>
+
+                        <p>On peut combiner ces fonctions pour des layouts complexes.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.layout</span> {
+    <span class="comment">/* Grille responsive avec clamp */</span>
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="value">repeat(auto-fit, minmax(clamp(200px, 25%, 300px), 1fr))</span>;
+}
+
+<span class="selector">.espacement</span> {
+    <span class="comment">/* Marge qui s'adapte mais jamais trop petite/grande */</span>
+    <span class="property">margin</span>: <span class="value">clamp(10px, 5vh, 50px) clamp(10px, 5vw, 50px)</span>;
+}
+
+<span class="selector">.boite</span> {
+    <span class="comment">/* calc + clamp */</span>
+    <span class="property">width</span>: <span class="value">calc(clamp(300px, 50%, 600px) - 20px)</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 19.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Typographie fluide</h4>
+                            <p><strong>Objectif :</strong> Créer des titres avec typographie responsive.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>h1 : minimum 32px, maximum 72px, préféré 6vw</li>
+                                    <li>h2 : minimum 24px, maximum 48px, préféré 4vw</li>
+                                    <li>p : minimum 14px, maximum 18px, préféré 2vw</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Layout avec contraintes</h4>
+                            <p><strong>Objectif :</strong> Créer un layout avec des contraintes de taille.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Un conteneur principal : largeur entre 300px et 1200px, préféré 80%</li>
+                                    <li>Une sidebar : largeur entre 200px et 300px, préféré 25%</li>
+                                    <li>Le contenu principal : utilise calc() pour prendre le reste</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                   </article>
+                              <!-- ===== LEÇON 20 : PROJET FINAL ===== -->
+            <article class="lecon projet" id="lecon20">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre projet-bg">Chapitre 20</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 60 min</span>
+                        <span class="lecon-niveau projet">Projet final</span>
+                    </div>
+                    <h2 class="lecon-titre">🚀 Projet final</h2>
+                    <p class="lecon-description">Créer un site complet avec toutes les notions CSS apprises</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Présentation -->
+                    <div class="lecon-section">
+                        <h3>🎯 20.1 Objectif du projet</h3>
+
+                        <p>Créer un site web complet pour un restaurant fictif en utilisant <strong>toutes les notions CSS</strong> apprises dans ce cours.</p>
+
+                        <div class="encart-important" style="background: #388e3c;">
+                            <div class="encart-icon">🏆</div>
+                            <div class="encart-content">
+                                <strong>Compétences évaluées :</strong> Sélecteurs, Box model, Flexbox, Grid, Position, Responsive, Animations, Transitions, Transformations, Pseudo-éléments, Pseudo-classes avancées, Variables CSS, Fonctions calc()/clamp()
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Structure du site -->
+                    <div class="lecon-section">
+                        <h3>📋 20.2 Structure du site</h3>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>Pages à créer :</h4>
+                                <ol>
+                                    <li><strong>Accueil (index.html)</strong> - Hero, présentation</li>
+                                    <li><strong>Menu (menu.html)</strong> - Grille de plats</li>
+                                    <li><strong>Galerie (galerie.html)</strong> - Photos du restaurant</li>
+                                    <li><strong>Contact (contact.html)</strong> - Formulaire, carte</li>
+                                </ol>
+                            </div>
+                            <div>
+                                <h4>Fonctionnalités :</h4>
+                                <ul>
+                                    <li>Navigation sticky avec effets</li>
+                                    <li>Hero avec image de fond et overlay</li>
+                                    <li>Cartes de menu animées</li>
+                                    <li>Galerie avec filtres au survol</li>
+                                    <li>Formulaire de réservation</li>
+                                    <li>Footer avec informations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Spécifications techniques -->
+                    <div class="lecon-section">
+                        <h3>⚙️ 20.3 Spécifications techniques détaillées</h3>
+
+                        <h4>🎨 Design System (variables CSS)</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">:root</span> {
+    <span class="comment">/* Couleurs */</span>
+    <span class="property">--primary</span>: <span class="value">#FF7A45</span>;
+    <span class="property">--secondary</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">--gray</span>: <span class="value">#6B7280</span>;
+    <span class="property">--light</span>: <span class="value">#F6EDE7</span>;
+    <span class="property">--white</span>: <span class="value">#FFFFFF</span>;
+    
+    <span class="comment">/* Typographie */</span>
+    <span class="property">--font-main</span>: <span class="value">'Segoe UI', sans-serif</span>;
+    <span class="property">--font-heading</span>: <span class="value">'Georgia', serif</span>;
+    
+    <span class="comment">/* Espacements */</span>
+    <span class="property">--spacing-xs</span>: <span class="value">0.5rem</span>;
+    <span class="property">--spacing-sm</span>: <span class="value">1rem</span>;
+    <span class="property">--spacing-md</span>: <span class="value">2rem</span>;
+    <span class="property">--spacing-lg</span>: <span class="value">4rem</span>;
+    
+    <span class="comment">/* Autres */</span>
+    <span class="property">--border-radius</span>: <span class="value">8px</span>;
+    <span class="property">--transition</span>: <span class="value">all 0.3s ease</span>;
+    <span class="property">--shadow</span>: <span class="value">0 5px 15px rgba(0,0,0,0.1)</span>;
+}</pre>
+                        </div>
+
+                        <h4>📱 Responsive (clamp et media queries)</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">/* Mobile-first */</span>
+<span class="selector">.container</span> {
+    <span class="property">width</span>: <span class="value">min(90%, 1200px)</span>;
+    <span class="property">margin</span>: <span class="value">0 auto</span>;
+}
+
+<span class="selector">h1</span> {
+    <span class="property">font-size</span>: <span class="value">clamp(2rem, 5vw, 4rem)</span>;
+}
+
+<span class="keyword">@media</span> <span class="property">(min-width: 768px)</span> {
+    <span class="selector">.grid</span> {
+        <span class="property">grid-template-columns</span>: <span class="value">repeat(2, 1fr)</span>;
+    }
+}
+
+<span class="keyword">@media</span> <span class="property">(min-width: 1024px)</span> {
+    <span class="selector">.grid</span> {
+        <span class="property">grid-template-columns</span>: <span class="value">repeat(3, 1fr)</span>;
+    }
+}</pre>
+                        </div>
+
+                        <h4>🎬 Animations</h4>
+                        <div class="code-block">
+                            <pre><span class="keyword">@keyframes</span> fadeInUp {
+    from {
+        <span class="property">opacity</span>: <span class="value">0</span>;
+        <span class="property">transform</span>: <span class="value">translateY(30px)</span>;
+    }
+    to {
+        <span class="property">opacity</span>: <span class="value">1</span>;
+        <span class="property">transform</span>: <span class="value">translateY(0)</span>;
+    }
+}
+
+<span class="selector">.hero-content</span> {
+    <span class="property">animation</span>: <span class="value">fadeInUp 1s ease-out</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Exemple de code pour chaque composant -->
+                    <div class="lecon-section">
+                        <h3>🏗️ 20.4 Exemples de composants</h3>
+
+                        <h4>Carte de menu (avec pseudo-éléments)</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">.menu-card</span> {
+    <span class="property">position</span>: <span class="value">relative</span>;
+    <span class="property">background</span>: <span class="value">white</span>;
+    <span class="property">border-radius</span>: <span class="value">var(--border-radius)</span>;
+    <span class="property">overflow</span>: <span class="value">hidden</span>;
+    <span class="property">box-shadow</span>: <span class="value">var(--shadow)</span>;
+    <span class="property">transition</span>: <span class="value">var(--transition)</span>;
+}
+
+<span class="selector">.menu-card:hover</span> {
+    <span class="property">transform</span>: <span class="value">translateY(-10px)</span>;
+    <span class="property">box-shadow</span>: <span class="value">0 10px 30px rgba(255,122,69,0.3)</span>;
+}
+
+<span class="selector">.menu-card::before</span> {
+    <span class="property">content</span>: <span class="value">""</span>;
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">top</span>: <span class="value">0</span>;
+    <span class="property">left</span>: <span class="value">0</span>;
+    <span class="property">width</span>: <span class="value">100%</span>;
+    <span class="property">height</span>: <span class="value">3px</span>;
+    <span class="property">background</span>: <span class="value">var(--primary)</span>;
+    <span class="property">transform</span>: <span class="value">scaleX(0)</span>;
+    <span class="property">transition</span>: <span class="value">transform 0.3s ease</span>;
+}
+
+<span class="selector">.menu-card:hover::before</span> {
+    <span class="property">transform</span>: <span class="value">scaleX(1)</span>;
+}</pre>
+                        </div>
+
+                        <h4>Badge "Nouveau" avec ::after</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">.menu-card.nouveau::after</span> {
+    <span class="property">content</span>: <span class="value">"Nouveau"</span>;
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">top</span>: <span class="value">10px</span>;
+    <span class="property">right</span>: <span class="value">-30px</span>;
+    <span class="property">background</span>: <span class="value">var(--primary)</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+    <span class="property">padding</span>: <span class="value">5px 30px</span>;
+    <span class="property">transform</span>: <span class="value">rotate(45deg)</span>;
+    <span class="property">font-size</span>: <span class="value">0.8rem</span>;
+    <span class="property">font-weight</span>: <span class="value">bold</span>;
+    <span class="property">text-transform</span>: <span class="value">uppercase</span>;
+}</pre>
+                        </div>
+
+                        <h4>Galerie avec filtres (grayscale au survol)</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">.gallery-item img</span> {
+    <span class="property">width</span>: <span class="value">100%</span>;
+    <span class="property">height</span>: <span class="value">100%</span>;
+    <span class="property">object-fit</span>: <span class="value">cover</span>;
+    <span class="property">filter</span>: <span class="value">grayscale(0.8)</span>;
+    <span class="property">transition</span>: <span class="value">filter 0.5s ease</span>;
+}
+
+<span class="selector">.gallery-item:hover img</span> {
+    <span class="property">filter</span>: <span class="value">grayscale(0)</span>;
+}
+
+<span class="selector">.gallery-item</span> {
+    <span class="property">position</span>: <span class="value">relative</span>;
+    <span class="property">overflow</span>: <span class="value">hidden</span>;
+    <span class="property">border-radius</span>: <span class="value">var(--border-radius)</span>;
+}
+
+<span class="selector">.gallery-item::after</span> {
+    <span class="property">content</span>: <span class="value">"Voir plus"</span>;
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">bottom</span>: <span class="value">-50px</span>;
+    <span class="property">left</span>: <span class="value">0</span>;
+    <span class="property">width</span>: <span class="value">100%</span>;
+    <span class="property">background</span>: <span class="value">rgba(255,122,69,0.9)</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+    <span class="property">text-align</span>: <span class="value">center</span>;
+    <span class="property">padding</span>: <span class="value">10px</span>;
+    <span class="property">transition</span>: <span class="value">bottom 0.3s ease</span>;
+}
+
+<span class="selector">.gallery-item:hover::after</span> {
+    <span class="property">bottom</span>: <span class="value">0</span>;
+}</pre>
+                        </div>
+
+                        <h4>Formulaire avec validation (pseudo-classes)</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">input:focus</span> {
+    <span class="property">outline</span>: <span class="value">none</span>;
+    <span class="property">border-color</span>: <span class="value">var(--primary)</span>;
+    <span class="property">box-shadow</span>: <span class="value">0 0 0 3px rgba(255,122,69,0.1)</span>;
+}
+
+<span class="selector">input:valid</span> {
+    <span class="property">border-color</span>: <span class="value">#388e3c</span>;
+}
+
+<span class="selector">input:invalid:not(:placeholder-shown)</span> {
+    <span class="property">border-color</span>: <span class="value">#c2185b</span>;
+}
+
+<span class="selector">input:required + label::after</span> {
+    <span class="property">content</span>: <span class="value">" *"</span>;
+    <span class="property">color</span>: <span class="value">#c2185b</span>;
+}</pre>
+                        </div>
+
+                        <h4>Footer avec grille et pseudo-éléments</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">.footer</span> {
+    <span class="property">background</span>: <span class="value">var(--secondary)</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+    <span class="property">padding</span>: <span class="value">var(--spacing-lg) 0</span>;
+    <span class="property">display</span>: <span class="value">grid</span>;
+    <span class="property">grid-template-columns</span>: <span class="value">repeat(auto-fit, minmax(250px, 1fr))</span>;
+    <span class="property">gap</span>: <span class="value">var(--spacing-md)</span>;
+}
+
+<span class="selector">.footer a</span> {
+    <span class="property">color</span>: <span class="value">var(--light)</span>;
+    <span class="property">text-decoration</span>: <span class="value">none</span>;
+    <span class="property">position</span>: <span class="value">relative</span>;
+    <span class="property">transition</span>: <span class="value">var(--transition)</span>;
+}
+
+<span class="selector">.footer a::before</span> {
+    <span class="property">content</span>: <span class="value">"›"</span>;
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">left</span>: <span class="value">-15px</span>;
+    <span class="property">opacity</span>: <span class="value">0</span>;
+    <span class="property">transition</span>: <span class="value">var(--transition)</span>;
+}
+
+<span class="selector">.footer a:hover</span> {
+    <span class="property">padding-left</span>: <span class="value">15px</span>;
+    <span class="property">color</span>: <span class="value">var(--primary)</span>;
+}
+
+<span class="selector">.footer a:hover::before</span> {
+    <span class="property">opacity</span>: <span class="value">1</span>;
+    <span class="property">left</span>: <span class="value">0</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Checklist finale -->
+                    <div class="lecon-section">
+                        <h3>✅ 20.5 Checklist des notions à utiliser</h3>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>Fondamentaux</h4>
+                                <ul>
+                                    <li><input type="checkbox"> Sélecteurs (classes, IDs, attributs)</li>
+                                    <li><input type="checkbox"> Box model (margin, padding, border)</li>
+                                    <li><input type="checkbox"> Couleurs et unités</li>
+                                    <li><input type="checkbox"> Typographie (Google Fonts)</li>
+                                    <li><input type="checkbox"> Arrière-plans (images, dégradés)</li>
+  </ul>
+                  <h4>Mise en page</h4>
+                                <ul>
+                                    <li><input type="checkbox"> Position (relative, absolute, fixed)</li>
+                                    <li><input type="checkbox"> Flexbox (navigation, cartes)</li>
+                                    <li><input type="checkbox"> Grid (galerie, footer)</li>
+                                    <li><input type="checkbox"> Responsive (media queries)</li>
+                                    <li><input type="checkbox"> clamp(), min(), max()</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4>Animations et effets</h4>
+                                <ul>
+                                    <li><input type="checkbox"> Transitions (hover effets)</li>
+                                    <li><input type="checkbox"> Transformations (scale, rotate)</li>
+                                    <li><input type="checkbox"> Animations @keyframes</li>
+                                    <li><input type="checkbox"> Filtres (grayscale, blur)</li>
+                                </ul>
+
+                                <h4>Avancé</h4>
+                                <ul>
+                                    <li><input type="checkbox"> Pseudo-éléments (::before, ::after)</li>
+                                    <li><input type="checkbox"> Pseudo-classes (:nth-child, :not)</li>
+                                    <li><input type="checkbox"> Variables CSS</li>
+                                    <li><input type="checkbox"> calc() pour les dimensions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Rendu final -->
+                    <div class="lecon-section exercices-recap">
+                        <h3>🎓 20.6 Rendu final</h3>
+
+                        <p>Le projet doit être présenté sous forme de :</p>
+                        <ol>
+                            <li>Site web complet avec au moins 4 pages HTML</li>
+                            <li>Un fichier CSS principal (ou plusieurs) bien organisé</li>
+                            <li>Design responsive (mobile, tablette, desktop)</li>
+                            <li>Animations et interactions au survol</li>
+                            <li>Code commenté et indenté proprement</li>
+                        </ol>
+
+                        <div class="encart-important" style="background: #388e3c; margin-top: 20px;">
+                            <div class="encart-icon">🏁</div>
+                            <div class="encart-content">
+                                <strong>Félicitations !</strong> Vous avez terminé les 20 leçons du cours CSS Master. Vous êtes maintenant un expert CSS capable de créer des sites modernes, responsives et animés.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- ===== SECTION CERTIFICATION ===== -->
+    <section class="certification">
+        <div class="container">
+            <div class="certification-content">
+                <i class="fas fa-trophy certification-icon"></i>
+                <h2>Félicitations !</h2>
+                <p>Vous avez terminé les 20 leçons du cours CSS Master</p>
+                <p class="certification-stats">20 leçons • 200+ exemples • 12+ heures de contenu</p>
+                
+                <div class="certification-badges">
+                    <span class="badge">CSS</span>
+                    <span class="badge">Flexbox</span>
+                    <span class="badge">Grid</span>
+                    <span class="badge">Animations</span>
+                    <span class="badge">Responsive</span>
+                </div>
+                
+                <div class="certification-actions">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-home"></i> Retour à l'accueil
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fas fa-download"></i> Télécharger le certificat
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <a href="3.html" class="pagination-prev"><i class="fas fa-arrow-left"></i> Leçons 11-16</a>
+                <div class="pagination-links">
+                    <a href="1.html">1</a>
+                    <a href="2.html">2</a>
+                    <a href="3.html">3</a>
+                    <a href="4.html" class="active">4</a>
+                </div>
+                <span class="pagination-next disabled">Fin du cours <i class="fas fa-check-circle"></i></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+                          </html>
+  
