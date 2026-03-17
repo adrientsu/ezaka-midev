@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Master - Leçons 1 à 5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="js1.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">{ }</span>
+                    <div class="logo-text">
+                        <span class="logo-main">JAVASCRIPT MASTER</span>
+                        <span class="logo-sub">Leçons 1 à 5 : Les fondamentaux</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 1-5 sur 20</span>
+                <span class="progress-percent">25%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 25%"></div>
+            </div>
+            <div class="progress-nav">
+                <span class="progress-current">Leçons 1-5</span>
+                <a href="js2.html" class="progress-next">Leçons 6-10 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 1-5 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 1 à 5 : Les fondamentaux JavaScript</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon1" class="sommaire-card">
+                    <span class="lecon-numero">01</span>
+                    <h3>Introduction à JavaScript</h3>
+                    <p>Histoire, inclusion, console</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                </a>
+                <a href="#lecon2" class="sommaire-card">
+                    <span class="lecon-numero">02</span>
+                    <h3>Variables et types de données</h3>
+                    <p>let, const, var, types primitifs</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon3" class="sommaire-card">
+                    <span class="lecon-numero">03</span>
+                    <h3>Opérateurs</h3>
+                    <p>Arithmétiques, comparaison, logiques</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                </a>
+                <a href="#lecon4" class="sommaire-card">
+                    <span class="lecon-numero">04</span>
+                    <h3>Structures conditionnelles</h3>
+                    <p>if, else, switch, ternaire</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon5" class="sommaire-card">
+                    <span class="lecon-numero">05</span>
+                    <h3>Boucles</h3>
+                    <p>for, while, do...while</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 1 : INTRODUCTION À JAVASCRIPT ===== -->
+            <article class="lecon" id="lecon1">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 01</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">🚀 Introduction à JavaScript</h2>
+                    <p class="lecon-description">Découvrir JavaScript, son histoire et comment l'utiliser</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Qu'est-ce que JavaScript ? -->
+                    <div class="lecon-section">
+                        <h3>🔍 1.1 Qu'est-ce que JavaScript ?</h3>
+
+                        <div class="definition-box">
+                            <p><strong>JavaScript</strong> est un langage de programmation qui permet de rendre les pages web interactives. Il s'exécute directement dans le navigateur de l'utilisateur.</p>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Explication :</h4>
+                            <ul>
+                                <li><strong>HTML</strong> = la structure (les os)</li>
+                                <li><strong>CSS</strong> = l'apparence (la peau)</li>
+                                <li><strong>JavaScript</strong> = l'interactivité (les muscles)</li>
+                            </ul>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>À savoir :</strong> JavaScript n'a rien à voir avec Java. C'est une coïncidence marketing ! Il a été créé en 1995 par Brendan Eich en seulement 10 jours.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Où placer JavaScript -->
+                    <div class="lecon-section">
+                        <h3>📥 1.2 Où placer JavaScript</h3>
+
+                        <div class="grid-3">
+                            <div class="carte-type">
+                                <h4>1. Interne (dans la page)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;script&gt;</span>
+    console.log("Bonjour !");
+    alert("Bienvenue");
+<span class="tag">&lt;/script&gt;</span></pre>
+                                </div>
+                                <p>À placer avant la fermeture du &lt;/body&gt;</p>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>2. Externe (recommandé)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;script</span> <span class="attribute">src</span>=<span class="value">"script.js"</span><span class="tag">&gt;&lt;/script&gt;</span></pre>
+                                </div>
+                                <p>Fichier .js séparé, plus propre et réutilisable</p>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>3. Inline (à éviter)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;button</span> <span class="attribute">onclick</span>=<span class="value">"alert('Cliqué !')"</span><span class="tag">&gt;</span>
+    Cliquez
+<span class="tag">&lt;/button&gt;</span></pre>
+                                </div>
+                                <p class="inconvenient">❌ Mélange HTML/JS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: La console -->
+                    <div class="lecon-section">
+                        <h3>🖥️ 1.3 La console (meilleur ami du développeur)</h3>
+
+                        <p>La console permet de voir les messages, tester du code et déboguer.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Afficher des messages</span>
+console.log("Ceci est un message normal");
+console.info("Information");
+console.warn("Attention !");
+console.error("Erreur !");
+
+<span class="comment">// Afficher des tableaux et objets</span>
+console.table(["pomme", "banane", "orange"]);
+console.log({nom: "Jean", age: 25});
+
+<span class="comment">// Grouper des messages</span>
+console.group("Groupe");
+console.log("Message 1");
+console.log("Message 2");
+console.groupEnd();
+
+<span class="comment">// Mesurer le temps d'exécution</span>
+console.time("Timer");
+for (let i = 0; i < 1000000; i++) {}
+console.timeEnd("Timer");</pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> Ouvrez la console avec F12 ou clic droit → "Inspecter" → onglet "Console". C'est là que vous passerez le plus clair de votre temps !</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Les commentaires -->
+                    <div class="lecon-section">
+                        <h3>📝 1.4 Les commentaires</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Ceci est un commentaire sur une ligne</span>
+
+<span class="comment">/*
+   Ceci est un commentaire
+   sur plusieurs lignes
+   très utile pour expliquer
+   des blocs de code complexes
+*/</span>
+
+console.log("Bonjour"); <span class="comment">// Commentaire en fin de ligne</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Points-virgules -->
+                    <div class="lecon-section">
+                        <h3>🔚 1.5 Les points-virgules (;)</h3>
+
+                        <p>Les points-virgules sont optionnels en JavaScript, mais recommandés pour éviter des erreurs dans certains cas.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Avec point-virgule (recommandé)</span>
+let a = 5;
+let b = 10;
+console.log(a + b);
+
+<span class="comment">// Sans point-virgule (fonctionne aussi)</span>
+let a = 5
+let b = 10
+console.log(a + b)</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 1.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Premier script</h4>
+                            <p><strong>Objectif :</strong> Créer une page HTML avec JavaScript.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un fichier HTML avec une balise &lt;script&gt;</li>
+                                    <li>Affichez "Bonjour le monde !" dans la console</li>
+                                    <li>Affichez une alerte avec "Bienvenue dans JavaScript"</li>
+                                    <li>Testez les différents niveaux de console (log, warn, error)</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 2 : VARIABLES ET TYPES ===== -->
+            <article class="lecon" id="lecon2">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 02</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">📦 Variables et types de données</h2>
+                    <p class="lecon-description">Stocker et manipuler des données</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Déclaration des variables -->
+                    <div class="lecon-section">
+                        <h3>📋 2.1 Déclarer des variables</h3>
+
+                        <p>Trois façons de déclarer des variables :</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Mot-clé</th>
+                                    <th>Portée</th>
+                                    <th>Réassignable</th>
+                                    <th>Hoisting</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>let</code></td>
+                                    <td>Bloc {}</td>
+                                    <td>✅ Oui</td>
+                                    <td>Non (Temporal Dead Zone)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>const</code></td>
+                                    <td>Bloc {}</td>
+                                    <td>❌ Non</td>
+                                    <td>Non (Temporal Dead Zone)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>var</code></td>
+                                    <td>Fonction</td>
+                                    <td>✅ Oui</td>
+                                    <td>✅ Oui (mais à éviter)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Déclaration avec let (modifiable)</span>
+<span class="keyword">let</span> age = 25;
+age = 26; <span class="comment">// OK</span>
+
+<span class="comment">// Déclaration avec const (constante, non modifiable)</span>
+<span class="keyword">const</span> nom = "Jean";
+<span class="comment">// nom = "Pierre"; // Erreur !</span>
+
+<span class="comment">// var (ancienne façon, à éviter)</span>
+<span class="keyword">var</span> ancienneVariable = "À ne plus utiliser";</pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Règle :</strong> Utilisez const par défaut, et let seulement si vous devez réassigner la variable. N'utilisez jamais var dans du code moderne.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Types primitifs -->
+                    <div class="lecon-section">
+                        <h3>🔤 2.2 Les types de données primitifs</h3>
+
+                        <p>JavaScript a 7 types primitifs :</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>number</code></td>
+                                    <td>Nombres (entiers ou décimaux)</td>
+                                    <td><code>let age = 25; let prix = 19.99;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>string</code></td>
+                                    <td>Chaînes de caractères</td>
+                                    <td><code>let nom = "Jean"; let message = 'Bonjour';</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>boolean</code></td>
+                                    <td>Vrai ou faux</td>
+                                    <td><code>let estVrai = true; let estFaux = false;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>undefined</code></td>
+                                    <td>Valeur non définie</td>
+                                    <td><code>let x; // undefined</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>null</code></td>
+                                    <td>Valeur vide (volontairement)</td>
+                                    <td><code>let y = null;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>symbol</code></td>
+                                    <td>Valeur unique</td>
+                                    <td><code>let sym = Symbol('id');</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>bigint</code></td>
+                                    <td>Grands entiers</td>
+                                    <td><code>let grand = 12345678901234567890n;</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Exemples concrets</span>
+<span class="keyword">let</span> nom = "Jean";              <span class="comment">// string</span>
+<span class="keyword">let</span> age = 25;                  <span class="comment">// number</span>
+<span class="keyword">let</span> prix = 19.99;              <span class="comment">// number (pas de différence entier/décimal)</span>
+<span class="keyword">let</span> estMajeur = true;          <span class="comment">// boolean</span>
+<span class="keyword">let</span> resultat = undefined;      <span class="comment">// undefined</span>
+<span class="keyword">let</span> valeurVide = null;         <span class="comment">// null</span>
+
+<span class="comment">// Vérifier le type</span>
+console.log(typeof nom);        <span class="comment">// "string"</span>
+console.log(typeof age);        <span class="comment">// "number"</span>
+console.log(typeof estMajeur);  <span class="comment">// "boolean"</span>
+console.log(typeof resultat);   <span class="comment">// "undefined"</span>
+console.log(typeof valeurVide); <span class="comment">// "object" (c'est un bug historique !)</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Différence entre null et undefined :</h4>
+                            <ul>
+                                <li><strong>undefined :</strong> la variable existe mais n'a pas de valeur</li>
+                                <li><strong>null :</strong> la variable existe et a volontairement une valeur vide</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Concaténation et templates -->
+                    <div class="lecon-section">
+                        <h3>🔗 2.3 Travailler avec les chaînes</h3>
+
+                        <p>Plusieurs façons de combiner du texte :</p>
+
+                        <div class="code-block">
+                                        <pre><span class="keyword">let</span> prenom = "Jean";
+<span class="keyword">let</span> nom = "Dupont";
+<span class="keyword">let</span> age = 25;
+
+<span class="comment">// Concaténation avec +</span>
+console.log("Je m'appelle " + prenom + " " + nom + " et j'ai " + age + " ans.");
+
+<span class="comment">// Template strings (avec backticks ``) - RECOMMANDÉ</span>
+console.log(`Je m'appelle ${prenom} ${nom} et j'ai ${age} ans.`);
+
+<span class="comment">// On peut mettre des expressions dans ${}</span>
+console.log(`L'année prochaine, j'aurai ${age + 1} ans.`);</pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> Toujours utiliser les template strings (avec backticks) pour les chaînes avec variables. C'est plus lisible et plus puissant.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 2.4 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Présentation</h4>
+                            <p><strong>Objectif :</strong> Créer des variables pour se présenter.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Déclarez une constante pour votre prénom</li>
+                                    <li>Déclarez une constante pour votre nom</li>
+                                    <li>Déclarez une variable pour votre âge (let car l'âge change)</li>
+                                    <li>Affichez "Je m'appelle [prénom] [nom] et j'ai [âge] ans"</li>
+                                    <li>Affichez aussi "L'année prochaine, j'aurai [âge+1] ans"</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Calculatrice simple</h4>
+                            <p><strong>Objectif :</strong> Manipuler des nombres.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Déclarez deux variables a = 15 et b = 7</li>
+                                    <li>Affichez leur somme, différence, produit, quotient</li>
+                                    <li>Utilisez console.table() pour afficher les résultats</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 3 : OPÉRATEURS ===== -->
+            <article class="lecon" id="lecon3">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 03</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">🧮 Opérateurs</h2>
+                    <p class="lecon-description">Arithmétiques, comparaison, logiques</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Opérateurs arithmétiques -->
+                    <div class="lecon-section">
+                        <h3>➕ 3.1 Opérateurs arithmétiques</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Opérateur</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                    <th>Résultat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>+</code></td><td>Addition</td><td><code>5 + 3</code></td><td>8</td></tr>
+                                <tr><td><code>-</code></td><td>Soustraction</td><td><code>10 - 4</code></td><td>6</td></tr>
+                                <tr><td><code>*</code></td><td>Multiplication</td><td><code>6 * 7</code></td><td>42</td></tr>
+                                <tr><td><code>/</code></td><td>Division</td><td><code>15 / 3</code></td><td>5</td></tr>
+                                <tr><td><code>%</code></td><td>Modulo (reste)</td><td><code>17 % 5</code></td><td>2</td></tr>
+                                <tr><td><code>**</code></td><td>Puissance</td><td><code>2 ** 3</code></td><td>8</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> a = 10;
+<span class="keyword">let</span> b = 3;
+
+console.log(a + b);  <span class="comment">// 13</span>
+console.log(a - b);  <span class="comment">// 7</span>
+console.log(a * b);  <span class="comment">// 30</span>
+console.log(a / b);  <span class="comment">// 3.33333...</span>
+console.log(a % b);  <span class="comment">// 1 (10 divisé par 3 donne 3*3=9, reste 1)</span>
+console.log(a ** b); <span class="comment">// 1000 (10 puissance 3)</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Opérateurs de comparaison -->
+                    <div class="lecon-section">
+                        <h3>⚖️ 3.2 Opérateurs de comparaison</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Opérateur</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                    <th>Résultat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>==</code></td><td>Égalité (valeur)</td><td><code>5 == "5"</code></td><td>true</td></tr>
+                                <tr><td><code>===</code></td><td>Égalité stricte (valeur ET type)</td><td><code>5 === "5"</code></td><td>false</td></tr>
+                                <tr><td><code>!=</code></td><td>Différence</td><td><code>5 != 3</code></td><td>true</td></tr>
+                                <tr><td><code>!==</code></td><td>Différence stricte</td><td><code>5 !== "5"</code></td><td>true</td></tr>
+                                <tr><td><code>></code></td><td>Supérieur</td><td><code>10 > 5</code></td><td>true</td></tr>
+                                <tr><td><code><</code></td><td>Inférieur</td><td><code>3 < 8</code></td><td>true</td></tr>
+                                <tr><td><code>>=</code></td><td>Supérieur ou égal</td><td><code>5 >= 5</code></td><td>true</td></tr>
+                                <tr><td><code><=</code></td><td>Inférieur ou égal</td><td><code>4 <= 3</code></td><td>false</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Règle d'or :</strong> Toujours utiliser <code>===</code> et <code>!==</code> pour éviter les conversions implicites surprenantes.
+                            </div>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Pourquoi éviter ==</h4>
+                            <div class="code-block small">
+                                <pre>console.log(0 == false);     <span class="comment">// true (surprenant !)</span>
+console.log("" == false);    <span class="comment">// true (surprenant !)</span>
+console.log(null == undefined); <span class="comment">// true (surprenant !)</span>
+
+console.log(0 === false);    <span class="comment">// false (correct)</span>
+console.log("" === false);   <span class="comment">// false (correct)</span>
+console.log(null === undefined); <span class="comment">// false (correct)</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Opérateurs logiques -->
+                    <div class="lecon-section">
+                        <h3>🔗 3.3 Opérateurs logiques</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Opérateur</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                    <th>Résultat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>&&</code></td><td>ET (les deux doivent être vrais)</td><td><code>true && true</code></td><td>true</td></tr>
+                                <tr><td><code>||</code></td><td>OU (au moins un vrai)</td><td><code>true || false</code></td><td>true</td></tr>
+                                <tr><td><code>!</code></td><td>NON (inverse)</td><td><code>!true</code></td><td>false</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> age = 20;
+<span class="keyword">let</span> aPermis = true;
+
+<span class="comment">// Peut conduire ? (âge >= 18 ET a le permis)</span>
+<span class="keyword">let</span> peutConduire = (age >= 18) && aPermis;
+console.log(peutConduire); <span class="comment">// true</span>
+
+<span class="comment">// Est-ce un enfant ou un senior ? (âge < 12 OU age > 65)</span>
+<span class="keyword">let</span> tarifReduit = (age < 12) || (age > 65);
+console.log(tarifReduit); <span class="comment">// false</span>
+
+<span class="comment">// Est-il mineur ? (inverse de majeur)</span>
+<span class="keyword">let</span> estMineur = !(age >= 18);
+console.log(estMineur); <span class="comment">// false</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Opérateurs d'assignation -->
+                    <div class="lecon-section">
+                        <h3>📝 3.4 Opérateurs d'assignation</h3>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> x = 10;
+
+x += 5;   <span class="comment">// équivalent à x = x + 5 (x = 15)</span>
+x -= 3;   <span class="comment">// équivalent à x = x - 3 (x = 12)</span>
+x *= 2;   <span class="comment">// équivalent à x = x * 2 (x = 24)</span>
+x /= 4;   <span class="comment">// équivalent à x = x / 4 (x = 6)</span>
+x %= 4;   <span class="comment">// équivalent à x = x % 4 (x = 2)</span>
+
+<span class="comment">// Incrémentation et décrémentation</span>
+<span class="keyword">let</span> compteur = 0;
+compteur++; <span class="comment">// compteur = compteur + 1 (1)</span>
+compteur--; <span class="comment">// compteur = compteur - 1 (0)</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 3.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Vérification d'âge</h4>
+                            <p><strong>Objectif :</strong> Vérifier si une personne peut entrer dans un club.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une variable age = 21</li>
+                                    <li>Créez une variable aCarte = true</li>
+                                    <li>Condition : âge >= 18 ET aCarte === true</li>
+                                    <li>Affichez le résultat dans la console</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Comparaisons</h4>
+                            <p><strong>Objectif :</strong> Tester les différents opérateurs.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Comparez 10 et "10" avec == et ===</li>
+                                    <li>Comparez null et undefined avec == et ===</li>
+                                    <li>Affichez les résultats et observez les différences</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 4 : STRUCTURES CONDITIONNELLES ===== -->
+            <article class="lecon" id="lecon4">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 04</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">🔄 Structures conditionnelles</h2>
+                    <p class="lecon-description">Prendre des décisions dans le code</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: if / else -->
+                    <div class="lecon-section">
+                        <h3>🔀 4.1 if, else if, else</h3>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> age = 18;
+                                  <span class="keyword">if</span> (age >= 18) {
+    console.log("Vous êtes majeur");
+} <span class="keyword">else</span> {
+    console.log("Vous êtes mineur");
+}
+
+<span class="comment">// Avec plusieurs conditions</span>
+<span class="keyword">let</span> note = 15;
+
+<span class="keyword">if</span> (note >= 16) {
+    console.log("Excellent");
+} <span class="keyword">else if</span> (note >= 14) {
+    console.log("Très bien");
+} <span class="keyword">else if</span> (note >= 12) {
+    console.log("Bien");
+} <span class="keyword">else if</span> (note >= 10) {
+    console.log("Passable");
+} <span class="keyword">else</span> {
+    console.log("Insuffisant");
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple concret :</h4>
+                            <div class="code-block small">
+                                <pre><span class="keyword">let</span> heure = 14;
+
+<span class="keyword">if</span> (heure < 12) {
+    console.log("Bonjour !");
+} <span class="keyword">else if</span> (heure < 18) {
+    console.log("Bon après-midi !");
+} <span class="keyword">else</span> {
+    console.log("Bonsoir !");
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Opérateur ternaire -->
+                    <div class="lecon-section">
+                        <h3>❓ 4.2 Opérateur ternaire (condition ? vrai : faux)</h3>
+
+                        <p>Raccourci pour les conditions simples.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Avec if/else</span>
+<span class="keyword">let</span> age = 20;
+<span class="keyword">let</span> statut;
+
+<span class="keyword">if</span> (age >= 18) {
+    statut = "majeur";
+} <span class="keyword">else</span> {
+    statut = "mineur";
+}
+
+<span class="comment">// Avec ternaire (plus court)</span>
+<span class="keyword">let</span> statut = (age >= 18) ? "majeur" : "mineur";
+
+<span class="comment">// On peut même l'utiliser directement dans un template</span>
+console.log(`Vous êtes ${age >= 18 ? "majeur" : "mineur"}`);</pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Attention :</strong> Le ternaire est pratique, mais à utiliser avec parcimonie. Si la logique est complexe, préférez if/else pour la lisibilité.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: switch -->
+                    <div class="lecon-section">
+                        <h3>🔌 4.3 switch</h3>
+
+                        <p>Utile quand on a plusieurs valeurs possibles pour une même variable.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> jour = 3;
+<span class="keyword">let</span> nomJour;
+
+<span class="keyword">switch</span> (jour) {
+    <span class="keyword">case</span> 1:
+        nomJour = "Lundi";
+        <span class="keyword">break</span>;
+    <span class="keyword">case</span> 2:
+        nomJour = "Mardi";
+        <span class="keyword">break</span>;
+    <span class="keyword">case</span> 3:
+        nomJour = "Mercredi";
+        <span class="keyword">break</span>;
+    <span class="keyword">case</span> 4:
+        nomJour = "Jeudi";
+        <span class="keyword">break</span>;
+    <span class="keyword">case</span> 5:
+        nomJour = "Vendredi";
+        <span class="keyword">break</span>;
+    <span class="keyword">case</span> 6:
+        nomJour = "Samedi";
+        <span class="keyword">break</span>;
+    <span class="keyword">case</span> 7:
+        nomJour = "Dimanche";
+        <span class="keyword">break</span>;
+    <span class="keyword">default</span>:
+        nomJour = "Jour invalide";
+}
+
+console.log(nomJour); <span class="comment">// Mercredi</span></pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Ne pas oublier break !</strong> Sans break, l'exécution continue sur le case suivant (effet de bord parfois voulu).
+                            </div>
+                        </div>
+
+                        <h4>Exemple avec "fallthrough" (volontaire)</h4>
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> note = "B";
+
+<span class="keyword">switch</span> (note) {
+    <span class="keyword">case</span> "A":
+    <span class="keyword">case</span> "B":
+    <span class="keyword">case</span> "C":
+        console.log("Réussite");
+        <span class="keyword">break</span>;
+    <span class="keyword">case</span> "D":
+    <span class="keyword">case</span> "E":
+        console.log("Échec");
+        <span class="keyword">break</span>;
+    <span class="keyword">default</span>:
+        console.log("Note invalide");
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 4.4 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Calculateur de mention</h4>
+                            <p><strong>Objectif :</strong> Afficher une mention selon la note.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une variable note entre 0 et 20</li>
+                                    <li>Si note >= 16 : "Excellent"</li>
+                                    <li>Si note >= 14 : "Très bien"</li>
+                                    <li>Si note >= 12 : "Bien"</li>
+                                    <li>Si note >= 10 : "Passable"</li>
+                                    <li>Sinon : "Insuffisant"</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Jour de la semaine</h4>
+                            <p><strong>Objectif :</strong> Utiliser switch pour afficher le jour.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une variable numeroJour de 1 à 7</li>
+                                    <li>Utilisez switch pour afficher le nom du jour</li>
+                                    <li>Gérez le cas par défaut "Jour invalide"</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Ternaire</h4>
+                            <p><strong>Objectif :</strong> Réécrire une condition avec le ternaire.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une variable age</li>
+                                    <li>Utilisez le ternaire pour définir "majeur" ou "mineur"</li>
+                                    <li>Affichez le résultat dans une phrase</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 5 : BOUCLES ===== -->
+            <article class="lecon" id="lecon5">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 05</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">🔄 Les boucles</h2>
+                    <p class="lecon-description">Répéter des actions</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Boucle for -->
+                    <div class="lecon-section">
+                        <h3>🔢 5.1 La boucle for</h3>
+
+                        <p>Idéale quand on connaît le nombre d'itérations.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Syntaxe : for (initialisation; condition; incrémentation)</span>
+<span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i < 5; i++) {
+    console.log(`Itération numéro ${i}`);
+}
+
+<span class="comment">// Parcourir un tableau</span>
+<span class="keyword">let</span> fruits = ["pomme", "banane", "orange"];
+<span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples :</h4>
+                            <div class="code-block small">
+                                <pre><span class="comment">// Compter de 0 à 10 avec un pas de 2</span>
+<span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i <= 10; i += 2) {
+    console.log(i); <span class="comment">// 0, 2, 4, 6, 8, 10</span>
+}
+
+<span class="comment">// Compter à l'envers</span>
+<span class="keyword">for</span> (<span class="keyword">let</span> i = 10; i >= 0; i--) {
+    console.log(i); <span class="comment">// 10, 9, 8...</span>
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Boucle while -->
+                    <div class="lecon-section">
+                        <h3>🔄 5.2 La boucle while</h3>
+
+                        <p>S'exécute tant que la condition est vraie. À utiliser quand on ne connaît pas le nombre d'itérations à l'avance.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> compteur = 0;
+
+<span class="keyword">while</span> (compteur < 5) {
+    console.log(`Compteur: ${compteur}`);
+    compteur++;
+}
+
+<span class="comment">// Attention aux boucles infinies !</span>
+<span class="comment">// while (true) { // boucle infinie !</span>
+<span class="comment">//     console.log("Attention !");</span>
+<span class="comment">// }</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Boucle do...while -->
+                    <div class="lecon-section">
+                        <h3>🔁 5.3 La boucle do...while</h3>
+
+                        <p>S'exécute au moins une fois, puis continue tant que la condition est vraie.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> i = 0;
+
+<span class="keyword">do</span> {
+    console.log(`i = ${i}`);
+    i++;
+} <span class="keyword">while</span> (i < 5);
+
+<span class="comment">// Même avec une condition fausse au départ, ça s'exécute une fois</span>
+<span class="keyword">let</span> j = 10;
+<span class="keyword">do</span> {
+    console.log("Ce message s'affiche quand même");
+    j++;
+} <span class="keyword">while</span> (j < 5);</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: break et continue -->
+                    <div class="lecon-section">
+                        <h3>⏹️ 5.4 break et continue</h3>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>break (arrêter la boucle)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i < 10; i++) {
+    <span class="keyword">if</span> (i === 5) {
+        <span class="keyword">break</span>; <span class="comment">// Sort de la boucle à i = 5</span>
+    }
+    console.log(i); <span class="comment">// 0,1,2,3,4</span>
+}</pre>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4>continue (sauter une itération)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i < 10; i++) {
+    <span class="keyword">if</span> (i % 2 === 0) {
+        <span class="keyword">continue</span>; <span class="comment">// Saute les nombres pairs</span>
+    }
+    console.log(i); <span class="comment">// 1,3,5,7,9</span>
+}</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 5.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Table de multiplication</h4>
+                            <p><strong>Objectif :</strong> Afficher la table de multiplication d'un nombre.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Choisissez un nombre (ex: 7)</li>
+                                    <li>Utilisez une boucle for pour afficher la table de 1 à 10</li>
+                                    <li>Affichez "7 x 1 = 7", "7 x 2 = 14", etc.</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Somme des nombres</h4>
+                            <p><strong>Objectif :</strong> Calculer la somme des nombres de 1 à 100.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Initialisez une variable somme = 0</li>
+                                    <li>Utilisez une boucle for pour ajouter chaque nombre</li>
+                                    <li>Affichez le résultat (5050)</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Recherche dans un tableau</h4>
+                            <p><strong>Objectif :</strong> Chercher un élément dans un tableau.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un tableau de fruits</li>
+                                    <li>Cherchez si "banane" est dans le tableau</li>
+                                    <li>Utilisez break dès que vous trouvez</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== EXERCICES RÉCAPITULATIFS ===== -->
+            <section class="exercices-recap">
+                <h2 class="section-title">🏆 Projet récapitulatif (Leçons 1-5)</h2>
+
+                <div class="recap-card">
+                    <h3>Créez un jeu de devinettes</h3>
+                    <p>Utilisez toutes les notions apprises dans les leçons 1 à 5.</p>
+
+                    <h4>Instructions :</h4>
+                    <ol>
+                        <li>Le programme choisit un nombre aléatoire entre 1 et 100</li>
+                        <li>L'utilisateur doit deviner le nombre</li>
+                        <li>À chaque essai, on indique si c'est plus ou moins</li>
+                        <li>On compte le nombre d'essais</li>
+                        <li>Quand l'utilisateur trouve, on affiche un message de félicitations et le nombre d'essais</li>
+                    </ol>
+
+                    <h4>Indices :</h4>
+                    <ul>
+                        <li><code>Math.random()</code> donne un nombre entre 0 et 1</li>
+                        <li><code>Math.floor()</code> arrondit à l'entier inférieur</li>
+                        <li><code>prompt()</code> demande une saisie à l'utilisateur</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <span class="pagination-prev disabled"><i class="fas fa-arrow-left"></i> Début</span>
+                <div class="pagination-links">
+                    <a href="js1.html" class="active">1</a>
+                    <a href="js2.html">2</a>
+                    <a href="js3.html">3</a>
+                    <a href="js4.html">4</a>
+                </div>
+                <a href="js2.html" class="pagination-next">Leçons 6-10 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+    </html>
+  
