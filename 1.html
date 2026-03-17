@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Master - Leçons 1 à 5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">{ }</span>
+                    <div class="logo-text">
+                        <span class="logo-main">CSS MASTER</span>
+                        <span class="logo-sub">Leçons 1 à 5 : Les fondamentaux</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 1-5 sur 20</span>
+                <span class="progress-percent">25%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 25%"></div>
+            </div>
+            <div class="progress-nav">
+                <span class="progress-current">Leçons 1-5</span>
+                <a href="2.html" class="progress-next">Leçons 6-10 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 1-5 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 1 à 5 : Les fondamentaux CSS</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon1" class="sommaire-card">
+                    <span class="lecon-numero">01</span>
+                    <h3>Introduction à CSS</h3>
+                    <p>Histoire, syntaxe, inclusion</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                </a>
+                <a href="#lecon2" class="sommaire-card">
+                    <span class="lecon-numero">02</span>
+                    <h3>Sélecteurs de base</h3>
+                    <p>Éléments, classes, IDs</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon3" class="sommaire-card">
+                    <span class="lecon-numero">03</span>
+                    <h3>Couleurs et unités</h3>
+                    <p>HEX, RGB, HSL, unités</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                </a>
+                <a href="#lecon4" class="sommaire-card">
+                    <span class="lecon-numero">04</span>
+                    <h3>Typographie</h3>
+                    <p>Fonts, taille, graisse</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon5" class="sommaire-card">
+                    <span class="lecon-numero">05</span>
+                    <h3>Modèle de boîte</h3>
+                    <p>Margin, padding, border</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 1 : INTRODUCTION À CSS ===== -->
+            <article class="lecon" id="lecon1">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 01</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">🎨 Introduction à CSS</h2>
+                    <p class="lecon-description">Comprendre ce qu'est CSS et comment l'utiliser</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Qu'est-ce que CSS ? -->
+                    <div class="lecon-section">
+                        <h3>🔍 1.1 Qu'est-ce que CSS ?</h3>
+
+                        <div class="definition-box">
+                            <p><strong>CSS</strong> signifie <strong>Cascading Style Sheets</strong> (Feuilles de style en cascade). C'est un langage qui décrit la présentation des documents HTML.</p>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Explication approfondie :</h4>
+                            <p>HTML s'occupe de la <strong>structure</strong> et du <strong>contenu</strong> (ce qui est affiché), tandis que CSS s'occupe de l'<strong>apparence</strong> et de la <strong>mise en page</strong> (comment c'est affiché).</p>
+                            
+                            <div class="encart-important">
+                                <div class="encart-icon">🏠</div>
+                                <div class="encart-content">
+                                    <strong>Analogie :</strong> HTML est comme les murs et les pièces d'une maison (structure), CSS est comme la peinture, la décoration et l'agencement des meubles (style). Sans CSS, le web serait comme un monde en noir et blanc sans mise en page.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="histoire-box">
+                            <h4>📜 Un peu d'histoire :</h4>
+                            <ul>
+                                <li><strong>1996 :</strong> CSS1 est créé par le W3C (World Wide Web Consortium)</li>
+                                <li><strong>1998 :</strong> CSS2 apporte le positionnement et les médias</li>
+                                <li><strong>2011 :</strong> CSS3 introduit les modules (Flexbox, Grid, animations, etc.)</li>
+                                <li><strong>Aujourd'hui :</strong> CSS continue d'évoluer avec de nouvelles fonctionnalités</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Syntaxe CSS -->
+                    <div class="lecon-section">
+                        <h3>📝 1.2 La syntaxe CSS</h3>
+
+                        <p>Une règle CSS est composée de trois parties :</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="css-tag">CSS</span>
+                                <span>Syntaxe de base</span>
+                            </div>
+                            <pre><span class="selector">sélecteur</span> {
+    <span class="property">propriété1</span>: <span class="value">valeur1</span>;
+    <span class="property">propriété2</span>: <span class="value">valeur2</span>;
+    <span class="property">propriété3</span>: <span class="value">valeur3</span>;
+}</pre>
+                        </div>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>Exemple concret :</h4>
+                                <div class="code-block small">
+                                    <pre><span class="selector">h1</span> {
+    <span class="property">color</span>: <span class="value">blue</span>;
+    <span class="property">font-size</span>: <span class="value">24px</span>;
+    <span class="property">text-align</span>: <span class="value">center</span>;
+    <span class="property">margin-bottom</span>: <span class="value">20px</span>;
+}</pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>Explication détaillée :</h4>
+                                <ul>
+                                    <li><strong>sélecteur</strong> : l'élément HTML à styliser (h1, p, .classe, #id)</li>
+                                    <li><strong>propriété</strong> : ce qu'on veut changer (color, font-size, margin)</li>
+                                    <li><strong>valeur</strong> : comment on veut le changer (blue, 24px, center)</li>
+                                    <li><strong>;</strong> : chaque déclaration se termine par un point-virgule</li>
+                                    <li><strong>{ }</strong> : les accolades encadrent toutes les déclarations</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> L'indentation (espaces au début des lignes) n'est pas obligatoire mais rend le code beaucoup plus lisible. Prenez l'habitude d'indenter proprement !</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Façons d'inclure CSS -->
+                    <div class="lecon-section">
+                        <h3>📥 1.3 Les trois façons d'inclure CSS</h3>
+
+                        <div class="grid-3">
+                            <div class="carte-type">
+                                <h4>1. CSS externe (recommandé)</h4>
+                                <p>Fichier .css séparé lié à la page HTML</p>
+                                <div class="code-block small">
+                                    <pre><span class="comment">&lt;!-- Dans le &lt;head&gt; du HTML --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"style.css"</span><span class="tag">&gt;</span></pre>
+                                </div>
+                                <p class="avantage">✅ Réutilisable sur plusieurs pages</p>
+                                <p class="avantage">✅ Plus facile à maintenir</p>
+                                <p class="avantage">✅ Cache navigateur (chargement plus rapide)</p>
+                                <p class="avantage">✅ Séparation claire HTML/CSS</p>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>2. CSS interne</h4>
+                                <p>Dans la balise &lt;style&gt; du head</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;style&gt;</span>
+    h1 {
+        color: blue;
+        text-align: center;
+    }
+<span class="tag">&lt;/style&gt;</span></pre>
+                                </div>
+                                <p class="avantage">✅ Utile pour une seule page</p>
+                                <p class="avantage">✅ Pas de fichier supplémentaire</p>
+                                <p class="inconvenient">❌ Non réutilisable sur plusieurs pages</p>
+                                <p class="inconvenient">❌ Alourdit le HTML</p>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>3. CSS en ligne (inline)</h4>
+                                <p>Directement dans l'attribut style de la balise</p>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;h1</span> <span class="attribute">style</span>=<span class="value">"color: blue; text-align: center;"</span><span class="tag">&gt;</span>
+    Titre
+<span class="tag">&lt;/h1&gt;</span></pre>
+                                </div>
+                                <p class="inconvenient">❌ Mélange HTML/CSS</p>
+                                <p class="inconvenient">❌ Difficile à maintenir</p>
+                                <p class="inconvenient">❌ Non réutilisable</p>
+                                <p class="inconvenient">❌ Spécificité trop élevée</p>
+                            </div>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Recommandation :</strong> Toujours utiliser un fichier CSS externe pour une meilleure organisation, maintenabilité et performance. Les CSS internes peuvent être utiles pour des prototypes rapides, et les styles en ligne sont à éviter sauf cas très spécifiques (ex: emails HTML).
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: La cascade et l'héritage -->
+                    <div class="lecon-section">
+                        <h3>🌊 1.4 La cascade et l'héritage</h3>
+
+                        <div class="definition-box">
+                            <p><strong>Cascade :</strong> L'ordre des règles CSS a de l'importance. Quand plusieurs règles s'appliquent au même élément, la dernière règle (ou la plus spécifique) l'emporte.</p>
+                            <p><strong>Héritage :</strong> Certaines propriétés sont automatiquement transmises des parents aux enfants (ex: color, font-family, line-height).</p>
+                        </div>
+
+                        <h4>🔹 L'héritage en pratique :</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">/* CSS */</span>
+<span class="selector">body</span> {
+    <span class="property">color</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">font-family</span>: <span class="value">Arial, sans-serif</span>;
+}
+
+<span class="comment">/* Tous les éléments dans body héritent de ces propriétés,
+   sauf si on les redéfinit spécifiquement */</span>
+
+<span class="selector">p</span> {
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;  <span class="comment">/* Remplace l'héritage pour les paragraphes */</span>
+}</pre>
+                        </div>
+
+                        <h4>🔹 La cascade et la spécificité :</h4>
+                        <p>Quand plusieurs règles s'appliquent, le navigateur calcule un score de spécificité :</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Sélecteur</th>
+                                    <th>Spécificité</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Styles en ligne</td><td>1000</td><td><code>style="color: red;"</code></td></tr>
+                                <tr><td>ID</td><td>100</td><td><code>#monId</code></td></tr>
+                                <tr><td>Classe, attribut, pseudo-classe</td><td>10</td><td><code>.maclasse, [type="text"], :hover</code></td></tr>
+                                <tr><td>Élément, pseudo-élément</td><td>1</td><td><code>h1, p, ::before</code></td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Exemple de calcul de spécificité */</span>
+<span class="selector">p</span> { <span class="property">color</span>: <span class="value">blue</span>; }                <span class="comment">/* Spécificité: 1 */</span>
+<span class="selector">.texte</span> { <span class="property">color</span>: <span class="value">red</span>; }              <span class="comment">/* Spécificité: 10 (l'emporte sur 1) */</span>
+<span class="selector">p.texte</span> { <span class="property">color</span>: <span class="value">green</span>; }           <span class="comment">/* Spécificité: 1 + 10 = 11 (l'emporte) */</span>
+<span class="selector">#paragraphe</span> { <span class="property">color</span>: <span class="value">orange</span>; }        <span class="comment">/* Spécificité: 100 (l'emporte sur tout) */</span></pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div><strong>Attention :</strong> Évitez d'utiliser <code>!important</code> qui force une règle et casse la cascade naturelle. C'est considéré comme une mauvaise pratique sauf cas exceptionnels.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Commentaires -->
+                    <div class="lecon-section">
+                        <h3>📝 1.5 Les commentaires en CSS</h3>
+
+                        <p>Les commentaires sont ignorés par le navigateur et servent à documenter le code.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Ceci est un commentaire sur une seule ligne */</span>
+
+<span class="comment">/*
+    Ceci est un commentaire
+    sur plusieurs lignes
+    très utile pour expliquer
+    des sections complexes
+*/</span>
+
+<span class="selector">.classe</span> {
+    <span class="property">color</span>: <span class="value">blue</span>; <span class="comment">/* Commentaire en fin de ligne */</span>
+    <span class="property">margin</span>: <span class="value">10px</span>; <span class="comment">/* Explique pourquoi cette marge */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Bonnes pratiques :</h4>
+                            <ul>
+                                <li>Commentez les sections importantes de votre code</li>
+                                <li>Expliquez les "pourquoi" pas les "comment" (le code parle déjà de lui-même)</li>
+                                <li>Utilisez des commentaires pour organiser votre fichier :</li>
+                            </ul>
+                            <div class="code-block small">
+                                <pre><span class="comment">/* ===== RESET ===== */</span>
+...
+
+<span class="comment">/* ===== HEADER ===== */</span>
+...
+
+<span class="comment">/* ===== BOUTONS ===== */</span>
+...</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 1.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Premier style</h4>
+                            <p><strong>Objectif :</strong> Créer une page HTML simple et lui appliquer du CSS externe.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un fichier <code>index.html</code> avec un titre h1, un sous-titre h2 et deux paragraphes</li>
+                                    <li>Créez un fichier <code>style.css</code> et liez-le au HTML</li>
+                                    <li>Changez la couleur du h1 en orange (#FF7A45)</li>
+                                    <li>Changez la couleur du h2 en bleu foncé (#1F2D3D)</li>
+                                    <li>Mettez les paragraphes en gris (#6B7280)</li>
+                                    <li>Centre le h1</li>
+                                </ol>
+                            </div>
+          <details class="solution">
+                                <summary>Voir la solution</summary>
+                                <div class="code-block small">
+                                    <pre><span class="comment">&lt;!-- index.html --&gt;</span>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Titre principal&lt;/h1&gt;
+    &lt;h2&gt;Sous-titre&lt;/h2&gt;
+    &lt;p&gt;Paragraphe 1&lt;/p&gt;
+    &lt;p&gt;Paragraphe 2&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+<span class="comment">/* style.css */</span>
+<span class="selector">h1</span> {
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;
+    <span class="property">text-align</span>: <span class="value">center</span>;
+}
+
+<span class="selector">h2</span> {
+    <span class="property">color</span>: <span class="value">#1F2D3D</span>;
+}
+
+<span class="selector">p</span> {
+    <span class="property">color</span>: <span class="value">#6B7280</span>;
+}</pre>
+                                </div>
+                            </details>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Comprendre la cascade</h4>
+                            <p><strong>Objectif :</strong> Expérimenter avec la cascade et la spécificité.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un paragraphe avec une classe "important" et un id "special"</li>
+                                    <li>Définissez trois règles :
+                                        <ul>
+                                            <li><code>p</code> : couleur bleue</li>
+                                            <li><code>.important</code> : couleur orange</li>
+                                            <li><code>#special</code> : couleur verte</li>
+                                        </ul>
+                                    </li>
+                                    <li>Observez quelle couleur l'emporte</li>
+                                    <li>Ajoutez un deuxième paragraphe sans classe ni id</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 2 : SÉLECTEURS DE BASE ===== -->
+            <article class="lecon" id="lecon2">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 02</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">🎯 Les sélecteurs de base</h2>
+                    <p class="lecon-description">Cibler les éléments HTML avec précision</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Sélecteur d'élément -->
+                    <div class="lecon-section">
+                        <h3>🔤 2.1 Sélecteur d'élément (type selector)</h3>
+
+                        <p>Le sélecteur d'élément cible tous les éléments HTML d'un type donné.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">h1</span> { <span class="property">color</span>: <span class="value">#FF7A45</span>; }     <span class="comment">/* Tous les titres h1 */</span>
+<span class="selector">p</span> { <span class="property">font-size</span>: <span class="value">16px</span>; }      <span class="comment">/* Tous les paragraphes */</span>
+<span class="selector">div</span> { <span class="property">margin</span>: <span class="value">10px</span>; }        <span class="comment">/* Toutes les divisions */</span>
+<span class="selector">a</span> { <span class="property">text-decoration</span>: <span class="value">none</span>; } <span class="comment">/* Tous les liens */</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Utilisation typique :</h4>
+                            <ul>
+                                <li>Styles de base pour tous les éléments d'un type</li>
+                                <li>Reset ou normalisation</li>
+                                <li>Styles globaux</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Sélecteur de classe -->
+                    <div class="lecon-section">
+                        <h3>🔹 2.2 Sélecteur de classe (.)</h3>
+
+                        <p>Le sélecteur de classe cible tous les éléments ayant un attribut <code>class</code> spécifique. Une classe peut être réutilisée sur plusieurs éléments.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* CSS */</span>
+<span class="selector">.important</span> {
+    <span class="property">font-weight</span>: <span class="value">bold</span>;
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;
+    <span class="property">font-size</span>: <span class="value">1.2em</span>;
+}
+
+<span class="selector">.carte</span> {
+    <span class="property">border</span>: <span class="value">1px solid #6B7280</span>;
+    <span class="property">padding</span>: <span class="value">20px</span>;
+    <span class="property">border-radius</span>: <span class="value">8px</span>;
+    <span class="property">background</span>: <span class="value">white</span>;
+}
+
+<span class="selector">.texte-gris</span> {
+    <span class="property">color</span>: <span class="value">#6B7280</span>;
+    <span class="property">line-height</span>: <span class="value">1.6</span>;
+}</pre>
+                            <br>
+                            <span class="comment">&lt;!-- HTML --&gt;</span>
+                            <pre><span class="tag">&lt;p</span> <span class="attribute">class</span>=<span class="value">"important"</span><span class="tag">&gt;</span>Ce texte est important et en orange<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"carte"</span><span class="tag">&gt;</span>
+    &lt;h3&gt;Titre de la carte&lt;/h3&gt;
+    &lt;p class="texte-gris"&gt;Contenu de la carte en gris&lt;/p&gt;
+&lt;/div&gt;
+<span class="tag">&lt;p</span> <span class="attribute">class</span>=<span class="value">"important texte-gris"</span><span class="tag">&gt;</span>Texte avec deux classes<span class="tag">&lt;/p&gt;</span></pre>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Classes multiples :</h4>
+                            <p>Un élément peut avoir plusieurs classes séparées par des espaces. Cela permet de combiner des styles :</p>
+                            <div class="code-block small">
+                                <pre><span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"boite rouge gras bordure"</span><span class="tag">&gt;</span>
+    Cette boite combine 3 classes
+<span class="tag">&lt;/div&gt;</span></pre>
+                            </div>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Bonnes pratiques :</strong> 
+                                <ul>
+                                    <li>Utilisez des noms de classes explicites (.menu-principal, .bouton-achat)</li>
+                                    <li>Évitez les noms basés sur l'apparence (.rouge, .gras) car le style peut changer</li>
+                                    <li>Préférez les noms sémantiques (.erreur, .alerte, .produit)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Sélecteur d'ID -->
+                    <div class="lecon-section">
+                        <h3>🔸 2.3 Sélecteur d'ID (#)</h3>
+
+                        <p>Le sélecteur d'ID cible un élément unique avec un attribut <code>id</code> spécifique. Un ID doit être unique dans toute la page.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* CSS */</span>
+<span class="selector">#en-tete</span> {
+    <span class="property">background-color</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+    <span class="property">padding</span>: <span class="value">20px</span>;
+    <span class="property">position</span>: <span class="value">sticky</span>;
+    <span class="property">top</span>: <span class="value">0</span>;
+}
+
+<span class="selector">#menu-principal</span> {
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">justify-content</span>: <span class="value">space-between</span>;
+    <span class="property">list-style</span>: <span class="value">none</span>;
+}
+
+<span class="selector">#pied-page</span> {
+    <span class="property">background</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">color</span>: <span class="value">#F6EDE7</span>;
+    <span class="property">text-align</span>: <span class="value">center</span>;
+    <span class="property">padding</span>: <span class="value">15px</span>;
+}</pre>
+                            <br>
+                            <span class="comment">&lt;!-- HTML --&gt;</span>
+                            <pre><span class="tag">&lt;header</span> <span class="attribute">id</span>=<span class="value">"en-tete"</span><span class="tag">&gt;</span>
+    &lt;nav id="menu-principal"&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+<span class="tag">&lt;footer</span> <span class="attribute">id</span>=<span class="value">"pied-page"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/footer&gt;</span></pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Règle importante :</strong> Un ID ne doit être utilisé qu'une seule fois par page. Pour des styles réutilisables, privilégiez les classes. Les IDs sont plus adaptés pour :
+                                <ul>
+                                    <li>Les ancres de liens (href="#section")</li>
+                                    <li>Le ciblage JavaScript (document.getElementById())</li>
+                                    <li>Les éléments uniques (header, footer, menu principal)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Sélecteur universel -->
+                    <div class="lecon-section">
+                        <h3>🌟 2.4 Sélecteur universel (*)</h3>
+
+                        <p>Le sélecteur universel cible <strong>tous</strong> les éléments de la page.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Réinitialisation des marges/paddings pour tous les éléments */</span>
+<span class="selector">*</span> {
+    <span class="property">margin</span>: <span class="value">0</span>;
+    <span class="property">padding</span>: <span class="value">0</span>;
+    <span class="property">box-sizing</span>: <span class="value">border-box</span>;
+}
+
+<span class="comment">/* Appliquer une police à toute la page */</span>
+<span class="selector">*</span> {
+    <span class="property">font-family</span>: <span class="value">'Segoe UI', sans-serif</span>;
+}
+
+<span class="comment">/* Sélecteur universel dans un contexte spécifique */</span>
+<span class="selector">.carte *</span> {
+    <span class="property">margin-bottom</span>: <span class="value">10px</span>;  <span class="comment">/* Tous les éléments dans .carte */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Utilisations courantes :</h4>
+                            <ul>
+                                <li>Reset CSS (réinitialiser les styles par défaut)</li>
+                                <li>Appliquer des styles à tous les éléments</li>
+                                <li>Sélectionner tous les enfants d'un conteneur</li>
+                            </ul>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div><strong>Attention :</strong> Le sélecteur universel peut être lent si utilisé abusivement. Évitez de l'utiliser dans des sélecteurs complexes comme <code>.menu * li</code>.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Sélecteurs groupés -->
+                    <div class="lecon-section">
+                        <h3>👥 2.5 Sélecteurs groupés</h3>
+
+                        <p>Les sélecteurs groupés permettent d'appliquer les mêmes styles à plusieurs sélecteurs en les séparant par des virgules.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Même style pour h1, h2, h3 */</span>
+<span class="selector">h1, h2, h3</span> {
+    <span class="property">font-family</span>: <span class="value">'Arial', sans-serif</span>;
+    <span class="property">color</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">margin-bottom</span>: <span class="value">10px</span>;
+}
+
+<span class="comment">/* Plusieurs classes */</span>
+<span class="selector">.important, .urgent, .alerte</span> {
+    <span class="property">font-weight</span>: <span class="value">bold</span>;
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;
+}
+
+<span class="comment">/* Mélange de sélecteurs */</span>
+<span class="selector">h1, .titre-principal, #logo</span> {
+    <span class="property">text-transform</span>: <span class="value">uppercase</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Avantages :</h4>
+                            <ul>
+                                <li>Code plus concis et plus facile à maintenir</li>
+                                <li>Évite la duplication de code</li>
+                                <li>Plus facile à modifier (un seul endroit à changer)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Sélecteurs descendants -->
+                    <div class="lecon-section">
+                        <h3>🌳 2.6 Sélecteurs descendants (espace)</h3>
+
+                        <p>Le sélecteur descendant (un espace) sélectionne les éléments qui sont à l'intérieur d'autres éléments, à n'importe quel niveau.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Tous les paragraphes dans un article */</span>
+<span class="selector">article p</span> {
+    <span class="property">line-height</span>: <span class="value">1.6</span>;
+    <span class="property">margin-bottom</span>: <span class="value">15px</span>;
+}
+
+<span class="comment">/* Tous les liens dans le menu */</span>
+<span class="selector">.menu a</span> {
+    <span class="property">text-decoration</span>: <span class="value">none</span>;
+    <span class="property">color</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">padding</span>: <span class="value">10px</span>;
+}
+
+<span class="comment">/* Tous les éléments de liste dans une navigation */</span>
+<span class="selector">nav ul li</span> {
+    <span class="property">display</span>: <span class="value">inline-block</span>;
+    <span class="property">margin-right</span>: <span class="value">15px</span>;
+}
+
+<span class="comment">/* Plusieurs niveaux */</span>
+<span class="selector">.sidebar .widget p a</span> {
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple HTML :</h4>
+                            <div class="code-block small">
+                                <pre><span class="tag">&lt;nav</span> <span class="attribute">class</span>=<span class="value">"menu"</span><span class="tag">&gt;</span>
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;  &lt;!-- .menu a s'applique --&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Produits&lt;/a&gt;&lt;/li&gt; &lt;!-- .menu a s'applique --&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+                            </div>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> Les sélecteurs descendants sont très utiles mais attention à ne pas les rendre trop spécifiques (ex: <code>div.container .content article p span</code> est difficile à maintenir).</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Sélecteurs enfants -->
+                    <div class="lecon-section">
+                        <h3>👪 2.7 Sélecteurs enfants (>)</h3>
+
+                        <p>Le sélecteur enfant (>) sélectionne uniquement les éléments qui sont des enfants <strong>directs</strong> d'un parent.</p>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>Avec > (enfant direct)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="selector">.menu > li</span> {
+    <span class="property">border-bottom</span>: <span class="value">1px solid #6B7280</span>;
+}</pre>
+                                </div>
+                                <p>S'applique uniquement aux <code>&lt;li&gt;</code> directement dans <code>.menu</code></p>
+                            </div>
+
+                            <div>
+  
+                             <h4>Sans > (descendant)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="selector">.menu li</span> {
+    <span class="property">border-bottom</span>: <span class="value">1px solid #6B7280</span>;
+}</pre>
+                                </div>
+                                <p>S'applique à tous les <code>&lt;li&gt;</code> dans <code>.menu</code>, même dans les sous-listes</p>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Exemple concret */</span>
+<span class="selector">.menu > li</span> {
+    <span class="property">display</span>: <span class="value">inline-block</span>;      <span class="comment">/* Uniquement les li directs */</span>
+    <span class="property">position</span>: <span class="value">relative</span>;
+}
+
+<span class="selector">.menu > li > ul</span> {
+    <span class="property">display</span>: <span class="value">none</span>;               <span class="comment">/* Le ul direct sous li */</span>
+    <span class="property">position</span>: <span class="value">absolute</span>;
+}
+
+<span class="selector">.menu > li:hover > ul</span> {
+    <span class="property">display</span>: <span class="value">block</span>;              <span class="comment">/* Affiche le sous-menu au survol */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 HTML correspondant :</h4>
+                            <div class="code-block small">
+                                <pre><span class="tag">&lt;ul</span> <span class="attribute">class</span>=<span class="value">"menu"</span><span class="tag">&gt;</span>
+    &lt;li&gt;Accueil&lt;/li&gt;                                 &lt;!-- .menu > li OK --&gt;
+    &lt;li&gt;Produits
+        &lt;ul&gt;
+            &lt;li&gt;Électronique&lt;/li&gt;                    &lt;!-- PAS .menu > li --&gt;
+            &lt;li&gt;Vêtements&lt;/li&gt;                       &lt;!-- PAS .menu > li --&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 8: Sélecteurs adjacents -->
+                    <div class="lecon-section">
+                        <h3>➕ 2.8 Sélecteurs adjacents (+ et ~)</h3>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>Sélecteur adjacent direct (+)</h4>
+                                <p>Sélectionne l'élément qui est <strong>directement après</strong> un autre élément.</p>
+                                <div class="code-block small">
+                                    <pre><span class="selector">h2 + p</span> {
+    <span class="property">font-weight</span>: <span class="value">bold</span>;
+    <span class="property">margin-top</span>: <span class="value">0</span>;
+}</pre>
+                                </div>
+                                <p><strong>Signification :</strong> Le paragraphe qui vient juste après un h2</p>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>Sélecteur général adjacent (~)</h4>
+                                <p>Sélectionne <strong>tous</strong> les éléments après un autre élément.</p>
+                                <div class="code-block small">
+                                    <pre><span class="selector">h2 ~ p</span> {
+    <span class="property">color</span>: <span class="value">#6B7280</span>;
+    <span class="property">margin-left</span>: <span class="value">20px</span>;
+}</pre>
+                                </div>
+                                <p><strong>Signification :</strong> Tous les paragraphes qui viennent après un h2</p>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Exemples concrets */</span>
+
+<span class="comment">/* Style pour le premier paragraphe après un titre */</span>
+<span class="selector">h1 + p</span> {
+    <span class="property">font-size</span>: <span class="value">1.2em</span>;
+    <span class="property">font-weight</span>: <span class="value">300</span>;
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;
+}
+
+<span class="comment">/* Tous les éléments après une erreur */</span>
+<span class="selector">.erreur ~ *</span> {
+    <span class="property">opacity</span>: <span class="value">0.5</span>;
+}
+
+<span class="comment">/* Style pour les éléments alternés */</span>
+<span class="selector">li + li</span> {
+    <span class="property">border-top</span>: <span class="value">1px solid #6B7280</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 9: Pseudo-classes de base -->
+                    <div class="lecon-section">
+                        <h3>🎭 2.9 Pseudo-classes de base</h3>
+
+                        <p>Les pseudo-classes définissent l'état spécial d'un élément.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Pseudo-classe</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>:hover</code></td>
+                                    <td>Quand la souris survole l'élément</td>
+                                    <td><code>a:hover { color: #FF7A45; }</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>:active</code></td>
+                                    <td>Pendant le clic (moment où on appuie)</td>
+                                    <td><code>button:active { transform: scale(0.95); }</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>:focus</code></td>
+                                    <td>Quand l'élément a le focus (input, lien)</td>
+                                    <td><code>input:focus { border-color: #FF7A45; }</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>:visited</code></td>
+                                    <td>Lien déjà visité</td>
+                                    <td><code>a:visited { color: purple; }</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>:link</code></td>
+                                    <td>Lien non visité</td>
+                                    <td><code>a:link { color: blue; }</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>:first-child</code></td>
+                                    <td>Premier enfant de son parent</td>
+                                    <td><code>li:first-child { font-weight: bold; }</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>:last-child</code></td>
+                                    <td>Dernier enfant de son parent</td>
+                                    <td><code>li:last-child { border: none; }</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Exemples d'utilisation */</span>
+<span class="selector">.bouton</span> {
+    <span class="property">background</span>: <span class="value">#FF7A45</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+    <span class="property">padding</span>: <span class="value">10px 20px</span>;
+    <span class="property">border</span>: <span class="value">none</span>;
+    <span class="property">transition</span>: <span class="value">all 0.3s</span>;
+}
+
+<span class="selector">.bouton:hover</span> {
+    <span class="property">background</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">transform</span>: <span class="value">translateY(-2px)</span>;
+    <span class="property">cursor</span>: <span class="value">pointer</span>;
+}
+
+<span class="selector">.bouton:active</span> {
+    <span class="property">transform</span>: <span class="value">translateY(0)</span>;
+}
+
+<span class="selector">input:focus</span> {
+    <span class="property">outline</span>: <span class="value">2px solid #FF7A45</span>;
+    <span class="property">outline-offset</span>: <span class="value">2px</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Ordre important pour les liens :</h4>
+                            <p>Pour les liens, l'ordre des pseudo-classes est important (LOVE HATE) :</p>
+                            <div class="code-block small">
+                                <pre><span class="selector">a:link</span> { <span class="property">color</span>: <span class="value">blue</span>; }     <span class="comment">/* Non visité */</span>
+<span class="selector">a:visited</span> { <span class="property">color</span>: <span class="value">purple</span>; } <span class="comment">
+<span class="selector">a:hover</span> { <span class="property">color</span>: <span class="value">red</span>; }      <span class="comment">/* Survol */</span>
+<span class="selector">a:active</span> { <span class="property">color</span>: <span class="value">orange</span>; }  <span class="comment">/* Au clic */</span></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 10: Exercices -->
+        <div class="lecon-section exercices">
+            <h3>✍️ 2.10 Exercices pratiques</h3>
+
+            <div class="exercice-card">
+                <h4>Exercice 1 : Menu de navigation</h4>
+                <p><strong>Objectif :</strong> Créer un menu de navigation en utilisant différents sélecteurs.</p>
+
+                <div class="consigne">
+                    <p><i class="fas fa-tasks"></i> Instructions :</p>
+                    <ol>
+                        <li>Créez une structure HTML pour un menu : <code>&lt;ul class="menu"&gt;</code> avec 4 liens</li>
+                        <li>Utilisez le sélecteur enfant pour que les <code>&lt;li&gt;</code> soient en inline-block</li>
+                        <li>Utilisez le sélecteur descendant pour que les liens (<code>&lt;a&gt;</code>) n'aient pas de soulignement</li>
+                        <li>Utilisez <code>:hover</code> pour changer la couleur des liens au survol</li>
+                        <li>Utilisez <code>li + li</code> pour ajouter une bordure gauche entre les éléments</li>
+                    </ol>
+                </div>
+
+                <details class="solution">
+                    <summary>Voir la solution</summary>
+                    <div class="code-block small">
+                        <pre><span class="comment">/* CSS */</span>
+<span class="selector">.menu</span> {
+    <span class="property">list-style</span>: <span class="value">none</span>;
+    <span class="property">padding</span>: <span class="value">0</span>;
+    <span class="property">display</span>: <span class="value">flex</span>;
+}
+
+<span class="selector">.menu > li</span> {
+    <span class="property">margin-right</span>: <span class="value">10px</span>;
+}
+
+<span class="selector">.menu a</span> {
+    <span class="property">text-decoration</span>: <span class="value">none</span>;
+    <span class="property">color</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">padding</span>: <span class="value">10px 15px</span>;
+    <span class="property">display</span>: <span class="value">block</span>;
+}
+
+<span class="selector">.menu a:hover</span> {
+    <span class="property">color</span>: <span class="value">#FF7A45</span>;
+    <span class="property">background</span>: <span class="value">#F6EDE7</span>;
+}
+
+<span class="selector">li + li</span> {
+    <span class="property">border-left</span>: <span class="value">1px solid #6B7280</span>;
+}</pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="exercice-card">
+                <h4>Exercice 2 : Cartes de produits</h4>
+                <p><strong>Objectif :</strong> Utiliser classes et sélecteurs pour créer des cartes.</p>
+
+                <div class="consigne">
+                    <p><i class="fas fa-tasks"></i> Instructions :</p>
+                    <ol>
+                        <li>Créez une classe <code>.carte</code> pour une carte produit (border, padding, border-radius)</li>
+                        <li>Créez une classe <code>.carte-titre</code> pour le titre (couleur #1F2D3D, gras)</li>
+                        <li>Créez une classe <code>.carte-prix</code> pour le prix (couleur #FF7A45, taille 1.2em)</li>
+                        <li>Créez une classe <code>.carte-bouton</code> pour un bouton (style personnalisé)</li>
+                        <li>Utilisez <code>:hover</code> sur la carte pour agrandir légèrement</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+                                      </article>
+                  <!-- ===== LEÇON 3 : COULEURS ET UNITÉS ===== -->
+<article class="lecon" id="lecon3">
+    <div class="lecon-header">
+        <div class="lecon-meta">
+            <span class="lecon-chapitre">Chapitre 03</span>
+            <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+            <span class="lecon-niveau debutant">Débutant</span>
+        </div>
+        <h2 class="lecon-titre">🎨 Couleurs et unités</h2>
+        <p class="lecon-description">Les différentes façons de définir couleurs et dimensions</p>
+    </div>
+
+    <div class="lecon-body">
+        <!-- SECTION 1: Formats de couleurs -->
+        <div class="lecon-section">
+            <h3>🌈 3.1 Les formats de couleurs</h3>
+
+            <p>CSS propose plusieurs façons de définir les couleurs :</p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Format</th>
+                        <th>Syntaxe</th>
+                        <th>Exemple</th>
+                        <th>Rendu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mots-clés</td>
+                        <td>Nom de couleur</td>
+                        <td><code>red, blue, green</code></td>
+                        <td style="color: red;">red</td>
+                    </tr>
+                    <tr>
+                        <td>Hexadécimal</td>
+                        <td>#RRGGBB</td>
+                        <td><code>#FF7A45</code></td>
+                        <td style="color: #FF7A45;">#FF7A45</td>
+                    </tr>
+                    <tr>
+                        <td>Hexa court</td>
+                        <td>#RGB</td>
+                        <td><code>#F00</code> (rouge)</td>
+                        <td style="color: #F00;">#F00</td>
+                    </tr>
+                    <tr>
+                        <td>RGB</td>
+                        <td>rgb(r, g, b)</td>
+                        <td><code>rgb(255, 122, 69)</code></td>
+                        <td style="color: rgb(255,122,69);">rgb(255,122,69)</td>
+                    </tr>
+                    <tr>
+                        <td>RGBA</td>
+                        <td>rgba(r, g, b, a)</td>
+                        <td><code>rgba(255, 122, 69, 0.5)</code></td>
+                        <td style="color: rgba(255,122,69,0.5);">rgba(255,122,69,0.5)</td>
+                    </tr>
+                    <tr>
+                        <td>HSL</td>
+                        <td>hsl(h, s%, l%)</td>
+                        <td><code>hsl(17, 100%, 64%)</code></td>
+                        <td style="color: hsl(17,100%,64%);">hsl(17,100%,64%)</td>
+                    </tr>
+                    <tr>
+                        <td>HSLA</td>
+                        <td>hsla(h, s%, l%, a)</td>
+                        <td><code>hsla(17, 100%, 64%, 0.5)</code></td>
+                        <td style="color: hsla(17,100%,64%,0.5);">hsla(17,100%,64%,0.5)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="explication-approfondie">
+                <h4>📖 Explication des formats :</h4>
+                <ul>
+                    <li><strong>Hexadécimal (#RRGGBB)</strong> : Chaque paire représente une couleur (Rouge, Vert, Bleu) de 00 à FF. Ex: #FF7A45 = Rouge:255, Vert:122, Bleu:69.</li>
+                    <li><strong>RGB</strong> : Même principe mais en décimal (0-255). Plus lisible pour certains.</li>
+                    <li><strong>RGBA</strong> : RGB avec transparence (alpha de 0 à 1).</li>
+                    <li><strong>HSL</strong> : Teinte (0-360°), Saturation (0-100%), Luminosité (0-100%). Plus intuitif pour créer des variations.</li>
+                </ul>
+            </div>
+
+            <div class="exemple-pratique">
+                <h4>🎯 Exemples d'utilisation :</h4>
+                <div class="code-block">
+                    <pre><span class="selector">.exemple1</span> { <span class="property">color</span>: <span class="value">red</span>; }
+<span class="selector">.exemple2</span> { <span class="property">color</span>: <span class="value">#FF7A45</span>; }
+<span class="selector">.exemple3</span> { <span class="property">color</span>: <span class="value">rgb(255, 122, 69)</span>; }
+<span class="selector">.exemple4</span> { <span class="property">color</span>: <span class="value">rgba(255, 122, 69, 0.8)</span>; }
+<span class="selector">.exemple5</span> { <span class="property">color</span>: <span class="value">hsl(17, 100%, 64%)</span>; }</pre>
+                </div>
+            </div>
+
+            <div class="encart-important">
+                <div class="encart-icon">💡</div>
+                <div class="encart-content">
+                    <strong>Bon à savoir :</strong> Pour la transparence, vous pouvez aussi utiliser <code>opacity: 0.5;</code> qui rend tout l'élément (et ses enfants) transparent, contrairement à rgba/hsla qui ne rend transparent que la couleur elle-même.
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: Unités absolues -->
+        <div class="lecon-section">
+            <h3>📏 3.2 Unités absolues</h3>
+
+            <p>Les unités absolues ont une taille fixe, indépendante du contexte. Elles sont principalement utilisées pour l'impression.</p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Unité</th>
+                        <th>Nom</th>
+                        <th>Équivalence</th>
+                        <th>Utilisation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>px</code></td>
+                        <td>Pixels</td>
+                        <td>1px = 1/96 de pouce</td>
+                        <td>Écrans (très courant)</td>
+                    </tr>
+                    <tr>
+                        <td><code>pt</code></td>
+                        <td>Points</td>
+                        <td>1pt = 1/72 de pouce</td>
+                        <td>Impression, typographie</td>
+                    </tr>
+                    <tr>
+                        <td><code>cm</code></td>
+                        <td>Centimètres</td>
+                        <td>-</td>
+                        <td>Impression</td>
+                    </tr>
+                    <tr>
+                        <td><code>mm</code></td>
+                        <td>Millimètres</td>
+                        <td>-</td>
+                        <td>Impression</td>
+                    </tr>
+                    <tr>
+                        <td><code>in</code></td>
+                        <td>Pouces</td>
+                        <td>1in = 2.54cm</td>
+                        <td>Impression</td>
+                    </tr>
+                    <tr>
+                        <td><code>pc</code></td>
+                        <td>Picas</td>
+                        <td>1pc = 12pt</td>
+                        <td>Impression</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+                <pre><span class="comment">/* Exemples d'unités absolues */</span>
+<span class="selector">.boite</span> {
+    <span class="property">width</span>: <span class="value">200px</span>;
+    <span class="property">height</span>: <span class="value">100px</span>;
+    <span class="property">font-size</span>: <span class="value">16px</span>;
+    <span class="property">border</span>: <span class="value">2px solid black</span>;
+}</pre>
+            </div>
+
+            <div class="astuce">
+                <i class="fas fa-lightbulb"></i>
+                <div><strong>Pour les écrans :</strong> Le pixel (px) est l'unité absolue la plus utilisée. Les autres unités absolues sont rarement utilisées sur le web sauf pour les feuilles de style d'impression.</div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: Unités relatives -->
+        <div class="lecon-section">
+            <h3>📐 3.3 Unités relatives</h3>
+
+            <p>Les unités relatives sont calculées par rapport à une autre valeur (taille de police, dimensions du parent, etc.). Elles sont essentielles pour le responsive design.</p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Unité</th>
+                        <th>Relative à</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>%</code></td>
+                        <td>Parent</td>
+                        <td>Pourcentage de la taille du parent</td>
+                    </tr>
+                    <tr>
+                        <td><code>em</code></td>
+                        <td>Police du parent</td>
+                        <td>1em = taille de police du parent (souvent 16px par défaut)</td>
+                    </tr>
+                    <tr>
+                        <td><code>rem</code></td>
+                        <td>Police racine (html)</td>
+                        <td>1rem = taille de police de l'élément html (généralement 16px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>vw</code></td>
+                        <td>Viewport width</td>
+                        <td>1vw = 1% de la largeur de la fenêtre</td>
+                    </tr>
+                    <tr>
+                        <td><code>vh</code></td>
+                        <td>Viewport height</td>
+                        <td>1vh = 1% de la hauteur de la fenêtre</td>
+                    </tr>
+                    <tr>
+                        <td><code>vmin</code></td>
+                        <td>Viewport min</td>
+                        <td>1vmin = 1% de la plus petite dimension (largeur ou hauteur)</td>
+                    </tr>
+                    <tr>
+                        <td><code>vmax</code></td>
+                        <td>Viewport max</td>
+                        <td>1vmax = 1% de la plus grande dimension</td>
+                    </tr>
+                    <tr>
+                        <td><code>ch</code></td>
+                        <td>Caractère "0"</td>
+                        <td>Largeur du caractère "0" dans la police courante</td>
+                    </tr>
+                    <tr>
+                        <td><code>ex</code></td>
+                        <td>Hauteur du "x"</td>
+                        <td>Hauteur du caractère "x" dans la police courante</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Exemples d'utilisation :</h4>
+            <div class="code-block">
+                <pre><span class="comment">/* Unités relatives */</span>
+<span class="selector">.conteneur</span> {
+    <span class="property">width</span>: <span class="value">80%</span>;          <span class="comment">/* 80% de la largeur du parent */</span>
+    <span class="property">margin</span>: <span class="value">0 auto</span>;
+}
+                          
+<span class="selector">.texte</span> {
+    <span class="property">font-size</span>: <span class="value">1.2em</span>;      <span class="comment">/* 1.2 fois la police du parent */</span>
+    <span class="property">margin-bottom</span>: <span class="value">1.5em</span>;  <span class="comment">/* Relatif à la police de l'élément */</span>
+}
+
+<span class="selector">.rem-exemple</span> {
+    <span class="property">font-size</span>: <span class="value">1.1rem</span>;     <span class="comment">/* 1.1 fois la police racine (html) */</span>
+    <span class="property">padding</span>: <span class="value">1rem</span>;
+}
+
+<span class="selector">.pleine-page</span> {
+    <span class="property">width</span>: <span class="value">100vw</span>;         <span class="comment">/* 100% de la largeur de la fenêtre */</span>
+    <span class="property">height</span>: <span class="value">100vh</span>;        <span class="comment">/* 100% de la hauteur de la fenêtre */</span>
+}
+
+<span class="selector">.texte-colonne</span> {
+    <span class="property">max-width</span>: <span class="value">60ch</span>;      <span class="comment">/* Largeur idéale pour la lecture (60 caractères) */</span>
+}</pre>
+            </div>
+
+            <div class="exemple-pratique">
+                <h4>🎯 Différence entre em et rem :</h4>
+                <div class="code-block">
+                    <pre><span class="comment">/* em est cumulatif */</span>
+<span class="selector">.parent</span> { <span class="property">font-size</span>: <span class="value">20px</span>; }
+<span class="selector">.enfant</span> { <span class="property">font-size</span>: <span class="value">0.8em</span>; } <span class="comment">/* 0.8 * 20px = 16px */</span>
+<span class="selector">.petit-enfant</span> { <span class="property">font-size</span>: <span class="value">0.8em</span>; } <span class="comment">/* 0.8 * 16px = 12.8px */</span>
+
+<span class="comment">/* rem est constant */</span>
+<span class="selector">html</span> { <span class="property">font-size</span>: <span class="value">16px</span>; }
+<span class="selector">.parent</span> { <span class="property">font-size</span>: <span class="value">1.2rem</span>; } <span class="comment">/* 1.2 * 16px = 19.2px */</span>
+<span class="selector">.enfant</span> { <span class="property">font-size</span>: <span class="value">1.2rem</span>; } <span class="comment">/* 1.2 * 16px = 19.2px (identique) */</span></pre>
+                </div>
+            </div>
+
+            <div class="encart-important">
+                <div class="encart-icon">🎯</div>
+                <div class="encart-content">
+                    <strong>Recommandations :</strong>
+                    <ul>
+                        <li>Utilisez <code>rem</code> pour les tailles de police (consistant)</li>
+                        <li>Utilisez <code>em</code> pour les marges/paddings relatifs à la police locale</li>
+                        <li>Utilisez <code>%</code>, <code>vw</code>, <code>vh</code> pour les mises en page responsives</li>
+                        <li>Utilisez <code>px</code> pour les bordures, petites valeurs fixes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: Exercices -->
+        <div class="lecon-section exercices">
+            <h3>✍️ 3.4 Exercices pratiques</h3>
+
+            <div class="exercice-card">
+                <h4>Exercice 1 : Dégradé de couleurs</h4>
+                <p><strong>Objectif :</strong> Créer plusieurs boîtes avec différentes notations de couleurs.</p>
+
+                <div class="consigne">
+                    <p><i class="fas fa-tasks"></i> Instructions :</p>
+                    <ol>
+                        <li>Créez 5 boîtes de 100x100px</li>
+                        <li>Première boîte : couleur hexadécimale (#FF7A45)</li>
+                        <li>Deuxième boîte : couleur RGB (rgb(31, 45, 61))</li>
+                        <li>Troisième boîte : couleur RGBA avec transparence (rgba(255, 122, 69, 0.5))</li>
+                        <li>Quatrième boîte : couleur HSL (hsl(17, 100%, 64%))</li>
+                        <li>Cinquième boîte : couleur avec mot-clé (coral)</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="exercice-card">
+                <h4>Exercice 2 : Mise en page responsive avec unités</h4>
+                <p><strong>Objectif :</strong> Utiliser différentes unités pour créer une mise en page.</p>
+
+                <div class="consigne">
+                    <p><i class="fas fa-tasks"></i> Instructions :</p>
+                    <ol>
+                        <li>Créez un conteneur principal qui prend 90% de la largeur et est centré</li>
+                        <li>Ajoutez un header qui prend 100% de la largeur du conteneur</li>
+                        <li>Le texte du header utilise rem (1.5rem)</li>
+                        <li>Créez une section hero qui prend 60vh de hauteur</li>
+                        <li>Ajoutez un paragraphe avec une largeur maximale de 60ch pour une bonne lisibilité</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- ===== LEÇON 4 : TYPOGRAPHIE ===== -->
+<article class="lecon" id="lecon4">
+    <div class="lecon-header">
+        <div class="lecon-meta">
+            <span class="lecon-chapitre">Chapitre 04</span>
+            <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+            <span class="lecon-niveau debutant">Débutant</span>
+        </div>
+        <h2 class="lecon-titre">📝 La typographie en CSS</h2>
+        <p class="lecon-description">Polices, tailles, graisses, espacements</p>
+    </div>
+
+    <div class="lecon-body">
+        <!-- SECTION 1: Propriétés de base -->
+        <div class="lecon-section">
+            <h3>🔤 4.1 Propriétés de base</h3>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Propriété</th>
+                        <th>Description</th>
+                        <th>Valeurs courantes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>font-family</code></td>
+                        <td>Police de caractères</td>
+                        <td>Arial, Helvetica, 'Times New Roman', sans-serif</td>
+                    </tr>
+                    <tr>
+                        <td><code>font-size</code></td>
+                        <td>Taille de la police</td>
+                        <td>16px, 1.2rem, 1.5em, large, medium</td>
+                    </tr>
+                    <tr>
+                        <td><code>font-weight</code></td>
+                        <td>Graisse (épaisseur)</td>
+                        <td>normal, bold, 100-900, lighter, bolder</td>
+                    </tr>
+                    <tr>
+                        <td><code>font-style</code></td>
+                        <td>Style italique</td>
+                        <td>normal, italic, oblique</td>
+                    </tr>
+                    <tr>
+                        <td><code>line-height</code></td>
+                        <td>Hauteur de ligne</td>
+                        <td>1.2, 1.5, 20px, normal</td>
+                    </tr>
+                    <tr>
+                        <td><code>text-align</code></td>
+                        <td>Alignement du texte</td>
+                        <td>left, right, center, justify</td>
+                    </tr>
+                    <tr>
+                        <td><code>text-decoration</code></td>
+                        <td>Décoration</td>
+                        <td>none, underline, line-through, overline</td>
+                    </tr>
+                    <tr>
+                        <td><code>text-transform</code></td>
+                        <td>Transformation</td>
+                        <td>uppercase, lowercase, capitalize, none</td>
+                    </tr>
+                    <tr>
+                        <td><code>letter-spacing</code></td>
+                        <td>Espacement entre lettres</td>
+                        <td>normal, 1px, 0.1em</td>
+                    </tr>
+                    <tr>
+                        <td><code>word-spacing</code></td>
+                        <td>Espacement entre mots</td>
+                        <td>normal, 2px, 0.2em</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+                <pre><span class="selector">.texte-style</span> {
+    <span class="property">font-family</span>: <span class="value">'Arial', 'Helvetica', sans-serif</span>;
+    <span class="property">font-size</span>: <span class="value">16px</span>;
+    <span class="property">font-weight</span>: <span class="value">bold</span>;
+    <span class="property">line-height</span>: <span class="value">1.5</span>;
+    <span class="property">text-align</span>: <span class="value">center</span>;
+    <span class="property">text-transform</span>: <span class="value">uppercase</span>;
+    <span class="property">letter-spacing</span>: <span class="value">1px</span>;
+    <span class="property">color</span>: <span class="value">#1F2D3D</span>;
+}</pre>
+            </div>
+        </div>
+
+        <!-- SECTION 2: font-family en détail -->
+        <div class="lecon-section">
+            <h3>📋 4.2 font-family et les polices sécurisées</h3>
+
+            <p><code>font-family</code> accepte une liste de polices séparées par des virgules. Le navigateur utilise la première disponible.</p>
+
+            <h4>Polices web sécurisées (web safe fonts) :</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Police</th>
+                        <th>Famille</th>
+                        <th>Exemple</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Arial</td>
+                        <td>sans-serif</td>
+                        <td style="font-family: Arial;">Texte en Arial</td>
+                    </tr>
+                    <tr>
+                        <td>Helvetica</td>
+                        <td>sans-serif</td>
+                        <td style="font-family: Helvetica;">Texte en Helvetica</td>
+                    </tr>
+                    <tr>
+                  <td>Verdana</td>
+                        <td>sans-serif</td>
+                        <td style="font-family: Verdana;">Texte en Verdana</td>
+                    </tr>
+                    <tr>
+                        <td>Times New Roman</td>
+                        <td>serif</td>
+                        <td style="font-family: 'Times New Roman';">Texte en Times</td>
+                    </tr>
+                    <tr>
+                        <td>Georgia</td>
+                        <td>serif</td>
+                        <td style="font-family: Georgia;">Texte en Georgia</td>
+                    </tr>
+                    <tr>
+                        <td>Courier New</td>
+                        <td>monospace</td>
+                        <td style="font-family: 'Courier New';">Texte en Courier</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+                <pre><span class="comment">/* Bonne pratique : toujours terminer par une famille générique */</span>
+<span class="selector">body</span> {
+    <span class="property">font-family</span>: <span class="value">'Arial', 'Helvetica', sans-serif</span>;
+}
+
+<span class="selector">h1</span> {
+    <span class="property">font-family</span>: <span class="value">'Georgia', 'Times New Roman', serif</span>;
+}
+
+<span class="selector">code</span> {
+    <span class="property">font-family</span>: <span class="value">'Courier New', monospace</span>;
+}</pre>
+            </div>
+        </div>
+
+        <!-- SECTION 3: Google Fonts -->
+        <div class="lecon-section">
+            <h3>🌐 4.3 Utiliser Google Fonts</h3>
+
+            <p>Google Fonts permet d'utiliser des polices personnalisées gratuitement.</p>
+
+            <div class="code-block">
+                <pre><span class="comment">&lt;!-- Dans le &lt;head&gt; du HTML --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attribute">href</span>=<span class="value">"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span><span class="tag">&gt;</span>
+
+<span class="comment">/* Utilisation en CSS */</span>
+<span class="selector">body</span> {
+    <span class="property">font-family</span>: <span class="value">'Roboto', sans-serif</span>;
+    <span class="property">font-weight</span>: <span class="value">400</span>;
+}
+
+<span class="selector">h1</span> {
+    <span class="property">font-weight</span>: <span class="value">700</span>;
+}
+
+<span class="selector">.legende</span> {
+    <span class="property">font-weight</span>: <span class="value">300</span>;
+}</pre>
+            </div>
+
+            <div class="exemple-pratique">
+                <h4>🎯 Exemple avec plusieurs graisses :</h4>
+                <p>Google Fonts permet de sélectionner plusieurs graisses pour une même police :</p>
+                <div class="code-block small">
+                    <pre><span class="comment">&lt;!-- Charger plusieurs graisses --&gt;</span>
+&lt;link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"&gt;</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: line-height -->
+        <div class="lecon-section">
+            <h3>📐 4.4 line-height (hauteur de ligne)</h3>
+
+            <p><code>line-height</code> définit l'espace vertical entre les lignes de texte. Une bonne hauteur de ligne améliore la lisibilité.</p>
+
+            <div class="code-block">
+                <pre><span class="comment">/* Différentes façons de définir line-height */</span>
+<span class="selector">.texte1</span> {
+    <span class="property">line-height</span>: <span class="value">1.2</span>;     <span class="comment">/* 1.2 fois la taille de police (recommandé) */</span>
+}
+
+<span class="selector">.texte2</span> {
+    <span class="property">line-height</span>: <span class="value">24px</span>;    <span class="comment">/* Valeur fixe en pixels */</span>
+}
+
+<span class="selector">.texte3</span> {
+    <span class="property">line-height</span>: <span class="value">150%</span>;    <span class="comment">/* Pourcentage de la taille de police */</span>
+}
+
+<span class="selector">.texte4</span> {
+    <span class="property">line-height</span>: <span class="value">2em</span>;     <span class="comment">/* 2 fois la taille de police */</span>
+}</pre>
+            </div>
+
+            <div class="exemple-pratique">
+                <h4>🎯 Comparaison visuelle :</h4>
+                <div style="background: #f0f0f0; padding: 15px;">
+                    <p style="line-height: 1.2; margin-bottom: 20px; background: white; padding: 10px;">
+                        <strong>line-height: 1.2</strong><br>
+                        Ligne 1<br>
+                        Ligne 2<br>
+                        Ligne 3
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 20px; background: white; padding: 10px;">
+                        <strong>line-height: 1.8</strong><br>
+                        Ligne 1<br>
+                        Ligne 2<br>
+                        Ligne 3
+                    </p>
+                    <p style="line-height: 0.8; background: white; padding: 10px;">
+                        <strong>line-height: 0.8 (trop serré)</strong><br>
+                        Ligne 1<br>
+                        Ligne 2<br>
+                        Ligne 3
+                    </p>
+                </div>
+            </div>
+
+            <div class="astuce">
+                <i class="fas fa-lightbulb"></i>
+                <div><strong>Astuce :</strong> Pour centrer verticalement du texte sur une seule ligne, donnez à line-height la même valeur que la hauteur du conteneur.</div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: text-decoration -->
+        <div class="lecon-section">
+            <h3>🎨 4.5 text-decoration</h3>
+
+            <p><code>text-decoration</code> permet d'ajouter des décorations au texte.</p>
+
+            <div class="code-block">
+                <pre><span class="selector">a</span> {
+    <span class="property">text-decoration</span>: <span class="value">none</span>;  <span class="comment">/* Enlève le soulignement des liens */</span>
+}
+
+<span class="selector">.souligne</span> {
+    <span class="property">text-decoration</span>: <span class="value">underline</span>;
+    <span class="property">text-decoration-color</span>: <span class="value">#FF7A45</span>;
+    <span class="property">text-decoration-style</span>: <span class="value">wavy</span>;
+    <span class="property">text-decoration-thickness</span>: <span class="value">2px</span>;
+}
+
+<span class="selector">.barre</span> {
+    <span class="property">text-decoration</span>: <span class="value">line-through red wavy 2px</span>;
+}</pre>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Propriété</th>
+                        <th>Description</th>
+                        <th>Valeurs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>text-decoration-line</code></td><td>Type de ligne</td><td>underline, overline, line-through</td></tr>
+                    <tr><td><code>text-decoration-color</code></td><td>Couleur</td><td>n'importe quelle couleur</td></tr>
+                    <tr><td><code>text-decoration-style</code></td><td>Style</td><td>solid, double, dotted, dashed, wavy</td></tr>
+                    <tr><td><code>text-decoration-thickness</code></td><td>Épaisseur</td><td>auto, from-font, 1px, 0.1em</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 6: text-transform et letter-spacing -->
+        <div class="lecon-section">
+            <h3>🔠 4.6 text-transform et letter-spacing</h3>
+
+            <div class="grid-2">
+                <div>
+                    <h4>text-transform</h4>
+                    <div class="code-block">
+                        <pre><span class="selector">.majuscules</span> { <span class="property">text-transform</span>: <span class="value">uppercase</span>; }
+<span class="selector">.minuscules</span> { <span class="property">text-transform</span>: <span class="value">lowercase</span>; }
+<span class="selector">.capitales</span> { <span class="property">text-transform</span>: <span class="value">capitalize</span>; }</pre>
+                    </div>
+                    <div class="demo-box">
+                        <p style="text-transform: uppercase;">uppercase</p>
+                        <p style="text-transform: lowercase;">LOWERCASE</p>
+                        <p style="text-transform: capitalize;">chaque mot commence par une majuscule</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>letter-spacing</h4>
+                    <div class="code-block">
+                        <pre><span class="selector">.espace-normal</span> { <span class="property">letter-spacing</span>: <span class="value">normal</span>; }
+<span class="selector">.espace-large</span> { <span class="property">letter-spacing</span>: <span class="value">2px</span>; }
+<span class="selector">.espace-tres-large</span> { <span class="property">letter-spacing</span>: <span class="value">0.5em</span>; }</pre>
+                    </div>
+                    <div class="demo-box">
+                        <p style="letter-spacing: normal;">Espace normal</p>
+                        <p style="letter-spacing: 2px;">Espace 2px</p>
+                        <p style="letter-spacing: 5px;">Espace 5px</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 7: Exercices -->
+        <div class="lecon-section exercices">
+            <h3>✍️ 4.7 Exercices pratiques</h3>
+                           <div class="exercice-card">
+                <h4>Exercice 1 : Styles de texte variés</h4>
+                <p><strong>Objectif :</strong> Créer différents styles de texte.</p>
+
+                <div class="consigne">
+                    <p><i class="fas fa-tasks"></i> Instructions :</p>
+                    <ol>
+                        <li>Titre principal : police 'Georgia', gras, taille 2.5rem, couleur #1F2D3D</li>
+                        <li>Sous-titre : police 'Arial', normal, taille 1.5rem, couleur #FF7A45, espacement 1px</li>
+                        <li>Paragraphe : police 'Verdana', taille 1rem, line-height 1.6, couleur #6B7280</li>
+                        <li>Citation : italique, bordure gauche #FF7A45, padding 15px</li>
+                        <li>Code : police monospace, fond #F6EDE7, padding 5px</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="exercice-card">
+                <h4>Exercice 2 : Google Fonts</h4>
+                <p><strong>Objectif :</strong> Utiliser une police personnalisée.</p>
+
+                <div class="consigne">
+                    <p><i class="fas fa-tasks"></i> Instructions :</p>
+                    <ol>
+                        <li>Allez sur Google Fonts et choisissez une police (ex: 'Poppins')</li>
+                        <li>Incluez-la dans votre page</li>
+                        <li>Utilisez différentes graisses (300, 400, 700)</li>
+                        <li>Créez un titre en gras, un paragraphe en normal, une légende en léger</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- ===== LEÇON 5 : MODÈLE DE BOÎTE ===== -->
+<article class="lecon" id="lecon5">
+    <div class="lecon-header">
+        <div class="lecon-meta">
+            <span class="lecon-chapitre">Chapitre 05</span>
+            <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+            <span class="lecon-niveau debutant">Débutant</span>
+        </div>
+        <h2 class="lecon-titre">📦 Le modèle de boîte (Box Model)</h2>
+        <p class="lecon-description">Margin, padding, border - comprendre comment les éléments occupent l'espace</p>
+    </div>
+
+    <div class="lecon-body">
+        <!-- SECTION 1: Introduction au box model -->
+        <div class="lecon-section">
+            <h3>📐 5.1 Qu'est-ce que le modèle de boîte ?</h3>
+
+            <div class="definition-box">
+                <p>En CSS, <strong>chaque élément est considéré comme une boîte rectangulaire</strong>. Le modèle de boîte décrit comment cette boîte est composée.</p>
+            </div>
+
+            <div class="schema-box">
+                <h4>🔷 Structure d'une boîte (de l'intérieur vers l'extérieur) :</h4>
+                <div style="background: #f0f0f0; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <div style="background: #FF7A45; padding: 20px; border: 10px solid #1F2D3D; margin: 20px; color: white; text-align: center;">
+                        <strong>CONTENU</strong><br>
+                        (content)
+                        <div style="font-size: 0.8rem; margin-top: 5px;">width: 200px; height: 100px;</div>
+                    </div>
+                </div>
+                <ul style="list-style: none;">
+                    <li><strong style="color: #FF7A45;">① Contenu (content)</strong> : Le texte, les images, etc.</li>
+                    <li><strong style="color: #1F2D3D;">② Padding (rembourrage)</strong> : Espace entre le contenu et la bordure</li>
+                    <li><strong style="color: #6B7280;">③ Border (bordure)</strong> : La bordure autour du padding</li>
+                    <li><strong style="color: #FF7A45;">④ Margin (marge)</strong> : Espace entre la bordure et les éléments voisins</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 2: Padding -->
+        <div class="lecon-section">
+            <h3>📏 5.2 Padding (rembourrage intérieur)</h3>
+
+            <p>Le <code>padding</code> crée un espace entre le contenu et la bordure. Il fait partie de la boîte et prend la couleur de fond.</p>
+
+            <div class="code-block">
+                <pre><span class="comment">/* Padding individuel */</span>
+<span class="selector">.boite</span> {
+    <span class="property">padding-top</span>: <span class="value">10px</span>;
+    <span class="property">padding-right</span>: <span class="value">15px</span>;
+    <span class="property">padding-bottom</span>: <span class="value">10px</span>;
+    <span class="property">padding-left</span>: <span class="value">15px</span>;
+}
+
+<span class="comment">/* Padding raccourci - 4 valeurs (haut, droite, bas, gauche) */</span>
+<span class="selector">.boite</span> {
+    <span class="property">padding</span>: <span class="value">10px 15px 10px 15px</span>;
+}
+
+<span class="comment">/* Padding - 3 valeurs (haut, gauche/droite, bas) */</span>
+<span class="selector">.boite</span> {
+    <span class="property">padding</span>: <span class="value">10px 20px 10px</span>;
+}
+
+<span class="comment">/* Padding - 2 valeurs (haut/bas, gauche/droite) */</span>
+<span class="selector">.boite</span> {
+    <span class="property">padding</span>: <span class="value">10px 20px</span>;
+}
+
+<span class="comment">/* Padding - 1 valeur (tous les côtés) */</span>
+<span class="selector">.boite</span> {
+    <span class="property">padding</span>: <span class="value">10px</span>;
+}</pre>
+            </div>
+
+            <div class="exemple-pratique">
+                <h4>🎯 Effet visuel du padding :</h4>
+                <div style="display: flex; gap: 20px;">
+                    <div style="background: #FF7A45; color: white; padding: 0px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">padding:0</div>
+                    <div style="background: #FF7A45; color: white; padding: 10px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">padding:10px</div>
+                    <div style="background: #FF7A45; color: white; padding: 20px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">padding:20px</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: Margin -->
+        <div class="lecon-section">
+            <h3>↔️ 5.3 Margin (marge extérieure)</h3>
+
+            <p>Le <code>margin</code> crée un espace entre la bordure de l'élément et les éléments voisins. Il est transparent et ne prend pas la couleur de fond.</p>
+
+            <div class="code-block">
+                <pre><span class="comment">/* Même syntaxe que padding */</span>
+<span class="selector">.boite</span> {
+    <span class="property">margin</span>: <span class="value">10px</span>;           <span class="comment">/* 10px de tous les côtés */</span>
+    <span class="property">margin</span>: <span class="value">10px 20px</span>;      <span class="comment">/* 10px haut/bas, 20px gauche/droite */</span>
+    <span class="property">margin</span>: <span class="value">10px 15px 20px</span>; <span class="comment">/* 10px haut, 15px côtés, 20px bas */</span>
+}
+
+<span class="comment">/* Cas particuliers */</span>
+<span class="selector">.centre</span> {
+    <span class="property">margin</span>: <span class="value">0 auto</span>;         <span class="comment">/* Centre horizontalement un bloc (avec width définie) */</span>
+}
+
+<span class="selector">.espace-negatif</span> {
+    <span class="property">margin-left</span>: <span class="value">-10px</span>;    <span class="comment">/* Marge négative (déplace vers la gauche) */</span>
+}</pre>
+            </div>
+
+            <div class="encart-important">
+                <div class="encart-icon">⚠️</div>
+                <div class="encart-content">
+                    <strong>Fusion des marges (margin collapsing) :</strong> Quand deux marges verticales se touchent, elles fusionnent en une seule (la plus grande des deux). C'est normal.
+                    <div style="margin-top: 10px; background: #F6EDE7; padding: 10px;">
+                        <div style="margin-bottom: 20px; background: #FF7A45; color: white;">Élément A (margin-bottom: 20px)</div>
+                        <div style="margin-top: 30px; background: #1F2D3D; color: white;">Élément B (margin-top: 30px)</div>
+                        <p style="font-size: 0.9rem;">L'espace entre eux sera de 30px (pas 50px)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: Border -->
+        <div class="lecon-section">
+            <h3>🖼️ 5.4 Border (bordure)</h3>
+               <p>La bordure entoure le padding. Elle peut être stylisée de nombreuses façons.</p>
+
+            <div class="code-block">
+                <pre><span class="comment">/* border: largeur style couleur */</span>
+<span class="selector">.bordure-simple</span> {
+    <span class="property">border</span>: <span class="value">2px solid #1F2D3D</span>;
+}
+
+<span class="comment">/* Bordures individuelles */</span>
+<span class="selector">.bordure-haute</span> {
+    <span class="property">border-top</span>: <span class="value">3px dashed #FF7A45</span>;
+}
+
+<span class="comment">/* Styles de bordure */</span>
+<span class="selector">.exemples</span> {
+    <span class="property">border-style</span>: <span class="value">solid</span>;     <span class="comment">/* plein */</span>
+    <span class="property">border-style</span>: <span class="value">dashed</span>;    <span class="comment">/* tirets */</span>
+    <span class="property">border-style</span>: <span class="value">dotted</span>;    <span class="comment">/* points */</span>
+    <span class="property">border-style</span>: <span class="value">double</span>;    <span class="comment">/* double ligne */</span>
+    <span class="property">border-style</span>: <span class="value">groove</span>;    <span class="comment">/* effet 3D */</span>
+    <span class="property">border-style</span>: <span class="value">ridge</span>;     <span class="comment">/* effet 3D inverse */</span>
+    <span class="property">border-style</span>: <span class="value">inset</span>;     <span class="comment">/* enfoncé */</span>
+    <span class="property">border-style</span>: <span class="value">outset</span>;    <span class="comment">/* relief */</span>
+}
+
+<span class="comment">/* Border-radius (coins arrondis) */</span>
+<span class="selector">.arrondi</span> {
+    <span class="property">border-radius</span>: <span class="value">10px</span>;          <span class="comment">/* tous les coins */</span>
+    <span class="property">border-radius</span>: <span class="value">10px 20px</span>;    <span class="comment">/* haut-gauche/bas-droit, haut-droit/bas-gauche */</span>
+    <span class="property">border-radius</span>: <span class="value">50%</span>;           <span class="comment">/* cercle parfait (avec largeur/hauteur égales) */</span>
+}</pre>
+            </div>
+
+            <div class="exemple-pratique">
+                <h4>🎯 Exemples de bordures :</h4>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <div style="border: 2px solid #1F2D3D; padding: 10px;">solid</div>
+                    <div style="border: 2px dashed #1F2D3D; padding: 10px;">dashed</div>
+                    <div style="border: 2px dotted #1F2D3D; padding: 10px;">dotted</div>
+                    <div style="border: 4px double #1F2D3D; padding: 10px;">double</div>
+                    <div style="border: 2px solid #1F2D3D; border-radius: 10px; padding: 10px;">radius 10px</div>
+                    <div style="border: 2px solid #1F2D3D; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">50%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: width et height -->
+        <div class="lecon-section">
+            <h3>📊 5.5 width et height</h3>
+
+            <p>Par défaut, <code>width</code> et <code>height</code> s'appliquent au contenu uniquement. Le padding, border et margin s'ajoutent.</p>
+
+            <div class="code-block">
+                <pre><span class="selector">.boite-standard</span> {
+    <span class="property">width</span>: <span class="value">200px</span>;
+    <span class="property">height</span>: <span class="value">100px</span>;
+    <span class="property">padding</span>: <span class="value">20px</span>;
+    <span class="property">border</span>: <span class="value">5px solid #1F2D3D</span>;
+    <span class="comment">/* Largeur totale = 200 + 40 (padding) + 10 (border) = 250px */</span>
+}</pre>
+            </div>
+
+            <div class="explication-approfondie">
+                <h4>📖 Calcul de la largeur totale :</h4>
+                <p><strong>Largeur totale = width + padding-left + padding-right + border-left + border-right</strong></p>
+                <p><strong>Hauteur totale = height + padding-top + padding-bottom + border-top + border-bottom</strong></p>
+            </div>
+
+            <div class="encart-important">
+                <div class="encart-icon">💡</div>
+                <div class="encart-content">
+                    <strong>Solution : box-sizing: border-box</strong>
+                    <p>Avec <code>box-sizing: border-box</code>, width et height incluent le padding et la bordure. C'est beaucoup plus intuitif !</p>
+                    <div class="code-block small">
+                        <pre><span class="selector">*</span> {
+    <span class="property">box-sizing</span>: <span class="value">border-box</span>;
+}
+
+<span class="selector">.boite</span> {
+    <span class="property">width</span>: <span class="value">200px</span>;
+    <span class="property">padding</span>: <span class="value">20px</span>;
+    <span class="property">border</span>: <span class="value">5px solid</span>;
+    <span class="comment">/* Largeur totale = 200px (inclut padding et border) */</span>
+}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: Exercices -->
+        <div class="lecon-section exercices">
+            <h3>✍️ 5.6 Exercices pratiques</h3>
+
+            <div class="exercice-card">
+                <h4>Exercice 1 : Créer une carte</h4>
+                <p><strong>Objectif :</strong> Utiliser le box model pour créer une carte de produit.</p>
+
+                <div class="consigne">
+                    <p><i class="fas fa-tasks"></i> Instructions :</p>
+                    <ol>
+                        <li>Créez une div avec classe "carte"</li>
+                        <li>Largeur: 300px</li>
+                        <li>Padding: 20px de tous les côtés</li>
+                        <li>Bordure: 1px solid #6B7280 avec coins arrondis de 8px</li>
+                        <li>Marge: 20px en bas</li>
+                        <li>Ajoutez un titre, une image (placeholder), un prix et un bouton</li>
+                        <li>Utilisez box-sizing: border-box</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="exercice-card">
+                <h4>Exercice 2 : Centrer une boîte</h4>
+                <p><strong>Objectif :</strong> Centrer horizontalement et verticalement.</p>
+
+                <div class="consigne">
+                    <p><i class="fas fa-tasks"></i> Instructions :</p>
+                    <ol>
+                        <li>Créez un conteneur de 400x300px avec fond gris clair</li>
+                        <li>Créez une boîte de 200x100px avec fond orange</li>
+                        <li>Centre la boîte horizontalement dans le conteneur (margin auto)</li>
+                        <li>Ajoutez du texte centré dans la boîte</li>
+                        <li>Pour le centrage vertical, utilisez line-height = hauteur</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="exercice-card">
+                <h4>Exercice 3 : Calculer les dimensions</h4>
+                <p><strong>Objectif :</strong> Comprendre la différence entre content-box et border-box.</p>
+
+                <div class="consigne">
+                    <p><i class="fas fa-tasks"></i> Instructions :</p>
+                    <ol>
+                        <li>Créez deux divs avec les mêmes styles :
+                            <ul>
+                                <li>width: 200px</li>
+                                <li>padding: 20px</li>
+                                <li>border: 5px solid</li>
+                                <li>margin: 10px</li>
+                            </ul>
+                        </li>
+                        <li>Sur la première, appliquez <code>box-sizing: content-box</code> (par défaut)</li>
+                        <li>Sur la seconde, appliquez <code>box-sizing: border-box</code></li>
+                        <li>Observez la différence de taille</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- ===== SECTION EXERCICES RÉCAPITULATIFS ===== -->
+<section class="exercices-recap">
+    <h2 class="section-title">🏆 Projet récapitulatif (Leçons 1-5)</h2>
+         <div class="recap-card">
+        <h3>Créez une page de présentation personnelle</h3>
+        <p>Utilisez toutes les notions apprises dans les leçons 1 à 5.</p>
+
+        <h4>Structure demandée :</h4>
+        <ul>
+            <li><strong>Header</strong> avec titre et navigation (utilisez les sélecteurs)</li>
+            <li><strong>Section hero</strong> avec un grand titre (typographie)</li>
+            <li><strong>Section "À propos"</strong> avec du texte et des citations</li>
+            <li><strong>Section compétences</strong> avec des cartes (box model)</li>
+            <li><strong>Section contact</strong> avec formulaire simple</li>
+            <li><strong>Footer</strong> avec copyright</li>
+        </ul>
+
+        <h4>Contraintes CSS :</h4>
+        <ul>
+            <li>Utilisez différentes unités (px, rem, %, vh)</li>
+            <li>Utilisez des sélecteurs variés (éléments, classes, descendants)</li>
+            <li>Appliquez des styles typographiques (font-family, line-height)</li>
+            <li>Utilisez le box model (padding, margin, border)</li>
+            <li>Ajoutez des interactions :hover sur les boutons et liens</li>
+            <li>Utilisez box-sizing: border-box sur tous les éléments</li>
+        </ul>
+
+        <details>
+            <summary>Voir un exemple de structure HTML</summary>
+            <div class="code-block small">
+                <pre><span class="tag">&lt;body&gt;</span>
+    &lt;header&gt;
+        &lt;h1&gt;Mon Portfolio&lt;/h1&gt;
+        &lt;nav&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;À propos&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section class="hero"&gt;
+&lt;h2&gt;Bienvenue sur mon site&lt;/h2&gt;
+&lt;p&gt;Découvrez mes projets et compétences&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section class="apropos"&gt;
+&lt;h3&gt;Qui suis-je ?&lt;/h3&gt;
+&lt;p&gt;Je suis développeur web passionné...&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section class="competences"&gt;
+&lt;h3&gt;Mes compétences&lt;/h3&gt;
+&lt;div class="cartes"&gt;
+    &lt;div class="carte"&gt;
+        &lt;h4&gt;HTML&lt;/h4&gt;
+        &lt;p&gt;5 ans d'expérience&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="carte"&gt;
+        &lt;h4&gt;CSS&lt;/h4&gt;
+        &lt;p&gt;5 ans d'expérience&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2026 - Mon Portfolio&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;</pre>
+            </div>
+        </details>
+    </div>
+</section>
+        </div>
+    </main>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+<div class="pagination-content">
+    <span class="pagination-prev disabled"><i class="fas fa-arrow-left"></i> Début</span>
+    <div class="pagination-links">
+        <a href="1.html" class="active">1</a>
+        <a href="2.html">2</a>
+        <a href="3.html">3</a>
+        <a href="4.html">4</a>
+    </div>
+    <a href="2.html" class="pagination-next">Leçons 6-10 <i class="fas fa-arrow-right"></i></a>
+</div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+  </html>
+  
