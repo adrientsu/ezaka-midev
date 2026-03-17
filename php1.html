@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Master - Leçons 1 à 5</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="php1.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">&#60;?&#62;</span>
+                    <div class="logo-text">
+                        <span class="logo-main">PHP MASTER</span>
+                        <span class="logo-sub">Leçons 1 à 5 : Les fondamentaux</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 1-5 sur 20</span>
+                <span class="progress-percent">25%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 25%"></div>
+            </div>
+            <div class="progress-nav">
+                <span class="progress-current">Leçons 1-5</span>
+                <a href="php2.html" class="progress-next">Leçons 6-10 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 1-5 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 1 à 5 : Les fondamentaux PHP</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon1" class="sommaire-card">
+                    <span class="lecon-numero">01</span>
+                    <h3>Introduction à PHP</h3>
+                    <p>Syntaxe, balises, premier script</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                </a>
+                <a href="#lecon2" class="sommaire-card">
+                    <span class="lecon-numero">02</span>
+                    <h3>Variables et types</h3>
+                    <p>Déclaration, types de données</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon3" class="sommaire-card">
+                    <span class="lecon-numero">03</span>
+                    <h3>Opérateurs</h3>
+                    <p>Arithmétiques, comparaison, logiques</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                </a>
+                <a href="#lecon4" class="sommaire-card">
+                    <span class="lecon-numero">04</span>
+                    <h3>Structures conditionnelles</h3>
+                    <p>if, else, elseif, switch</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon5" class="sommaire-card">
+                    <span class="lecon-numero">05</span>
+                    <h3>Boucles</h3>
+                    <p>for, while, foreach</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 1 : INTRODUCTION À PHP ===== -->
+            <article class="lecon" id="lecon1">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 01</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">🚀 Introduction à PHP</h2>
+                    <p class="lecon-description">Découvrir PHP, son histoire et comment l'utiliser</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Qu'est-ce que PHP ? -->
+                    <div class="lecon-section">
+                        <h3>🔍 1.1 Qu'est-ce que PHP ?</h3>
+
+                        <div class="definition-box">
+                            <p><strong>PHP</strong> (Hypertext Preprocessor) est un langage de programmation côté serveur, spécialement conçu pour le développement web. Il permet de générer des pages dynamiques et d'interagir avec des bases de données.</p>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Explication :</h4>
+                            <ul>
+                                <li><strong>Côté client (navigateur)</strong> : HTML, CSS, JavaScript</li>
+                                <li><strong>Côté serveur</strong> : PHP, Python, Java, etc.</li>
+                            </ul>
+                            <p>PHP s'exécute sur le serveur avant d'envoyer le résultat au navigateur. Le code PHP n'est pas visible dans la source de la page.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>À savoir :</strong> PHP a été créé en 1994 par Rasmus Lerdorf. Il équipe aujourd'hui plus de 75% des sites web (Facebook, Wikipedia, WordPress).
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Balises PHP -->
+                    <div class="lecon-section">
+                        <h3>🏷️ 1.2 Les balises PHP</h3>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="php-tag">PHP</span>
+                                <span>Syntaxe de base</span>
+                            </div>
+                            <pre><span class="php"><?php
+    // Code PHP ici
+    echo "Bonjour le monde !";
+?></span></pre>
+                        </div>
+
+                        <p>Le code PHP doit être placé entre les balises <code>&lt;?php</code> et <code>?&gt;</code>.</p>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple concret :</h4>
+                            <div class="code-block">
+                                <pre><span class="php"><?php
+    echo "&lt;h1&gt;Titre généré par PHP&lt;/h1&gt;";
+    echo "&lt;p&gt;Ce paragraphe vient du serveur.&lt;/p&gt;";
+?></span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Premier script -->
+                    <div class="lecon-section">
+                        <h3>📝 1.3 Premier script PHP</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    // Ceci est un commentaire
+    $nom = "Jean";
+    $age = 25;
+    
+    echo "Bonjour, je m'appelle " . $nom . " et j'ai " . $age . " ans.";
+    echo "&lt;br&gt;";
+    echo "L'année prochaine, j'aurai " . ($age + 1) . " ans.";
+?></span></pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> Les variables en PHP commencent toujours par <code>$</code>. Le point <code>.</code> sert à concaténer (coller) des chaînes.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Commentaires -->
+                    <div class="lecon-section">
+                        <h3>📝 1.4 Les commentaires</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    // Commentaire sur une ligne
+    
+    # Autre façon pour une ligne
+    
+    /*
+       Commentaire
+       sur plusieurs
+       lignes
+    */
+    
+    echo "Code exécuté"; // Commentaire en fin de ligne
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 1.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Premier script</h4>
+                            <p><strong>Objectif :</strong> Créer votre premier script PHP.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un fichier <code>index.php</code></li>
+                                    <li>Écrivez le code PHP pour afficher "Bonjour le monde !"</li>
+                                    <li>Ajoutez un commentaire expliquant ce que fait le code</li>
+                                    <li>Testez sur votre serveur local</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 2 : VARIABLES ET TYPES ===== -->
+            <article class="lecon" id="lecon2">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 02</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">📦 Variables et types de données</h2>
+                    <p class="lecon-description">Stocker et manipuler des données en PHP</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Variables -->
+                    <div class="lecon-section">
+                        <h3>📋 2.1 Déclaration des variables</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    $nom = "Jean";           // Chaîne de caractères
+    $age = 25;                // Entier
+    $prix = 19.99;            // Float (décimal)
+    $estMajeur = true;        // Booléen
+    $notes = [12, 15, 18];    // Tableau
+    $rien = null;             // Null
+    
+    echo $nom;
+?></span></pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">📌</div>
+                            <div class="encart-content">
+                                <strong>Règles pour les noms de variables :</strong>
+                                <ul>
+                                    <li>Commence toujours par <code>$</code></li>
+                                    <li>Suivi d'une lettre ou underscore (_)</li>
+                                    <li>Pas de chiffre au début</li>
+                                    <li>Pas d'espaces, pas de caractères spéciaux</li>
+                                    <li>Sensible à la casse ($Nom ≠ $nom)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Types de données -->
+                    <div class="lecon-section">
+                        <h3>🔤 2.2 Les types de données</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                    <th>Fonction test</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>string</td>
+                                    <td>Chaîne de caractères</td>
+                                    <td><code>"Bonjour"</code></td>
+                                    <td><code>is_string()</code></td>
+                                </tr>
+                                <tr>
+                                    <td>int</td>
+                                    <td>Entier</td>
+                                    <td><code>25</code></td>
+                                    <td><code>is_int()</code></td>
+                                </tr>
+                                <tr>
+                                    <td>float</td>
+                                    <td>Décimal</td>
+                                    <td><code>19.99</code></td>
+                                    <td><code>is_float()</code></td>
+                                </tr>
+                                <tr>
+                                    <td>bool</td>
+                                    <td>Booléen (true/false)</td>
+                                    <td><code>true</code></td>
+                                    <td><code>is_bool()</code></td>
+                                </tr>
+                                <tr>
+                                    <td>array</td>
+                                    <td>Tableau</td>
+                                    <td><code>[1, 2, 3]</code></td>
+                                    <td><code>is_array()</code></td>
+                                </tr>
+                                <tr>
+                                    <td>null</td>
+                                    <td>Aucune valeur</td>
+                                    <td><code>null</code></td>
+                                    <td><code>is_null()</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    $nom = "Jean";
+    $age = 25;
+    
+    echo gettype($nom);  // string
+    echo gettype($age);  // integer
+    
+    var_dump($nom);      // string(4) "Jean"
+    var_dump($age);      // int(25)
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Chaînes de caractères -->
+                    <div class="lecon-section">
+                        <h3>🔤 2.3 Travailler avec les chaînes</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    $prenom = "Jean";
+    $nom = "Dupont";
+    
+    // Concaténation avec .
+    $nomComplet = $prenom . " " . $nom;
+    echo $nomComplet;  // "Jean Dupont"
+    
+    // Avec guillemets doubles (interprète les variables)
+    echo "Bonjour $prenom $nom";  // "Bonjour Jean Dupont"
+    
+    // Guillemets simples (n'interprète pas)
+    echo 'Bonjour $prenom';  // "Bonjour $prenom"
+    
+    // Fonctions utiles
+    echo strlen($prenom);           // 4 (longueur)
+    echo strtoupper($prenom);       // "JEAN"
+    echo strtolower($prenom);       // "jean"
+    echo ucfirst($prenom);          // "Jean" (première majuscule)
+    echo str_replace("Jean", "Pierre", $prenom); // "Pierre"
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Constantes -->
+                    <div class="lecon-section">
+                        <h3>🔒 2.4 Les constantes</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    // Définir une constante
+    define("PI", 3.14159);
+    const SITE_NAME = "Ambanivolo mi-DEV";
+    
+    echo PI;           // 3.14159
+    echo SITE_NAME;    // "Ambanivolo mi-DEV"
+    
+    // Constantes magiques
+    echo __LINE__;     // Ligne actuelle
+    echo __FILE__;     // Chemin du fichier
+    echo __DIR__;      // Dossier du fichier
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 2.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Présentation</h4>
+                            <p><strong>Objectif :</strong> Créer des variables pour se présenter.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une variable <code>$prenom</code> avec votre prénom</li>
+                                    <li>Créez une variable <code>$nom</code> avec votre nom</li>
+                                    <li>Créez une variable <code>$age</code> avec votre âge</li>
+                                    <li>Affichez "Je m'appelle [prénom] [nom] et j'ai [âge] ans"</li>
+                                    <li>Affichez aussi "L'année prochaine, j'aurai [âge+1] ans"</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Calculs simples</h4>
+                            <p><strong>Objectif :</strong> Manipuler des nombres.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez deux variables <code>$a = 15</code> et <code>$b = 7</code></li>
+                                    <li>Affichez leur somme, différence, produit et quotient</li>
+                                    <li>Utilisez <code>var_dump()</code> pour voir les types</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 3 : OPÉRATEURS ===== -->
+            <article class="lecon" id="lecon3">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 03</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">🧮 Opérateurs PHP</h2>
+                    <p class="lecon-description">Arithmétiques, comparaison, logiques</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Opérateurs arithmétiques -->
+                    <div class="lecon-section">
+                        <h3>➕ 3.1 Opérateurs arithmétiques</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Opérateur</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                    <th>Résultat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                         <tr><td><code>+</code></td><td>Addition</td><td><code>$a + $b</code></td><td>Somme</td></tr>
+                                <tr><td><code>-</code></td><td>Soustraction</td><td><code>$a - $b</code></td><td>Différence</td></tr>
+                                <tr><td><code>*</code></td><td>Multiplication</td><td><code>$a * $b</code></td><td>Produit</td></tr>
+                                <tr><td><code>/</code></td><td>Division</td><td><code>$a / $b</code></td><td>Quotient</td></tr>
+                                <tr><td><code>%</code></td><td>Modulo (reste)</td><td><code>$a % $b</code></td><td>Reste de la division</td></tr>
+                                <tr><td><code>**</code></td><td>Puissance</td><td><code>$a ** $b</code></td><td>$a puissance $b</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    $a = 10;
+    $b = 3;
+    
+    echo $a + $b;  // 13
+    echo $a - $b;  // 7
+    echo $a * $b;  // 30
+    echo $a / $b;  // 3.3333...
+    echo $a % $b;  // 1
+    echo $a ** $b; // 1000
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Opérateurs d'assignation -->
+                    <div class="lecon-section">
+                        <h3>📝 3.2 Opérateurs d'assignation</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    $x = 10;
+    
+    $x += 5;   // $x = $x + 5 (15)
+    $x -= 3;   // $x = $x - 3 (12)
+    $x *= 2;   // $x = $x * 2 (24)
+    $x /= 4;   // $x = $x / 4 (6)
+    $x %= 4;   // $x = $x % 4 (2)
+    
+    // Incrémentation / Décrémentation
+    $compteur = 0;
+    $compteur++; // $compteur = $compteur + 1 (1)
+    $compteur--; // $compteur = $compteur - 1 (0)
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Opérateurs de comparaison -->
+                    <div class="lecon-section">
+                        <h3>⚖️ 3.3 Opérateurs de comparaison</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Opérateur</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                    <th>Résultat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>==</code></td><td>Égal (valeur)</td><td><code>5 == "5"</code></td><td>true</td></tr>
+                                <tr><td><code>===</code></td><td>Identique (valeur ET type)</td><td><code>5 === "5"</code></td><td>false</td></tr>
+                                <tr><td><code>!=</code> ou <code><></code></td><td>Différent</td><td><code>5 != 3</code></td><td>true</td></tr>
+                                <tr><td><code>!==</code></td><td>Différent (valeur OU type)</td><td><code>5 !== "5"</code></td><td>true</td></tr>
+                                <tr><td><code>></code></td><td>Supérieur</td><td><code>5 > 3</code></td><td>true</td></tr>
+                                <tr><td><code><</code></td><td>Inférieur</td><td><code>5 < 3</code></td><td>false</td></tr>
+                                <tr><td><code>>=</code></td><td>Supérieur ou égal</td><td><code>5 >= 5</code></td><td>true</td></tr>
+                                <tr><td><code><=</code></td><td>Inférieur ou égal</td><td><code>5 <= 4</code></td><td>false</td></tr>
+                                <tr><td><code><=></code></td><td>Spaceship (PHP7)</td><td><code>1 <=> 2</code></td><td>-1 (inférieur)</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Règle d'or :</strong> Toujours utiliser <code>===</code> et <code>!==</code> pour éviter les conversions implicites.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Opérateurs logiques -->
+                    <div class="lecon-section">
+                        <h3>🔗 3.4 Opérateurs logiques</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Opérateur</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                    <th>Résultat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>and</code> ou <code>&&</code></td><td>ET (les deux vrais)</td><td><code>true && false</code></td><td>false</td></tr>
+                                <tr><td><code>or</code> ou <code>||</code></td><td>OU (au moins un vrai)</td><td><code>true || false</code></td><td>true</td></tr>
+                                <tr><td><code>xor</code></td><td>OU exclusif (un seul vrai)</td><td><code>true xor true</code></td><td>false</td></tr>
+                                <tr><td><code>!</code></td><td>NON (inverse)</td><td><code>!true</code></td><td>false</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    $age = 20;
+    $permis = true;
+    
+    if ($age >= 18 && $permis) {
+        echo "Vous pouvez conduire";
+    }
+    
+    if ($age < 12 || $age > 65) {
+        echo "Tarif réduit";
+    }
+    
+    $estMineur = !($age >= 18);
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 3.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Vérification</h4>
+                            <p><strong>Objectif :</strong> Vérifier l'éligibilité.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez <code>$age = 21</code> et <code>$inscrit = true</code></li>
+                                    <li>Vérifiez si la personne peut participer (âge ≥ 18 ET inscrit)</li>
+                                    <li>Affichez le résultat</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 4 : STRUCTURES CONDITIONNELLES ===== -->
+            <article class="lecon" id="lecon4">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 04</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">🔄 Structures conditionnelles</h2>
+                    <p class="lecon-description">Prendre des décisions dans le code</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: if / else -->
+                    <div class="lecon-section">
+                        <h3>🔀 4.1 if, else, elseif</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    $age = 18;
+    
+    if ($age >= 18) {
+        echo "Vous êtes majeur";
+    } else {
+        echo "Vous êtes mineur";
+    }
+    
+    $note = 15;
+    
+    if ($note >= 16) {
+        echo "Excellent";
+    } elseif ($note >= 14) {
+        echo "Très bien";
+    } elseif ($note >= 12) {
+        echo "Bien";
+    } elseif ($note >= 10) {
+        echo "Passable";
+    } else {
+        echo "Insuffisant";
+    }
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: switch -->
+                    <div class="lecon-section">
+                        <h3>🔌 4.2 switch</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    $jour = 3;
+    
+    switch ($jour) {
+        case 1:
+            echo "Lundi";
+            break;
+        case 2:
+            echo "Mardi";
+            break;
+        case 3:
+            echo "Mercredi";
+            break;
+        case 4:
+            echo "Jeudi";
+            break;
+        case 5:
+            echo "Vendredi";
+            break;
+        case 6:
+            echo "Samedi";
+            break;
+        case 7:
+            echo "Dimanche";
+            break;
+        default:
+            echo "Jour invalide";
+    }
+    
+    // Fallthrough volontaire
+    $note = "B";
+    
+    switch ($note) {
+        case "A":
+        case "B":
+        case "C":
+            echo "Réussite";
+            break;
+        default:
+            echo "Échec";
+    }
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Opérateur ternaire -->
+                    <div class="lecon-section">
+                        <h3>❓ 4.3 Opérateur ternaire</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    $age = 20;
+    
+    // Avec if/else
+    if ($age >= 18) {
+        $statut = "majeur";
+    } else {
+        $statut = "mineur";
+    }
+    
+    // Avec ternaire
+    $statut = ($age >= 18) ? "majeur" : "mineur";
+    
+    // Dans un echo
+    echo "Vous êtes " . (($age >= 18) ? "majeur" : "mineur");
+    
+    // Ternaire imbriqué (à éviter si trop complexe)
+    $resultat = ($note >= 10) ? "réussi" : (($note >= 8) ? "rattrapage" : "échoué");
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 4.4 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Mention</h4>
+                            <p><strong>Objectif :</strong> Afficher une mention selon la note.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une variable <code>$note</code> entre 0 et 20</li>
+                                    <li>Affichez la mention correspondante (comme l'exemple)</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Jour de la semaine</h4>
+                            <p><strong>Objectif :</strong> Utiliser switch.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez <code>$numeroJour = 4</code></li>
+                                    <li>Avec switch, affichez le nom du jour</li>
+                                    <li>Gérez le cas par défaut</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 5 : BOUCLES ===== -->
+            <article class="lecon" id="lecon5">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 05</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau debutant">Débutant</span>
+                    </div>
+                    <h2 class="lecon-titre">🔄 Les boucles</h2>
+                    <p class="lecon-description">Répéter des actions</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Boucle for -->
+                    <div class="lecon-section">
+                        <h3>🔢 5.1 La boucle for</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    for ($i = 0; $i < 5; $i++) {
+        echo "Itération numéro $i<br>";
+    }
+    
+    // Compter de 0 à 10 avec un pas de 2
+    for ($i = 0; $i <= 10; $i += 2) {
+        echo $i . " ";  // 0 2 4 6 8 10
+    }
+    
+    // Compter à l'envers
+    for ($i = 10; $i >= 0; $i--) {
+        echo $i . " ";  // 10 9 8 ... 0
+    }
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Boucle while -->
+                    <div class="lecon-section">
+                        <h3>🔄 5.2 La boucle while</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    $i = 0;
+    
+    while ($i < 5) {
+        echo "i = $i<br>";
+        $i++;
+    }
+    
+    // Attention aux boucles infinies !
+    // while (true) {
+    //     echo "Infini !";
+    // }
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Boucle do...while -->
+                    <div class="lecon-section">
+                        <h3>🔁 5.3 La boucle do...while</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    $i = 0;
+    
+    do {
+        echo "i = $i<br>";
+        $i++;
+    } while ($i < 5);
+    
+    // S'exécute au moins une fois
+    $j = 10;
+    do {
+        echo "Ce message s'affiche quand même<br>";
+        $j++;
+    } while ($j < 5);
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Boucle foreach (pour tableaux) -->
+                    <div class="lecon-section">
+                        <h3>📚 5.4 La boucle foreach</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    $fruits = ["pomme", "banane", "orange"];
+    
+    foreach ($fruits as $fruit) {
+        echo "$fruit<br>";
+    }
+    
+    // Avec les index
+    foreach ($fruits as $index => $fruit) {
+        echo "$index : $fruit<br>";
+    }
+    
+    // Tableaux associatifs
+    $personne = [
+        "nom" => "Jean",
+        "age" => 25,
+        "ville" => "Antananarivo"
+    ];
+    
+    foreach ($personne as $cle => $valeur) {
+        echo "$cle : $valeur<br>";
+    }
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: break et continue -->
+                    <div class="lecon-section">
+                        <h3>⏹️ 5.5 break et continue</h3>
+
+                        <div class="code-block">
+                            <pre><span class="php"><?php
+    // break : sort de la boucle
+    for ($i = 0; $i < 10; $i++) {
+        if ($i == 5) {
+            break;  // Arrête à 5
+        }
+        echo "$i ";
+    }
+    // Affiche : 0 1 2 3 4
+    
+    // continue : passe à l'itération suivante
+    for ($i = 0; $i < 10; $i++) {
+        if ($i % 2 == 0) {
+            continue;  // Saute les pairs
+        }
+        echo "$i ";  // Affiche : 1 3 5 7 9
+    }
+?></span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 5.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Table de multiplication</h4>
+                            <p><strong>Objectif :</strong> Afficher la table de multiplication d'un nombre.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Choisissez un nombre (ex: 7)</li>
+                                    <li>Utilisez une boucle for pour afficher la table de 1 à 10</li>
+                                    <li>Affichez "7 x 1 = 7", "7 x 2 = 14", etc.</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Somme des nombres</h4>
+                            <p><strong>Objectif :</strong> Calculer la somme des nombres de 1 à 100.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Initialisez <code>$somme = 0</code></li>
+                                    <li>Utilisez une boucle for pour ajouter chaque nombre</li>
+                                    <li>Affichez le résultat (5050)</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== EXERCICES RÉCAPITULATIFS ===== -->
+            <section class="exercices-recap">
+                <h2 class="section-title">🏆 Projet récapitulatif (Leçons 1-5)</h2>
+
+                <div class="recap-card">
+                    <h3>Créez un mini-jeu de devinettes en PHP</h3>
+                    <p>Utilisez toutes les notions apprises.</p>
+
+                    <h4>Instructions :</h4>
+                    <ol>
+                        <li>Le programme choisit un nombre aléatoire entre 1 et 100</li>
+                        <li>L'utilisateur doit deviner le nombre</li>
+                        <li>À chaque essai, on indique si c'est plus ou moins</li>
+                        <li>On compte le nombre d'essais</li>
+                        <li>Quand l'utilisateur trouve, on affiche un message de félicitations</li>
+                    </ol>
+
+                    <h4>Fonctions utiles :</h4>
+                    <ul>
+                        <li><code>rand(1, 100)</code> : nombre aléatoire</li>
+                        <li>Pour les formulaires, on verra dans les prochaines leçons</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <span class="pagination-prev disabled"><i class="fas fa-arrow-left"></i> Début</span>
+                <div class="pagination-links">
+                    <a href="php1.html" class="active">1</a>
+                    <a href="php2.html">2</a>
+                    <a href="php3.html">3</a>
+                    <a href="php4.html">4</a>
+                </div>
+                <a href="php2.html" class="pagination-next">Leçons 6-10 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+  </html>
+  
