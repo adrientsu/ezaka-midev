@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Master - Leçons 11 à 16</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="3.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">{ }</span>
+                    <div class="logo-text">
+                        <span class="logo-main">CSS MASTER</span>
+                        <span class="logo-sub">Leçons 11 à 16 : Animation et effets</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 11-16 sur 20</span>
+                <span class="progress-percent">80%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%"></div>
+            </div>
+            <div class="progress-nav">
+                <a href="2.html" class="progress-prev"><i class="fas fa-arrow-left"></i> Leçons 6-10</a>
+                <span class="progress-current">Leçons 11-16</span>
+                <a href="4.html" class="progress-next">Leçons 17-20 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 11-16 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 11 à 16 : Animation et effets</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon11" class="sommaire-card">
+                    <span class="lecon-numero">11</span>
+                    <h3>Transitions</h3>
+                    <p>transition-property, duration, timing</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon12" class="sommaire-card">
+                    <span class="lecon-numero">12</span>
+                    <h3>Transformations 2D</h3>
+                    <p>rotate, scale, translate, skew</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon13" class="sommaire-card">
+                    <span class="lecon-numero">13</span>
+                    <h3>Transformations 3D</h3>
+                    <p>perspective, rotate3d, translate3d</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon14" class="sommaire-card">
+                    <span class="lecon-numero">14</span>
+                    <h3>Animations CSS</h3>
+                    <p>@keyframes, animation-name, duration</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                </a>
+                <a href="#lecon15" class="sommaire-card">
+                    <span class="lecon-numero">15</span>
+                    <h3>Filtres et effets</h3>
+                    <p>blur, brightness, contrast, drop-shadow</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                </a>
+                <a href="#lecon16" class="sommaire-card">
+                    <span class="lecon-numero">16</span>
+                    <h3>Variables CSS</h3>
+                    <p>custom properties, var(), portée</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 11 : TRANSITIONS ===== -->
+            <article class="lecon" id="lecon11">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 11</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">🔄 Les transitions CSS</h2>
+                    <p class="lecon-description">Animer les changements d'état en douceur</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🎬 11.1 Qu'est-ce qu'une transition ?</h3>
+
+                        <div class="definition-box">
+                            <p>Les <strong>transitions CSS</strong> permettent de changer progressivement la valeur d'une propriété CSS sur une durée donnée. Au lieu de passer instantanément d'un état à un autre, on obtient un mouvement fluide.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Principe :</strong> Une transition est un changement d'état (souvent au survol, au focus, ou lors de l'ajout/suppression d'une classe) qui se fait progressivement.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Syntaxe de base -->
+                    <div class="lecon-section">
+                        <h3>📝 11.2 Syntaxe de base</h3>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">transition-property</span>: <span class="value">all</span>;        <span class="comment">/* Propriété à animer (ou all) */</span>
+    <span class="property">transition-duration</span>: <span class="value">0.3s</span>;      <span class="comment">/* Durée de l'animation */</span>
+    <span class="property">transition-timing-function</span>: <span class="value">ease</span>; <span class="comment">/* Courbe d'accélération */</span>
+    <span class="property">transition-delay</span>: <span class="value">0s</span>;            <span class="comment">/* Délai avant démarrage */</span>
+    
+    <span class="comment">/* Raccourci */</span>
+    <span class="property">transition</span>: <span class="value">all 0.3s ease 0s</span>;
+    <span class="property">transition</span>: <span class="value">background-color 0.3s ease</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple simple :</h4>
+                            <div style="display: flex; gap: 20px; align-items: center;">
+                                <div style="width: 100px; height: 100px; background: #FF7A45; transition: all 0.3s; display: flex; align-items: center; justify-content: center; color: white; border-radius: 5px;" 
+                                     onmouseover="this.style.background='#1F2D3D'; this.style.transform='scale(1.1)';" 
+                                     onmouseout="this.style.background='#FF7A45'; this.style.transform='scale(1)'">
+                                    Survolez
+                                </div>
+                                <p>La boîte change de couleur et s'agrandit en douceur au survol.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: transition-property -->
+                    <div class="lecon-section">
+                        <h3>🎯 11.3 transition-property</h3>
+
+                        <p>Définit quelle(s) propriété(s) seront animées.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Une seule propriété */</span>
+<span class="selector">.bouton</span> {
+    <span class="property">transition-property</span>: <span class="value">background-color</span>;
+    <span class="property">transition-duration</span>: <span class="value">0.3s</span>;
+}
+
+<span class="comment">/* Plusieurs propriétés (séparées par des virgules) */</span>
+<span class="selector">.bouton</span> {
+    <span class="property">transition-property</span>: <span class="value">background-color, transform, box-shadow</span>;
+    <span class="property">transition-duration</span>: <span class="value">0.3s, 0.5s, 0.2s</span>;
+}
+
+<span class="comment">/* Toutes les propriétés */</span>
+<span class="selector">.bouton</span> {
+    <span class="property">transition</span>: <span class="value">all 0.3s ease</span>;
+}</pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> N'animez que les propriétés qui peuvent être animées (couleurs, dimensions, positions, transformations). Évitez d'animer `width`, `height`, `margin`, `padding` qui peuvent causer des repositionnements coûteux.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: transition-duration -->
+                    <div class="lecon-section">
+                        <h3>⏱️ 11.4 transition-duration</h3>
+
+                        <p>Définit la durée de l'animation, en secondes (s) ou millisecondes (ms).</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.rapide</span> {
+    <span class="property">transition</span>: <span class="value">all 0.1s ease</span>;  <span class="comment">/* Très rapide */</span>
+}
+
+<span class="selector">.normal</span> {
+    <span class="property">transition</span>: <span class="value">all 0.3s ease</span>;  <span class="comment">/* Vitesse standard */</span>
+}
+
+<span class="selector">.lent</span> {
+    <span class="property">transition</span>: <span class="value">all 1s ease</span>;    <span class="comment">/* Lent */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Comparaison des durées :</h4>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                                <div style="width: 80px; height: 80px; background: #FF7A45; transition: all 0.1s; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white;"
+                                     onmouseover="this.style.transform='rotate(45deg)'" onmouseout="this.style.transform='rotate(0)'">0.1s</div>
+                                <div style="width: 80px; height: 80px; background: #1F2D3D; transition: all 0.3s; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white;"
+                                     onmouseover="this.style.transform='rotate(45deg)'" onmouseout="this.style.transform='rotate(0)'">0.3s</div>
+                                <div style="width: 80px; height: 80px; background: #6B7280; transition: all 1s; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white;"
+                                     onmouseover="this.style.transform='rotate(45deg)'" onmouseout="this.style.transform='rotate(0)'">1s</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: transition-timing-function -->
+                    <div class="lecon-section">
+                        <h3>📈 11.5 transition-timing-function</h3>
+
+                        <p>Contrôle la vitesse de l'animation au cours du temps (courbe d'accélération).</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Valeur</th>
+                                    <th>Description</th>
+                                    <th>Courbe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>ease</code></td><td>Départ lent, accélère, ralentit à la fin (défaut)</td><td>cubic-bezier(0.25,0.1,0.25,1)</td></tr>
+                                <tr><td><code>linear</code></td><td>Vitesse constante</td><td>cubic-bezier(0,0,1,1)</td></tr>
+                                <tr><td><code>ease-in</code></td><td>Départ lent, accélère</td><td>cubic-bezier(0.42,0,1,1)</td></tr>
+                                <tr><td><code>ease-out</code></td><td>Départ rapide, ralentit à la fin</td><td>cubic-bezier(0,0,0.58,1)</td></tr>
+                                <tr><td><code>ease-in-out</code></td><td>Départ et fin lents, accélère au milieu</td><td>cubic-bezier(0.42,0,0.58,1)</td></tr>
+                                <tr><td><code>cubic-bezier(n,n,n,n)</code></td><td>Courbe personnalisée</td><td>-</td></tr>
+                                <tr><td><code>steps(n)</code></td><td>Animation par paliers (pour animations en stop-motion)</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Comparaison visuelle :</h4>
+                            <div style="background: #f0f0f0; padding: 20px;">
+                                <div style="margin: 10px 0;">
+                                    <div style="background: #FF7A45; width: 50px; height: 30px; border-radius: 5px; transition: margin-left 1s linear;"
+                                         onmouseover="this.style.marginLeft='300px'" onmouseout="this.style.marginLeft='0'">linear</div>
+                                </div>
+                                <div style="margin: 10px 0;">
+                                    <div style="background: #1F2D3D; width: 50px; height: 30px; border-radius: 5px; transition: margin-left 1s ease; color: white; padding-left: 5px;"
+                                         onmouseover="this.style.marginLeft='300px'" onmouseout="this.style.marginLeft='0'">ease</div>
+                                </div>
+                                <div style="margin: 10px 0;">
+                                    <div style="background: #6B7280; width: 50px; height: 30px; border-radius: 5px; transition: margin-left 1s ease-in; color: white; padding-left: 5px;"
+                                         onmouseover="this.style.marginLeft='300px'" onmouseout="this.style.marginLeft='0'">ease-in</div>
+                                </div>
+                                <div style="margin: 10px 0;">
+                                    <div style="background: #FF7A45; width: 50px; height: 30px; border-radius: 5px; transition: margin-left 1s ease-out;"
+                                         onmouseover="this.style.marginLeft='300px'" onmouseout="this.style.marginLeft='0'">ease-out</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Cubic-bezier personnalisé :</h4>
+                        <div class="code-block">
+                            <pre><span class="selector">.rebond</span> {
+    <span class="property">transition-timing-function</span>: <span class="value">cubic-bezier(0.68, -0.55, 0.27, 1.55)</span>;
+    <span class="comment">/* Effet de rebond */</span>
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: transition-delay -->
+                    <div class="lecon-section">
+                        <h3>⏰ 11.6 transition-delay</h3>
+
+                        <p>Définit un délai avant le début de l'animation.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.avec-delai</span> {
+    <span class="property">transition</span>: <span class="value">all 0.5s ease 0.2s</span>;  <span class="comment">/* Attend 0.2s avant de commencer */</span>
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Transitions multiples -->
+                    <div class="lecon-section">
+                        <h3>🎭 11.7 Transitions multiples</h3>
+
+                        <p>On peut avoir des transitions différentes pour différentes propriétés.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.bouton</span> {
+    <span class="property">background-color</span>: <span class="value">#FF7A45</span>;
+    <span class="property">transform</span>: <span class="value">scale(1)</span>;
+    
+    <span class="property">transition-property</span>: <span class="value">background-color, transform</span>;
+    <span class="property">transition-duration</span>: <span class="value">0.3s, 0.5s</span>;
+    <span class="property">transition-timing-function</span>: <span class="value">ease, ease-out</span>;
+    <span class="property">transition-delay</span>: <span class="value">0s, 0.1s</span>;
+    
+    <span class="comment">/* Raccourci */</span>
+    <span class="property">transition</span>: <span class="value">background-color 0.3s ease 0s, transform 0.5s ease-out 0.1s</span>;
+}
+
+<span class="selector">.bouton:hover</span> {
+    <span class="property">background-color</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">transform</span>: <span class="value">scale(1.1)</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 8: Propriétés animables -->
+                    <div class="lecon-section">
+                        <h3>📋 11.8 Quelles propriétés peut-on animer ?</h3>
+
+                        <p>Toutes les propriétés qui ont des valeurs intermédiaires possibles :</p>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>✅ Animables :</h4>
+                                <ul>
+                                    <li>Couleurs (color, background-color, border-color)</li>
+                                    <li>Dimensions (width, height, font-size)</li>
+                                    <li>Positions (top, right, bottom, left)</li>
+                                    <li>Transformations (transform, rotate, scale)</li>
+                                    <li>Opacité (opacity)</li>
+                                    <li>Filtres (filter)</li>
+                                    <li>Box-shadow, text-shadow</li>
+                                    <li>Flexbox (flex-grow, flex-shrink)</li>
+                                    <li>Grid (grid-template-columns, grid-gap)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>❌ Non animables :</h4>
+                                <ul>
+                                    <li>display (pas de valeurs intermédiaires)</li>
+                                    <li>font-family (pas de transition)</li>
+                                    <li>visibility (peut être animé avec une astuce)</li>
+                                    <li>overflow</li>
+                                    <li>position</li>
+                                    <li>z-index</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                 <!-- SECTION 9: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 11.9 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Bouton animé</h4>
+                            <p><strong>Objectif :</strong> Créer un bouton avec plusieurs transitions.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un bouton avec background orange (#FF7A45)</li>
+                                    <li>Au survol : change de couleur (#1F2D3D), s'agrandit (scale 1.1), ajoute une ombre</li>
+                                    <li>La couleur change en 0.3s, l'agrandissement en 0.5s</li>
+                                    <li>Utilisez ease-out pour l'agrandissement</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Carte qui se révèle</h4>
+                            <p><strong>Objectif :</strong> Créer une carte avec des informations qui apparaissent au survol.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une carte avec une image et un texte</li>
+                                    <li>Le texte est caché (opacity: 0) par défaut</li>
+                                    <li>Au survol, le texte apparaît avec une transition sur opacity</li>
+                                    <li>Ajoutez un délai de 0.2s</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 12 : TRANSFORMATIONS 2D ===== -->
+            <article class="lecon" id="lecon12">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 12</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">🔄 Transformations 2D</h2>
+                    <p class="lecon-description">rotate, scale, translate, skew</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔧 12.1 Qu'est-ce que transform ?</h3>
+
+                        <div class="definition-box">
+                            <p>La propriété <code>transform</code> permet de modifier la position, la taille, la rotation et l'inclinaison d'un élément, sans affecter la disposition des autres éléments.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Important :</strong> Les transformations sont appliquées après la mise en page. L'élément conserve son espace d'origine dans le flux (contrairement à position qui peut le sortir du flux).
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: translate (déplacement) -->
+                    <div class="lecon-section">
+                        <h3>📏 12.2 translate (déplacement)</h3>
+
+                        <p>Déplace un élément de sa position d'origine.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="comment">/* Déplacement horizontal */</span>
+    <span class="property">transform</span>: <span class="value">translateX(50px)</span>;
+    
+    <span class="comment">/* Déplacement vertical */</span>
+    <span class="property">transform</span>: <span class="value">translateY(30px)</span>;
+    
+    <span class="comment">/* Déplacement horizontal et vertical */</span>
+    <span class="property">transform</span>: <span class="value">translate(50px, 30px)</span>;
+    
+    <span class="comment">/* Pourcentages (relatifs à la taille de l'élément) */</span>
+    <span class="property">transform</span>: <span class="value">translate(50%, 20%)</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple :</h4>
+                            <div style="display: flex; gap: 50px; background: #f0f0f0; padding: 20px; position: relative; height: 100px;">
+                                <div style="width: 80px; height: 80px; background: #FF7A45; border-radius: 5px; display: flex; align-items: center; justify-content: center;">Original</div>
+                                <div style="width: 80px; height: 80px; background: #1F2D3D; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; transform: translate(20px, 10px);">Translate</div>
+                            </div>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> translate(50%, 50%) permet de décaler un élément de la moitié de sa propre taille. Très utile pour centrer avec position absolute !</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: rotate (rotation) -->
+                    <div class="lecon-section">
+                        <h3>🔄 12.3 rotate (rotation)</h3>
+
+                        <p>Fait pivoter un élément autour de son centre (par défaut).</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="comment">/* Rotation en degrés */</span>
+    <span class="property">transform</span>: <span class="value">rotate(45deg)</span>;   <span class="comment">/* Sens horaire */</span>
+    <span class="property">transform</span>: <span class="value">rotate(-30deg)</span>;  <span class="comment">/* Sens anti-horaire */</span>
+    
+    <span class="comment">/* Autres unités possibles */</span>
+    <span class="property">transform</span>: <span class="value">rotate(0.5turn)</span>;  <span class="comment">/* 0.5 tour = 180deg */</span>
+    <span class="property">transform</span>: <span class="value">rotate(3.1416rad)</span>; <span class="comment">/* Radians */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples :</h4>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                                <div style="width: 80px; height: 80px; background: #FF7A45; border-radius: 5px; display: flex; align-items: center; justify-content: center; transform: rotate(15deg);">15°</div>
+                                <div style="width: 80px; height: 80px; background: #1F2D3D; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; transform: rotate(45deg);">45°</div>
+                                <div style="width: 80px; height: 80px; background: #6B7280; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; transform: rotate(90deg);">90°</div>
+                                <div style="width: 80px; height: 80px; background: #FF7A45; border-radius: 5px; display: flex; align-items: center; justify-content: center; transform: rotate(-20deg);">-20°</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: scale (mise à l'échelle) -->
+                    <div class="lecon-section">
+                        <h3>📊 12.4 scale (mise à l'échelle)</h3>
+
+                        <p>Agrandit ou rétrécit un élément.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="comment">/* Facteur d'échelle uniforme */</span>
+    <span class="property">transform</span>: <span class="value">scale(1.5)</span>;     <span class="comment">/* Agrandit de 50% */</span>
+    <span class="property">transform</span>: <span class="value">scale(0.5)</span>;     <span class="comment">/* Réduit de moitié */</span>
+    
+    <span class="comment">/* Échelle différente horizontalement et verticalement */</span>
+    <span class="property">transform</span>: <span class="value">scale(1.5, 0.8)</span>;  <span class="comment">/* Largeur x1.5, hauteur x0.8 */</span>
+    
+    <span class="comment">/* Fonctions séparées */</span>
+    <span class="property">transform</span>: <span class="value">scaleX(2)</span>;      <span class="comment">/* Étire horizontalement */</span>
+    <span class="property">transform</span>: <span class="value">scaleY(1.5)</span>;     <span class="comment">/* Étire verticalement */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples :</h4>
+                            <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+                                <div style="width: 80px; height: 80px; background: #FF7A45; border-radius: 5px; display: flex; align-items: center; justify-content: center;">scale(1)</div>
+                                <div style="width: 80px; height: 80px; background: #1F2D3D; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; transform: scale(1.2);">scale(1.2)</div>
+                                <div style="width: 80px; height: 80px; background: #6B7280; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; transform: scale(0.8);">scale(0.8)</div>
+                                <div style="width: 80px; height: 80px; background: #FF7A45; border-radius: 5px; display: flex; align-items: center; justify-content: center; transform: scale(1.5, 0.8);">scale(1.5,0.8)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: skew (inclinaison) -->
+                    <div class="lecon-section">
+                        <h3>📐 12.5 skew (inclinaison)</h3>
+
+                        <p>Incline un élément sur l'axe horizontal ou vertical.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="comment">/* Inclinaison horizontale */</span>
+    <span class="property">transform</span>: <span class="value">skewX(20deg)</span>;
+    
+    <span class="comment">/* Inclinaison verticale */</span>
+    <span class="property">transform</span>: <span class="value">skewY(15deg)</span>;
+    
+    <span class="comment">/* Inclinaison horizontale et verticale */</span>
+    <span class="property">transform</span>: <span class="value">skew(20deg, 10deg)</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples :</h4>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                                <div style="width: 80px; height: 80px; background: #FF7A45; border-radius: 5px; display: flex; align-items: center; justify-content: center;">Normal</div>
+                                <div style="width: 80px; height: 80px; background: #1F2D3D; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; transform: skewX(15deg);">skewX(15°)</div>
+                                <div style="width: 80px; height: 80px; background: #6B7280; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; transform: skewY(15deg);">skewY(15°)</div>
+                                <div style="width: 80px; height: 80px; background: #FF7A45; border-radius: 5px; display: flex; align-items: center; justify-content: center; transform: skew(15deg, 10deg);">skew(15°,10°)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Combinaisons et origine -->
+                    <div class="lecon-section">
+                        <h3>🔗 12.6 Combiner plusieurs transformations</h3>
+
+                        <p>On peut appliquer plusieurs transformations à la fois, dans l'ordre donné.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="comment">/* L'ordre compte ! */</span>
+    <span class="property">transform</span>: <span class="value">translate(50px, 30px) rotate(45deg) scale(1.2)</span>;
+}</pre>
+                        </div>
+
+                        <h4>transform-origin (origine de la transformation)</h4>
+                        <p>Change le point d'origine des transformations (par défaut, le centre).</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="comment">/* Mots-clés */</span>
+    <span class="property">transform-origin</span>: <span class="value">top left</span>;
+    <span class="property">transform-origin</span>: <span class="value">center</span>;    <span class="comment">/* Par défaut */</span>
+    <span class="property">transform-origin</span>: <span class="value">right bottom</span>;
+    
+    <span class="comment">/* Coordonnées */</span>
+    <span class="property">transform-origin</span>: <span class="value">50% 50%</span>;    <span class="comment">/* Centre */</span>
+    <span class="property">transform-origin</span>: <span class="value">0 0</span>;          <span class="comment">/* Coin supérieur gauche */</span>
+    <span class="property">transform-origin</span>: <span class="value">100% 100%</span>;    <span class="comment">/* Coin inférieur droit */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Différence d'origine :</h4>
+                            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                                <div style="text-align: center;">
+                                    <div style="width: 80px; height: 80px; background: #FF7A45; border-radius: 5px; display: flex; align-items: center; justify-content: center; transform: rotate(30deg); transform-origin: center;">Centre</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="width: 80px; height: 80px; background: #1F2D3D; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; transform: rotate(30deg); transform-origin: top left;">Top left</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 12.7 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Image qui bouge</h4>
+                            <p><strong>Objectif :</strong> Créer une image qui se déplace et pivote au survol.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une image (ou une boîte) de 150x150px</li>
+                                    <li>Au survol : translate(20px, -10px) et rotate(5deg)</li>
+                                    <li>Ajoutez une transition pour que ce soit fluide</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Carte 3D</h4>
+                            <p><strong>Objectif :</strong> Créer une carte qui s'incline au survol.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une carte avec background et ombre</li>
+                                    <li>Au survol : scale(1.05) et rotate(2deg)</li>
+                                    <li>L'origine de rotation doit être le centre</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  </article>
+                          <!-- ===== LEÇON 13 : TRANSFORMATIONS 3D ===== -->
+            <article class="lecon" id="lecon13">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 13</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">🎲 Transformations 3D</h2>
+                    <p class="lecon-description">Perspective, rotations 3D, translate3d</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction à la 3D -->
+                    <div class="lecon-section">
+                        <h3>🔮 13.1 La troisième dimension</h3>
+
+                        <div class="definition-box">
+                            <p>Les transformations 3D ajoutent un axe Z (profondeur) aux axes X (horizontal) et Y (vertical) des transformations 2D.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Principe :</strong> Pour créer un effet 3D réaliste, il faut :
+                                <ul>
+                                    <li>Définir une perspective (point de fuite)</li>
+                                    <li>Appliquer des transformations 3D (rotateX, rotateY, translateZ)</li>
+                                    <li>Parfois, activer le rendu 3D des faces (transform-style)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: perspective -->
+                    <div class="lecon-section">
+                        <h3>👁️ 13.2 La perspective</h3>
+
+                        <p>La perspective définit la distance entre le spectateur et le plan de l'écran. Une petite valeur donne un effet plus prononcé.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">/* Sur le conteneur parent */</span>
+<span class="selector">.scene</span> {
+    <span class="property">perspective</span>: <span class="value">800px</span>;    <span class="comment">/* Distance du spectateur */</span>
+    <span class="property">perspective-origin</span>: <span class="value">center</span>;  <span class="comment">/* Point de vue */</span>
+}
+
+<span class="selector">.cube</span> {
+    <span class="property">transform</span>: <span class="value">rotateY(45deg)</span>;
+}
+
+<span class="comment">/* Ou directement sur l'élément (moins réaliste) */</span>
+<span class="selector">.element</span> {
+    <span class="property">transform</span>: <span class="value">perspective(800px) rotateY(45deg)</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Effet de perspective :</h4>
+                            <div style="display: flex; gap: 30px; justify-content: center;">
+                                <div style="text-align: center;">
+                                    <p>Sans perspective :</p>
+                                    <div style="width: 100px; height: 100px; background: #FF7A45; transform: rotateY(45deg);">rotateY(45°)</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <p>Avec perspective (400px) :</p>
+                                    <div style="width: 100px; height: 100px; background: #1F2D3D; color: white; transform: perspective(400px) rotateY(45deg);">rotateY(45°)</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <p>Avec perspective (200px) :</p>
+                                    <div style="width: 100px; height: 100px; background: #6B7280; color: white; transform: perspective(200px) rotateY(45deg);">rotateY(45°)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Rotations 3D -->
+                    <div class="lecon-section">
+                        <h3>🔄 13.3 Rotations 3D</h3>
+
+                        <p>On peut pivoter autour des axes X, Y et Z.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="comment">/* Rotation autour de X (horizontal) */</span>
+    <span class="property">transform</span>: <span class="value">rotateX(45deg)</span>;  <span class="comment">/* Bascule vers l'avant/arrière */</span>
+    
+    <span class="comment">/* Rotation autour de Y (vertical) */</span>
+    <span class="property">transform</span>: <span class="value">rotateY(45deg)</span>;  <span class="comment">/* Tourne comme une porte */</span>
+    
+    <span class="comment">/* Rotation autour de Z (identique à rotate 2D) */</span>
+    <span class="property">transform</span>: <span class="value">rotateZ(45deg)</span>;
+    
+    <span class="comment">/* Combinaison */</span>
+    <span class="property">transform</span>: <span class="value">rotateX(30deg) rotateY(45deg)</span>;
+    
+    <span class="comment">/* Raccourci 3D */</span>
+    <span class="property">transform</span>: <span class="value">rotate3d(1, 1, 0, 45deg)</span>;  <span class="comment">/* Vecteur (x,y,z) + angle */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples de rotations 3D :</h4>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                                <div style="width: 100px; height: 100px; background: #FF7A45; transform: perspective(400px) rotateX(30deg); display: flex; align-items: center; justify-content: center;">rotateX</div>
+                                <div style="width: 100px; height: 100px; background: #1F2D3D; color: white; transform: perspective(400px) rotateY(30deg); display: flex; align-items: center; justify-content: center;">rotateY</div>
+                                <div style="width: 100px; height: 100px; background: #6B7280; color: white; transform: perspective(400px) rotateX(20deg) rotateY(30deg); display: flex; align-items: center; justify-content: center;">rotateX+Y</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: translate3d et translateZ -->
+                    <div class="lecon-section">
+                        <h3>📏 13.4 translate3d et translateZ</h3>
+
+                        <p>Déplacement sur l'axe Z (profondeur).</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="comment">/* Déplacement sur Z (rapproche ou éloigne) */</span>
+    <span class="property">transform</span>: <span class="value">translateZ(50px)</span>;   <span class="comment">/* Rapproche */</span>
+    <span class="property">transform</span>: <span class="value">translateZ(-50px)</span>;  <span class="comment">/* Éloigne */</span>
+    
+    <span class="comment">/* Déplacement sur X, Y, et Z */</span>
+    <span class="property">transform</span>: <span class="value">translate3d(20px, 30px, 50px)</span>;
+    
+    <span class="comment">/* Combinaison avec perspective */</span>
+    <span class="property">transform</span>: <span class="value">perspective(400px) translateZ(100px)</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Effet de profondeur :</h4>
+                            <div style="display: flex; gap: 20px; justify-content: center;">
+                                <div style="width: 100px; height: 100px; background: #FF7A45; transform: perspective(400px) translateZ(0); display: flex; align-items: center; justify-content: center;">Z:0</div>
+                                <div style="width: 100px; height: 100px; background: #1F2D3D; color: white; transform: perspective(400px) translateZ(50px); display: flex; align-items: center; justify-content: center;">Z:50px</div>
+                                <div style="width: 100px; height: 100px; background: #6B7280; color: white; transform: perspective(400px) translateZ(100px); display: flex; align-items: center; justify-content: center;">Z:100px</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: transform-style -->
+                    <div class="lecon-section">
+                        <h3>🧊 13.5 transform-style (préserver la 3D)</h3>
+
+                        <p>Permet aux enfants d'un élément 3D de conserver leur position dans l'espace 3D.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.parent</span> {
+    <span class="property">transform-style</span>: <span class="value">preserve-3d</span>;   <span class="comment">/* Les enfants sont en 3D */</span>
+    <span class="property">transform-style</span>: <span class="value">flat</span>;            <span class="comment">/* Par défaut, aplatit les enfants */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Sans preserve-3d vs avec :</h4>
+                            <div style="display: flex; gap: 30px;">
+                                <div>
+                                    <p>flat (aplati) :</p>
+                                    <div style="width: 150px; height: 150px; background: #FF7A45; transform: rotateY(30deg); transform-style: flat; padding: 20px;">
+                                        <div style="width: 100%; height: 100%; background: #1F2D3D; transform: rotateX(30deg);"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>preserve-3d :</p>
+                                    <div style="width: 150px; height: 150px; background: #FF7A45; transform: rotateY(30deg); transform-style: preserve-3d; padding: 20px;">
+                                        <div style="width: 100%; height: 100%; background: #1F2D3D; transform: rotateX(30deg);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: backface-visibility -->
+                    <div class="lecon-section">
+                        <h3>🔄 13.6 backface-visibility</h3>
+
+                        <p>Contrôle si la face arrière d'un élément est visible quand il est tourné.</p>
+
+                        <div class="code-block">
+                           <pre><span class="selector">.carte</span> {
+    <span class="property">backface-visibility</span>: <span class="value">hidden</span>;   <span class="comment">/* Cache la face arrière */</span>
+    <span class="property">backface-visibility</span>: <span class="value">visible</span>;  <span class="comment">/* Par défaut */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple :</h4>
+                            <div style="display: flex; gap: 30px;">
+                                <div>
+                                    <p>visible :</p>
+                                    <div style="width: 100px; height: 100px; background: #FF7A45; transform: rotateY(180deg);">Face arrière visible</div>
+                                </div>
+                                <div>
+                                    <p>hidden :</p>
+                                    <div style="width: 100px; height: 100px; background: #1F2D3D; color: white; transform: rotateY(180deg); backface-visibility: hidden;">Caché</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 13.7 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Carte qui pivote</h4>
+                            <p><strong>Objectif :</strong> Créer une carte qui pivote sur l'axe Y au survol.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une carte de 200x300px</li>
+                                    <li>Ajoutez une perspective sur le conteneur</li>
+                                    <li>Au survol, la carte pivote de 10deg sur rotateY</li>
+                                    <li>Ajoutez une transition fluide</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Cube simple</h4>
+                            <p><strong>Objectif :</strong> Créer un cube 3D basique.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un conteneur avec perspective</li>
+                                    <li>Créez 6 faces (div) avec des couleurs différentes</li>
+                                    <li>Positionnez-les en 3D pour former un cube</li>
+                                    <li>Faites tourner le cube</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 14 : ANIMATIONS CSS ===== -->
+            <article class="lecon" id="lecon14">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 14</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">🎬 Animations CSS</h2>
+                    <p class="lecon-description">@keyframes, animation-name, duration, iteration</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🎞️ 14.1 Différence entre transition et animation</h3>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>Transitions</h4>
+                                <ul>
+                                    <li>Nécessitent un changement d'état (hover, focus)</li>
+                                    <li>Un seul aller-retour possible</li>
+                                    <li>Simples à mettre en place</li>
+                                    <li>Idéales pour les micro-interactions</li>
+                                </ul>
+                            </div>
+                            <div class="carte-type">
+                                <h4>Animations</h4>
+                                <ul>
+                                    <li>Peuvent démarrer automatiquement</li>
+                                    <li>Plusieurs étapes (keyframes)</li>
+                                    <li>Répétitions possibles</li>
+                                    <li>Contrôle plus fin</li>
+                                    <li>Idéales pour les effets visuels complexes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: @keyframes -->
+                    <div class="lecon-section">
+                        <h3>🎯 14.2 @keyframes (étapes de l'animation)</h3>
+
+                        <p>Définit les étapes de l'animation avec des pourcentages ou des mots-clés.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">@keyframes</span> nom-animation {
+    <span class="comment">/* Étapes avec pourcentages */</span>
+    <span class="value">0%</span> {
+        <span class="property">opacity</span>: <span class="value">0</span>;
+        <span class="property">transform</span>: <span class="value">translateX(-100px)</span>;
+    }
+    <span class="value">50%</span> {
+        <span class="property">opacity</span>: <span class="value">0.5</span>;
+        <span class="property">transform</span>: <span class="value">translateX(50px)</span>;
+    }
+    <span class="value">100%</span> {
+        <span class="property">opacity</span>: <span class="value">1</span>;
+        <span class="property">transform</span>: <span class="value">translateX(0)</span>;
+    }
+}
+
+<span class="comment">/* Mots-clés from et to (équivalent à 0% et 100%) */</span>
+<span class="keyword">@keyframes</span> apparition {
+    <span class="value">from</span> {
+        <span class="property">opacity</span>: <span class="value">0</span>;
+    }
+    <span class="value">to</span> {
+        <span class="property">opacity</span>: <span class="value">1</span>;
+    }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: animation-name et animation-duration -->
+                    <div class="lecon-section">
+                        <h3>📝 14.3 animation-name et animation-duration</h3>
+
+                        <p>Applique l'animation à un élément.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">animation-name</span>: <span class="value">apparition</span>;      <span class="comment">/* Nom de l'animation */</span>
+    <span class="property">animation-duration</span>: <span class="value">2s</span>;          <span class="comment">/* Durée */</span>
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Animation simple :</h4>
+                            <style>
+                                @keyframes demo-apparition {
+                                    from { opacity: 0; transform: scale(0.5); }
+                                    to { opacity: 1; transform: scale(1); }
+                                }
+                                .demo-anim {
+                                    animation: demo-apparition 1s;
+                                }
+                            </style>
+                            <div class="demo-anim" style="width: 100px; height: 100px; background: #FF7A45; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                                Animation
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: animation-iteration-count -->
+                    <div class="lecon-section">
+                        <h3>🔄 14.4 animation-iteration-count (répétitions)</h3>
+
+                        <p>Nombre de répétitions de l'animation.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">animation-iteration-count</span>: <span class="value">1</span>;        <span class="comment">/* Une seule fois (défaut) */</span>
+    <span class="property">animation-iteration-count</span>: <span class="value">3</span>;        <span class="comment">/* 3 fois */</span>
+    <span class="property">animation-iteration-count</span>: <span class="value">infinite</span>;   <span class="comment">/* Infini */</span>
+}</pre>
+                        </div>
+
+                        <style>
+                            @keyframes demo-clignote {
+                                0% { opacity: 1; }
+                                50% { opacity: 0.2; }
+                                100% { opacity: 1; }
+                            }
+                            .demo-infinite {
+                                animation: demo-clignote 1s infinite;
+                            }
+                        </style>
+                        <div class="demo-infinite" style="width: 100px; height: 100px; background: #1F2D3D; color: white; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
+                            Infini
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: animation-direction -->
+                    <div class="lecon-section">
+                        <h3>↔️ 14.5 animation-direction</h3>
+
+                        <p>Direction de l'animation.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Valeur</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>normal</code></td><td>0% → 100% (défaut)</td></tr>
+                                <tr><td><code>reverse</code></td><td>100% → 0% (inverse)</td></tr>
+                                <tr><td><code>alternate</code></td><td>0% → 100% puis 100% → 0% (aller-retour)</td></tr>
+                                <tr><td><code>alternate-reverse</code></td><td>Inverse puis normal</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">animation</span>: <span class="value">mouvement 2s infinite alternate</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: animation-timing-function -->
+                    <div class="lecon-section">
+                        <h3>📈 14.6 animation-timing-function</h3>
+                                          <p>Mêmes valeurs que pour les transitions (ease, linear, etc.).</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">animation</span>: <span class="value">mouvement 2s ease-in-out infinite</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: animation-delay -->
+                    <div class="lecon-section">
+                        <h3>⏰ 14.7 animation-delay</h3>
+
+                        <p>Délai avant le début de l'animation (peut être négatif !).</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">animation-delay</span>: <span class="value">1s</span>;    <span class="comment">/* Commence après 1s */</span>
+    <span class="property">animation-delay</span>: <span class="value">-1s</span>;   <span class="comment">/* Commence à 1s dans l'animation */</span>
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 8: animation-fill-mode -->
+                    <div class="lecon-section">
+                        <h3>⏯️ 14.8 animation-fill-mode</h3>
+
+                        <p>Définit le style de l'élément avant/après l'animation.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Valeur</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>none</code></td><td>Retour à l'état initial après l'animation (défaut)</td></tr>
+                                <tr><td><code>forwards</code></td><td>Garde le style de la dernière keyframe</td></tr>
+                                <tr><td><code>backwards</code></td><td>Applique le style de la première keyframe pendant le délai</td></tr>
+                                <tr><td><code>both</code></td><td>Combinaison de forwards et backwards</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">animation</span>: <span class="value">apparition 2s forwards</span>;  <span class="comment">/* Reste visible */</span>
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 9: animation-play-state -->
+                    <div class="lecon-section">
+                        <h3>⏸️ 14.9 animation-play-state</h3>
+
+                        <p>Contrôle si l'animation est en cours ou en pause.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="property">animation</span>: <span class="value">rotation 3s infinite</span>;
+}
+
+<span class="selector">.element:hover</span> {
+    <span class="property">animation-play-state</span>: <span class="value">paused</span>;  <span class="comment">/* Met en pause au survol */</span>
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 10: animation (raccourci) -->
+                    <div class="lecon-section">
+                        <h3>📝 14.10 La propriété raccourcie animation</h3>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="comment">/* nom durée timing delay iteration direction fill-mode */</span>
+    <span class="property">animation</span>: <span class="value">monAnimation 2s ease 1s infinite alternate forwards</span>;
+    
+    <span class="comment">/* Plusieurs animations */</span>
+    <span class="property">animation</span>: <span class="value">anim1 2s ease, anim2 3s linear infinite</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 11: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 14.11 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Spinner de chargement</h4>
+                            <p><strong>Objectif :</strong> Créer un spinner de chargement avec une animation CSS.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un cercle avec border-radius: 50%</li>
+                                    <li>Ajoutez une bordure en haut de couleur différente</li>
+                                    <li>Animez la rotation avec @keyframes</li>
+                                    <li>L'animation doit être infinie</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Balle qui rebondit</h4>
+                            <p><strong>Objectif :</strong> Créer une balle qui rebondit.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une balle (cercle)</li>
+                                    <li>Animez sa position Y pour qu'elle rebondisse</li>
+                                    <li>Ajoutez un effet d'écrasement au sol (scaleY)</li>
+                                    <li>Utilisez ease-in/ease-out pour un effet réaliste</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Texte qui apparaît lettre par lettre</h4>
+                            <p><strong>Objectif :</strong> Créer un effet d'apparition de texte.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un texte "Bienvenue"</li>
+                                    <li>Animez l'opacité et la position</li>
+                                    <li>Faites apparaître les lettres une par une</li>
+                                    <li>Utilisez steps() pour un effet saccadé</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 15 : FILTRES ET EFFETS ===== -->
+            <article class="lecon" id="lecon15">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 15</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 30 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">✨ Filtres et effets</h2>
+                    <p class="lecon-description">blur, brightness, contrast, drop-shadow</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 15.1 La propriété filter</h3>
+
+                        <div class="definition-box">
+                            <p>La propriété <code>filter</code> permet d'appliquer des effets graphiques (flou, luminosité, contraste, etc.) à un élément, comme dans les logiciels de retouche d'image.</p>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Les différents filtres -->
+                    <div class="lecon-section">
+                        <h3>🎨 15.2 Les types de filtres</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Filtre</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>blur(px)</code></td>
+                                    <td>Flou gaussien</td>
+                                    <td><code>filter: blur(5px);</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>brightness(%)</code></td>
+                                    <td>Luminosité (0=noir, 1=normal, >1=plus lumineux)</td>
+                                    <td><code>filter: brightness(0.5);</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>contrast(%)</code></td>
+                                    <td>Contraste (0=gris, 1=normal, >1=contraste élevé)</td>
+                                    <td><code>filter: contrast(2);</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>grayscale(%)</code></td>
+                                    <td>Niveaux de gris (0=couleur, 1=noir et blanc)</td>
+                                    <td><code>filter: grayscale(1);</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>hue-rotate(deg)</code></td>
+                                    <td>Rotation de la teinte (cercle chromatique)</td>
+                                    <td><code>filter: hue-rotate(90deg);</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>invert(%)</code></td>
+                                    <td>Inversion des couleurs</td>
+                                    <td><code>filter: invert(1);</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>opacity(%)</code></td>
+                                    <td>Transparence (similaire à opacity mais peut être animé)</td>
+                                    <td><code>filter: opacity(0.5);</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>saturate(%)</code></td>
+                                    <td>Saturation (0=non saturé, 1=normal, >1=sursaturé)</td>
+                                    <td><code>filter: saturate(2);</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>sepia(%)</code></td>
+                                    <td>Effet sépia (vieux photos)</td>
+                                    <td><code>filter: sepia(1);</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>drop-shadow()</code></td>
+                                    <td>Ombre portée (différente de box-shadow)</td>
+                                    <td><code>filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemples visuels :</h4>
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                                <img src="https://picsum.photos/150/150?random=1" style="filter: blur(2px); border-radius: 5px;">
+                                <img src="https://picsum.photos/150/150?random=2" style="filter: brightness(0.5); border-radius: 5px;">
+                                <img src="https://picsum.photos/150/150?random=3" style="filter: grayscale(1); border-radius: 5px;">
+                                <img src="https://picsum.photos/150/150?random=4" style="filter: sepia(1); border-radius: 5px;">
+                                <img src="https://picsum.photos/150/150?random=5" style="filter: contrast(2); border-radius: 5px;">
+                                <img src="https://picsum.photos/150/150?random=6" style="filter: hue-rotate(90deg); border-radius: 5px;">
+                                <img src="https://picsum.photos/150/150?random=7" style="filter: invert(1); border-radius: 5px;">
+                                <img src="https://picsum.photos/150/150?random=8" style="filter: saturate(3); border-radius: 5px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: drop-shadow vs box-shadow -->
+                    <div class="lecon-section">
+                        <h3>💡 15.3 drop-shadow (spécial)</h3>
+
+                        <p><code>drop-shadow</code> est différent de <code>box-shadow</code> car il suit les contours de l'image (transparence).</p>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>box-shadow (sur la boîte)</h4>
+                                <div style="width: 150px; height: 150px; background: transparent; display: flex; align-items: center; justify-content: center;">
+                                    <div style="width: 100px; height: 100px; background: #FF7A45; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); box-shadow: 10px 10px 10px rgba(0,0,0,0.3);"></div>
+                                </div>
+                                <p>L'ombre suit le rectangle (boîte)</p>
+                            </div>
+                            <div>
+                                <h4>drop-shadow (suit la forme)</h4>
+                                <div style="width: 150px; height: 150px; background: transparent; display: flex; align-items: center; justify-content: center;">
+                                    <div style="width: 100px; height: 100px; background: #1F2D3D; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.3));"></div>
+                                </div>
+                                <p>L'ombre suit le triangle</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Combinaisons de filtres -->
+                    <div class="lecon-section">
+                        <h3>🔗 15.4 Combiner plusieurs filtres</h3>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.image</span> {
+    <span class="property">filter</span>: <span class="value">brightness(0.8) contrast(1.2) grayscale(0.5) blur(1px)</span>;
+}
+
+<span class="selector">.image:hover</span> {
+    <span class="property">filter</span>: <span class="value">none</span>;  <span class="comment">/* Retour à la normale au survol */</span>
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: backdrop-filter -->
+                    <div class="lecon-section">
+                        <h3>🔮 15.5 backdrop-filter (filtre sur l'arrière-plan)</h3>
+
+                        <p><code>backdrop-filter</code> applique un filtre à la zone derrière l'élément (effet de verre dépoli).</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.modal</span> {
+    <span class="property">backdrop-filter</span>: <span class="value">blur(5px) brightness(0.8)</span>;
+    <span class="property">background</span>: <span class="value">rgba(255,255,255,0.3)</span>;
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Effet glassmorphisme :</h4>
+                            <div style="position: relative; width: 300px; height: 200px; background: linear-gradient(45deg, #FF7A45, #1F2D3D); padding: 20px;">
+                                <div style="backdrop-filter: blur(5px); background: rgba(255,255,255,0.2); padding: 20px; border-radius: 10px; color: white; border: 1px solid rgba(255,255,255,0.3);">
+                                    Effet verre dépoli
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 15.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Galerie d'images</h4>
+                            <p><strong>Objectif :</strong> Créer une galerie avec des effets de filtres.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez 4 images en grille</li>
+                                    <li>Par défaut, images en niveaux de gris (grayscale)</li>
+                                    <li>Au survol, retrouvent leurs couleurs et luminosité augmentée</li>
+                                    <li>Ajoutez une transition fluide</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Carte avec effet de flou</h4>
+                            <p><strong>Objectif :</strong> Créer une carte avec un arrière-plan flou.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une carte avec une image de fond</li>
+                                    <li>Ajoutez un overlay avec backdrop-filter: blur()</li>
+                                    <li>Le texte doit être lisible par-dessus</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 16 : VARIABLES CSS ===== -->
+            <article class="lecon" id="lecon16">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 16</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                        <span class="lecon-niveau avance">Avancé</span>
+                    </div>
+                    <h2 class="lecon-titre">📦 Variables CSS (Custom Properties)</h2>
+                    <p class="lecon-description">Déclarer et utiliser des variables pour un code plus maintenable</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔧 16.1 Pourquoi utiliser des variables CSS ?</h3>
+
+                        <div class="definition-box">
+                            <p>Les <strong>variables CSS</strong> (ou custom properties) permettent de stocker des valeurs réutilisables dans toute la feuille de style, facilitant la maintenance et les changements globaux.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Avantages :</strong>
+                                <ul>
+                                    <li>Un seul endroit à modifier pour changer une couleur/thème</li>
+                                    <li>Plus facile à maintenir</li>
+                                    <li>Peuvent être modifiées par JavaScript</li>
+                                    <li>Héritage et portée (comme en programmation)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Déclaration et utilisation -->
+                    <div class="lecon-section">
+                        <h3>📝 16.2 Syntaxe de base</h3>
+                      
+                        <div class="code-block">
+                            <pre><span class="comment">/* Déclaration (généralement dans :root) */</span>
+<span class="selector">:root</span> {
+    <span class="property">--couleur-principale</span>: <span class="value">#FF7A45</span>;
+    <span class="property">--couleur-secondaire</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">--espacement</span>: <span class="value">20px</span>;
+    <span class="property">--police-titre</span>: <span class="value">'Arial', sans-serif</span>;
+}
+
+<span class="comment">/* Utilisation */</span>
+<span class="selector">.bouton</span> {
+    <span class="property">background-color</span>: <span class="value">var(--couleur-principale)</span>;
+    <span class="property">color</span>: <span class="value">white</span>;
+    <span class="property">padding</span>: <span class="value">var(--espacement)</span>;
+}
+
+<span class="selector">h1</span> {
+    <span class="property">font-family</span>: <span class="value">var(--police-titre)</span>;
+    <span class="property">color</span>: <span class="value">var(--couleur-secondaire)</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Portée des variables -->
+                    <div class="lecon-section">
+                        <h3>🎯 16.3 Portée et héritage</h3>
+
+                        <p>Les variables sont héritées et peuvent être redéfinies dans des contextes plus spécifiques.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">:root</span> {
+    <span class="property">--couleur-texte</span>: <span class="value">#1F2D3D</span>;  <span class="comment">/* Globale */</span>
+}
+
+<span class="selector">.carte</span> {
+    <span class="property">--couleur-texte</span>: <span class="value">#FF7A45</span>;  <span class="comment">/* Redéfinition locale */</span>
+    <span class="property">color</span>: <span class="value">var(--couleur-texte)</span>;  <span class="comment">/* Orange dans la carte */</span>
+}
+
+<span class="selector">p</span> {
+    <span class="property">color</span>: <span class="value">var(--couleur-texte)</span>;  <span class="comment">/* Bleu (hérité de :root) */</span>
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Valeurs par défaut -->
+                    <div class="lecon-section">
+                        <h3>🛡️ 16.4 Valeurs par défaut</h3>
+
+                        <p>On peut spécifier une valeur par défaut si la variable n'est pas définie.</p>
+
+                        <div class="code-block">
+                            <pre><span class="selector">.element</span> {
+    <span class="comment">/* Si --couleur-inexistante n'existe pas, utilise #FF7A45 */</span>
+    <span class="property">color</span>: <span class="value">var(--couleur-inexistante, #FF7A45)</span>;
+    
+    <span class="comment">/* Avec une variable existante, utilise sa valeur */</span>
+    <span class="property">background</span>: <span class="value">var(--couleur-principale, #1F2D3D)</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Manipulation par JavaScript -->
+                    <div class="lecon-section">
+                        <h3>⚙️ 16.5 Modifier les variables avec JavaScript</h3>
+
+                        <p>Les variables CSS peuvent être modifiées dynamiquement, permettant de créer des thèmes, etc.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// JavaScript</span>
+<span class="comment">// Changer une variable globale</span>
+document.documentElement.style.setProperty('--couleur-principale', '#FF9933');
+
+<span class="comment">// Changer une variable sur un élément spécifique</span>
+document.querySelector('.carte').style.setProperty('--couleur-texte', 'blue');
+
+<span class="comment">// Lire la valeur d'une variable</span>
+const couleur = getComputedStyle(document.documentElement)
+    .getPropertyValue('--couleur-principale').trim();</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exemple pratique - Thème clair/sombre -->
+                    <div class="lecon-section">
+                        <h3>🌓 16.6 Exemple : Thème clair/sombre</h3>
+
+                        <div class="code-block">
+                            <pre><span class="selector">:root</span> {
+    <span class="property">--bg-color</span>: <span class="value">#F6EDE7</span>;
+    <span class="property">--text-color</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">--primary-color</span>: <span class="value">#FF7A45</span>;
+}
+
+<span class="selector">body.dark-theme</span> {
+    <span class="property">--bg-color</span>: <span class="value">#1F2D3D</span>;
+    <span class="property">--text-color</span>: <span class="value">#F6EDE7</span>;
+    <span class="property">--primary-color</span>: <span class="value">#FF9933</span>;
+}
+
+<span class="selector">body</span> {
+    <span class="property">background-color</span>: <span class="value">var(--bg-color)</span>;
+    <span class="property">color</span>: <span class="value">var(--text-color)</span>;
+}
+
+<span class="selector">.bouton</span> {
+    <span class="property">background</span>: <span class="value">var(--primary-color)</span>;
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 16.7 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Système de couleurs</h4>
+                            <p><strong>Objectif :</strong> Créer un système de couleurs avec variables.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Déclarez les couleurs : primaire, secondaire, texte, fond</li>
+                                    <li>Créez un bouton, une carte, un titre utilisant ces variables</li>
+                                    <li>Changez les couleurs à un seul endroit</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Thème interchangeable</h4>
+                            <p><strong>Objectif :</strong> Créer deux thèmes (clair/sombre) avec variables.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Définissez un thème clair et un thème sombre</li>
+                                    <li>Ajoutez un bouton qui bascule la classe sur body</li>
+                                    <li>Utilisez uniquement des variables pour les couleurs</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== EXERCICES RÉCAPITULATIFS ===== -->
+            <section class="exercices-recap">
+                <h2 class="section-title">🏆 Projet récapitulatif (Leçons 11-16)</h2>
+
+                <div class="recap-card">
+                    <h3>Créez une landing page animée</h3>
+                    <p>Utilisez toutes les notions apprises dans les leçons 11 à 16.</p>
+
+                    <h4>Structure demandée :</h4>
+                    <ul>
+                        <li><strong>Header</strong> avec navigation sticky</li>
+                        <li><strong>Section hero</strong> avec image de fond et titre animé (apparition)</li>
+                        <li><strong>Section features</strong> avec 3 cartes qui s'animent au scroll (transitions)</li>
+                        <li><strong>Section portfolio</strong> avec galerie d'images (filtres au survol)</li>
+                        <li><strong>Section témoignages</strong> avec des cartes qui tournent en 3D</li>
+                        <li><strong>Footer</strong> avec liens</li>
+                    </ul>
+
+                    <h4>Contraintes techniques :</h4>
+                    <ul>
+                        <li>Utilisez des variables CSS pour les couleurs</li>
+                        <li>Ajoutez des transitions sur tous les boutons et cartes</li>
+                        <li>Créez une animation @keyframes pour le titre principal</li>
+                        <li>Utilisez des filtres sur les images (grayscale qui disparaît au survol)</li>
+                        <li>Ajoutez un effet 3D sur les témoignages (rotateY léger au survol)</li>
+                        <li>Implémentez un thème clair/sombre avec JavaScript (optionnel)</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <a href="2.html" class="pagination-prev"><i class="fas fa-arrow-left"></i> Leçons 6-10</a>
+                <div class="pagination-links">
+                    <a href="1.html">1</a>
+                    <a href="2.html">2</a>
+                    <a href="3.html" class="active">3</a>
+                    <a href="4.html">4</a>
+                </div>
+                <a href="4.html" class="pagination-next">Leçons 17-20 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+  </html>
+      
+     
