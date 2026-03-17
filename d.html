@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Master - Leçons 16 à 20</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="d.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">&lt;/&gt;</span>
+                    <div class="logo-text">
+                        <span class="logo-main">HTML MASTER</span>
+                        <span class="logo-sub">Leçons 16 à 20 : Expertise finale</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 16-20 sur 20</span>
+                <span class="progress-percent">100%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%"></div>
+            </div>
+            <div class="progress-nav">
+                <a href="c.html" class="progress-prev"><i class="fas fa-arrow-left"></i> Leçons 11-15</a>
+                <span class="progress-current">Leçons 16-20</span>
+                <span class="progress-next disabled">Fin du cours <i class="fas fa-check-circle"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 16-20 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 16 à 20 : Expertise finale</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon16" class="sommaire-card">
+                    <span class="lecon-numero">16</span>
+                    <h3>APIs HTML5</h3>
+                    <p>Geolocation, localStorage, drag & drop</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon17" class="sommaire-card">
+                    <span class="lecon-numero">17</span>
+                    <h3>Canvas et SVG</h3>
+                    <p>Dessins vectoriels et graphiques</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                </a>
+                <a href="#lecon18" class="sommaire-card">
+                    <span class="lecon-numero">18</span>
+                    <h3>Templates HTML</h3>
+                    <p>template, slot, web components</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon19" class="sommaire-card">
+                    <span class="lecon-numero">19</span>
+                    <h3>Web Components</h3>
+                    <p>Custom elements, shadow DOM</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                </a>
+                <a href="#lecon20" class="sommaire-card projet">
+                    <span class="lecon-numero">20</span>
+                    <h3>Projet final</h3>
+                    <p>Site complet avec toutes les notions</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 60 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 16 : APIS HTML5 ===== -->
+            <article class="lecon" id="lecon16">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 16</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">⚡ Les APIs HTML5</h2>
+                    <p class="lecon-description">Geolocation, localStorage, drag & drop, et plus</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔌 16.1 Qu'est-ce qu'une API HTML5 ?</h3>
+
+                        <div class="definition-box">
+                            <p>Les <strong>APIs HTML5</strong> sont des ensembles de fonctionnalités JavaScript qui permettent d'interagir avec le navigateur et l'appareil de l'utilisateur.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">🌐</div>
+                            <div class="encart-content">
+                                <strong>APIs courantes :</strong>
+                                <ul>
+                                    <li>Geolocation - Localisation GPS</li>
+                                    <li>Web Storage - Stockage local (localStorage, sessionStorage)</li>
+                                    <li>Drag & Drop - Glisser-déposer</li>
+                                    <li>Canvas - Dessins 2D/3D</li>
+                                    <li>Web Workers - Calculs en arrière-plan</li>
+                                    <li>History API - Navigation dans l'historique</li>
+                                    <li>File API - Manipulation de fichiers</li>
+                                    <li>Notification API - Notifications système</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Geolocation API -->
+                    <div class="lecon-section">
+                        <h3>📍 16.2 Geolocation API</h3>
+
+                        <p>Permet d'obtenir la position géographique de l'utilisateur.</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="html-tag">JavaScript</span>
+                                <span>Géolocalisation</span>
+                            </div>
+                            <pre><span class="comment">// Vérifier si le navigateur supporte la géolocalisation</span>
+if (navigator.geolocation) {
+    <span class="comment">// Obtenir la position actuelle</span>
+    navigator.geolocation.getCurrentPosition(
+        function(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const precision = position.coords.accuracy;
+            
+            console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+            console.log(`Précision: ±${precision}m`);
+            
+            <span class="comment">// Afficher sur une carte</span>
+            document.getElementById('carte').innerHTML = 
+                `&lt;iframe src="https://www.openstreetmap.org/export/embed.html?bbox=${longitude-0.01},${latitude-0.01},${longitude+0.01},${latitude+0.01}&amp;layer=mapnik" width="100%" height="300"&gt;&lt;/iframe&gt;`;
+        },
+        function(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("Vous avez refusé la géolocalisation.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Position indisponible.");
+                    break;
+                case error.TIMEOUT:
+                    alert("Délai d'attente dépassé.");
+                    break;
+            }
+        },
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        }
+    );
+} else {
+    alert("Votre navigateur ne supporte pas la géolocalisation.");
+}</pre>
+                        </div>
+
+                        <h4>Surveillance de position</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">// Surveiller les changements de position</span>
+const watchId = navigator.geolocation.watchPosition(
+    function(position) {
+        console.log("Nouvelle position:", position.coords);
+    },
+    function(error) {
+        console.error("Erreur:", error);
+    }
+);
+
+<span class="comment">// Arrêter la surveillance</span>
+<span class="comment">// navigator.geolocation.clearWatch(watchId);</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple concret :</h4>
+                            <p>Bouton pour obtenir la position :</p>
+                            <div class="code-block small">
+                                <pre><span class="tag">&lt;button</span> <span class="attribute">onclick</span>=<span class="value">"getLocation()"</span><span class="tag">&gt;</span>Où suis-je ?<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"demo"</span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        document.getElementById("demo").innerHTML = 
+            "Géolocalisation non supportée.";
+    }
+}
+
+function showPosition(position) {
+    document.getElementById("demo").innerHTML = 
+        "Latitude: " + position.coords.latitude + 
+        "&lt;br&gt;Longitude: " + position.coords.longitude;
+}
+<span class="tag">&lt;/script&gt;</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Web Storage API -->
+                    <div class="lecon-section">
+                        <h3>💾 16.3 Web Storage API (localStorage et sessionStorage)</h3>
+
+                        <p>Permet de stocker des données dans le navigateur de manière persistante.</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>API</th>
+                                    <th>Durée de vie</th>
+                                    <th>Portée</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>localStorage</code></td>
+                                    <td>Permanent (jusqu'à suppression manuelle)</td>
+                                    <td>Toutes les fenêtres/onglets du même site</td>
+                                </tr>
+                                <tr>
+                                    <td><code>sessionStorage</code></td>
+                                    <td>Durée de la session (jusqu'à fermeture de l'onglet)</td>
+                                    <td>Uniquement l'onglet courant</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>Méthodes communes</h4>
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h5>Stockage</h5>
+                                <div class="code-block small">
+                                    <pre>localStorage.setItem("nom", "Jean");
+localStorage.setItem("age", 25);
+localStorage.setItem("estAdmin", true);
+
+<span class="comment">// Stocker des objets (JSON)</span>
+const user = {nom: "Jean", age: 25};
+localStorage.setItem("user", JSON.stringify(user));</pre>
+                                </div>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h5>Récupération</h5>
+                                <div class="code-block small">
+                                    <pre>const nom = localStorage.getItem("nom");
+const age = localStorage.getItem("age");
+
+<span class="comment">// Récupérer et parser JSON</span>
+const user = JSON.parse(localStorage.getItem("user"));</pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h5>Suppression</h5>
+                                <div class="code-block small">
+                                    <pre><span class="comment">// Supprimer un élément</span>
+localStorage.removeItem("age");
+
+<span class="comment">// Vider tout le stockage</span>
+localStorage.clear();</pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h5>Parcourir</h5>
+                                <div class="code-block small">
+                                    <pre>for (let i = 0; i &lt; localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    console.log(`${key}: ${value}`);
+}</pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple : Thème sombre/clair</h4>
+                            <div class="code-block">
+                                <pre><span class="comment">// Sauvegarder la préférence</span>
+function setTheme(theme) {
+    localStorage.setItem("theme", theme);
+    document.body.className = theme;
+}
+  
+<span class="comment">// Charger la préférence au chargement</span>
+window.onload = function() {
+    const savedTheme = localStorage.getItem("theme") || "clair";
+    document.body.className = savedTheme;
+}
+
+<span class="comment">// HTML</span>
+&lt;button onclick="setTheme('clair')"&gt;Clair&lt;/button&gt;
+&lt;button onclick="setTheme('sombre')"&gt;Sombre&lt;/button&gt;</pre>
+                            </div>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Limites :</strong> localStorage est limité à environ 5-10 Mo par domaine. Ne stockez pas de données sensibles (pas de sécurité).</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Drag & Drop API -->
+                    <div class="lecon-section">
+                        <h3>🖱️ 16.4 Drag & Drop API</h3>
+
+                        <p>Permet de rendre des éléments déplaçables par glisser-déposer.</p>
+
+                        <h4>Événements principaux</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Événement</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>dragstart</code></td><td>Début du glissement</td></tr>
+                                <tr><td><code>drag</code></td><td>Pendant le glissement</td></tr>
+                                <tr><td><code>dragend</code></td><td>Fin du glissement</td></tr>
+                                <tr><td><code>dragenter</code></td><td>Élément glissé entre dans une zone</td></tr>
+                                <tr><td><code>dragover</code></td><td>Élément glissé au-dessus d'une zone</td></tr>
+                                <tr><td><code>dragleave</code></td><td>Élément glissé quitte une zone</td></tr>
+                                <tr><td><code>drop</code></td><td>Dépôt de l'élément</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- Élément déplaçable --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"draggable"</span> 
+     <span class="attribute">draggable</span>=<span class="value">"true"</span>
+     <span class="attribute">ondragstart</span>=<span class="value">"dragStart(event)"</span>
+     <span class="attribute">ondragend</span>=<span class="value">"dragEnd(event)"</span><span class="tag">&gt;</span>
+    Élément déplaçable
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- Zone de dépôt --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"dropzone"</span>
+     <span class="attribute">ondragover</span>=<span class="value">"dragOver(event)"</span>
+     <span class="attribute">ondrop</span>=<span class="value">"drop(event)"</span>
+     <span class="attribute">ondragenter</span>=<span class="value">"dragEnter(event)"</span>
+     <span class="attribute">ondragleave</span>=<span class="value">"dragLeave(event)"</span><span class="tag">&gt;</span>
+    Zone de dépôt
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+function dragStart(event) {
+    event.dataTransfer.setData("text/plain", event.target.id);
+    event.dataTransfer.effectAllowed = "move";
+    event.target.style.opacity = "0.5";
+}
+
+function dragEnd(event) {
+    event.target.style.opacity = "1";
+}
+
+function dragOver(event) {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "move";
+}
+
+function dragEnter(event) {
+    event.target.style.backgroundColor = "#FF7A45";
+    event.target.style.color = "white";
+}
+
+function dragLeave(event) {
+    event.target.style.backgroundColor = "";
+    event.target.style.color = "";
+}
+
+function drop(event) {
+    event.preventDefault();
+    const data = event.dataTransfer.getData("text/plain");
+    const draggableElement = document.getElementById(data);
+    event.target.appendChild(draggableElement);
+    event.target.style.backgroundColor = "";
+    event.target.style.color = "";
+}
+<span class="tag">&lt;/script&gt;</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple de zone de dépôt de fichiers</h4>
+                            <div class="code-block">
+                                <pre><span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"filedrop"</span>
+     <span class="attribute">ondragover</span>=<span class="value">"event.preventDefault()"</span>
+     <span class="attribute">ondrop</span>=<span class="value">"dropFiles(event)"</span>
+     <span class="attribute">style</span>=<span class="value">"border: 2px dashed #FF7A45; padding: 20px; text-align: center;"</span><span class="tag">&gt;</span>
+    Déposez vos fichiers ici
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+function dropFiles(event) {
+    event.preventDefault();
+    const files = event.dataTransfer.files;
+    
+    for (let i = 0; i &lt; files.length; i++) {
+        const file = files[i];
+        console.log(`Fichier: ${file.name}, Taille: ${file.size} octets`);
+    }
+}
+<span class="tag">&lt;/script&gt;</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: File API -->
+                    <div class="lecon-section">
+                        <h3>📁 16.5 File API</h3>
+
+                        <p>Permet de lire et manipuler des fichiers locaux.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"file"</span> <span class="attribute">id</span>=<span class="value">"fileInput"</span> <span class="attribute">multiple</span><span class="tag">&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"fileInfo"</span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;img</span> <span class="attribute">id</span>=<span class="value">"preview"</span> <span class="attribute">style</span>=<span class="value">"max-width: 200px; display: none;"</span><span class="tag">&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+document.getElementById('fileInput').addEventListener('change', function(event) {
+    const files = event.target.files;
+    const info = document.getElementById('fileInfo');
+    const preview = document.getElementById('preview');
+    
+    info.innerHTML = '';
+    preview.style.display = 'none';
+    
+    for (let i = 0; i &lt; files.length; i++) {
+        const file = files[i];
+        info.innerHTML += `
+            &lt;p&gt;
+                &lt;strong&gt;${file.name}&lt;/strong&gt;&lt;br&gt;
+                Type: ${file.type || 'inconnu'}&lt;br&gt;
+                Taille: ${(file.size / 1024).toFixed(2)} Ko
+            &lt;/p&gt;
+        `;
+        
+        <span class="comment">// Aperçu des images</span>
+        if (file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+});
+<span class="tag">&lt;/script&gt;</span></pre>
+                        </div>
+
+                        <h4>Lecture de fichiers texte</h4>
+                        <div class="code-block">
+                            <pre>const fileInput = document.getElementById('fileInput');
+fileInput.addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = function(e) {
+        console.log('Contenu du fichier:', e.target.result);
+    };
+    
+    reader.onerror = function(e) {
+        console.error('Erreur de lecture:', e.target.error);
+    };
+    
+    reader.readAsText(file); <span class="comment">// Pour texte</span>
+    <span class="comment">// reader.readAsDataURL(file); // Pour images</span>
+    <span class="comment">// reader.readAsArrayBuffer(file); // Pour binaires</span>
+});</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: History API -->
+                    <div class="lecon-section">
+                        <h3>📜 16.6 History API</h3>
+
+                        <p>Permet de manipuler l'historique du navigateur (utile pour les applications monopages).</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Naviguer</span>
+history.back();      <span class="comment">// Page précédente</span>
+history.forward();   <span class="comment">// Page suivante</span>
+history.go(-2);      <span class="comment">// Recule de 2 pages</span>
+
+<span class="comment">// Ajouter une entrée dans l'historique</span>
+history.pushState({page: 1}, "Titre", "?page=1");
+
+<span class="comment">// Remplacer l'entrée courante</span>
+history.replaceState({page: 2}, "Titre", "?page=2");
+
+<span class="comment">// Écouter les changements</span>
+window.addEventListener('popstate', function(event) {
+    console.log('État:', event.state);
+});</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Notification API -->
+                    <div class="lecon-section">
+                        <h3>🔔 16.7 Notification API</h3>
+
+                        <p>Permet d'afficher des notifications système.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Vérifier si les notifications sont supportées</span>
+if ("Notification" in window) {
+    <span class="comment">// Demander la permission</span>
+    Notification.requestPermission().then(function(permission) {
+        if (permission === "granted") {
+            <span class="comment">// Créer une notification</span>
+            new Notification("Titre de la notification", {
+                body: "Ceci est le contenu de la notification",
+                icon: "icone.png",
+                tag: "message-id",
+                requireInteraction: true
+            });
+        }
+    });
+}</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple avec rappel</h4>
+                            <div class="code-block small">
+                                <pre>function showReminder() {
+    if (Notification.permission === "granted") {
+        new Notification("Rappel", {
+            body: "N'oubliez pas de pratiquer le HTML !",
+            silent: false
+        });
+    } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then(permission => {
+            if (permission === "granted") {
+                showReminder();
+            }
+        });
+    }
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 8: Web Workers -->
+                    <div class="lecon-section">
+                        <h3>⚙️ 16.8 Web Workers (calculs en arrière-plan)</h3>
+
+                        <p>Les Web Workers permettent d'exécuter du JavaScript en arrière-plan, sans bloquer l'interface.</p>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h5>Script principal</h5>
+                                <div class="code-block small">
+                                    <pre><span class="comment">// Créer un worker</span>
+const worker = new Worker('worker.js');
+
+<span class="comment">// Envoyer des données</span>
+worker.postMessage({nombre: 1000000});
+
+<span class="comment">// Recevoir des résultats</span>
+worker.onmessage = function(event) {
+    console.log('Résultat:', event.data);
+};
+
+<span class="comment">// Arrêter le worker</span>
+<span class="comment">// worker.terminate();</span></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h5>worker.js</h5>
+                                <div class="code-block small">
+                                    <pre>self.onmessage = function(event) {
+    const nombre = event.data.nombre;
+   <span class="comment">// Calcul long (exemple)</span>
+    let resultat = 0;
+    for (let i = 0; i &lt; nombre; i++) {
+        resultat += Math.sqrt(i);
+    }
+    
+    <span class="comment">// Renvoyer le résultat</span>
+    self.postMessage(resultat);
+};</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 9: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 16.9 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Localisation et météo</h4>
+                            <p><strong>Objectif :</strong> Afficher la météo à la position de l'utilisateur.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Obtenir la position de l'utilisateur</li>
+                                    <li>Afficher la latitude et longitude</li>
+                                    <li>Intégrer une carte OpenStreetMap</li>
+                                    <li>Sauvegarder la position dans localStorage</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Gestionnaire de fichiers</h4>
+                            <p><strong>Objectif :</strong> Créer une zone de dépôt de fichiers.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créer une zone de drag & drop pour fichiers</li>
+                                    <li>Afficher le nom, type et taille des fichiers</li>
+                                    <li>Pour les images, afficher un aperçu</li>
+                                    <li>Sauvegarder la liste dans localStorage</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : To-do list avec stockage</h4>
+                            <p><strong>Objectif :</strong> Créer une to-do list persistante.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Interface pour ajouter/supprimer des tâches</li>
+                                    <li>Utiliser localStorage pour la persistance</li>
+                                    <li>Ajouter des notifications de rappel</li>
+                                    <li>Permettre le drag & drop pour réorganiser</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 17 : CANVAS ET SVG ===== -->
+            <article class="lecon" id="lecon17">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 17</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">🎨 Canvas et SVG</h2>
+                    <p class="lecon-description">Dessins vectoriels et graphiques dynamiques</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 17.1 Canvas vs SVG</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Caractéristique</th>
+                                    <th>Canvas</th>
+                                    <th>SVG</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Type</td>
+                                    <td>Bitmap (pixels)</td>
+                                    <td>Vectoriel (formes)</td>
+                                </tr>
+                                <tr>
+                                    <td>Résolution</td>
+                                    <td>Dépendante (pixelisé en zoomant)</td>
+                                    <td>Indépendante (net à tout zoom)</td>
+                                </tr>
+                                <tr>
+                                    <td>Manipulation</td>
+                                    <td>JavaScript uniquement</td>
+                                    <td>CSS et JavaScript</td>
+                                </tr>
+                                <tr>
+                                    <td>Événements</td>
+                                    <td>Sur tout le canvas</td>
+                                    <td>Sur chaque élément individuel</td>
+                                </tr>
+                                <tr>
+                                    <td>Performance</td>
+                                    <td>Rapide pour beaucoup d'éléments</td>
+                                    <td>Lent pour beaucoup d'éléments</td>
+                                </tr>
+                                <tr>
+                                    <td>Cas d'usage</td>
+                                    <td>Jeux, graphiques dynamiques, manipulation d'images</td>
+                                    <td>Icônes, logos, graphiques statiques, cartes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- SECTION 2: Canvas de base -->
+                    <div class="lecon-section">
+                        <h3>🖌️ 17.2 Canvas - Dessins de base</h3>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;canvas</span> <span class="attribute">id</span>=<span class="value">"monCanvas"</span> <span class="attribute">width</span>=<span class="value">"400"</span> <span class="attribute">height</span>=<span class="value">"300"</span> <span class="attribute">style</span>=<span class="value">"border:1px solid #000;"</span><span class="tag">&gt;</span>
+    Texte alternatif si canvas non supporté
+<span class="tag">&lt;/canvas&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+    const canvas = document.getElementById('monCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    <span class="comment">// Dessiner un rectangle</span>
+    ctx.fillStyle = '#FF7A45';
+    ctx.fillRect(50, 50, 100, 80);
+    
+    <span class="comment">// Rectangle avec contour</span>
+    ctx.strokeStyle = '#1F2D3D';
+    ctx.lineWidth = 3;
+    ctx.strokeRect(200, 50, 100, 80);
+    
+    <span class="comment">// Ligne</span>
+    ctx.beginPath();
+    ctx.moveTo(50, 200);
+    ctx.lineTo(300, 250);
+    ctx.strokeStyle = '#6B7280';
+    ctx.lineWidth = 5;
+    ctx.stroke();
+    
+    <span class="comment">// Cercle</span>
+    ctx.beginPath();
+    ctx.arc(150, 200, 40, 0, 2 * Math.PI);
+    ctx.fillStyle = '#F6EDE7';
+    ctx.fill();
+    ctx.strokeStyle = '#1F2D3D';
+    ctx.stroke();
+    
+    <span class="comment">// Texte</span>
+    ctx.font = '20px Arial';
+    ctx.fillStyle = '#1F2D3D';
+    ctx.fillText('Bonjour Canvas', 50, 280);
+<span class="tag">&lt;/script&gt;</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Formes de base</h4>
+                            <div style="background: #f0f0f0; padding: 20px;">
+                                <canvas id="demoCanvas" width="400" height="200" style="border:1px solid #ccc; background: white;"></canvas>
+                                <script>
+                                    const demoCanvas = document.getElementById('demoCanvas');
+                                    if (demoCanvas) {
+                                        const ctx = demoCanvas.getContext('2d');
+                                        ctx.fillStyle = '#FF7A45';
+                                        ctx.fillRect(20, 20, 80, 60);
+                                        ctx.fillStyle = '#1F2D3D';
+                                        ctx.fillRect(120, 20, 80, 60);
+                                        ctx.beginPath();
+                                        ctx.arc(280, 50, 30, 0, 2 * Math.PI);
+                                        ctx.fillStyle = '#6B7280';
+                                        ctx.fill();
+                                        ctx.font = '16px Arial';
+                                        ctx.fillStyle = '#1F2D3D';
+                                        ctx.fillText('Canvas', 20, 150);
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Canvas avancé -->
+                    <div class="lecon-section">
+                        <h3>🎭 17.3 Canvas avancé</h3>
+
+                        <h4>Dégradés</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">// Dégradé linéaire</span>
+const gradient = ctx.createLinearGradient(0, 0, 200, 0);
+gradient.addColorStop(0, '#FF7A45');
+gradient.addColorStop(0.5, '#1F2D3D');
+gradient.addColorStop(1, '#6B7280');
+ctx.fillStyle = gradient;
+ctx.fillRect(50, 50, 200, 100);
+
+<span class="comment">// Dégradé radial</span>
+const radialGradient = ctx.createRadialGradient(150, 150, 20, 150, 150, 100);
+radialGradient.addColorStop(0, '#FF7A45');
+radialGradient.addColorStop(1, '#1F2D3D');
+ctx.fillStyle = radialGradient;
+ctx.beginPath();
+ctx.arc(150, 150, 100, 0, 2 * Math.PI);
+ctx.fill();</pre>
+                        </div>
+
+                        <h4>Ombre</h4>
+                        <div class="code-block">
+                            <pre>ctx.shadowColor = '#1F2D3D';
+ctx.shadowBlur = 10;
+ctx.shadowOffsetX = 5;
+ctx.shadowOffsetY = 5;
+ctx.fillStyle = '#FF7A45';
+ctx.fillRect(50, 50, 100, 100);
+
+<span class="comment">// Désactiver l'ombre</span>
+ctx.shadowColor = 'transparent';</pre>
+                        </div>
+
+                        <h4>Transformation</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">// Rotation</span>
+ctx.save();
+ctx.translate(200, 150);
+ctx.rotate(45 * Math.PI / 180);
+ctx.fillStyle = '#FF7A45';
+ctx.fillRect(-50, -25, 100, 50);
+ctx.restore();
+
+<span class="comment">// Scale</span>
+ctx.save();
+ctx.scale(2, 1);
+ctx.fillStyle = '#1F2D3D';
+ctx.fillRect(50, 200, 50, 50);
+ctx.restore();</pre>
+                        </div>
+
+                        <h4>Images</h4>
+                        <div class="code-block">
+                            <pre>const img = new Image();
+img.src = 'image.jpg';
+img.onload = function() {
+    ctx.drawImage(img, 50, 50, 200, 150);
+    
+    <span class="comment">// Découper une partie de l'image</span>
+    ctx.drawImage(img, 100, 100, 100, 100, 250, 50, 100, 100);
+};</pre>
+                        </div>
+
+                        <h4>Animation</h4>
+                        <div class="code-block">
+                            <pre>let x = 0;
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = '#FF7A45';
+    ctx.fillRect(x, 100, 50, 50);
+    
+    x += 2;
+    if (x > canvas.width) x = -50;
+    
+    requestAnimationFrame(animate);
+}
+animate();</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: SVG -->
+                    <div class="lecon-section">
+                        <h3>📐 17.4 SVG (Scalable Vector Graphics)</h3>
+
+                        <p>SVG est un format XML pour décrire des graphiques vectoriels.</p>
+
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;svg</span> <span class="attribute">width</span>=<span class="value">"400"</span> <span class="attribute">height</span>=<span class="value">"200"</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.w3.org/2000/svg"</span><span class="tag">&gt;</span>
+    <span class="comment">&lt;!-- Rectangle --&gt;</span>
+    <span class="tag">&lt;rect</span> <span class="attribute">x</span>=<span class="value">"20"</span> <span class="attribute">y</span>=<span class="value">"20"</span> <span class="attribute">width</span>=<span class="value">"100"</span> <span class="attribute">height</span>=<span class="value">"80"</span> 
+          <span class="attribute">fill</span>=<span class="value">"#FF7A45"</span> <span class="attribute">stroke</span>=<span class="value">"#1F2D3D"</span> <span class="attribute">stroke-width</span>=<span class="value">"2"</span><span class="tag">/&gt;</span>
+    
+    <span class="comment">&lt;!-- Cercle --&gt;</span>
+    <span class="tag">&lt;circle</span> <span class="attribute">cx</span>=<span class="value">"200"</span> <span class="attribute">cy</span>=<span class="value">"60"</span> <span class="attribute">r</span>=<span class="value">"40"</span> 
+            <span class="attribute">fill</span>=<span class="value">"#1F2D3D"</span> <span class="attribute">stroke</span>=<span class="value">"#FF7A45"</span> <span class="attribute">stroke-width</span>=<span class="value">"3"</span><span class="tag">/&gt;</span>
+    
+    <span class="comment">&lt;!-- Ligne --&gt;</span>
+    <span class="tag">&lt;line</span> <span class="attribute">x1</span>=<span class="value">"280"</span> <span class="attribute">y1</span>=<span class="value">"20"</span> <span class="attribute">x2</span>=<span class="value">"380"</span> <span class="attribute">y2</span>=<span class="value">"100"</span> 
+          <span class="attribute">stroke</span>=<span class="value">"#6B7280"</span> <span class="attribute">stroke-width</span>=<span class="value">"5"</span><span class="tag">/&gt;</span>
+     <span class="comment">&lt;!-- Texte --&gt;</span>
+    <span class="tag">&lt;text</span> <span class="attribute">x</span>=<span class="value">"20"</span> <span class="attribute">y</span>=<span class="value">"150"</span> <span class="attribute">font-family</span>=<span class="value">"Arial"</span> <span class="attribute">font-size</span>=<span class="value">"20"</span> 
+          <span class="attribute">fill</span>=<span class="value">"#1F2D3D"</span><span class="tag">&gt;</span>Bonjour SVG<span class="tag">&lt;/text&gt;</span>
+    
+    <span class="comment">&lt;!-- Chemin (path) --&gt;</span>
+    <span class="tag">&lt;path</span> <span class="attribute">d</span>=<span class="value">"M50 180 L100 130 L150 180 Z"</span> 
+          <span class="attribute">fill</span>=<span class="value">"#FF7A45"</span> <span class="attribute">stroke</span>=<span class="value">"#1F2D3D"</span> <span class="attribute">stroke-width</span>=<span class="value">"2"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/svg&gt;</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Rendu SVG</h4>
+                            <svg width="400" height="200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #ccc; background: white;">
+                                <rect x="20" y="20" width="80" height="60" fill="#FF7A45" stroke="#1F2D3D" stroke-width="2"/>
+                                <circle cx="180" cy="50" r="30" fill="#1F2D3D" stroke="#FF7A45" stroke-width="3"/>
+                                <line x1="250" y1="20" x2="350" y2="80" stroke="#6B7280" stroke-width="5"/>
+                                <text x="20" y="140" font-family="Arial" font-size="16" fill="#1F2D3D">SVG est vectoriel</text>
+                                <path d="M50 160 L100 130 L150 160 Z" fill="#FF7A45" stroke="#1F2D3D" stroke-width="2"/>
+                            </svg>
+                        </div>
+
+                        <h4>Manipulation SVG avec JavaScript</h4>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;svg</span> <span class="attribute">id</span>=<span class="value">"monSVG"</span> <span class="attribute">width</span>=<span class="value">"400"</span> <span class="attribute">height</span>=<span class="value">"200"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;circle</span> <span class="attribute">id</span>=<span class="value">"monCercle"</span> <span class="attribute">cx</span>=<span class="value">"100"</span> <span class="attribute">cy</span>=<span class="value">"100"</span> <span class="attribute">r</span>=<span class="value">"40"</span> <span class="attribute">fill</span>=<span class="value">"#FF7A45"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/svg&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+    const cercle = document.getElementById('monCercle');
+    
+    <span class="comment">// Changer les attributs</span>
+    cercle.setAttribute('fill', '#1F2D3D');
+    cercle.setAttribute('r', '60');
+    
+    <span class="comment">// Ajouter un événement</span>
+    cercle.addEventListener('click', function() {
+        this.setAttribute('fill', '#FF7A45');
+    });
+<span class="tag">&lt;/script&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 17.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Horloge Canvas</h4>
+                            <p><strong>Objectif :</strong> Créer une horloge analogique avec Canvas.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Dessiner un cercle pour le cadran</li>
+                                    <li>Ajouter les graduations des heures</li>
+                                    <li>Dessiner les aiguilles (heures, minutes, secondes)</li>
+                                    <li>Animer l'horloge</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Graphique SVG</h4>
+                            <p><strong>Objectif :</strong> Créer un diagramme en barres avec SVG.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créer des barres avec des hauteurs différentes</li>
+                                    <li>Ajouter des labels</li>
+                                    <li>Ajouter une interaction au survol</li>
+                                    <li>Rendre responsive</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Jeu de Pong</h4>
+                            <p><strong>Objectif :</strong> Créer un jeu Pong simple avec Canvas.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Dessiner les raquettes et la balle</li>
+                                    <li>Animer la balle</li>
+                                    <li>Gérer les collisions</li>
+                                    <li>Ajouter le score</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 18 : TEMPLATES HTML ===== -->
+            <article class="lecon" id="lecon18">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 18</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">📦 Templates HTML</h2>
+                    <p class="lecon-description">template, slot, et web components</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: template -->
+                    <div class="lecon-section">
+                        <h3>📋 18.1 La balise &lt;template&gt;</h3>
+
+                        <p>La balise <code>&lt;template&gt;</code> contient du HTML qui n'est pas affiché immédiatement, mais peut être cloné et inséré avec JavaScript.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- Définir un template --&gt;</span>
+<span class="tag">&lt;template</span> <span class="attribute">id</span>=<span class="value">"carte-template"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"carte"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h3</span> <span class="attribute">class</span>=<span class="value">"titre"</span><span class="tag">&gt;</span><span class="tag">&lt;/h3&gt;</span>
+        <span class="tag">&lt;p</span> <span class="attribute">class</span>=<span class="value">"description"</span><span class="tag">&gt;</span><span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;img</span> <span class="attribute">class</span>=<span class="value">"image"</span> <span class="attribute">src</span>=<span class="value">""</span> <span class="attribute">alt</span>=<span class="value">""</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;button</span> <span class="attribute">class</span>=<span class="value">"btn"</span><span class="tag">&gt;</span>Détails<span class="tag">&lt;/button&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/template&gt;</span>
+
+<span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"conteneur-cartes"</span><span class="tag">&gt;</span><span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+    <span class="comment">// Récupérer le template</span>
+    const template = document.getElementById('carte-template');
+    const conteneur = document.getElementById('conteneur-cartes');
+    
+    <span class="comment">// Cloner le contenu du template</span>
+    const clone = template.content.cloneNode(true);
+    
+    <span class="comment">// Remplir le contenu</span>
+    clone.querySelector('.titre').textContent = 'Produit 1';
+    clone.querySelector('.description').textContent = 'Description du produit';
+    clone.querySelector('.image').src = 'produit1.jpg';
+    
+    <span class="comment">// Ajouter au DOM</span>
+    conteneur.appendChild(clone);
+<span class="tag">&lt;/script&gt;</span></pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Avantages des templates</h4>
+                            <ul>
+                                <li><strong>Performance :</strong> Le contenu n'est pas parsé tant qu'il n'est pas cloné</li>
+                                <li><strong>Réutilisabilité :</strong> Un même template peut être cloné plusieurs fois</li>
+                                <li><strong>Maintenabilité :</strong> Séparation du HTML et du JavaScript</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: slot -->
+                    <div class="lecon-section">
+                        <h3>🔌 18.2 La balise &lt;slot&gt;</h3>
+
+                        <p>Les slots sont utilisés dans les Web Components pour permettre l'injection de contenu personnalisé.</p>
+
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- Composant avec slots --&gt;</span>
+<span class="tag">&lt;template</span> <span class="attribute">id</span>=<span class="value">"ma-carte"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"carte"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;header&gt;</span>
+            <span class="tag">&lt;slot</span> <span class="attribute">name</span>=<span class="value">"titre"</span><span class="tag">&gt;</span>Titre par défaut<span class="tag">&lt;/slot&gt;</span>
+        <span class="tag">&lt;/header&gt;</span>
+        <span class="tag">&lt;main&gt;</span>
+            <span class="tag">&lt;slot&gt;</span>Contenu par défaut<span class="tag">&lt;/slot&gt;</span>
+        <span class="tag">&lt;/main&gt;</span>
+        <span class="tag">&lt;footer&gt;</span>
+            <span class="tag">&lt;slot</span> <span class="attribute">name</span>=<span class="value">"footer"</span><span class="tag">&gt;</span>Pied par défaut<span class="tag">&lt;/slot&gt;</span>
+        <span class="tag">&lt;/footer&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/template&gt;</span>
+
+<span class="comment">&lt;!-- Utilisation --&gt;</span>
+<span class="tag">&lt;ma-carte&gt;</span>
+    <span class="tag">&lt;span</span> <span class="attribute">slot</span>=<span class="value">"titre"</span><span class="tag">&gt;</span>Mon titre personnalisé<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Ceci est le contenu principal<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">slot</span>=<span class="value">"footer"</span><span class="tag">&gt;</span>Pied personnalisé avec <span class="tag">&lt;button&gt;</span>Action<span class="tag">&lt;/button&gt;</span><span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/ma-carte&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: slot avancé -->
+                    <div class="lecon-section">
+                        <h3>🎭 18.3 Slots avancés</h3>
+
+                        <h4>Slot par défaut (non nommé)</h4>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;slot&gt;</span>Contenu par défaut si rien n'est fourni<span class="tag">&lt;/slot&gt;</span></pre>
+                        </div>
+
+                        <h4>Slots nommés</h4>
+                        <div class="code-block">
+                            <pre><span class="tag">&lt;slot</span> <span class="attribute">name</span>=<span class="value">"header"</span><span class="tag">&gt;</span>Header par défaut<span class="tag">&lt;/slot&gt;</span>
+<span class="tag">&lt;slot</span> <span class="attribute">name</span>=<span class="value">"main"</span><span class="tag">&gt;</span>Main par défaut<span class="tag">&lt;/slot&gt;</span>
+<span class="tag">&lt;slot</span> <span class="attribute">name</span>=<span class="value">"footer"</span><span class="tag">&gt;</span>Footer par défaut<span class="tag">&lt;/slot&gt;</span></pre>
+                        </div>
+
+                        <h4>Accès aux slots en JavaScript</h4>
+                        <div class="code-block">
+                            <pre>class MaCarte extends HTMLElement {
+    connectedCallback() {
+        const shadow = this.attachShadow({mode: 'open'});
+        const template = document.getElementById('ma-carte');
+        shadow.appendChild(template.content.cloneNode(true));
+        
+        <span class="comment">// Accéder aux slots assignés</span>
+        const slots = this.shadowRoot.querySelectorAll('slot');
+        slots.forEach(slot => {
+            console.log(`Slot ${slot.name}:`, slot.assignedNodes());
+        });
+    }
+}</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 18.4 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Galerie avec template</h4>
+                            <p><strong>Objectif :</strong> Créer une galerie d'images avec template.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créer un template pour une image (img + légende)</li>
+                                    <li>Générer 6 images à partir d'un tableau de données</li>
+                                    <li>Ajouter au DOM</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Composant avec slots</h4>
+                            <p><strong>Objectif :</strong> Créer un composant modal avec slots.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Template avec slots pour header, body, footer</li>
+                                    <li>Créer un composant custom</li>
+                                    <li>Utiliser le composant avec différents contenus</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 19 : WEB COMPONENTS ===== -->
+            <article class="lecon" id="lecon19">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 19</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                        <span class="lecon-niveau expert">Expert</span>
+                    </div>
+                    <h2 class="lecon-titre">🧩 Web Components</h2>
+                    <p class="lecon-description">Custom elements, shadow DOM, composants réutilisables</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 19.1 Qu'est-ce que les Web Components ?</h3>
+
+                        <div class="definition-box">
+                            <p>Les <strong>Web Components</strong> sont un ensemble de technologies standards permettant de créer des composants réutilisables, encapsulés et interopérables.</p>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">🧩</div>
+                            <div class="encart-content">
+                                <strong>Technologies clés :</strong>
+                                                                 <ul>
+                                    <li><strong>Custom Elements</strong> - Créer ses propres balises HTML</li>
+                                    <li><strong>Shadow DOM</strong> - Encapsuler le style et le comportement</li>
+                                    <li><strong>HTML Templates</strong> - Définir des structures réutilisables</li>
+                                    <li><strong>ES Modules</strong> - Importer/exporter des composants</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Custom Elements -->
+                    <div class="lecon-section">
+                        <h3>🏷️ 19.2 Custom Elements (éléments personnalisés)</h3>
+
+                        <p>Permettent de créer ses propres balises HTML.</p>
+
+                        <h4>Custom Element simple</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">// Définir un custom element</span>
+class MonBouton extends HTMLElement {
+    constructor() {
+        super(); <span class="comment">// Toujours appeler super() d'abord</span>
+        
+        <span class="comment">// Attacher le shadow DOM</span>
+        this.attachShadow({mode: 'open'});
+        
+        <span class="comment">// Créer le contenu</span>
+        this.shadowRoot.innerHTML = `
+            &lt;style&gt;
+                button {
+                    background-color: #FF7A45;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                button:hover {
+                    background-color: #1F2D3D;
+                }
+            &lt;/style&gt;
+            &lt;button&gt;&lt;slot&gt;Cliquez&lt;/slot&gt;&lt;/button&gt;
+        `;
+    }
+}
+
+<span class="comment">// Enregistrer le custom element</span>
+customElements.define('mon-bouton', MonBouton);</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Utilisation</h4>
+                            <div class="code-block small">
+                                <pre><span class="tag">&lt;mon-bouton&gt;</span>OK<span class="tag">&lt;/mon-bouton&gt;</span>
+<span class="tag">&lt;mon-bouton&gt;</span>Annuler<span class="tag">&lt;/mon-bouton&gt;</span>
+<span class="tag">&lt;mon-bouton&gt;</span>Sauvegarder<span class="tag">&lt;/mon-bouton&gt;</span></pre>
+                            </div>
+                        </div>
+
+                        <h4>Custom Element avec attributs</h4>
+                        <div class="code-block">
+                            <pre>class MaCarte extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+    }
+    
+    static get observedAttributes() {
+        return ['titre', 'image', 'description', 'prix'];
+    }
+    
+    connectedCallback() {
+        this.render();
+    }
+    
+    attributeChangedCallback(name, oldValue, newValue) {
+        this.render();
+    }
+    
+    render() {
+        const titre = this.getAttribute('titre') || 'Sans titre';
+        const image = this.getAttribute('image') || 'https://via.placeholder.com/300';
+        const description = this.getAttribute('description') || '';
+        const prix = this.getAttribute('prix') || '0';
+        
+        this.shadowRoot.innerHTML = `
+            &lt;style&gt;
+                .carte {
+                    border: 1px solid #6B7280;
+                    border-radius: 8px;
+                    padding: 16px;
+                    max-width: 300px;
+                    font-family: Arial, sans-serif;
+                }
+                img {
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                    border-radius: 4px;
+                }
+                h3 {
+                    color: #1F2D3D;
+                    margin: 10px 0;
+                }
+                .prix {
+                    color: #FF7A45;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+                button {
+                    background: #FF7A45;
+                    color: white;
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    width: 100%;
+                }
+            &lt;/style&gt;
+            &lt;div class="carte"&gt;
+                &lt;img src="${image}" alt="${titre}"&gt;
+                &lt;h3&gt;${titre}&lt;/h3&gt;
+                &lt;p&gt;${description}&lt;/p&gt;
+                &lt;p class="prix"&gt;${prix} €&lt;/p&gt;
+                &lt;button&gt;Ajouter au panier&lt;/button&gt;
+            &lt;/div&gt;
+        `;
+    }
+}
+
+customElements.define('ma-carte', MaCarte);</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Utilisation</h4>
+                            <div class="code-block small">
+                                <pre><span class="tag">&lt;ma-carte</span> 
+    <span class="attribute">titre</span>=<span class="value">"Smartphone"</span>
+    <span class="attribute">image</span>=<span class="value">"tel.jpg"</span>
+    <span class="attribute">description</span>=<span class="value">"Dernier modèle"</span>
+    <span class="attribute">prix</span>=<span class="value">"299"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/ma-carte&gt;</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Shadow DOM -->
+                    <div class="lecon-section">
+                        <h3>🌑 19.3 Shadow DOM (DOM fantôme)</h3>
+
+                        <p>Le Shadow DOM permet d'encapsuler le style et la structure d'un composant, l'isolant du reste de la page.</p>
+
+                        <div class="grid-2">
+                            <div class="carte-type">
+                                <h4>Sans Shadow DOM</h4>
+                                <div class="code-block small">
+                                    <pre><span class="tag">&lt;style&gt;</span>
+    button { background: blue; }
+<span class="tag">&lt;/style&gt;</span>
+
+<span class="tag">&lt;button&gt;</span>Bouton normal<span class="tag">&lt;/button&gt;</span></pre>
+                                </div>
+                                <p>Le style affecte <strong>tous</strong> les boutons de la page.</p>
+                            </div>
+                            
+                            <div class="carte-type">
+                                <h4>Avec Shadow DOM</h4>
+                                <div class="code-block small">
+                                    <pre>this.attachShadow({mode: 'open'});
+this.shadowRoot.innerHTML = `
+    &lt;style&gt;button { background: blue; }&lt;/style&gt;
+    &lt;button&gt;Bouton isolé&lt;/button&gt;
+`;</pre>
+                                </div>
+                                <p>Le style est <strong>isolé</strong> au composant.</p>
+                            </div>
+                        </div>
+
+                        <h4>Modes du Shadow DOM</h4>
+                        <ul>
+                            <li><code>mode: 'open'</code> - Accessible depuis JavaScript (via element.shadowRoot)</li>
+                            <li><code>mode: 'closed'</code> - Non accessible (plus sécurisé mais rarement utilisé)</li>
+                        </ul>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Accéder au shadow DOM (mode open)</span>
+const element = document.querySelector('mon-composant');
+const shadow = element.shadowRoot;
+const button = shadow.querySelector('button');
+
+<span class="comment">// Ajouter un événement</span>
+button.addEventListener('click', () => {
+    console.log('Clic dans le shadow DOM');
+});</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Cycle de vie des custom elements -->
+                    <div class="lecon-section">
+                        <h3>🔄 19.4 Cycle de vie des custom elements</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Méthode</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>constructor()</code></td>
+                                    <td>Appelé quand l'élément est créé (initialisation)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>connectedCallback()</code></td>
+                                    <td>Appelé quand l'élément est ajouté au DOM</td>
+                                </tr>
+                                <tr>
+                                    <td><code>disconnectedCallback()</code></td>
+                                    <td>Appelé quand l'élément est retiré du DOM</td>
+                                </tr>
+                                <tr>
+                                    <td><code>attributeChangedCallback(name, oldValue, newValue)</code></td>
+                                    <td>Appelé quand un attribut observé change</td>
+                                </tr>
+                                <tr>
+                                    <td><code>adoptedCallback()</code></td>
+                                    <td>Appelé quand l'élément est déplacé dans un nouveau document</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre>class MonComposant extends HTMLElement {
+    constructor() {
+        super();
+        console.log('1. Constructeur');
+        this.attachShadow({mode: 'open'});
+    }
+    
+    connectedCallback() {
+        console.log('2. Ajouté au DOM');
+        this.render();
+        
+        <span class="comment">// Configurer des événements</span>
+        this.shadowRoot.querySelector('button')?.addEventListener('click', () => {
+            console.log('Bouton cliqué');
+        });
+    }
+    
+    disconnectedCallback() {
+        console.log('3. Retiré du DOM');
+        <span class="comment">// Nettoyer les événements, timers, etc.</span>
+    }
+    
+    static get observedAttributes() {
+        return ['data-count'];
+    }
+    
+    attributeChangedCallback(name, oldValue, newValue) {
+        console.log(`Attribut ${name} changé: ${oldValue} → ${newValue}`);
+        this.render();
+    }
+      
+    render() {
+        const count = this.getAttribute('data-count') || 0;
+        this.shadowRoot.innerHTML = `
+            &lt;style&gt;
+                div { padding: 10px; background: #F6EDE7; }
+            &lt;/style&gt;
+            &lt;div&gt;
+                &lt;p&gt;Compteur: ${count}&lt;/p&gt;
+                &lt;button&gt;Inc&lt;/button&gt;
+            &lt;/div&gt;
+        `;
+    }
+}
+
+customElements.define('mon-composant', MonComposant);</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Communication entre composants -->
+                    <div class="lecon-section">
+                        <h3>📡 19.5 Communication entre composants</h3>
+
+                        <h4>Événements personnalisés</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">// Dans le composant enfant</span>
+class EnfantComposant extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+    }
+    
+    connectedCallback() {
+        this.shadowRoot.innerHTML = `
+            &lt;button&gt;Cliquez&lt;/button&gt;
+        `;
+        
+        this.shadowRoot.querySelector('button').addEventListener('click', () => {
+            <span class="comment">// Créer et dispatcher un événement personnalisé</span>
+            const event = new CustomEvent('enfant-click', {
+                detail: { 
+                    message: 'Bouton enfant cliqué',
+                    timestamp: Date.now()
+                },
+                bubbles: true,
+                composed: true <span class="comment">// Permet de traverser le shadow DOM</span>
+            });
+            this.dispatchEvent(event);
+        });
+    }
+}
+
+customElements.define('enfant-composant', EnfantComposant);
+
+<span class="comment">// Dans le parent</span>
+class ParentComposant extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+            &lt;enfant-composant&gt;&lt;/enfant-composant&gt;
+            &lt;div id="log"&gt;&lt;/div&gt;
+        `;
+        
+        this.querySelector('enfant-composant').addEventListener('enfant-click', (e) => {
+            this.querySelector('#log').textContent = 
+                `Reçu: ${e.detail.message}`;
+        });
+    }
+}
+
+customElements.define('parent-composant', ParentComposant);</pre>
+                        </div>
+
+                        <h4>Communication via les props (attributs)</h4>
+                        <div class="code-block">
+                            <pre><span class="comment">// Composant enfant</span>
+class DisplayComposant extends HTMLElement {
+    static get observedAttributes() { return ['value']; }
+    
+    attributeChangedCallback() {
+        this.textContent = this.getAttribute('value') || '0';
+    }
+}
+
+customElements.define('display-composant', DisplayComposant);
+
+<span class="comment">// Mise à jour depuis le parent</span>
+const display = document.querySelector('display-composant');
+display.setAttribute('value', '42');</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exemple complet -->
+                    <div class="lecon-section">
+                        <h3>🏗️ 19.6 Exemple complet : Composant Todo</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">&lt;!-- Définition du composant --&gt;</span>
+class TodoList extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+        this.todos = [
+            { id: 1, text: 'Apprendre HTML', completed: true },
+            { id: 2, text: 'Apprendre CSS', completed: false },
+            { id: 3, text: 'Apprendre JavaScript', completed: false }
+        ];
+    }
+    
+    connectedCallback() {
+        this.render();
+        
+        this.shadowRoot.querySelector('#ajouter').addEventListener('click', () => {
+            const input = this.shadowRoot.querySelector('#nouveau');
+            if (input.value.trim()) {
+                this.todos.push({
+                    id: Date.now(),
+                    text: input.value,
+                    completed: false
+                });
+                input.value = '';
+                this.render();
+            }
+        });
+        
+        this.shadowRoot.querySelector('#todo-items').addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                const id = parseInt(e.target.dataset.id);
+                this.todos = this.todos.filter(t => t.id !== id);
+                this.render();
+            } else if (e.target.type === 'checkbox') {
+                const id = parseInt(e.target.dataset.id);
+                const todo = this.todos.find(t => t.id === id);
+                if (todo) todo.completed = e.target.checked;
+            }
+        });
+    }
+    
+    render() {
+        this.shadowRoot.innerHTML = `
+            &lt;style&gt;
+                :host {
+                    display: block;
+                    max-width: 400px;
+                    margin: 20px auto;
+                    font-family: Arial, sans-serif;
+                }
+                .todo-container {
+                    background: #F6EDE7;
+                    border-radius: 8px;
+                    padding: 20px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+                h2 {
+                    color: #1F2D3D;
+                    margin-top: 0;
+                }
+                .input-group {
+                    display: flex;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                }
+                input[type="text"] {
+                    flex: 1;
+                    padding: 8px;
+                    border: 1px solid #6B7280;
+                    border-radius: 4px;
+                }
+                button {
+                    background: #FF7A45;
+                    color: white;
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+                button:hover {
+                    background: #1F2D3D;
+                }
+                ul {
+                    list-style: none;
+                    padding: 0;
+                }
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 8px;
+                    background: white;
+                    margin-bottom: 5px;
+                    border-radius: 4px;
+                }
+                li.completed span {
+                    text-decoration: line-through;
+                    color: #6B7280;
+                }
+                .delete-btn {
+                    margin-left: auto;
+                    background: #dc3545;
+                    padding: 4px 8px;
+                    font-size: 0.9rem;
+                }
+            &lt;/style&gt;
+            
+            &lt;div class="todo-container"&gt;
+                &lt;h2&gt;Ma Todo List&lt;/h2&gt;
+                
+                &lt;div class="input-group"&gt;
+                    &lt;input type="text" id="nouveau" placeholder="Nouvelle tâche..."&gt;
+                    &lt;button id="ajouter"&gt;Ajouter&lt;/button&gt;
+                &lt;/div&gt;
+                
+                &lt;ul id="todo-items"&gt;
+                    ${this.todos.map(todo => `
+                        &lt;li class="${todo.completed ? 'completed' : ''}"&gt;
+                            &lt;input type="checkbox" data-id="${todo.id}" ${todo.completed ? 'checked' : ''}&gt;
+                            &lt;span&gt;${todo.text}&lt;/span&gt;
+                            &lt;button class="delete-btn" data-id="${todo.id}"&gt;×&lt;/button&gt;
+                        &lt;/li&gt;
+                    `).join('')}
+                &lt;/ul&gt;
+                
+                &lt;p&gt;Total: ${this.todos.length} tâches&lt;/p&gt;
+            &lt;/div&gt;
+        `;
+    }
+}
+
+customElements.define('todo-list', TodoList);</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 19.7 Exercices pratiques</h3>
+                               <div class="exercice-card">
+                            <h4>Exercice 1 : Composant bouton personnalisé</h4>
+                            <p><strong>Objectif :</strong> Créer un bouton avec différentes variantes.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créer un composant <code>&lt;mon-bouton&gt;</code></li>
+                                    <li>Attributs : variant (primary, secondary, danger), taille (small, medium, large)</li>
+                                    <li>Gérer l'état disabled</li>
+                                    <li>Émettre un événement 'click' personnalisé</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Composant modal</h4>
+                            <p><strong>Objectif :</strong> Créer un composant de fenêtre modale.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Utiliser shadow DOM pour l'isolation</li>
+                                    <li>Slots pour le titre, le contenu et le footer</li>
+                                    <li>Attribut "ouvert" pour afficher/masquer</li>
+                                    <li>Bouton de fermeture</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 3 : Composant de notation par étoiles</h4>
+                            <p><strong>Objectif :</strong> Créer un composant d'évaluation.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Attributs : note (1-5), readonly, taille</li>
+                                    <li>Affichage des étoiles pleines/vides</li>
+                                    <li>Émettre un événement quand la note change</li>
+                                    <li>Style au survol</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 20 : PROJET FINAL ===== -->
+            <article class="lecon projet" id="lecon20">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre projet-bg">Chapitre 20</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 60 min</span>
+                        <span class="lecon-niveau projet">Projet final</span>
+                    </div>
+                    <h2 class="lecon-titre">🚀 Projet final</h2>
+                    <p class="lecon-description">Créer une application complète avec toutes les notions apprises</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Présentation -->
+                    <div class="lecon-section">
+                        <h3>🎯 20.1 Objectif du projet</h3>
+
+                        <p>Créer une application web complète de gestion de produits (dashboard admin) utilisant toutes les technologies HTML apprises.</p>
+
+                        <div class="encart-important" style="background: #388e3c;">
+                            <div class="encart-icon">🏆</div>
+                            <div class="encart-content">
+                                <strong>Compétences évaluées :</strong> Structure sémantique, formulaires avancés, tableaux, APIs HTML5, Canvas/SVG, Templates, Web Components, Microdonnées, SEO, Accessibilité
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Spécifications -->
+                    <div class="lecon-section">
+                        <h3>📋 20.2 Spécifications du projet</h3>
+
+                        <h4>Structure de la page</h4>
+                        <ul>
+                            <li><strong>Header sémantique</strong> avec navigation et menu utilisateur</li>
+                            <li><strong>Barre latérale</strong> avec filtres (catégories, prix, note)</li>
+                            <li><strong>Zone principale</strong> avec grille de produits</li>
+                            <li><strong>Footer</strong> avec informations et liens</li>
+                        </ul>
+
+                        <h4>Fonctionnalités</h4>
+                        <ol>
+                            <li><strong>Affichage des produits</strong> (grille/liste) avec microdonnées Product</li>
+                            <li><strong>Filtres dynamiques</strong> (par catégorie, prix, note)</li>
+                            <li><strong>Recherche en temps réel</strong></li>
+                            <li><strong>Panier d'achat</strong> avec localStorage</li>
+                            <li><strong>Formulaire d'ajout de produit</strong> (admin) avec validation</li>
+                            <li><strong>Graphiques de ventes</strong> avec Canvas</li>
+                            <li><strong>Carte de localisation</strong> du magasin (iframe Maps)</li>
+                            <li><strong>Drag & drop</strong> pour réorganiser les produits</li>
+                            <li><strong>Notifications</strong> lors de l'ajout au panier</li>
+                            <li><strong>Géolocalisation</strong> pour trouver le magasin le plus proche</li>
+                        </ol>
+
+                        <h4>Composants personnalisés (Web Components)</h4>
+                        <ul>
+                            <li><code>&lt;product-card&gt;</code> - Carte produit</li>
+                            <li><code>&lt;rating-stars&gt;</code> - Étoiles de notation</li>
+                            <li><code>&lt;price-filter&gt;</code> - Filtre par prix</li>
+                            <li><code>&lt;shopping-cart&gt;</code> - Panier d'achat</li>
+                            <li><code>&lt;sales-chart&gt;</code> - Graphique des ventes</li>
+                        </ul>
+                    </div>
+
+                    <!-- SECTION 3: Structure du code -->
+                    <div class="lecon-section">
+                        <h3>📁 20.3 Structure des fichiers</h3>
+
+                        <div class="code-block">
+                            <pre>mon-projet/
+│
+├── index.html          # Page principale
+├── style.css           # Styles globaux
+│
+├── components/
+│   ├── ProductCard.js      # Web component carte produit
+│   ├── RatingStars.js      # Web component étoiles
+│   ├── PriceFilter.js      # Web component filtre
+│   ├── ShoppingCart.js     # Web component panier
+│   └── SalesChart.js       # Web component graphique
+│
+├── js/
+│   ├── app.js              # Logique principale
+│   ├── api.js              # Gestion des données
+│   ├── storage.js          # Gestion localStorage
+│   └── utils.js            # Fonctions utilitaires
+│
+├── data/
+│   └── products.json       # Données des produits
+│
+└── assets/
+    ├── images/
+    └── icons/</pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Code de base -->
+                    <div class="lecon-section">
+                        <h3>🔧 20.4 Code de base (index.html)</h3>
+
+                        <div class="code-block">
+                            <pre><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attribute">lang</span>=<span class="value">"fr"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Mon Shop - Projet HTML Master<span class="tag">&lt;/title&gt;</span>
+    
+    <span class="comment">&lt;!-- Meta tags SEO --&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"description"</span> <span class="attribute">content</span>=<span class="value">"Application de gestion de produits - Projet final HTML"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">name</span>=<span class="value">"author"</span> <span class="attribute">content</span>=<span class="value">"Ambanivolo mi-DEV"</span><span class="tag">&gt;</span>
+    
+    <span class="comment">&lt;!-- Open Graph --&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">property</span>=<span class="value">"og:title"</span> <span class="attribute">content</span>=<span class="value">"Mon Shop"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attribute">property</span>=<span class="value">"og:type"</span> <span class="attribute">content</span>=<span class="value">"website"</span><span class="tag">&gt;</span>
+    
+    <span class="comment">&lt;!-- Styles --&gt;</span>
+    <span class="tag">&lt;link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"style.css"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    <span class="comment">&lt;!-- Header sémantique --&gt;</span>
+    <span class="tag">&lt;header</span> <span class="attribute">role</span>=<span class="value">"banner"</span> <span class="attribute">aria-label</span>=<span class="value">"En-tête du site"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h1&gt;</span>Mon Shop<span class="tag">&lt;/h1&gt;</span>
+        <span class="tag">&lt;nav</span> <span class="attribute">role</span>=<span class="value">"navigation"</span> <span class="attribute">aria-label</span>=<span class="value">"Navigation principale"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;ul&gt;</span>
+                <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#accueil"</span> <span class="attribute">aria-current</span>=<span class="value">"page"</span><span class="tag">&gt;</span>Accueil<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+                <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#produits"</span><span class="tag">&gt;</span>Produits<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+                <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"#contact"</span><span class="tag">&gt;</span>Contact<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+            <span class="tag">&lt;/ul&gt;</span>
+        <span class="tag">&lt;/nav&gt;</span>
+        
+        <span class="comment">&lt;!-- Panier (web component) --&gt;</span>
+        <span class="tag">&lt;shopping-cart</span> <span class="attribute">id</span>=<span class="value">"panier"</span><span class="tag">&gt;&lt;/shopping-cart&gt;</span>
+    <span class="tag">&lt;/header&gt;</span>
+
+    <span class="comment">&lt;!-- Contenu principal --&gt;</span>
+    <span class="tag">&lt;main</span> <span class="attribute">role</span>=<span class="value">"main"</span><span class="tag">&gt;</span>
+        <span class="comment">&lt;!-- Barre latérale avec filtres --&gt;</span>
+        <span class="tag">&lt;aside</span> <span class="attribute">role</span>=<span class="value">"complementary"</span> <span class="attribute">aria-label</span>=<span class="value">"Filtres"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;h2&gt;</span>Filtres<span class="tag">&lt;/h2&gt;</span>
+            
+            <span class="comment">&lt;!-- Filtre catégorie (select) --&gt;</span>
+            <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"categorie"</span><span class="tag">&gt;</span>Catégorie :<span class="tag">&lt;/label&gt;</span>
+            <span class="tag">&lt;select</span> <span class="attribute">id</span>=<span class="value">"categorie"</span> <span class="attribute">name</span>=<span class="value">"categorie"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">""</span><span class="tag">&gt;</span>Toutes<span class="tag">&lt;/option&gt;</span>
+                <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"electronique"</span><span class="tag">&gt;</span>Électronique<span class="tag">&lt;/option&gt;</span>
+                <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"vetements"</span><span class="tag">&gt;</span>Vêtements<span class="tag">&lt;/option&gt;</span>
+                <span class="tag">&lt;option</span> <span class="attribute">value</span>=<span class="value">"livres"</span><span class="tag">&gt;</span>Livres<span class="tag">&lt;/option&gt;</span>
+            <span class="tag">&lt;/select&gt;</span>
+            
+            <span class="comment">&lt;!-- Filtre prix (range) --&gt;</span>
+            <span class="tag">&lt;price-filter</span> <span class="attribute">id</span>=<span class="value">"filtre-prix"</span><span class="tag">&gt;&lt;/price-filter&gt;</span>
+            
+            <span class="comment">&lt;!-- Filtre note (étoiles) --&gt;</span>
+            <span class="tag">&lt;rating-stars</span> <span class="attribute">id</span>=<span class="value">"filtre-note"</span> <span class="attribute">note</span>=<span class="value">"0"</span><span class="tag">&gt;&lt;/rating-stars&gt;</span>
+        <span class="tag">&lt;/aside&gt;</span>
+
+        <span class="comment">&lt;!-- Zone des produits --&gt;</span>
+        <span class="tag">&lt;section</span> <span class="attribute">id</span>=<span class="value">"produits"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;h2&gt;</span>Nos produits<span class="tag">&lt;/h2&gt;</span>
+            
+            <span class="comment">&lt;!-- Barre de recherche --&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="value">"search-bar"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;label</span> <span class="attribute">for</span>=<span class="value">"recherche"</span><span class="tag">&gt;</span>Rechercher :<span class="tag">&lt;/label&gt;</span>
+                <span class="tag">&lt;input</span> <span class="attribute">type</span>=<span class="value">"search"</span> <span class="attribute">id</span>=<span class="value">"recherche"</span> <span class="attribute">placeholder</span>=<span class="value">"Nom du produit..."</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+            
+            <span class="comment">&lt;!-- Grille de produits (web components) --&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attribute">id</span>=<span class="value">"products-grid"</span> <span class="attribute">class</span>=<span class="value">"products-grid"</span><span class="tag">&gt;</span>
+                <span class="comment">&lt;!-- Les produits seront injectés ici --&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;/section&gt;</span>
+
+        <span class="comment">&lt;!-- Graphique des ventes (Canvas) --&gt;</span>
+        <span class="tag">&lt;section</span> <span class="attribute">id</span>=<span class="value">"stats"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;h2&gt;</span>Statistiques des ventes<span class="tag">&lt;/h2&gt;</span>
+            <span class="tag">&lt;canvas</span> <span class="attribute">id</span>=<span class="value">"sales-chart"</span> <span class="attribute">width</span>=<span class="value">"800"</span> <span class="attribute">height</span>=<span class="value">"400"</span><span class="tag">&gt;</span><span class="tag">&lt;/canvas&gt;</span>
+        <span class="tag">&lt;/section&gt;</span>
+
+        <span class="comment">&lt;!-- Carte de localisation (iframe) --&gt;</span>
+        <span class="tag">&lt;section</span> <span class="attribute">id</span>=<span class="value">"localisation"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;h2&gt;</span>Notre magasin<span class="tag">&lt;/h2&gt;</span>
+            <span class="tag">&lt;iframe</span> 
+                <span class="attribute">src</span>=<span class="value">"https://www.openstreetmap.org/export/embed.html?bbox=47.5,-18.9,47.6,-18.8&amp;layer=mapnik"</span>
+                <span class="attribute">width</span>=<span class="value">"100%"</span>
+                <span class="attribute">height</span>=<span class="value">"300"</span>
+                <span class="attribute">loading</span>=<span class="value">"lazy"</span>
+                <span class="attribute">title</span>=<span class="value">"Carte du magasin"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;/iframe&gt;</span>
+        <span class="tag">&lt;/section&gt;</span>
+    <span class="tag">&lt;/main&gt;</span>
+
+    <span class="comment">&lt;!-- Footer --&gt;</span>
+    <span class="tag">&lt;footer</span> <span class="attribute">role</span>=<span class="value">"contentinfo"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;p&gt;</span>&amp;copy; 2026 Ambanivolo mi-DEV. Tous droits réservés.<span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;address&gt;</span>
+            Contact : <span class="tag">&lt;a</span> <span class="attribute">href</span>=<span class="value">"mailto:contact@ambanivolo-dev.mg"</span><span class="tag">&gt;</span>contact@ambanivolo-dev.mg<span class="tag">&lt;/a&gt;</span>
+        <span class="tag">&lt;/address&gt;</span>
+    <span class="tag">&lt;/footer&gt;</span>
+
+    <span class="comment">&lt;!-- Import des composants --&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute">type</span>=<span class="value">"module"</span> <span class="attribute">src</span>=<span class="value">"components/ProductCard.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute">type</span>=<span class="value">"module"</span> <span class="attribute">src</span>=<span class="value">"components/RatingStars.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute">type</span>=<span class="value">"module"</span> <span class="attribute">src</span>=<span class="value">"components/PriceFilter.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+   <span class="tag">&lt;script</span> <span class="attribute">type</span>=<span class="value">"module"</span> <span class="attribute">src</span>=<span class="value">"components/ShoppingCart.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attribute">src</span>=<span class="value">"js/app.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Critères d'évaluation -->
+                    <div class="lecon-section">
+                        <h3>✅ 20.5 Critères d'évaluation</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Critère</th>
+                                    <th>Points</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Structure sémantique</td>
+                                    <td>10</td>
+                                    <td>Utilisation correcte des balises (header, nav, main, article, section, aside, footer)</td>
+                                </tr>
+                                <tr>
+                                    <td>Formulaires avancés</td>
+                                    <td>10</td>
+                                    <td>Validation, types spéciaux, accessibilité</td>
+                                </tr>
+                                <tr>
+                                    <td>Tableaux</td>
+                                    <td>5</td>
+                                    <td>Affichage de données structurées</td>
+                                </tr>
+                                <tr>
+                                    <td>Multimédia</td>
+                                    <td>5</td>
+                                    <td>Images, iframe (carte), éventuellement audio/vidéo</td>
+                                </tr>
+                                <tr>
+                                    <td>APIs HTML5</td>
+                                    <td>10</td>
+                                    <td>localStorage pour le panier, géolocalisation, notifications</td>
+                                </tr>
+                                <tr>
+                                    <td>Canvas / SVG</td>
+                                    <td>10</td>
+                                    <td>Graphique des ventes avec Canvas</td>
+                                </tr>
+                                <tr>
+                                    <td>Templates</td>
+                                    <td>5</td>
+                                    <td>Utilisation de &lt;template&gt; pour les produits</td>
+                                </tr>
+                                <tr>
+                                    <td>Web Components</td>
+                                    <td>15</td>
+                                    <td>Au moins 3 composants personnalisés</td>
+                                </tr>
+                                <tr>
+                                    <td>Microdonnées</td>
+                                    <td>5</td>
+                                    <td>Schema.org pour les produits</td>
+                                </tr>
+                                <tr>
+                                    <td>SEO</td>
+                                    <td>5</td>
+                                    <td>Meta tags, Open Graph, structure</td>
+                                </tr>
+                                <tr>
+                                    <td>Accessibilité</td>
+                                    <td>10</td>
+                                    <td>ARIA, labels, navigation clavier, contrastes</td>
+                                </tr>
+                                <tr>
+                                    <td>Responsive</td>
+                                    <td>5</td>
+                                    <td>S'adapte aux écrans mobiles</td>
+                                </tr>
+                                <tr>
+                                    <td>Code propre</td>
+                                    <td>5</td>
+                                    <td>Indentation, commentaires, organisation</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- SECTION 6: Rendu final -->
+                    <div class="lecon-section exercices-recap">
+                        <h3>🎓 20.6 Rendu final</h3>
+
+                        <p>Le projet doit être présenté sous forme de :</p>
+                        <ol>
+                            <li>Fichier ZIP contenant tous les fichiers (HTML, CSS, JS)</li>
+                            <li>Documentation technique expliquant les choix</li>
+                            <li>Démo en ligne (optionnel)</li>
+                        </ol>
+
+                        <div class="encart-important" style="background: #388e3c; margin-top: 20px;">
+                            <div class="encart-icon">🏁</div>
+                            <div class="encart-content">
+                                <strong>Félicitations !</strong> Vous avez terminé les 20 leçons du cours HTML Master. Vous êtes maintenant un expert HTML prêt à créer des sites web professionnels.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- ===== SECTION FÉLICITATIONS ===== -->
+    <section class="certification">
+        <div class="container">
+            <div class="certification-content">
+                <i class="fas fa-trophy certification-icon"></i>
+                <h2>Félicitations !</h2>
+                <p>Vous avez terminé les 20 leçons du cours HTML Master</p>
+                <p class="certification-stats">20 leçons • 200+ exemples • 10+ heures de contenu</p>
+                
+                <div class="certification-badges">
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">APIs</span>
+                    <span class="badge">Canvas</span>
+                    <span class="badge">Web Components</span>
+                </div>
+                
+                <div class="certification-actions">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-home"></i> Retour à l'accueil
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fas fa-download"></i> Télécharger le certificat
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <a href="c.html" class="pagination-prev"><i class="fas fa-arrow-left"></i> Leçons 11-15</a>
+                <div class="pagination-links">
+                    <a href="a.html">1</a>
+                    <a href="b.html">2</a>
+                    <a href="c.html">3</a>
+                    <a href="d.html" class="active">4</a>
+                </div>
+                <span class="pagination-next disabled">Fin du cours <i class="fas fa-check-circle"></i></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+  </html>
+  
