@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Master - Leçons 6 à 10</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="js2.css">
+</head>
+<body>
+    <!-- ===== HEADER AVEC BOUTON RETOUR ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-bracket">{ }</span>
+                    <div class="logo-text">
+                        <span class="logo-main">JAVASCRIPT MASTER</span>
+                        <span class="logo-sub">Leçons 6 à 10 : Fonctions et tableaux</span>
+                    </div>
+                </div>
+                <a href="index.html" class="btn-retour">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Accueil</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="progress-info">
+                <span class="progress-text">Progression : Leçons 6-10 sur 20</span>
+                <span class="progress-percent">50%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%"></div>
+            </div>
+            <div class="progress-nav">
+                <a href="js1.html" class="progress-prev"><i class="fas fa-arrow-left"></i> Leçons 1-5</a>
+                <span class="progress-current">Leçons 6-10</span>
+                <a href="js3.html" class="progress-next">Leçons 11-15 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SOMMAIRE DES LEÇONS 6-10 ===== -->
+    <section class="sommaire">
+        <div class="container">
+            <h2 class="section-title">Leçons 6 à 10 : Fonctions et tableaux</h2>
+            <div class="sommaire-grid">
+                <a href="#lecon6" class="sommaire-card">
+                    <span class="lecon-numero">06</span>
+                    <h3>Fonctions</h3>
+                    <p>Déclaration, paramètres, retour</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon7" class="sommaire-card">
+                    <span class="lecon-numero">07</span>
+                    <h3>Portée des variables</h3>
+                    <p>Scope global, local, bloc</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                </a>
+                <a href="#lecon8" class="sommaire-card">
+                    <span class="lecon-numero">08</span>
+                    <h3>Tableaux (Arrays)</h3>
+                    <p>Création, accès, méthodes</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+                <a href="#lecon9" class="sommaire-card">
+                    <span class="lecon-numero">09</span>
+                    <h3>Méthodes de tableaux</h3>
+                    <p>push, pop, map, filter, reduce</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                </a>
+                <a href="#lecon10" class="sommaire-card">
+                    <span class="lecon-numero">10</span>
+                    <h3>Objets</h3>
+                    <p>Création, propriétés, méthodes</p>
+                    <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENU DES LEÇONS ===== -->
+    <main class="main-content">
+        <div class="container">
+            <!-- ===== LEÇON 6 : FONCTIONS ===== -->
+            <article class="lecon" id="lecon6">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 06</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">🔧 Les fonctions</h2>
+                    <p class="lecon-description">Regrouper et réutiliser du code</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 6.1 Qu'est-ce qu'une fonction ?</h3>
+
+                        <div class="definition-box">
+                            <p>Une <strong>fonction</strong> est un bloc de code réutilisable qui effectue une tâche spécifique. Elle peut prendre des paramètres (entrées) et retourner une valeur (sortie).</p>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Analogie :</h4>
+                            <p>Une fonction est comme une machine :</p>
+                            <ul>
+                                <li><strong>Entrée</strong> : les paramètres (ingrédients)</li>
+                                <li><strong>Traitement</strong> : le code de la fonction (recette)</li>
+                                <li><strong>Sortie</strong> : la valeur retournée (plat préparé)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Déclaration de fonction -->
+                    <div class="lecon-section">
+                        <h3>📝 6.2 Déclarer une fonction</h3>
+
+                        <p>Plusieurs façons de déclarer des fonctions :</p>
+
+                        <div class="grid-3">
+                            <div class="carte-type">
+                                <h4>Fonction classique</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">function</span> direBonjour() {
+    console.log("Bonjour !");
+}</pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>Fonction avec paramètres</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">function</span> saluer(nom) {
+    console.log(`Bonjour ${nom} !`);
+}</pre>
+                                </div>
+                            </div>
+
+                            <div class="carte-type">
+                                <h4>Fonction avec retour</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">function</span> carre(x) {
+    <span class="keyword">return</span> x * x;
+}</pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Exemple complet</span>
+<span class="keyword">function</span> addition(a, b) {
+    <span class="keyword">let</span> resultat = a + b;
+    <span class="keyword">return</span> resultat;
+}
+
+<span class="comment">// Appel de la fonction</span>
+<span class="keyword">let</span> somme = addition(5, 3);
+console.log(somme); <span class="comment">// 8</span>
+
+<span class="comment">// On peut directement utiliser le retour</span>
+console.log(addition(10, 20)); <span class="comment">// 30</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Fonctions anonymes et fléchées -->
+                    <div class="lecon-section">
+                        <h3>🏹 6.3 Fonctions anonymes et fléchées (ES6)</h3>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>Fonction anonyme</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">const</span> bonjour = <span class="keyword">function</span>(nom) {
+    <span class="keyword">return</span> `Bonjour ${nom}`;
+};</pre>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4>Fonction fléchée (arrow)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">const</span> bonjour = (nom) => {
+    <span class="keyword">return</span> `Bonjour ${nom}`;
+};
+
+<span class="comment">// Version courte (1 paramètre, 1 ligne)</span>
+<span class="keyword">const</span> carre = x => x * x;</pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Différence importante :</strong> Les fonctions fléchées n'ont pas leur propre <code>this</code>. Elles sont idéales pour les callbacks.
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Exemples de fonctions fléchées</span>
+<span class="keyword">const</span> addition = (a, b) => a + b;
+<span class="keyword">const</span> carre = x => x * x;
+<span class="keyword">const</span> saluer = nom => `Salut ${nom} !`;
+<span class="keyword">const</span> rien = () => console.log("Pas de paramètres");
+
+console.log(addition(5, 3));    <span class="comment">// 8</span>
+console.log(carre(4));          <span class="comment">// 16</span>
+console.log(saluer("Jean"));    <span class="comment">// "Salut Jean !"</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Paramètres par défaut -->
+                    <div class="lecon-section">
+                        <h3>⚙️ 6.4 Paramètres par défaut</h3>
+
+                        <p>On peut donner des valeurs par défaut aux paramètres.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">function</span> saluer(nom = "inconnu") {
+    console.log(`Bonjour ${nom} !`);
+}
+
+saluer("Jean");    <span class="comment">// "Bonjour Jean !"</span>
+saluer();          <span class="comment">// "Bonjour inconnu !"</span>
+
+<span class="comment">// Avec fonctions fléchées</span>
+<span class="keyword">const</span> multiplier = (a, b = 2) => a * b;
+
+console.log(multiplier(5, 3)); <span class="comment">// 15 (5*3)</span>
+console.log(multiplier(5));    <span class="comment">// 10 (5*2)</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 6.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Calculatrice</h4>
+                            <p><strong>Objectif :</strong> Créer des fonctions pour les opérations de base.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez une fonction <code>addition(a, b)</code> qui retourne a + b</li>
+                                    <li>Créez une fonction <code>soustraction(a, b)</code> qui retourne a - b</li>
+                                    <li>Créez une fonction <code>multiplication(a, b)</code> qui retourne a * b</li>
+                                    <li>Créez une fonction <code>division(a, b)</code> qui retourne a / b</li>
+                                    <li>Testez-les avec différentes valeurs</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Fonction fléchée</h4>
+                            <p><strong>Objectif :</strong> Convertir des fonctions classiques en fonctions fléchées.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Convertissez ces fonctions en version fléchée :</li>
+                                    <li><code>function carre(x) { return x * x; }</code></li>
+                                    <li><code>function bonjour(nom) { return "Bonjour " + nom; }</code></li>
+                                    <li><code>function somme(a, b) { return a + b; }</code></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 7 : PORTÉE DES VARIABLES ===== -->
+            <article class="lecon" id="lecon7">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 07</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 25 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">🌐 Portée des variables (Scope)</h2>
+                    <p class="lecon-description">Où les variables sont-elles accessibles ?</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 7.1 Qu'est-ce que la portée ?</h3>
+
+                        <div class="definition-box">
+                            <p>La <strong>portée (scope)</strong> définit où une variable est accessible dans le code. Une variable n'est accessible que dans la portée où elle est déclarée.</p>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Portée globale -->
+                    <div class="lecon-section">
+                        <h3>🌍 7.2 Portée globale</h3>
+
+                        <p>Les variables déclarées en dehors de toute fonction sont globales et accessibles partout.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> nomGlobal = "Jean"; <span class="comment">// Variable globale</span>
+
+<span class="keyword">function</span> afficher() {
+    console.log(nomGlobal); <span class="comment">// Accessible ici</span>
+}
+
+afficher(); <span class="comment">// "Jean"</span>
+
+<span class="keyword">if</span> (true) {
+    console.log(nomGlobal); <span class="comment">// Accessible aussi</span>
+}</pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Attention :</strong> Évitez les variables globales ! Elles peuvent causer des conflits et rendre le code difficile à maintenir.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Portée locale (fonction) -->
+                    <div class="lecon-section">
+                        <h3>🏠 7.3 Portée locale (de fonction)</h3>
+
+                        <p>Les variables déclarées dans une fonction ne sont accessibles qu'à l'intérieur de cette fonction.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">function</span> maFonction() {
+    <span class="keyword">let</span> nomLocal = "Marie"; <span class="comment">// Variable locale</span>
+    console.log(nomLocal); <span class="comment">// "Marie" (accessible ici)</span>
+}
+
+maFonction();
+console.log(nomLocal); <span class="comment">// ERREUR ! nomLocal n'est pas définie</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Portée de bloc -->
+                    <div class="lecon-section">
+                        <h3>📦 7.4 Portée de bloc (let et const)</h3>
+
+                        <p><code>let</code> et <code>const</code> ont une portée de bloc, contrairement à <code>var</code>.</p>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>Avec let (portée de bloc)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">if</span> (true) {
+    <span class="keyword">let</span> message = "Bonjour";
+    console.log(message); <span class="comment">// OK</span>
+}
+console.log(message); <span class="comment">// ERREUR !</span></pre>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4>Avec var (pas de portée de bloc)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">if</span> (true) {
+    <span class="keyword">var</span> message = "Bonjour";
+    console.log(message); <span class="comment">// OK</span>
+}
+console.log(message); <span class="comment">// "Bonjour" (!!!)</span></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Règle :</strong> Toujours utiliser <code>let</code> et <code>const</code>, jamais <code>var</code>. La portée de bloc est plus intuitive et évite les bugs.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 7.5 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Test de portée</h4>
+                            <p><strong>Objectif :</strong> Comprendre la portée.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Déclarez une variable globale <code>pays = "Madagascar"</code></li>
+                                    <li>Dans une fonction, déclarez une variable locale <code>ville = "Antananarivo"</code></li>
+                                    <li>Affichez les deux variables dans la fonction</li>
+                                    <li>Essayez d'afficher la variable locale en dehors de la fonction</li>
+                                    <li>Observez les résultats</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 8 : TABLEAUX (ARRAYS) ===== -->
+            <article class="lecon" id="lecon8">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 08</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                      </div>
+                    <h2 class="lecon-titre">📚 Les tableaux (Arrays)</h2>
+                    <p class="lecon-description">Stocker des listes de données</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 8.1 Qu'est-ce qu'un tableau ?</h3>
+
+                        <div class="definition-box">
+                            <p>Un <strong>tableau (array)</strong> est une structure de données qui permet de stocker plusieurs valeurs dans une seule variable. Chaque valeur a un index (position) commençant à 0.</p>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Créer un tableau -->
+                    <div class="lecon-section">
+                        <h3>➕ 8.2 Créer un tableau</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Avec les crochets [] (recommandé)</span>
+<span class="keyword">let</span> fruits = ["pomme", "banane", "orange"];
+<span class="keyword">let</span> nombres = [1, 2, 3, 4, 5];
+<span class="keyword">let</span> mixte = ["texte", 42, true, null];
+
+<span class="comment">// Avec le constructeur Array</span>
+<span class="keyword">let</span> vide = new Array();           <span class="comment">// []</span>
+<span class="keyword">let</span> taille5 = new Array(5);       <span class="comment">// Tableau vide de longueur 5</span>
+<span class="keyword">let</span> predefini = new Array(1, 2, 3); <span class="comment">// [1, 2, 3]</span>
+
+console.log(fruits);    <span class="comment">// ["pomme", "banane", "orange"]</span>
+console.log(nombres);   <span class="comment">// [1, 2, 3, 4, 5]</span></pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> Toujours utiliser la syntaxe <code>[]</code> pour créer des tableaux, c'est plus simple et plus lisible.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Accéder aux éléments -->
+                    <div class="lecon-section">
+                        <h3>🔢 8.3 Accéder aux éléments</h3>
+
+                        <p>Les indices commencent à 0.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> fruits = ["pomme", "banane", "orange"];
+
+console.log(fruits[0]);  <span class="comment">// "pomme" (premier élément)</span>
+console.log(fruits[1]);  <span class="comment">// "banane" (deuxième élément)</span>
+console.log(fruits[2]);  <span class="comment">// "orange" (troisième élément)</span>
+console.log(fruits[3]);  <span class="comment">// undefined (pas d'élément)</span>
+
+<span class="comment">// Longueur du tableau</span>
+console.log(fruits.length); <span class="comment">// 3</span>
+
+<span class="comment">// Dernier élément</span>
+console.log(fruits[fruits.length - 1]); <span class="comment">// "orange"</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Modifier un tableau -->
+                    <div class="lecon-section">
+                        <h3>✏️ 8.4 Modifier un tableau</h3>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> fruits = ["pomme", "banane", "orange"];
+
+<span class="comment">// Modifier un élément</span>
+fruits[1] = "kiwi";
+console.log(fruits); <span class="comment">// ["pomme", "kiwi", "orange"]</span>
+
+<span class="comment">// Ajouter à la fin</span>
+fruits[fruits.length] = "mangue"; <span class="comment">// Mais on utilise plutôt push()</span>
+
+<span class="comment">// Ajouter à un index spécifique (peut créer des trous)</span>
+fruits[5] = "fraise";
+console.log(fruits); <span class="comment">// ["pomme", "kiwi", "orange", "mangue", empty × 1, "fraise"]</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Parcourir un tableau -->
+                    <div class="lecon-section">
+                        <h3>🔄 8.5 Parcourir un tableau</h3>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>Avec for classique</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">let</span> fruits = ["pomme", "banane", "orange"];
+
+<span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}</pre>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4>Avec for...of (ES6)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">let</span> fruits = ["pomme", "banane", "orange"];
+
+<span class="keyword">for</span> (<span class="keyword">let</span> fruit <span class="keyword">of</span> fruits) {
+    console.log(fruit);
+}</pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// for...of est plus simple quand on n'a pas besoin de l'index</span>
+<span class="keyword">let</span> nombres = [10, 20, 30, 40, 50];
+<span class="keyword">let</span> somme = 0;
+
+<span class="keyword">for</span> (<span class="keyword">let</span> nombre <span class="keyword">of</span> nombres) {
+    somme += nombre;
+}
+
+console.log(somme); <span class="comment">// 150</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 8.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Liste de courses</h4>
+                            <p><strong>Objectif :</strong> Créer et manipuler un tableau.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un tableau <code>courses</code> avec 5 éléments</li>
+                                    <li>Affichez le premier et le dernier élément</li>
+                                    <li>Modifiez le 3ème élément</li>
+                                    <li>Affichez la longueur du tableau</li>
+                                    <li>Parcourez le tableau et affichez chaque élément</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 9 : MÉTHODES DE TABLEAUX ===== -->
+            <article class="lecon" id="lecon9">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 09</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 40 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">⚙️ Méthodes de tableaux</h2>
+                    <p class="lecon-description">push, pop, map, filter, reduce</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Ajouter/Supprimer -->
+                    <div class="lecon-section">
+                        <h3>➕ 9.1 Ajouter et supprimer des éléments</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Méthode</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                    <th>Résultat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>push()</code></td>
+                                    <td>Ajoute à la fin</td>
+                                    <td><code>arr.push(4)</code></td>
+                                    <td>[1,2,3,4]</td>
+                                </tr>
+                                <tr>
+                                    <td><code>pop()</code></td>
+                                    <td>Supprime le dernier</td>
+                                    <td><code>arr.pop()</code></td>
+                                    <td>[1,2] (retourne 3)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>unshift()</code></td>
+                                    <td>Ajoute au début</td>
+                                    <td><code>arr.unshift(0)</code></td>
+                                    <td>[0,1,2,3]</td>
+                                </tr>
+                                <tr>
+                                    <td><code>shift()</code></td>
+                                    <td>Supprime le premier</td>
+                                    <td><code>arr.shift()</code></td>
+                                    <td>[2,3] (retourne 1)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> fruits = ["pomme", "banane"];
+
+<span class="comment">// push - ajouter à la fin</span>
+fruits.push("orange");
+console.log(fruits); <span class="comment">// ["pomme", "banane", "orange"]</span>
+
+<span class="comment">// pop - enlever le dernier</span>
+<span class="keyword">let</span> dernier = fruits.pop();
+console.log(dernier); <span class="comment">// "orange"</span>
+console.log(fruits);  <span class="comment">// ["pomme", "banane"]</span>
+
+<span class="comment">// unshift - ajouter au début</span>
+fruits.unshift("kiwi");
+console.log(fruits); <span class="comment">// ["kiwi", "pomme", "banane"]</span>
+
+<span class="comment">// shift - enlever le premier</span>
+<span class="keyword">let</span> premier = fruits.shift();
+console.log(premier); <span class="comment">// "kiwi"</span>
+console.log(fruits);  <span class="comment">// ["pomme", "banane"]</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: map() -->
+                    <div class="lecon-section">
+                        <h3>🗺️ 9.2 map() - Transformer chaque élément</h3>
+
+                        <p><code>map()</code> crée un nouveau tableau en appliquant une fonction à chaque élément.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> nombres = [1, 2, 3, 4, 5];
+
+<span class="comment">// Doubler chaque nombre</span>
+<span class="keyword">let</span> doubles = nombres.map(<span class="keyword">function</span>(nombre) {
+    <span class="keyword">return</span> nombre * 2;
+});
+
+<span class="comment">// Version fléchée</span>
+<span class="keyword">let</span> doubles = nombres.map(nombre => nombre * 2);
+
+console.log(doubles); <span class="comment">// [2, 4, 6, 8, 10]</span>
+
+<span class="comment">// Autre exemple : mettre en majuscules</span>
+<span class="keyword">let</span> fruits = ["pomme", "banane", "orange"];
+<span class="keyword">let</span> majuscules = fruits.map(fruit => fruit.toUpperCase());
+console.log(majuscules); <span class="comment">// ["POMME", "BANANE", "ORANGE"]</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: filter() -->
+                    <div class="lecon-section">
+                        <h3>🔍 9.3 filter() - Filtrer les éléments</h3>
+
+                        <p><code>filter()</code> crée un nouveau tableau avec les éléments qui satisfont une condition.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+<span class="comment">// Garder uniquement les nombres pairs</span>
+<span class="keyword">let</span> pairs = nombres.filter(<span class="keyword">function</span>(nombre) {
+    <span class="keyword">return</span> nombre % 2 === 0;
+});
+
+<span class="comment">// Version fléchée</span>
+<span class="keyword">let</span> pairs = nombres.filter(nombre => nombre % 2 === 0);
+
+console.log(pairs); <span class="comment">// [2, 4, 6, 8, 10]</span>
+
+<span class="comment">// Garder les fruits qui commencent par "p"</span>
+<span class="keyword">let</span> fruits = ["pomme", "banane", "poire", "orange", "pêche"];
+<span class="keyword">let</span> fruitsP = fruits.filter(fruit => fruit.startsWith("p"));
+console.log(fruitsP); <span class="comment">// ["pomme", "poire", "pêche"]</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: reduce() -->
+                    <div class="lecon-section">
+                        <h3>📊 9.4 reduce() - Réduire à une valeur</h3>
+
+                        <p><code>reduce()</code> applique une fonction qui accumule les valeurs.</p>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> nombres = [1, 2, 3, 4, 5];
+
+<span class="comment">// Calculer la somme</span>
+<span class="keyword">let</span> somme = nombres.reduce(<span class="keyword">function</span>(accumulateur, valeur) {
+    <span class="keyword">return</span> accumulateur + valeur;
+}, 0); <span class="comment">// 0 est la valeur initiale</span>
+
+<span class="comment">// Version fléchée</span>
+<span class="keyword">let</span> somme = nombres.reduce((acc, val) => acc + val, 0);
+
+console.log(somme); <span class="comment">// 15</span>
+
+<span class="comment">// Trouver le maximum</span>
+<span class="keyword">let</span> max = nombres.reduce((acc, val) => Math.max(acc, val), nombres[0]);</pre>
+                        </div>
+
+                        <div class="exemple-pratique">
+                            <h4>🎯 Exemple plus avancé : compter des occurrences</h4>
+                            <div class="code-block small">
+                                <pre><span class="keyword">let</span> fruits = ["pomme", "banane", "pomme", "orange", "banane", "pomme"];
+
+<span class="keyword">let</span> compteur = fruits.reduce((acc, fruit) => {
+    acc[fruit] = (acc[fruit] || 0) + 1;
+    <span class="keyword">return</span> acc;
+}, {});
+
+console.log(compteur); <span class="comment">// { pomme: 3, banane: 2, orange: 1 }</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Autres méthodes utiles -->
+                    <div class="lecon-section">
+                        <h3>🔧 9.5 Autres méthodes utiles</h3>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Méthode</th>
+                                    <th>Description</th>
+                                    <th>Exemple</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>indexOf()</code></td>
+                                    <td>Trouve l'index d'un élément</td>
+                                    <td><code>arr.indexOf("banane")</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>includes()</code></td>
+                                    <td>Vérifie si un élément existe</td>
+                                    <td><code>arr.includes("pomme")</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>slice()</code></td>
+                                    <td>Extrait une portion (sans modifier)</td>
+                                    <td><code>arr.slice(1, 3)</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>splice()</code></td>
+                                    <td>Ajoute/supprime à une position</td>
+                                    <td><code>arr.splice(2, 1, "nouveau")</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>concat()</code></td>
+                                    <td>Concatène des tableaux</td>
+                                    <td><code>arr1.concat(arr2)</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>join()</code></td>
+                                    <td>Convertit en chaîne</td>
+                                    <td><code>arr.join(", ")</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>reverse()</code></td>
+                                    <td>Inverse l'ordre</td>
+                                    <td><code>arr.reverse()</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>sort()</code></td>
+                                    <td>Trie le tableau</td>
+                                    <td><code>arr.sort()</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> fruits = ["pomme", "banane", "orange", "kiwi"];
+
+console.log(fruits.includes("banane"));    <span class="comment">// true</span>
+console.log(fruits.indexOf("orange"));     <span class="comment">// 2</span>
+console.log(fruits.slice(1, 3));           <span class="comment">// ["banane", "orange"]</span>
+console.log(fruits.join(" - "));           <span class="comment">// "pomme - banane - orange - kiwi"</span>
+console.log(fruits.sort());                <span class="comment">// ["banane", "kiwi", "orange", "pomme"]</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 9.6 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Manipulations de tableau</h4>
+                            <p><strong>Objectif :</strong> Utiliser différentes méthodes.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un tableau <code>notes</code> avec [12, 15, 8, 19, 10, 6, 14]</li>
+                                    <li>Filtrez pour garder les notes >= 10 (réussite)</li>
+                                    <li>Utilisez map pour augmenter chaque note de 1 point</li>
+                                    <li>Calculez la moyenne avec reduce</li>
+                                    <li>Affichez le tout</li>
+                            </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Gestion d'inventaire</h4>
+                            <p><strong>Objectif :</strong> Créer un petit système d'inventaire.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un tableau d'objets produits (nom, prix, quantité)</li>
+                                    <li>Calculez la valeur totale du stock (prix * quantité)</li>
+                                    <li>Trouvez les produits en rupture (quantité = 0)</li>
+                                    <li>Appliquez une réduction de 10% sur tous les prix</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== LEÇON 10 : OBJETS ===== -->
+            <article class="lecon" id="lecon10">
+                <div class="lecon-header">
+                    <div class="lecon-meta">
+                        <span class="lecon-chapitre">Chapitre 10</span>
+                        <span class="lecon-duree"><i class="far fa-clock"></i> 35 min</span>
+                        <span class="lecon-niveau intermediaire">Intermédiaire</span>
+                    </div>
+                    <h2 class="lecon-titre">📦 Les objets</h2>
+                    <p class="lecon-description">Stocker des données structurées</p>
+                </div>
+
+                <div class="lecon-body">
+                    <!-- SECTION 1: Introduction -->
+                    <div class="lecon-section">
+                        <h3>🔍 10.1 Qu'est-ce qu'un objet ?</h3>
+
+                        <div class="definition-box">
+                            <p>Un <strong>objet</strong> est une collection de paires clé/valeur. Il permet de regrouper des données liées entre elles.</p>
+                        </div>
+
+                        <div class="explication-approfondie">
+                            <h4>📖 Analogie :</h4>
+                            <p>Un objet représente une entité du monde réel : une personne, une voiture, un produit, etc.</p>
+                            <ul>
+                                <li><strong>Propriétés</strong> : les caractéristiques (nom, âge, couleur)</li>
+                                <li><strong>Méthodes</strong> : les actions (parler, rouler, afficher)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: Créer un objet -->
+                    <div class="lecon-section">
+                        <h3>➕ 10.2 Créer un objet</h3>
+
+                        <div class="code-block">
+                            <pre><span class="comment">// Avec les accolades {} (recommandé)</span>
+<span class="keyword">let</span> personne = {
+    prenom: "Jean",
+    nom: "Dupont",
+    age: 25,
+    ville: "Antananarivo"
+};
+
+<span class="comment">// Avec le constructeur Object</span>
+<span class="keyword">let</span> personne = new Object();
+personne.prenom = "Jean";
+personne.nom = "Dupont";
+
+console.log(personne);</pre>
+                        </div>
+
+                        <div class="astuce">
+                            <i class="fas fa-lightbulb"></i>
+                            <div><strong>Astuce :</strong> Toujours utiliser la syntaxe <code>{}</code> pour créer des objets, c'est plus simple et plus lisible.</div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: Accéder aux propriétés -->
+                    <div class="lecon-section">
+                        <h3>🔑 10.3 Accéder aux propriétés</h3>
+
+                        <div class="grid-2">
+                            <div>
+                                <h4>Notation point (.)</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">let</span> personne = {
+    prenom: "Jean",
+    age: 25
+};
+
+console.log(personne.prenom); <span class="comment">// "Jean"</span>
+personne.age = 26;            <span class="comment">// Modification</span></pre>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4>Notation crochets []</h4>
+                                <div class="code-block small">
+                                    <pre><span class="keyword">let</span> personne = {
+    prenom: "Jean",
+    age: 25
+};
+
+console.log(personne["prenom"]); <span class="comment">// "Jean"</span>
+<span class="keyword">let</span> prop = "age";
+console.log(personne[prop]);     <span class="comment">// 25</span></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">💡</div>
+                            <div class="encart-content">
+                                <strong>Quand utiliser [] ?</strong> Quand le nom de la propriété est dynamique (dans une variable) ou contient des caractères spéciaux (tirets, espaces).
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: Ajouter et supprimer des propriétés -->
+                    <div class="lecon-section">
+                        <h3>✏️ 10.4 Ajouter et supprimer des propriétés</h3>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> personne = {
+    prenom: "Jean"
+};
+
+<span class="comment">// Ajouter une propriété</span>
+personne.nom = "Dupont";
+personne["age"] = 25;
+
+console.log(personne); <span class="comment">// {prenom: "Jean", nom: "Dupont", age: 25}</span>
+
+<span class="comment">// Supprimer une propriété</span>
+<span class="keyword">delete</span> personne.age;
+console.log(personne); <span class="comment">// {prenom: "Jean", nom: "Dupont"}</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 5: Méthodes dans les objets -->
+                    <div class="lecon-section">
+                        <h3>⚙️ 10.5 Méthodes (fonctions dans les objets)</h3>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> personne = {
+    prenom: "Jean",
+    nom: "Dupont",
+    age: 25,
+    
+    <span class="comment">// Méthode (fonction classique)</span>
+    sePresenter: <span class="keyword">function</span>() {
+        console.log(`Je m'appelle ${this.prenom} ${this.nom}`);
+    },
+    
+    <span class="comment">// Méthode avec syntaxe raccourcie (ES6)</span>
+    anniversaire() {
+        this.age++;
+        console.log(`J'ai maintenant ${this.age} ans`);
+    }
+};
+
+personne.sePresenter();   <span class="comment">// "Je m'appelle Jean Dupont"</span>
+personne.anniversaire();  <span class="comment">// "J'ai maintenant 26 ans"</span></pre>
+                        </div>
+
+                        <div class="encart-important">
+                            <div class="encart-icon">⚠️</div>
+                            <div class="encart-content">
+                                <strong>Attention avec this :</strong> Dans les méthodes, <code>this</code> fait référence à l'objet lui-même. Les fonctions fléchées n'ont pas leur propre this, elles prennent celle du contexte parent.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 6: Parcourir un objet -->
+                    <div class="lecon-section">
+                        <h3>🔄 10.6 Parcourir un objet</h3>
+
+                        <div class="code-block">
+                            <pre><span class="keyword">let</span> personne = {
+    prenom: "Jean",
+    nom: "Dupont",
+    age: 25,
+    ville: "Antananarivo"
+};
+
+<span class="comment">// for...in (pour les objets)</span>
+<span class="keyword">for</span> (<span class="keyword">let</span> cle <span class="keyword">in</span> personne) {
+    console.log(`${cle}: ${personne[cle]}`);
+}
+
+<span class="comment">// Obtenir les clés</span>
+console.log(Object.keys(personne));   <span class="comment">// ["prenom", "nom", "age", "ville"]</span>
+
+<span class="comment">// Obtenir les valeurs</span>
+console.log(Object.values(personne)); <span class="comment">// ["Jean", "Dupont", 25, "Antananarivo"]</span>
+
+<span class="comment">// Obtenir les paires clé/valeur</span>
+console.log(Object.entries(personne)); <span class="comment">// [["prenom","Jean"], ["nom","Dupont"], ...]</span></pre>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 7: Exercices -->
+                    <div class="lecon-section exercices">
+                        <h3>✍️ 10.7 Exercices pratiques</h3>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 1 : Créer un profil utilisateur</h4>
+                            <p><strong>Objectif :</strong> Créer un objet représentant un utilisateur.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un objet <code>utilisateur</code> avec : nom, email, age, estAdmin (booléen)</li>
+                                    <li>Ajoutez une méthode <code>afficher</code> qui affiche toutes les infos</li>
+                                    <li>Ajoutez une méthode <code>vieillir</code> qui incrémente l'âge</li>
+                                    <li>Testez les méthodes</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="exercice-card">
+                            <h4>Exercice 2 : Catalogue de produits</h4>
+                            <p><strong>Objectif :</strong> Créer un tableau d'objets produits.</p>
+
+                            <div class="consigne">
+                                <p><i class="fas fa-tasks"></i> Instructions :</p>
+                                <ol>
+                                    <li>Créez un tableau de 3 produits (nom, prix, stock)</li>
+                                    <li>Utilisez filter pour trouver les produits en stock (stock > 0)</li>
+                                    <li>Utilisez map pour appliquer une réduction de 10%</li>
+                                    <li>Calculez la valeur totale du stock avec reduce</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ===== EXERCICES RÉCAPITULATIFS ===== -->
+            <section class="exercices-recap">
+                <h2 class="section-title">🏆 Projet récapitulatif (Leçons 6-10)</h2>
+
+                <div class="recap-card">
+                    <h3>Créez une liste de tâches (Todo List)</h3>
+                    <p>Utilisez les fonctions, tableaux et objets.</p>
+
+                    <h4>Instructions :</h4>
+                    <ol>
+                        <li>Créez un tableau <code>taches</code> contenant des objets avec : id, description, termine (booléen)</li>
+                        <li>Fonction <code>ajouterTache(description)</code> qui ajoute une nouvelle tâche</li>
+                        <li>Fonction <code>supprimerTache(id)</code> qui supprime une tâche</li>
+                        <li>Fonction <code>terminerTache(id)</code> qui marque une tâche comme terminée</li>
+                        <li>Fonction <code>afficherTaches()</code> qui affiche toutes les tâches (avec statut)</li>
+                        <li>Fonction <code>tachesNonTerminees()</code> qui retourne les tâches non terminées (filter)</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== PAGINATION ===== -->
+    <section class="pagination">
+        <div class="container">
+            <div class="pagination-content">
+                <a href="js1.html" class="pagination-prev"><i class="fas fa-arrow-left"></i> Leçons 1-5</a>
+                <div class="pagination-links">
+                    <a href="js1.html">1</a>
+                    <a href="js2.html" class="active">2</a>
+                    <a href="js3.html">3</a>
+                    <a href="js4.html">4</a>
+                </div>
+                <a href="js3.html" class="pagination-next">Leçons 11-15 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOUTON BACK TO TOP ===== -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+  </html>
+                              
